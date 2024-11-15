@@ -1,0 +1,1785 @@
+text|source|chunk_id
+"Found 57 source code files: ../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/Account.java package com.ibatis.jpetstore.domain;
+
+public class Account {
+
+private String userId;
+
+private String email;
+
+private String firstName;
+
+private String lastName;
+
+private String status;
+
+private String address1;
+
+private String address2;
+
+private String city;
+
+private String state;
+
+private String zip;
+
+private String country;
+
+private String phone;
+
+private String favouriteCategoryId;
+
+private String languagePreference;
+
+private boolean listOption;
+
+private boolean bannerOption;
+
+private String bannerName;
+
+public String getUserId() {
+
+return userId;
+
+}
+
+public void setUserId(String userId) { this.userId = userId; }
+
+public String getEmail() {
+
+return email;
+
+}
+
+public void setEmail(String email) { this.email = email; }
+
+public String getFirstName() {
+
+return firstName;
+
+}
+
+public void setFirstName(String firstName) { this.firstName = firstName; }
+
+public String getLastName() {
+
+return lastName;
+
+}
+
+public void setLastName(String lastName) { this.lastName = lastName; }
+
+public String getStatus() {
+
+return status;
+
+}
+
+public void setStatus(String status) { this.status = status; }
+
+public String getAddress1() {
+
+return address1;
+
+}
+
+public void setAddress1(String address1) { this.address1 = address1; }
+
+public String getAddress2() {
+
+return address2;
+
+}
+
+public void setAddress2(String address2) { this.address2 = address2; }
+
+public String getCity() {
+
+return city;
+
+}"|data_input/jpetstore/jpetstore.txt|24481914343a43d99d5ff3c1f46dddea
+"return address2;
+
+}
+
+public void setAddress2(String address2) { this.address2 = address2; }
+
+public String getCity() {
+
+return city;
+
+}
+
+public void setCity(String city) { this.city = city; }
+
+public String getState() {
+
+return state;
+
+}
+
+public void setState(String state) { this.state = state; }
+
+public String getZip() {
+
+return zip;
+
+}
+
+public void setZip(String zip) { this.zip = zip; }
+
+public String getCountry() {
+
+return country;
+
+}
+
+public void setCountry(String country) { this.country = country; }
+
+public String getPhone() {
+
+return phone;
+
+}
+
+public void setPhone(String phone) { this.phone = phone; }
+
+public String getFavouriteCategoryId() {
+
+return favouriteCategoryId;
+
+}
+
+public void setFavouriteCategoryId(String favouriteCategoryId) { this.favouriteCategoryId = favouriteCategoryId; }
+
+public String getLanguagePreference() {
+
+return languagePreference;
+
+}
+
+public void setLanguagePreference(String languagePreference) { this.languagePreference = languagePreference; }
+
+public boolean isListOption() {
+
+return listOption;
+
+}
+
+public void setListOption(boolean listOption) { this.listOption = listOption; }
+
+public boolean isBannerOption() {
+
+return bannerOption;
+
+}
+
+public void setBannerOption(boolean bannerOption) { this.bannerOption = bannerOption; }
+
+public String getBannerName() {
+
+return bannerName;
+
+}
+
+public void setBannerName(String bannerName) { this.bannerName = bannerName; } }
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/domain/Cart.java"|data_input/jpetstore/jpetstore.txt|accff122f31949ad8ae6446e5b49c737
+"../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/domain/Cart.java
+
+package com.ibatis.jpetstore.domain;
+
+import java.math.
+
+;
+
+import java.util.
+
+;
+
+public class Cart {
+
+private Map itemMap = Collections.synchronizedMap(new HashMap());
+
+public Iterator getCartItems() {
+
+return itemMap.values().iterator();
+
+}
+
+public int getNumberOfItems() {
+
+return itemMap.size();
+
+}
+
+public void addItem(Item item) { CartItem cartItem = (CartItem) itemMap.get(item.getItemId()); if (cartItem == null) { cartItem = new CartItem(); cartItem.setItem(item); cartItem.setQuantity(0); itemMap.put(item.getItemId(), cartItem); } cartItem.incrementQuantity(); }
+
+public boolean containsItemId(String itemId) { return itemMap.containsKey(itemId); }
+
+public Item removeItemById(String itemId) { CartItem cartItem = (CartItem) itemMap.remove(itemId); if (cartItem == null) { return null; } else { return cartItem.getItem(); } }
+
+public void incrementQuantityByItemId(String itemId) { CartItem cartItem = (CartItem) itemMap.get(itemId); cartItem.incrementQuantity(); }
+
+public void setQuantityByItemId(String itemId, int quantity) { CartItem cartItem = (CartItem) itemMap.get(itemId); cartItem.setQuantity(quantity); }"|data_input/jpetstore/jpetstore.txt|255aefd7ad2a4363a988f11673accf59
+"public void setQuantityByItemId(String itemId, int quantity) { CartItem cartItem = (CartItem) itemMap.get(itemId); cartItem.setQuantity(quantity); }
+
+public BigDecimal getSubTotal() { BigDecimal subTotal = new BigDecimal(""0""); Iterator items = getCartItems(); while (items.hasNext()) { CartItem cartItem = (CartItem) items.next(); Item item = cartItem.getItem(); BigDecimal listPrice = item.getListPrice(); BigDecimal quantity = new BigDecimal(String.valueOf(cartItem.getQuantity())); subTotal = subTotal.add(listPrice.multiply(quantity)); } return subTotal; }
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/domain/CartItem.java
+
+package com.ibatis.jpetstore.domain;
+
+public class CartItem {
+
+private Item item;
+
+private int quantity;
+
+public Item getItem() {
+
+return item;
+
+}
+
+public void setItem(Item item) { this.item = item; }
+
+public int getQuantity() {
+
+return quantity;
+
+}
+
+public void setQuantity(int quantity) { this.quantity = quantity; }
+
+public void incrementQuantity() {
+
+quantity++;
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/domain/Category.java
+
+package com.ibatis.jpetstore.domain;
+
+public class Category {
+
+private String categoryId;
+
+private String name;
+
+private String description;
+
+private String image;
+
+public String getCategoryId() {
+
+return categoryId;
+
+}
+
+public void setCategoryId(String categoryId) { this.categoryId = categoryId.trim(); }
+
+public String getImage() {
+
+return image;
+
+}"|data_input/jpetstore/jpetstore.txt|bf395dcae79c4689a27b72bba5f3e378
+"}
+
+public void setCategoryId(String categoryId) { this.categoryId = categoryId.trim(); }
+
+public String getImage() {
+
+return image;
+
+}
+
+public void setImage(String image) { this.image = image; }
+
+public String getName() {
+
+return name;
+
+}
+
+public void setName(String name) { this.name = name; }
+
+public String getDescription() {
+
+return description;
+
+}
+
+public void setDescription(String description) { this.description = description; }
+
+public String toString() {
+
+return getCategoryId();
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/domain/Item.java
+
+package com.ibatis.jpetstore.domain;
+
+import java.math.
+
+;
+
+public class Item {
+
+private String itemId;
+
+private String productId;
+
+private BigDecimal listPrice;
+
+private BigDecimal unitCost;
+
+private int supplierId;
+
+private String status;
+
+private String attribute1;
+
+private String attribute2;
+
+private String attribute3;
+
+private String attribute4;
+
+private String attribute5;
+
+private Product product;
+
+private int quantity;
+
+public String getItemId() {
+
+return itemId;
+
+}
+
+public void setItemId(String itemId) { this.itemId = itemId.trim(); }
+
+public int getQuantity() {
+
+return quantity;
+
+}
+
+public void setQuantity(int quantity) { this.quantity = quantity; }
+
+public Product getProduct() {
+
+return product;
+
+}
+
+public void setProduct(Product product) { this.product = product; }
+
+public String getProductId() {
+
+return productId;
+
+}
+
+public void setProductId(String productId) { this.productId = productId; }"|data_input/jpetstore/jpetstore.txt|ed156cdaf1e34e8c8e94bb986adbb3f1
+"public String getProductId() {
+
+return productId;
+
+}
+
+public void setProductId(String productId) { this.productId = productId; }
+
+public int getSupplierId() {
+
+return supplierId;
+
+}
+
+public void setSupplierId(int supplierId) { this.supplierId = supplierId; }
+
+public BigDecimal getListPrice() {
+
+return listPrice;
+
+}
+
+public void setListPrice(BigDecimal listPrice) { this.listPrice = listPrice; }
+
+public BigDecimal getUnitCost() {
+
+return unitCost;
+
+}
+
+public void setUnitCost(BigDecimal unitCost) { this.unitCost = unitCost; }
+
+public String getStatus() {
+
+return status;
+
+}
+
+public void setStatus(String status) { this.status = status; }
+
+public String getAttribute1() {
+
+return attribute1;
+
+}
+
+public void setAttribute1(String attribute1) { this.attribute1 = attribute1; }
+
+public String getAttribute2() {
+
+return attribute2;
+
+}
+
+public void setAttribute2(String attribute2) { this.attribute2 = attribute2; }
+
+public String getAttribute3() {
+
+return attribute3;
+
+}
+
+public void setAttribute3(String attribute3) { this.attribute3 = attribute3; }
+
+public String getAttribute4() {
+
+return attribute4;
+
+}
+
+public void setAttribute4(String attribute4) { this.attribute4 = attribute4; }
+
+public String getAttribute5() {
+
+return attribute5;
+
+}
+
+public void setAttribute5(String attribute5) { this.attribute5 = attribute5; }
+
+public String toString() { return ""("" + getItemId().trim() + ""-"" + getProductId().trim() + "")""; }
+
+}
+
+../jpetstore/src/WEB"|data_input/jpetstore/jpetstore.txt|10b17fdeb5514365b9301cfe3487fcea
+"public String toString() { return ""("" + getItemId().trim() + ""-"" + getProductId().trim() + "")""; }
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/domain/LineItem.java
+
+package com.ibatis.jpetstore.domain;
+
+import java.math.
+
+;
+
+public class LineItem {
+
+private int orderId;
+
+private int lineNumber;
+
+private int quantity;
+
+private String itemId;
+
+private BigDecimal unitprice;
+
+private Item item;
+
+public LineItem() {
+
+}
+
+public LineItem(int orderId, int lineNumber, CartItem cartItem) { this.orderId = orderId; this.lineNumber = lineNumber; this.quantity = cartItem.getQuantity(); this.itemId = cartItem.getItem().getItemId(); this.unitprice = cartItem.getItem().getListPrice(); this.item = cartItem.getItem(); }
+
+public Item getItem() {
+
+return item;
+
+}
+
+public void setItem(Item item) { this.item = item; }
+
+public int getOrderId() {
+
+return orderId;
+
+}
+
+public void setOrderId(int orderId) { this.orderId = orderId; }
+
+public int getLineNumber() {
+
+return lineNumber;
+
+}
+
+public void setLineNumber(int lineNumber) { this.lineNumber = lineNumber; }
+
+public String getItemId() {
+
+return itemId;
+
+}
+
+public void setItemId(String itemId) { this.itemId = itemId; }
+
+public int getQuantity() {
+
+return quantity;
+
+}
+
+public void setQuantity(int quantity) { this.quantity = quantity; }
+
+public BigDecimal getUnitPrice() {
+
+return unitprice;
+
+}
+
+public void setUnitPrice(BigDecimal unitprice) { this.unitprice = unitprice; } }
+
+../jpetstore/src/WEB"|data_input/jpetstore/jpetstore.txt|21667be70b134e5db7f333a50c490051
+"return unitprice;
+
+}
+
+public void setUnitPrice(BigDecimal unitprice) { this.unitprice = unitprice; } }
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/domain/Order.java
+
+package com.ibatis.jpetstore.domain;
+
+import java.math.
+
+;
+
+import java.util.
+
+;
+
+public class Order {
+
+private int orderId;
+
+private String userId;
+
+private Date orderDate;
+
+private String shipAddress1;
+
+private String shipAddress2;
+
+private String shipCity;
+
+private String shipState;
+
+private String shipZip;
+
+private String shipCountry;
+
+private String billAddress1;
+
+private String billAddress2;
+
+private String billCity;
+
+private String billState;
+
+private String billZip;
+
+private String billCountry;
+
+private String courier;
+
+private BigDecimal totalPrice;
+
+private String billToFirstName;
+
+private String billToLastName;
+
+private String shipToFirstName;
+
+private String shipToLastName;
+
+private String creditCard;
+
+private String expiryDate;
+
+private String cardType;
+
+private String locale;
+
+private String status;
+
+private List lineItems = new ArrayList();
+
+public Order() {
+
+}
+
+public void initOrder(int id, Account account, Cart cart) { orderId = id;
+
+userId = account.getUserId();
+
+orderDate = new Date();
+
+shipToFirstName = account.getFirstName();
+
+shipToLastName = account.getLastName();
+
+shipAddress1 = account.getAddress1();
+
+shipAddress2 = account.getAddress2();
+
+shipCity = account.getCity();
+
+shipState = account.getState();
+
+shipZip = account.getZip();
+
+shipCountry = account.getCountry();"|data_input/jpetstore/jpetstore.txt|48dbbb7a9ebf4be6894213cf050823f3
+"shipCity = account.getCity();
+
+shipState = account.getState();
+
+shipZip = account.getZip();
+
+shipCountry = account.getCountry();
+
+billToFirstName = account.getFirstName();
+
+billToLastName = account.getLastName();
+
+billAddress1 = account.getAddress1();
+
+billAddress2 = account.getAddress2();
+
+billCity = account.getCity();
+
+billState = account.getState();
+
+billZip = account.getZip();
+
+billCountry = account.getCountry();
+
+totalPrice = cart.getSubTotal();
+
+creditCard = ""999 9999 9999 9999""; expiryDate = ""12/03""; cardType = ""Visa""; courier = ""UPS""; locale = ""CA""; status = ""P"";
+
+Iterator i = cart.getCartItems(); while (i.hasNext()) { CartItem cartItem = (CartItem) i.next(); addLineItem(cartItem); }
+
+}
+
+public void addLineItem(CartItem cartItem) { LineItem lineItem = new LineItem(orderId, lineItems.size() + 1, cartItem); addLineItem(lineItem); }
+
+public void addLineItem(LineItem lineItem) { lineItems.add(lineItem); }
+
+public Iterator getLineItems() {
+
+return lineItems.iterator();
+
+}
+
+public int getOrderId() {
+
+return orderId;
+
+}
+
+public void setOrderId(int orderId) { this.orderId = orderId; }
+
+public String getUserId() {
+
+return userId;
+
+}
+
+public void setUserId(String userId) { this.userId = userId; }
+
+public Date getOrderDate() {
+
+return orderDate;
+
+}
+
+public void setOrderDate(Date orderDate) { this.orderDate = orderDate; }
+
+public String getShipAddress1() {
+
+return shipAddress1;
+
+}
+
+public void setShipAddress1(String shipAddress1) { this.shipAddress1 = shipAddress1; }"|data_input/jpetstore/jpetstore.txt|bc8d9f8ce407465088c693ad280472a5
+"public String getShipAddress1() {
+
+return shipAddress1;
+
+}
+
+public void setShipAddress1(String shipAddress1) { this.shipAddress1 = shipAddress1; }
+
+public String getShipAddress2() {
+
+return shipAddress2;
+
+}
+
+public void setShipAddress2(String shipAddress2) { this.shipAddress2 = shipAddress2; }
+
+public String getShipCity() {
+
+return shipCity;
+
+}
+
+public void setShipCity(String shipCity) { this.shipCity = shipCity; }
+
+public String getShipState() {
+
+return shipState;
+
+}
+
+public void setShipState(String shipState) { this.shipState = shipState; }
+
+public String getShipZip() {
+
+return shipZip;
+
+}
+
+public void setShipZip(String shipZip) { this.shipZip = shipZip; }
+
+public String getShipCountry() {
+
+return shipCountry;
+
+}
+
+public void setShipCountry(String shipCountry) { this.shipCountry = shipCountry; }
+
+public String getBillAddress1() {
+
+return billAddress1;
+
+}
+
+public void setBillAddress1(String billAddress1) { this.billAddress1 = billAddress1; }
+
+public String getBillAddress2() {
+
+return billAddress2;
+
+}
+
+public void setBillAddress2(String billAddress2) { this.billAddress2 = billAddress2; }
+
+public String getBillCity() {
+
+return billCity;
+
+}
+
+public void setBillCity(String billCity) { this.billCity = billCity; }
+
+public String getBillState() {
+
+return billState;
+
+}
+
+public void setBillState(String billState) { this.billState = billState; }
+
+public String getBillZip() {
+
+return billZip;
+
+}
+
+public void setBillZip(String billZip) { this.billZip = billZip; }"|data_input/jpetstore/jpetstore.txt|bea818b5d3484234b48ae1f91b4c2c30
+"public String getBillZip() {
+
+return billZip;
+
+}
+
+public void setBillZip(String billZip) { this.billZip = billZip; }
+
+public String getBillCountry() {
+
+return billCountry;
+
+}
+
+public void setBillCountry(String billCountry) { this.billCountry = billCountry; }
+
+public String getCourier() {
+
+return courier;
+
+}
+
+public void setCourier(String courier) { this.courier = courier; }
+
+public BigDecimal getTotalPrice() {
+
+return totalPrice;
+
+}
+
+public void setTotalPrice(BigDecimal totalPrice) { this.totalPrice = totalPrice; }
+
+public String getBillToFirstName() {
+
+return billToFirstName;
+
+}
+
+public void setBillToFirstName(String billToFirstName) { this.billToFirstName = billToFirstName; }
+
+public String getBillToLastName() {
+
+return billToLastName;
+
+}
+
+public void setBillToLastName(String billToLastName) { this.billToLastName = billToLastName; }
+
+public String getShipToFirstName() {
+
+return shipToFirstName;
+
+}
+
+public void setShipToFirstName(String shipFoFirstName) { this.shipToFirstName = shipFoFirstName; }
+
+public String getShipToLastName() {
+
+return shipToLastName;
+
+}
+
+public void setShipToLastName(String shipToLastName) { this.shipToLastName = shipToLastName; }
+
+public String getCreditCard() {
+
+return creditCard;
+
+}
+
+public void setCreditCard(String creditCard) { this.creditCard = creditCard; }
+
+public String getExpiryDate() {
+
+return expiryDate;
+
+}
+
+public void setExpiryDate(String expiryDate) { this.expiryDate = expiryDate; }
+
+public String getCardType() {
+
+return cardType;
+
+}"|data_input/jpetstore/jpetstore.txt|ec6fda1ba2c947da9da285336f53f22e
+"}
+
+public void setExpiryDate(String expiryDate) { this.expiryDate = expiryDate; }
+
+public String getCardType() {
+
+return cardType;
+
+}
+
+public void setCardType(String cardType) { this.cardType = cardType; }
+
+public String getLocale() {
+
+return locale;
+
+}
+
+public void setLocale(String locale) { this.locale = locale; }
+
+public String getStatus() {
+
+return status;
+
+}
+
+public void setStatus(String status) { this.status = status; } }
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/domain/Product.java
+
+package com.ibatis.jpetstore.domain;
+
+public class Product {
+
+private String productId;
+
+private String categoryId;
+
+private String name;
+
+private String description;
+
+private String image;
+
+public String getProductId() {
+
+return productId;
+
+}
+
+public void setProductId(String productId) { this.productId = productId.trim(); }
+
+public String getImage() {
+
+return image;
+
+}
+
+public void setImage(String image) { this.image = image; }
+
+public String getCategoryId() {
+
+return categoryId;
+
+}
+
+public void setCategoryId(String categoryId) { this.categoryId = categoryId; }
+
+public String getName() {
+
+return name;
+
+}
+
+public void setName(String name) { this.name = name; }
+
+public String getDescription() {
+
+return description;
+
+}
+
+public void setDescription(String description) { this.description = description; }
+
+public String toString() {
+
+return getName();
+
+}
+
+}"|data_input/jpetstore/jpetstore.txt|6116de0c5e0149fe8bd8212ee870b2b8
+"}
+
+public void setDescription(String description) { this.description = description; }
+
+public String toString() {
+
+return getName();
+
+}
+
+}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/Sequence.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Sep 9, 2002 * Time: 7:47:51 PM * To change template for new class use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.domain;
+
+public class Sequence {
+
+public String name;
+
+public int nextId;
+
+public String getName() {
+
+return name;
+
+}
+
+public void setName(String name) { this.name = name; }
+
+public int getNextId() {
+
+return nextId;
+
+}
+
+public void setNextId(int nextId) { this.nextId = nextId; } }
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/domain/Signon.java
+
+package com.ibatis.jpetstore.domain;
+
+public class Signon {
+
+private String username;
+
+private String password;
+
+public String getUsername() {
+
+return username;
+
+}
+
+public void setUsername(String username) { this.username = username; }
+
+public String getPassword() {
+
+return password;
+
+}
+
+public void setPassword(String password) { this.password = password; }
+
+}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/AccountDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:08:55 PM * To change template for new interface use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao;"|data_input/jpetstore/jpetstore.txt|4acc29f98b424ecdbe5965e8af71ab67
+"import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+public interface AccountDao extends Dao { Account getAccount(DaoTransaction trans, String userId) throws DaoException;
+
+void updateAccount(DaoTransaction trans, Account account) throws DaoException;
+
+void insertAccount(DaoTransaction trans, Account account) throws DaoException; }
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/CategoryDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:09:09 PM * To change template for new interface use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import java.util.
+
+;
+
+public interface CategoryDao extends Dao { Category getCategory(DaoTransaction trans, String categoryId) throws DaoException;
+
+List getCategoryList(DaoTransaction trans)
+
+throws DaoException;
+
+}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/InventoryDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:09:23 PM * To change template for new interface use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao;
+
+import com.ibatis.db.dao.
+
+;
+
+public interface InventoryDao extends Dao { void updateInventoryQuantity(DaoTransaction trans, String itemId, int quantity) throws DaoException; }"|data_input/jpetstore/jpetstore.txt|3f63653f00544f4d908d5ab47030818f
+"public interface InventoryDao extends Dao { void updateInventoryQuantity(DaoTransaction trans, String itemId, int quantity) throws DaoException; }
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/ItemDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:09:36 PM * To change template for new interface use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import java.util.
+
+;
+
+public interface ItemDao extends Dao { Item getItem(DaoTransaction trans, String itemId) throws DaoException;
+
+List getItemList(DaoTransaction trans)
+
+throws DaoException;
+
+List getItemListByProduct(DaoTransaction trans, String productId) throws DaoException; }
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/LineItemDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:10:01 PM * To change template for new interface use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import java.util.
+
+;
+
+public interface LineItemDao extends Dao { void insertLineItem(DaoTransaction trans, LineItem lineItem) throws DaoException;
+
+List getLineItemsByOrderId(DaoTransaction trans, int orderId) throws DaoException; }"|data_input/jpetstore/jpetstore.txt|be0548dc1c414e95833257d8f071cfc1
+"List getLineItemsByOrderId(DaoTransaction trans, int orderId) throws DaoException; }
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/OrderDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:10:18 PM * To change template for new interface use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import java.util.
+
+;
+
+public interface OrderDao extends Dao { Order getOrder(DaoTransaction trans, int orderId) throws DaoException;
+
+List getOrdersByUserId(DaoTransaction trans, String userId) throws DaoException;
+
+void insertOrder(DaoTransaction trans, Order order) throws DaoException;
+
+int getNextOrderId()
+
+throws DaoException;
+
+}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/ProductDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:10:36 PM * To change template for new interface use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import java.util.
+
+;
+
+public interface ProductDao extends Dao { Product getProduct(DaoTransaction trans, String productId) throws DaoException;
+
+List getProductList(DaoTransaction trans)
+
+throws DaoException;"|data_input/jpetstore/jpetstore.txt|7bd947520b3a43eb86769f1ae0664c36
+"List getProductList(DaoTransaction trans)
+
+throws DaoException;
+
+List getProductListByCategory(DaoTransaction trans, String categoryId) throws DaoException;
+
+List getProductListByKeyword(DaoTransaction trans, String keyword) throws DaoException; }
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/SignonDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:10:50 PM * To change template for new interface use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+public interface SignonDao extends Dao { Signon getSignon(DaoTransaction trans, String username, String password) throws DaoException;
+
+void updateSignon(DaoTransaction trans, Signon signon) throws DaoException;
+
+void insertSignon(DaoTransaction trans, Signon signon) throws DaoException; }
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/cache/BaseCacheDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 8:51:00 PM * To change template for new class use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao.cache;
+
+import java.util.
+
+;"|data_input/jpetstore/jpetstore.txt|0038c3bd107540d3b41c4398e4a4d36d
+"import java.util.
+
+;
+
+/** * These Cache DAOs are examples of how DAO provides a pluggable framework. * * Note: Cacheing such as this can be done declaratively through SQL Maps, * so this would be somewhat redundant in practice. */ public abstract class BaseCacheDao {
+
+private static final int MAX_ITEMS_PER_CHANNEL = 8; private static final Map CHANNELS = new HashMap();
+
+protected void put(String key, Object object) { synchronized (CHANNELS) { CacheChannel channel = getChannel(); channel.getCache().put(key, object); channel.getKeys().add(key); if (channel.getKeys().size() > MAX_ITEMS_PER_CHANNEL) { channel.getCache().remove(channel.getKeys().remove(0)); } } }
+
+protected Object get(String key) { synchronized (CHANNELS) { CacheChannel channel = getChannel(); Object o = channel.getCache().get(key); if (o != null) { channel.getKeys().remove(key); channel.getKeys().add(key); } return o; } }
+
+protected void flush() {
+
+synchronized (CHANNELS) {
+
+CacheChannel channel = getChannel();
+
+channel.getCache().clear();
+
+}
+
+}
+
+protected CacheChannel getChannel() { // Channels are applied per class....so if you only have one // cache DAO, then you only have one channel. CacheChannel channel = (CacheChannel) CHANNELS.get(this.getClass()); if (channel == null) { channel = new CacheChannel(); CHANNELS.put(this.getClass(), channel); } return channel; }
+
+private class CacheChannel {
+
+private Map cache = new HashMap(); private List keys = new ArrayList();
+
+public Map getCache() {
+
+return cache;
+
+}"|data_input/jpetstore/jpetstore.txt|6cd5fb7f64d441eba4741253057bb4ac
+"private class CacheChannel {
+
+private Map cache = new HashMap(); private List keys = new ArrayList();
+
+public Map getCache() {
+
+return cache;
+
+}
+
+public List getKeys() {
+
+return keys;
+
+}
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/persistence/dao/cache/PetStoreCacheDao.java
+
+package com.ibatis.jpetstore.persistence.dao.cache;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+import com.ibatis.jpetstore.persistence.dao.map.
+
+;
+
+import java.util.
+
+;
+
+/** * These Cache DAOs are examples of how DAO provides a pluggable framework. * * Note: Cacheing such as this can be done declaratively through SQL Maps, * so this would be somewhat redundant in practice. */ public class PetStoreCacheDao extends BaseCacheDao implements ItemDao, ProductDao, CategoryDao, InventoryDao {
+
+private static final ItemDao itemDao = new ItemMapDao(); private static final ProductDao productDao = new ProductMapDao(); private static final CategoryDao categoryDao = new CategoryMapDao(); private static final InventoryDao inventoryDao = new InventoryMapDao();
+
+public Product getProduct(DaoTransaction trans, String productId) throws DaoException { String key = ""getProduct"" + productId; Product product = (Product) get(key); if (product == null) { product = productDao.getProduct(trans, productId); put(key, product); } return product; }"|data_input/jpetstore/jpetstore.txt|41ea21fd766b4c39ad3cc183da7eb56f
+"public List getProductList(DaoTransaction trans) throws DaoException { String key = ""getProductList""; List list = (List) get(key); if (list == null) { list = productDao.getProductList(trans); put(key, list); } return list; }
+
+public List getProductListByCategory(DaoTransaction trans, String categoryId) throws DaoException { String key = ""getProductListByCategory"" + categoryId; List list = (List) get(key); if (list == null) { list = productDao.getProductListByCategory(trans, categoryId); put(key, list); } return list; }
+
+public List getProductListByKeyword(DaoTransaction trans, String keyword) throws DaoException { return productDao.getProductListByKeyword(trans, keyword); }
+
+public Item getItem(DaoTransaction trans, String itemId) throws DaoException { String key = ""getItem"" + itemId; Item item = (Item) get(key); if (item == null) { item = itemDao.getItem(trans, itemId); put(key, item); } return item; }
+
+public List getItemList(DaoTransaction trans) throws DaoException { String key = ""getItemList""; List list = (List) get(key); if (list == null) { list = itemDao.getItemList(trans); put(key, list); } return list; }
+
+public List getItemListByProduct(DaoTransaction trans, String productId) throws DaoException { String key = ""getItemListByProduct"" + productId; List list = (List) get(key); if (list == null) { list = itemDao.getItemListByProduct(trans, productId); put(key, list); } return list; }"|data_input/jpetstore/jpetstore.txt|f3af89a5dee54ba884861457f858bee6
+"public void updateInventoryQuantity(DaoTransaction trans, String itemId, int quantity) throws DaoException { inventoryDao.updateInventoryQuantity(trans, itemId, quantity); flush(); }
+
+public Category getCategory(DaoTransaction trans, String categoryId) throws DaoException { String key = ""getCategory"" + categoryId; Category category = (Category) get(key); if (category == null) { category = categoryDao.getCategory(trans, categoryId); put(key, category); } return category; }
+
+public List getCategoryList(DaoTransaction trans) throws DaoException { String key = ""getCategoryList""; List list = (List) get(key); if (list == null) { list = categoryDao.getCategoryList(trans); put(key, list); } return list; }
+
+}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/AccountMapDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:02:19 PM * To change template for new class use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao.map;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.db.sqlmap.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+public class AccountMapDao extends BaseMapDao implements AccountDao {
+
+public Account getAccount(DaoTransaction trans, String userId) throws DaoException { return (Account) executeQueryForObject(""getAccount"", trans, new StringKey(userId)); }"|data_input/jpetstore/jpetstore.txt|1f6b778795e7474abfb38aba6323460c
+"public void updateAccount(DaoTransaction trans, Account account) throws DaoException { executeUpdate(""updateAccount"", trans, account); executeUpdate(""updateProfile"", trans, account); }
+
+public void insertAccount(DaoTransaction trans, Account account) throws DaoException { executeUpdate(""insertAccount"", trans, account); executeUpdate(""insertProfile"", trans, account); }
+
+}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/BaseMapDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 8:14:28 PM * To change template for new class use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao.map;
+
+import com.ibatis.common.resources.
+
+;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.db.dao.jdbc.
+
+;
+
+import com.ibatis.db.sqlmap.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import java.sql.
+
+;
+
+import java.util.
+
+;
+
+public abstract class BaseMapDao {
+
+protected static SqlMap sqlMap;
+
+protected static DaoManager daoManager;
+
+static { try { daoManager = DaoManager.getInstance(""PetStore""); String relative = daoManager.getExtraProperty(""sqlmap.repository.path.relative""); sqlMap = XmlSqlMapBuilder.buildSqlMap(Resources.getResourceAsReader(relative)); } catch (Exception e) { throw new RuntimeException (""Could not initialize BaseMapDao. Cause: "" + e); }
+
+}"|data_input/jpetstore/jpetstore.txt|3417e22b1b6b4d92b702682b1830b80d
+"}
+
+protected void executeUpdate(String mappedStatementName, DaoTransaction trans, Object parameterObject) throws DaoException {
+
+try { Connection conn = ((JdbcDaoTransaction) trans).getConnection(); MappedStatement mappedStatement = sqlMap.getMappedStatement(mappedStatementName); mappedStatement.executeUpdate(conn, parameterObject); } catch (SQLException e) { throw new DaoException(e); }
+
+}
+
+protected List executeQueryForList(String mappedStatementName, DaoTransaction trans, Object parameterObject) throws DaoException {
+
+try { Connection conn = ((JdbcDaoTransaction) trans).getConnection(); MappedStatement mappedStatement = sqlMap.getMappedStatement(mappedStatementName); return mappedStatement.executeQueryForList(conn, parameterObject); } catch (SQLException e) { throw new DaoException(e); }
+
+}
+
+protected Object executeQueryForObject(String mappedStatementName, DaoTransaction trans, Object parameterObject) throws DaoException {
+
+try { Connection conn = ((JdbcDaoTransaction) trans).getConnection(); MappedStatement mappedStatement = sqlMap.getMappedStatement(mappedStatementName); return mappedStatement.executeQueryForObject(conn, parameterObject); } catch (SQLException e) { throw new DaoException(e); }
+
+}"|data_input/jpetstore/jpetstore.txt|911ada9111be4fc9a206b5c2ffa08d7a
+"}
+
+/** * The scheme used here will require an extra connections being for inserts * (for a very short term), and will reduce complexity around ID generation, * as well as reduce the number of blocked insert requests (but may increase * the number of blocked requests to the connection pool). * * There are many other (better/more complex) ways to do this, but this is * a simple, safe approach appropriate for this application. */ public synchronized int getNextId (String name) throws DaoException { DaoTransaction trans = daoManager.getTransaction(); Sequence sequence = new Sequence(); sequence.setName(name); sequence=(Sequence)executeQueryForObject(""getSequence"",trans,sequence); int nextId = sequence.getNextId(); sequence.setNextId(nextId+1); executeUpdate(""updateSequence"",trans,sequence); trans.commit(); trans.release(); return nextId; }
+
+}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/CategoryMapDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:03:51 PM * To change template for new class use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao.map;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.db.sqlmap.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+import java.util.
+
+;
+
+public class CategoryMapDao extends BaseMapDao implements CategoryDao {"|data_input/jpetstore/jpetstore.txt|ee83a8f26b7246fb8e8c7060c571c372
+";
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+import java.util.
+
+;
+
+public class CategoryMapDao extends BaseMapDao implements CategoryDao {
+
+public Category getCategory(DaoTransaction trans, String categoryId) throws DaoException { return (Category) executeQueryForObject(""getCategory"", trans, new StringKey(categoryId)); }
+
+public List getCategoryList(DaoTransaction trans)
+
+throws DaoException {
+
+return executeQueryForList(""getCategoryList"", trans, null);
+
+}
+
+}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/InventoryMapDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:03:43 PM * To change template for new class use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao.map;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+public class InventoryMapDao extends BaseMapDao implements InventoryDao {
+
+public void updateInventoryQuantity(DaoTransaction trans, String itemId, int quantity) throws DaoException { Item item = new Item(); item.setItemId(itemId); item.setQuantity(quantity); executeUpdate(""updateInventoryQuantity"", trans, item); }
+
+}"|data_input/jpetstore/jpetstore.txt|7d829bf1477d4ed1bce01541890c8141
+"}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/ItemMapDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:03:30 PM * To change template for new class use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao.map;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.db.sqlmap.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+import java.util.
+
+;
+
+public class ItemMapDao extends BaseMapDao implements ItemDao {
+
+public Item getItem(DaoTransaction trans, String itemId) throws DaoException { Item item = (Item) executeQueryForObject(""getItem"", trans, new StringKey(itemId)); Product product = (Product) executeQueryForObject(""getProduct"", trans, new StringKey(item.getProductId())); item.setProduct(product); return item; }
+
+public List getItemList(DaoTransaction trans)
+
+throws DaoException {
+
+return executeQueryForList(""getItemList"", trans, null);
+
+}
+
+public List getItemListByProduct(DaoTransaction trans, String productId) throws DaoException { return executeQueryForList(""getItemListByProduct"", trans, new StringKey(productId)); } }"|data_input/jpetstore/jpetstore.txt|f8827b0a82ad42859f37221deaf18ce2
+"../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/LineItemMapDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:03:23 PM * To change template for new class use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao.map;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.db.sqlmap.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+import java.util.
+
+;
+
+public class LineItemMapDao extends BaseMapDao implements LineItemDao {
+
+private static final ItemDao itemDao = (ItemDao) daoManager.getDao(""Item"");
+
+public void insertLineItem(DaoTransaction trans, LineItem lineItem) throws DaoException { executeUpdate(""insertLineItem"", trans, lineItem); }
+
+public List getLineItemsByOrderId(DaoTransaction trans, int orderId) throws DaoException { List list = executeQueryForList(""getLineItemsByOrderId"", trans, new IntegerKey(orderId)); for (int i = 0; i < list.size(); i++) { LineItem lineItem = (LineItem) list.get(i); // unchached lineItem.setItem(itemDao.getItem(trans, lineItem.getItemId())); } return list; }
+
+}"|data_input/jpetstore/jpetstore.txt|7dbc28dc70634557a3e1eafa8d95965c
+"}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/OrderMapDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:03:10 PM * To change template for new class use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao.map;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.db.sqlmap.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+import java.util.
+
+;
+
+public class OrderMapDao extends BaseMapDao implements OrderDao {
+
+public Order getOrder(DaoTransaction trans, int orderId) throws DaoException { return (Order) executeQueryForObject(""getOrder"", trans, new IntegerKey(orderId)); }
+
+public List getOrdersByUserId(DaoTransaction trans, String userId) throws DaoException { return executeQueryForList(""getOrdersByUserId"", trans, new StringKey(userId)); }
+
+public void insertOrder(DaoTransaction trans, Order order) throws DaoException { executeUpdate(""insertOrder"", trans, order); executeUpdate(""insertOrderStatus"", trans, order); }
+
+public int getNextOrderId()
+
+throws DaoException {
+
+return getNextId(""Order"");
+
+}
+
+}"|data_input/jpetstore/jpetstore.txt|8977bf7da4834786a1bcd3bbf8f2670b
+"public int getNextOrderId()
+
+throws DaoException {
+
+return getNextId(""Order"");
+
+}
+
+}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/ProductMapDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:02:56 PM * To change template for new class use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao.map;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.db.sqlmap.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+import java.util.
+
+;
+
+public class ProductMapDao extends BaseMapDao implements ProductDao {
+
+public Product getProduct(DaoTransaction trans, String productId) throws DaoException { return (Product) executeQueryForObject(""getProduct"", trans, new StringKey(productId)); }
+
+public List getProductList(DaoTransaction trans)
+
+throws DaoException {
+
+return executeQueryForList(""getProductList"", trans, null);
+
+}
+
+public List getProductListByCategory(DaoTransaction trans, String categoryId) throws DaoException { return executeQueryForList(""getProductListByCategory"", trans, new StringKey(categoryId)); }
+
+public List getProductListByKeyword(DaoTransaction trans, String keyword) throws DaoException { return executeQueryForList(""searchProductList"", trans, new StringKey(keyword)); }
+
+}"|data_input/jpetstore/jpetstore.txt|4943082ade2d431ba7677a3ccf9990a9
+"}
+
+../jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/SignonMapDao.java /* * Created by IntelliJ IDEA. * User: Clinton Begin * Date: Jul 29, 2002 * Time: 9:02:42 PM * To change template for new class use * Code Style | Class Templates options (Tools | IDE Options). */ package com.ibatis.jpetstore.persistence.dao.map;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+public class SignonMapDao extends BaseMapDao implements SignonDao {
+
+public Signon getSignon(DaoTransaction trans, String username, String password) throws DaoException { Signon signon = new Signon(); signon.setUsername(username); signon.setPassword(password); return (Signon) executeQueryForObject(""getSignon"", trans, signon); }
+
+public void updateSignon(DaoTransaction trans, Signon signon) throws DaoException { executeUpdate(""updateSignon"", trans, signon); }
+
+public void insertSignon(DaoTransaction trans, Signon signon) throws DaoException { executeUpdate(""insertSignon"", trans, signon); } }
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/AddItemToCartAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class AddItemToCartAction extends BaseAction {"|data_input/jpetstore/jpetstore.txt|7f44ca1abcf14af9af43377655fa6454
+";
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class AddItemToCartAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+boolean success = false;
+
+CartForm cartForm = (CartForm) form;
+
+if (cartForm.getCart().containsItemId(cartForm.getWorkingItemId())) { cartForm.getCart().incrementQuantityByItemId(cartForm.getWorkingItemId()); success = true; } else { DaoTransaction trans = daoManager.getTransaction(); Item item = itemDao.getItem(trans, cartForm.getWorkingItemId()); if (item != null) { cartForm.getCart().addItem(item); success = true; } trans.release(); }
+
+if (success) { return mapping.findForward(""success""); } else { request.setAttribute(""message"", ""Error adding Item to Cart. Could not find Item for the Item ID specified. ""); return mapping.findForward(""failure""); } }
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/BaseAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.common.resources.
+
+;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.
+
+;
+
+import javax.servlet.http.
+
+;
+
+import java.io.
+
+;
+
+public abstract class BaseAction extends Action {
+
+protected static final DaoManager daoManager;"|data_input/jpetstore/jpetstore.txt|86ca433ea90844e59a9fb60bb1913d3f
+"import javax.servlet.http.
+
+;
+
+import java.io.
+
+;
+
+public abstract class BaseAction extends Action {
+
+protected static final DaoManager daoManager;
+
+protected static final AccountDao accountDao; protected static final CategoryDao categoryDao; protected static final InventoryDao inventoryDao; protected static final ItemDao itemDao; protected static final LineItemDao lineItemDao; protected static final OrderDao orderDao; protected static final ProductDao productDao; protected static final SignonDao signonDao;
+
+static { try { DaoManager.configure(Resources.getResourceAsStream(""properties/dao.xml"")); daoManager = DaoManager.getInstance(); accountDao = (AccountDao) daoManager.getDao(""Account""); categoryDao = (CategoryDao) daoManager.getDao(""Category""); inventoryDao = (InventoryDao) daoManager.getDao(""Inventory""); itemDao = (ItemDao) daoManager.getDao(""Item""); lineItemDao = (LineItemDao) daoManager.getDao(""LineItem""); orderDao = (OrderDao) daoManager.getDao(""Order""); productDao = (ProductDao) daoManager.getDao(""Product""); signonDao = (SignonDao) daoManager.getDao(""Signon""); } catch (Exception e) { e.printStackTrace(); throw new RuntimeException(""There was an error initializing BaseAction. Cause: "" + e); } }"|data_input/jpetstore/jpetstore.txt|7b7d19532fb54e86bae41434c84f9027

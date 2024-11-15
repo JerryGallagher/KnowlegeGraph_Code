@@ -1,0 +1,905 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script>function neighbourhoodHighlight(params) {
+  // console.log("in nieghbourhoodhighlight");
+  allNodes = nodes.get({ returnType: "Object" });
+  // originalNodes = JSON.parse(JSON.stringify(allNodes));
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    highlightActive = true;
+    var i, j;
+    var selectedNode = params.nodes[0];
+    var degrees = 2;
+
+    // mark all nodes as hard to read.
+    for (let nodeId in allNodes) {
+      // nodeColors[nodeId] = allNodes[nodeId].color;
+      allNodes[nodeId].color = "rgba(200,200,200,0.5)";
+      if (allNodes[nodeId].hiddenLabel === undefined) {
+        allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+    var connectedNodes = network.getConnectedNodes(selectedNode);
+    var allConnectedNodes = [];
+
+    // get the second degree nodes
+    for (i = 1; i < degrees; i++) {
+      for (j = 0; j < connectedNodes.length; j++) {
+        allConnectedNodes = allConnectedNodes.concat(
+          network.getConnectedNodes(connectedNodes[j])
+        );
+      }
+    }
+
+    // all second degree nodes get a different color and their label back
+    for (i = 0; i < allConnectedNodes.length; i++) {
+      // allNodes[allConnectedNodes[i]].color = "pink";
+      allNodes[allConnectedNodes[i]].color = "rgba(150,150,150,0.75)";
+      if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[allConnectedNodes[i]].label =
+          allNodes[allConnectedNodes[i]].hiddenLabel;
+        allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // all first degree nodes get their own color and their label back
+    for (i = 0; i < connectedNodes.length; i++) {
+      // allNodes[connectedNodes[i]].color = undefined;
+      allNodes[connectedNodes[i]].color = nodeColors[connectedNodes[i]];
+      if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[connectedNodes[i]].label =
+          allNodes[connectedNodes[i]].hiddenLabel;
+        allNodes[connectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // the main node gets its own color and its label back.
+    // allNodes[selectedNode].color = undefined;
+    allNodes[selectedNode].color = nodeColors[selectedNode];
+    if (allNodes[selectedNode].hiddenLabel !== undefined) {
+      allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+      allNodes[selectedNode].hiddenLabel = undefined;
+    }
+  } else if (highlightActive === true) {
+    // console.log("highlightActive was true");
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      // allNodes[nodeId].color = "purple";
+      allNodes[nodeId].color = nodeColors[nodeId];
+      // delete allNodes[nodeId].color;
+      if (allNodes[nodeId].hiddenLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+        allNodes[nodeId].hiddenLabel = undefined;
+      }
+    }
+    highlightActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    // console.log("Nothing was selected");
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        // allNodes[nodeId].color = {};
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function filterHighlight(params) {
+  allNodes = nodes.get({ returnType: "Object" });
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    filterActive = true;
+    let selectedNodes = params.nodes;
+
+    // hiding all nodes and saving the label
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = true;
+      if (allNodes[nodeId].savedLabel === undefined) {
+        allNodes[nodeId].savedLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+
+    for (let i=0; i < selectedNodes.length; i++) {
+      allNodes[selectedNodes[i]].hidden = false;
+      if (allNodes[selectedNodes[i]].savedLabel !== undefined) {
+        allNodes[selectedNodes[i]].label = allNodes[selectedNodes[i]].savedLabel;
+        allNodes[selectedNodes[i]].savedLabel = undefined;
+      }
+    }
+
+  } else if (filterActive === true) {
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = false;
+      if (allNodes[nodeId].savedLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].savedLabel;
+        allNodes[nodeId].savedLabel = undefined;
+      }
+    }
+    filterActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function selectNode(nodes) {
+  network.selectNodes(nodes);
+  neighbourhoodHighlight({ nodes: nodes });
+  return nodes;
+}
+
+function selectNodes(nodes) {
+  network.selectNodes(nodes);
+  filterHighlight({nodes: nodes});
+  return nodes;
+}
+
+function highlightFilter(filter) {
+  let selectedNodes = []
+  let selectedProp = filter['property']
+  if (filter['item'] === 'node') {
+    let allNodes = nodes.get({ returnType: "Object" });
+    for (let nodeId in allNodes) {
+      if (allNodes[nodeId][selectedProp] && filter['value'].includes((allNodes[nodeId][selectedProp]).toString())) {
+        selectedNodes.push(nodeId)
+      }
+    }
+  }
+  else if (filter['item'] === 'edge'){
+    let allEdges = edges.get({returnType: 'object'});
+    // check if the selected property exists for selected edge and select the nodes connected to the edge
+    for (let edge in allEdges) {
+      if (allEdges[edge][selectedProp] && filter['value'].includes((allEdges[edge][selectedProp]).toString())) {
+        selectedNodes.push(allEdges[edge]['from'])
+        selectedNodes.push(allEdges[edge]['to'])
+      }
+    }
+  }
+  selectNodes(selectedNodes)
+}</script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+            
+            
+            
+            
+            
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/css/tom-select.min.css" integrity="sha512-43fHB3GLgZfz8QXl1RPQ8O66oIgv3po9cJ5erMt1c4QISq9dYb195T3vr5ImnJPXuVroKcGBPXBFKETW8jrPNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/tom-select/2.0.0-rc.4/js/tom-select.complete.js" integrity="sha512-jeF9CfnvzDiw9G9xiksVjxR2lib44Gnovvkv+3CgCG6NXCD4gqlA5nDAVW5WjpA+i+/zKsUWV5xNEbW1X/HH0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 900px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 900px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+             #config {
+                 float: left;
+                 width: 400px;
+                 height: 600px;
+             }
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+                <div id="select-menu" class="card-header">
+                    <div class="row no-gutters">
+                        <div class="col-10 pb-2">
+                            <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            onchange="selectNode([value]);"
+                            id="select-node"
+                            placeholder="Select node..."
+                            >
+                                <option selected>Select a Node by ID</option>
+                                
+                                    <option value="../spring-petclinic/build/generated/aotsources/org/springframework/boot/actuate/autoconfigure/metrics/repository/repositorymetricsproperties__beandefinitions.java">../spring-petclinic/build/generated/aotsources/org/springframework/boot/actuate/autoconfigure/metrics/repository/repositorymetricsproperties__beandefinitions.java</option>
+                                
+                                    <option value="cachemeterbinderprovidersconfiguration__beandefinitions.java">cachemeterbinderprovidersconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="repositorymetricsautoconfiguration__beandefinitions.java">repositorymetricsautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="/">/</option>
+                                
+                                    <option value="_pr_isie6">_pr_isie6</option>
+                                
+                                    <option value="pr">pr</option>
+                                
+                                    <option value="prettyprint">prettyprint</option>
+                                
+                                    <option value="prettyprintone">prettyprintone</option>
+                                
+                                    <option value="window['pr']">window['pr']</option>
+                                
+                                    <option value="actuate">actuate</option>
+                                
+                                    <option value="metricsautoconfiguration">metricsautoconfiguration</option>
+                                
+                                    <option value="observationautoconfiguration">observationautoconfiguration</option>
+                                
+                                    <option value="annotationawareaspectjautoproxycreator__beandefinitions">annotationawareaspectjautoproxycreator__beandefinitions</option>
+                                
+                                    <option value="crashcontroller">crashcontroller</option>
+                                
+                                    <option value="entityutils">entityutils</option>
+                                
+                                    <option value="org/springframework/aop/aspectj/annotation/annotationawareaspectjautoproxycreator">org/springframework/aop/aspectj/annotation/annotationawareaspectjautoproxycreator</option>
+                                
+                                    <option value="aopautoconfiguration">aopautoconfiguration</option>
+                                
+                                    <option value="applicationavailabilityautoconfiguration">applicationavailabilityautoconfiguration</option>
+                                
+                                    <option value="autoconfigurationpackages">autoconfigurationpackages</option>
+                                
+                                    <option value="httpexchangesendpointautoconfiguration">httpexchangesendpointautoconfiguration</option>
+                                
+                                    <option value="managementcontextautoconfiguration">managementcontextautoconfiguration</option>
+                                
+                                    <option value="aotsources">aotsources</option>
+                                
+                                    <option value="build/generated">build/generated</option>
+                                
+                                    <option value="configurationpropertiesautoconfiguration__beandefinitions.java">configurationpropertiesautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="datasourcepoolmetadataprovidersconfiguration__beandefinitions.java">datasourcepoolmetadataprovidersconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="datasourceproperties__beandefinitions.java">datasourceproperties__beandefinitions.java</option>
+                                
+                                    <option value="datasourcetransactionmanagerautoconfiguration__beandefinitions.java">datasourcetransactionmanagerautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="hibernatejpaautoconfiguration__beandefinitions.java">hibernatejpaautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="hibernatejpaconfiguration__beandefinitions.java">hibernatejpaconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="jdbcclientautoconfiguration__beandefinitions.java">jdbcclientautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="jdbcproperties__beandefinitions.java">jdbcproperties__beandefinitions.java</option>
+                                
+                                    <option value="jdbctemplateautoconfiguration__beandefinitions.java">jdbctemplateautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="jparepositoriesautoconfiguration__beandefinitions.java">jparepositoriesautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="lifecycleautoconfiguration__beandefinitions.java">lifecycleautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="lifecycleproperties__beandefinitions.java">lifecycleproperties__beandefinitions.java</option>
+                                
+                                    <option value="messagesourceautoconfiguration__beandefinitions.java">messagesourceautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="namedparameterjdbctemplateconfiguration__beandefinitions.java">namedparameterjdbctemplateconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="org/springframework/boot">org/springframework/boot</option>
+                                
+                                    <option value="org/springframework/boot/autoconfigure">org/springframework/boot/autoconfigure</option>
+                                
+                                    <option value="org/springframework/boot/autoconfigure/cache/cacheproperties__beandefinitions.java">org/springframework/boot/autoconfigure/cache/cacheproperties__beandefinitions.java</option>
+                                
+                                    <option value="org/springframework/boot/autoconfigure/cache/caffeinecacheconfiguration__beandefinitions.java">org/springframework/boot/autoconfigure/cache/caffeinecacheconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="org/springframework/boot/autoconfigure/data/jpa">org/springframework/boot/autoconfigure/data/jpa</option>
+                                
+                                    <option value="org/springframework/boot/autoconfigure/data/web">org/springframework/boot/autoconfigure/data/web</option>
+                                
+                                    <option value="persistenceexceptiontranslationautoconfiguration__beandefinitions.java">persistenceexceptiontranslationautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="petclinic">petclinic</option>
+                                
+                                    <option value="propertyplaceholderautoconfiguration__beandefinitions.java">propertyplaceholderautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="spring-petclinic">spring-petclinic</option>
+                                
+                                    <option value="springdatawebautoconfiguration__beandefinitions.java">springdatawebautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="cacheautoconfiguration">cacheautoconfiguration</option>
+                                
+                                    <option value="managementserverproperties">managementserverproperties</option>
+                                
+                                    <option value="mappingsendpointautoconfiguration">mappingsendpointautoconfiguration</option>
+                                
+                                    <option value="servletmanagementcontextautoconfiguration">servletmanagementcontextautoconfiguration</option>
+                                
+                                    <option value="auditeventsendpointautoconfiguration__beandefinitions">auditeventsendpointautoconfiguration__beandefinitions</option>
+                                
+                                    <option value="org/springframework/boot/actuate/audit/auditeventsendpointautoconfiguration">org/springframework/boot/actuate/audit/auditeventsendpointautoconfiguration</option>
+                                
+                                    <option value="autoconfiguration">autoconfiguration</option>
+                                
+                                    <option value="autoconfigure">autoconfigure</option>
+                                
+                                    <option value="servlet">servlet</option>
+                                
+                                    <option value="availabilityhealthcontributorautoconfiguration">availabilityhealthcontributorautoconfiguration</option>
+                                
+                                    <option value="beandefinitions">beandefinitions</option>
+                                
+                                    <option value="beansendpointautoconfiguration">beansendpointautoconfiguration</option>
+                                
+                                    <option value="boundconfigurationproperties">boundconfigurationproperties</option>
+                                
+                                    <option value="properties">properties</option>
+                                
+                                    <option value="cacheconfiguration.java">cacheconfiguration.java</option>
+                                
+                                    <option value="integrationtests.java">integrationtests.java</option>
+                                
+                                    <option value="owner">owner</option>
+                                
+                                    <option value="spring">spring</option>
+                                
+                                    <option value="src">src</option>
+                                
+                                    <option value="system">system</option>
+                                
+                                    <option value="test">test</option>
+                                
+                                    <option value="vet">vet</option>
+                                
+                                    <option value="cachemetricsautoconfiguration__beandefinitions.java">cachemetricsautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="cachemetricsregistrarconfiguration__beandefinitions.java">cachemetricsregistrarconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="metricsendpointautoconfiguration__beandefinitions.java">metricsendpointautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="metricsproperties__beandefinitions.java">metricsproperties__beandefinitions.java</option>
+                                
+                                    <option value="simplemetricsexportautoconfiguration__beandefinitions.java">simplemetricsexportautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="simpleproperties__beandefinitions.java">simpleproperties__beandefinitions.java</option>
+                                
+                                    <option value="systemmetricsautoconfiguration__beandefinitions.java">systemmetricsautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="cachesendpointautoconfiguration">cachesendpointautoconfiguration</option>
+                                
+                                    <option value="client">client</option>
+                                
+                                    <option value="clinicservice">clinicservice</option>
+                                
+                                    <option value="clinicservicetests">clinicservicetests</option>
+                                
+                                    <option value="compositemeterregistryautoconfiguration">compositemeterregistryautoconfiguration</option>
+                                
+                                    <option value="heapdumpwebendpointautoconfiguration">heapdumpwebendpointautoconfiguration</option>
+                                
+                                    <option value="jvmmetricsautoconfiguration">jvmmetricsautoconfiguration</option>
+                                
+                                    <option value="logbackmetricsautoconfiguration">logbackmetricsautoconfiguration</option>
+                                
+                                    <option value="logfilewebendpointproperties">logfilewebendpointproperties</option>
+                                
+                                    <option value="loggersendpointautoconfiguration">loggersendpointautoconfiguration</option>
+                                
+                                    <option value="metricsaspectsautoconfiguration">metricsaspectsautoconfiguration</option>
+                                
+                                    <option value="threaddumpendpointautoconfiguration">threaddumpendpointautoconfiguration</option>
+                                
+                                    <option value="conditionsreportendpointautoconfiguration">conditionsreportendpointautoconfiguration</option>
+                                
+                                    <option value="configuration">configuration</option>
+                                
+                                    <option value="webmvcproperties">webmvcproperties</option>
+                                
+                                    <option value="configurationpropertiesreportendpointautoconfiguration">configurationpropertiesreportendpointautoconfiguration</option>
+                                
+                                    <option value="configurationpropertiesreportendpointproperties">configurationpropertiesreportendpointproperties</option>
+                                
+                                    <option value="corsendpointproperties">corsendpointproperties</option>
+                                
+                                    <option value="webendpointproperties">webendpointproperties</option>
+                                
+                                    <option value="crashcontrollerintegrationtests">crashcontrollerintegrationtests</option>
+                                
+                                    <option value="crashcontrollertests">crashcontrollertests</option>
+                                
+                                    <option value="ownercontroller">ownercontroller</option>
+                                
+                                    <option value="ownercontrollertests">ownercontrollertests</option>
+                                
+                                    <option value="petcontroller">petcontroller</option>
+                                
+                                    <option value="petcontrollertests">petcontrollertests</option>
+                                
+                                    <option value="pettypeformatter">pettypeformatter</option>
+                                
+                                    <option value="pettypeformattertests">pettypeformattertests</option>
+                                
+                                    <option value="vetcontroller">vetcontroller</option>
+                                
+                                    <option value="vetcontrollertests">vetcontrollertests</option>
+                                
+                                    <option value="vettests">vettests</option>
+                                
+                                    <option value="visitcontroller">visitcontroller</option>
+                                
+                                    <option value="visitcontrollertests">visitcontrollertests</option>
+                                
+                                    <option value="crashcontroller.java">crashcontroller.java</option>
+                                
+                                    <option value="datasourceautoconfiguration">datasourceautoconfiguration</option>
+                                
+                                    <option value="datasourceconfiguration">datasourceconfiguration</option>
+                                
+                                    <option value="springdatawebproperties">springdatawebproperties</option>
+                                
+                                    <option value="datasourcejmxconfiguration">datasourcejmxconfiguration</option>
+                                
+                                    <option value="httpmessageconvertersautoconfiguration">httpmessageconvertersautoconfiguration</option>
+                                
+                                    <option value="jacksonautoconfiguration">jacksonautoconfiguration</option>
+                                
+                                    <option value="jacksonhttpmessageconvertersconfiguration">jacksonhttpmessageconvertersconfiguration</option>
+                                
+                                    <option value="jacksonproperties">jacksonproperties</option>
+                                
+                                    <option value="projectinfoautoconfiguration">projectinfoautoconfiguration</option>
+                                
+                                    <option value="projectinfoproperties">projectinfoproperties</option>
+                                
+                                    <option value="datasourcehealthcontributorautoconfiguration">datasourcehealthcontributorautoconfiguration</option>
+                                
+                                    <option value="datasourcehealthindicatorproperties">datasourcehealthindicatorproperties</option>
+                                
+                                    <option value="healthendpointconfiguration">healthendpointconfiguration</option>
+                                
+                                    <option value="datasourceinitializationconfiguration__beandefinitions.java">datasourceinitializationconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="hibernateproperties__beandefinitions.java">hibernateproperties__beandefinitions.java</option>
+                                
+                                    <option value="sqlinitializationautoconfiguration__beandefinitions.java">sqlinitializationautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="datasourcepoolmetricsautoconfiguration">datasourcepoolmetricsautoconfiguration</option>
+                                
+                                    <option value="diskspacehealthcontributorautoconfiguration__beandefinitions.java">diskspacehealthcontributorautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="diskspacehealthindicatorproperties__beandefinitions.java">diskspacehealthindicatorproperties__beandefinitions.java</option>
+                                
+                                    <option value="httpclientobservationsautoconfiguration__beandefinitions.java">httpclientobservationsautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="scheduledtasksendpointautoconfiguration__beandefinitions.java">scheduledtasksendpointautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="webmvcobservationautoconfiguration__beandefinitions.java">webmvcobservationautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="dispatcherservletautoconfiguration">dispatcherservletautoconfiguration</option>
+                                
+                                    <option value="embeddedwebserverfactorycustomizerautoconfiguration">embeddedwebserverfactorycustomizerautoconfiguration</option>
+                                
+                                    <option value="enablewebmvcconfiguration">enablewebmvcconfiguration</option>
+                                
+                                    <option value="webmvcautoconfiguration">webmvcautoconfiguration</option>
+                                
+                                    <option value="endpointautoconfiguration">endpointautoconfiguration</option>
+                                
+                                    <option value="environmentendpointproperties">environmentendpointproperties</option>
+                                
+                                    <option value="environmentendpointautoconfiguration">environmentendpointautoconfiguration</option>
+                                
+                                    <option value="healthcontributorautoconfiguration">healthcontributorautoconfiguration</option>
+                                
+                                    <option value="healthendpointautoconfiguration">healthendpointautoconfiguration</option>
+                                
+                                    <option value="healthendpointproperties">healthendpointproperties</option>
+                                
+                                    <option value="healthendpointwebextensionconfiguration">healthendpointwebextensionconfiguration</option>
+                                
+                                    <option value="infocontributorautoconfiguration">infocontributorautoconfiguration</option>
+                                
+                                    <option value="infocontributorproperties">infocontributorproperties</option>
+                                
+                                    <option value="infoendpointautoconfiguration">infoendpointautoconfiguration</option>
+                                
+                                    <option value="logfilewebendpointautoconfiguration">logfilewebendpointautoconfiguration</option>
+                                
+                                    <option value="springboot">springboot</option>
+                                
+                                    <option value="springpetclinic">springpetclinic</option>
+                                
+                                    <option value="jpabaseconfiguration__beandefinitions.java">jpabaseconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="jpaproperties__beandefinitions.java">jpaproperties__beandefinitions.java</option>
+                                
+                                    <option value="sslautoconfiguration__beandefinitions.java">sslautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="sslproperties__beandefinitions.java">sslproperties__beandefinitions.java</option>
+                                
+                                    <option value="taskexecutionautoconfiguration__beandefinitions.java">taskexecutionautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="taskexecutionproperties__beandefinitions.java">taskexecutionproperties__beandefinitions.java</option>
+                                
+                                    <option value="restclientobservationconfiguration__beandefinitions.java">restclientobservationconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="resttemplateobservationconfiguration__beandefinitions.java">resttemplateobservationconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="httpencodingautoconfiguration">httpencodingautoconfiguration</option>
+                                
+                                    <option value="integrationmetricsautoconfiguration">integrationmetricsautoconfiguration</option>
+                                
+                                    <option value="java">java</option>
+                                
+                                    <option value="main">main</option>
+                                
+                                    <option value="mysqlintegrationtests.java">mysqlintegrationtests.java</option>
+                                
+                                    <option value="mysqltestapplication.java">mysqltestapplication.java</option>
+                                
+                                    <option value="org">org</option>
+                                
+                                    <option value="petvalidator.java">petvalidator.java</option>
+                                
+                                    <option value="postgres">postgres</option>
+                                
+                                    <option value="samples">samples</option>
+                                
+                                    <option value="specialty.java">specialty.java</option>
+                                
+                                    <option value="springframework">springframework</option>
+                                
+                                    <option value="vet.java">vet.java</option>
+                                
+                                    <option value="vetcontroller.java">vetcontroller.java</option>
+                                
+                                    <option value="vetrepository.java">vetrepository.java</option>
+                                
+                                    <option value="vets.java">vets.java</option>
+                                
+                                    <option value="visit">visit</option>
+                                
+                                    <option value="visitcontroller.java">visitcontroller.java</option>
+                                
+                                    <option value="welcomecontroller.java">welcomecontroller.java</option>
+                                
+                                    <option value="jacksonendpointautoconfiguration">jacksonendpointautoconfiguration</option>
+                                
+                                    <option value="java file">java file</option>
+                                
+                                    <option value="observationproperties">observationproperties</option>
+                                
+                                    <option value="startuptimemetricslistenerautoconfiguration">startuptimemetricslistenerautoconfiguration</option>
+                                
+                                    <option value="taskexecutormetricsautoconfiguration">taskexecutormetricsautoconfiguration</option>
+                                
+                                    <option value="tomcatmetricsautoconfiguration">tomcatmetricsautoconfiguration</option>
+                                
+                                    <option value="multipartautoconfiguration">multipartautoconfiguration</option>
+                                
+                                    <option value="restclientautoconfiguration">restclientautoconfiguration</option>
+                                
+                                    <option value="resttemplateautoconfiguration">resttemplateautoconfiguration</option>
+                                
+                                    <option value="servletwebserverfactory">servletwebserverfactory</option>
+                                
+                                    <option value="web">web</option>
+                                
+                                    <option value="websocketservletautoconfiguration">websocketservletautoconfiguration</option>
+                                
+                                    <option value="transaction">transaction</option>
+                                
+                                    <option value="validation">validation</option>
+                                
+                                    <option value="webproperties">webproperties</option>
+                                
+                                    <option value="taskexecutorconfigurations__beandefinitions.java">taskexecutorconfigurations__beandefinitions.java</option>
+                                
+                                    <option value="taskschedulingautoconfiguration__beandefinitions.java">taskschedulingautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="taskschedulingproperties__beandefinitions.java">taskschedulingproperties__beandefinitions.java</option>
+                                
+                                    <option value="templateengineconfigurations__beandefinitions.java">templateengineconfigurations__beandefinitions.java</option>
+                                
+                                    <option value="thymeleafautoconfiguration__beandefinitions.java">thymeleafautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="thymeleafproperties__beandefinitions.java">thymeleafproperties__beandefinitions.java</option>
+                                
+                                    <option value="transactionautoconfiguration__beandefinitions.java">transactionautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="transactionmanagercustomizationautoconfiguration__beandefinitions.java">transactionmanagercustomizationautoconfiguration__beandefinitions.java</option>
+                                
+                                    <option value="transactionproperties__beandefinitions.java">transactionproperties__beandefinitions.java</option>
+                                
+                                    <option value="webmvcendpointmanagementcontextconfiguration">webmvcendpointmanagementcontextconfiguration</option>
+                                
+                                    <option value="webendpointautoconfiguration">webendpointautoconfiguration</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button type="button" class="btn btn-primary btn-block" onclick="neighbourhoodHighlight({nodes: []});">Reset Selection</button>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+            <div id="config"></div>
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+                  new TomSelect("#select-node",{
+                      create: false,
+                      sortField: {
+                          field: "text",
+                          direction: "asc"
+                      }
+                  });
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"group": 1, "id": "../spring-petclinic/build/generated/aotsources/org/springframework/boot/actuate/autoconfigure/metrics/repository/repositorymetricsproperties__beandefinitions.java", "label": "../spring-petclinic/build/generated/aotsources/org/springframework/boot/actuate/autoconfigure/metrics/repository/repositorymetricsproperties__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 1, "id": "cachemeterbinderprovidersconfiguration__beandefinitions.java", "label": "cachemeterbinderprovidersconfiguration__beandefinitions.java", "shape": "dot", "size": 9}, {"group": 1, "id": "repositorymetricsautoconfiguration__beandefinitions.java", "label": "repositorymetricsautoconfiguration__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 2, "id": "/", "label": "/", "shape": "dot", "size": 5}, {"group": 2, "id": "_pr_isie6", "label": "_pr_isie6", "shape": "dot", "size": 2}, {"group": 2, "id": "pr", "label": "pr", "shape": "dot", "size": 5}, {"group": 2, "id": "prettyprint", "label": "prettyprint", "shape": "dot", "size": 2}, {"group": 2, "id": "prettyprintone", "label": "prettyprintone", "shape": "dot", "size": 2}, {"group": 2, "id": "window[\u0027pr\u0027]", "label": "window[\u0027pr\u0027]", "shape": "dot", "size": 2}, {"group": 3, "id": "actuate", "label": "actuate", "shape": "dot", "size": 2}, {"group": 3, "id": "metricsautoconfiguration", "label": "metricsautoconfiguration", "shape": "dot", "size": 16}, {"group": 3, "id": "observationautoconfiguration", "label": "observationautoconfiguration", "shape": "dot", "size": 8}, {"group": 4, "id": "annotationawareaspectjautoproxycreator__beandefinitions", "label": "annotationawareaspectjautoproxycreator__beandefinitions", "shape": "dot", "size": 3}, {"group": 4, "id": "crashcontroller", "label": "crashcontroller", "shape": "dot", "size": 23}, {"group": 4, "id": "entityutils", "label": "entityutils", "shape": "dot", "size": 25}, {"group": 4, "id": "org/springframework/aop/aspectj/annotation/annotationawareaspectjautoproxycreator", "label": "org/springframework/aop/aspectj/annotation/annotationawareaspectjautoproxycreator", "shape": "dot", "size": 3}, {"group": 5, "id": "aopautoconfiguration", "label": "aopautoconfiguration", "shape": "dot", "size": 4}, {"group": 5, "id": "applicationavailabilityautoconfiguration", "label": "applicationavailabilityautoconfiguration", "shape": "dot", "size": 8}, {"group": 5, "id": "autoconfigurationpackages", "label": "autoconfigurationpackages", "shape": "dot", "size": 8}, {"group": 5, "id": "httpexchangesendpointautoconfiguration", "label": "httpexchangesendpointautoconfiguration", "shape": "dot", "size": 8}, {"group": 5, "id": "managementcontextautoconfiguration", "label": "managementcontextautoconfiguration", "shape": "dot", "size": 8}, {"group": 6, "id": "aotsources", "label": "aotsources", "shape": "dot", "size": 26}, {"group": 6, "id": "build/generated", "label": "build/generated", "shape": "dot", "size": 3}, {"group": 6, "id": "configurationpropertiesautoconfiguration__beandefinitions.java", "label": "configurationpropertiesautoconfiguration__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 6, "id": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "label": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "shape": "dot", "size": 11}, {"group": 6, "id": "datasourceproperties__beandefinitions.java", "label": "datasourceproperties__beandefinitions.java", "shape": "dot", "size": 11}, {"group": 6, "id": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "label": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "shape": "dot", "size": 11}, {"group": 6, "id": "hibernatejpaautoconfiguration__beandefinitions.java", "label": "hibernatejpaautoconfiguration__beandefinitions.java", "shape": "dot", "size": 11}, {"group": 6, "id": "hibernatejpaconfiguration__beandefinitions.java", "label": "hibernatejpaconfiguration__beandefinitions.java", "shape": "dot", "size": 11}, {"group": 6, "id": "jdbcclientautoconfiguration__beandefinitions.java", "label": "jdbcclientautoconfiguration__beandefinitions.java", "shape": "dot", "size": 11}, {"group": 6, "id": "jdbcproperties__beandefinitions.java", "label": "jdbcproperties__beandefinitions.java", "shape": "dot", "size": 11}, {"group": 6, "id": "jdbctemplateautoconfiguration__beandefinitions.java", "label": "jdbctemplateautoconfiguration__beandefinitions.java", "shape": "dot", "size": 11}, {"group": 6, "id": "jparepositoriesautoconfiguration__beandefinitions.java", "label": "jparepositoriesautoconfiguration__beandefinitions.java", "shape": "dot", "size": 4}, {"group": 6, "id": "lifecycleautoconfiguration__beandefinitions.java", "label": "lifecycleautoconfiguration__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 6, "id": "lifecycleproperties__beandefinitions.java", "label": "lifecycleproperties__beandefinitions.java", "shape": "dot", "size": 4}, {"group": 6, "id": "messagesourceautoconfiguration__beandefinitions.java", "label": "messagesourceautoconfiguration__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 6, "id": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "label": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "shape": "dot", "size": 11}, {"group": 6, "id": "org/springframework/boot", "label": "org/springframework/boot", "shape": "dot", "size": 4}, {"group": 6, "id": "org/springframework/boot/autoconfigure", "label": "org/springframework/boot/autoconfigure", "shape": "dot", "size": 17}, {"group": 6, "id": "org/springframework/boot/autoconfigure/cache/cacheproperties__beandefinitions.java", "label": "org/springframework/boot/autoconfigure/cache/cacheproperties__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 6, "id": "org/springframework/boot/autoconfigure/cache/caffeinecacheconfiguration__beandefinitions.java", "label": "org/springframework/boot/autoconfigure/cache/caffeinecacheconfiguration__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 6, "id": "org/springframework/boot/autoconfigure/data/jpa", "label": "org/springframework/boot/autoconfigure/data/jpa", "shape": "dot", "size": 4}, {"group": 6, "id": "org/springframework/boot/autoconfigure/data/web", "label": "org/springframework/boot/autoconfigure/data/web", "shape": "dot", "size": 4}, {"group": 6, "id": "persistenceexceptiontranslationautoconfiguration__beandefinitions.java", "label": "persistenceexceptiontranslationautoconfiguration__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 8, "id": "petclinic", "label": "petclinic", "shape": "dot", "size": 40}, {"group": 6, "id": "propertyplaceholderautoconfiguration__beandefinitions.java", "label": "propertyplaceholderautoconfiguration__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 6, "id": "spring-petclinic", "label": "spring-petclinic", "shape": "dot", "size": 49}, {"group": 6, "id": "springdatawebautoconfiguration__beandefinitions.java", "label": "springdatawebautoconfiguration__beandefinitions.java", "shape": "dot", "size": 4}, {"group": 5, "id": "cacheautoconfiguration", "label": "cacheautoconfiguration", "shape": "dot", "size": 4}, {"group": 5, "id": "managementserverproperties", "label": "managementserverproperties", "shape": "dot", "size": 4}, {"group": 5, "id": "mappingsendpointautoconfiguration", "label": "mappingsendpointautoconfiguration", "shape": "dot", "size": 4}, {"group": 5, "id": "servletmanagementcontextautoconfiguration", "label": "servletmanagementcontextautoconfiguration", "shape": "dot", "size": 4}, {"group": 4, "id": "auditeventsendpointautoconfiguration__beandefinitions", "label": "auditeventsendpointautoconfiguration__beandefinitions", "shape": "dot", "size": 3}, {"group": 4, "id": "org/springframework/boot/actuate/audit/auditeventsendpointautoconfiguration", "label": "org/springframework/boot/actuate/audit/auditeventsendpointautoconfiguration", "shape": "dot", "size": 3}, {"group": 6, "id": "autoconfiguration", "label": "autoconfiguration", "shape": "dot", "size": 1}, {"group": 7, "id": "autoconfigure", "label": "autoconfigure", "shape": "dot", "size": 1}, {"group": 7, "id": "servlet", "label": "servlet", "shape": "dot", "size": 10}, {"group": 6, "id": "availabilityhealthcontributorautoconfiguration", "label": "availabilityhealthcontributorautoconfiguration", "shape": "dot", "size": 1}, {"group": 6, "id": "beandefinitions", "label": "beandefinitions", "shape": "dot", "size": 1}, {"group": 6, "id": "beansendpointautoconfiguration", "label": "beansendpointautoconfiguration", "shape": "dot", "size": 1}, {"group": 7, "id": "boundconfigurationproperties", "label": "boundconfigurationproperties", "shape": "dot", "size": 2}, {"group": 7, "id": "properties", "label": "properties", "shape": "dot", "size": 2}, {"group": 8, "id": "cacheconfiguration.java", "label": "cacheconfiguration.java", "shape": "dot", "size": 8}, {"group": 8, "id": "integrationtests.java", "label": "integrationtests.java", "shape": "dot", "size": 26}, {"group": 8, "id": "owner", "label": "owner", "shape": "dot", "size": 26}, {"group": 8, "id": "spring", "label": "spring", "shape": "dot", "size": 26}, {"group": 8, "id": "src", "label": "src", "shape": "dot", "size": 26}, {"group": 8, "id": "system", "label": "system", "shape": "dot", "size": 26}, {"group": 8, "id": "test", "label": "test", "shape": "dot", "size": 26}, {"group": 8, "id": "vet", "label": "vet", "shape": "dot", "size": 29}, {"group": 1, "id": "cachemetricsautoconfiguration__beandefinitions.java", "label": "cachemetricsautoconfiguration__beandefinitions.java", "shape": "dot", "size": 1}, {"group": 1, "id": "cachemetricsregistrarconfiguration__beandefinitions.java", "label": "cachemetricsregistrarconfiguration__beandefinitions.java", "shape": "dot", "size": 1}, {"group": 1, "id": "metricsendpointautoconfiguration__beandefinitions.java", "label": "metricsendpointautoconfiguration__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 1, "id": "metricsproperties__beandefinitions.java", "label": "metricsproperties__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 1, "id": "simplemetricsexportautoconfiguration__beandefinitions.java", "label": "simplemetricsexportautoconfiguration__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 1, "id": "simpleproperties__beandefinitions.java", "label": "simpleproperties__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 1, "id": "systemmetricsautoconfiguration__beandefinitions.java", "label": "systemmetricsautoconfiguration__beandefinitions.java", "shape": "dot", "size": 1}, {"group": 6, "id": "cachesendpointautoconfiguration", "label": "cachesendpointautoconfiguration", "shape": "dot", "size": 1}, {"group": 6, "id": "client", "label": "client", "shape": "dot", "size": 1}, {"group": 4, "id": "clinicservice", "label": "clinicservice", "shape": "dot", "size": 3}, {"group": 4, "id": "clinicservicetests", "label": "clinicservicetests", "shape": "dot", "size": 3}, {"group": 3, "id": "compositemeterregistryautoconfiguration", "label": "compositemeterregistryautoconfiguration", "shape": "dot", "size": 8}, {"group": 3, "id": "heapdumpwebendpointautoconfiguration", "label": "heapdumpwebendpointautoconfiguration", "shape": "dot", "size": 3}, {"group": 3, "id": "jvmmetricsautoconfiguration", "label": "jvmmetricsautoconfiguration", "shape": "dot", "size": 3}, {"group": 3, "id": "logbackmetricsautoconfiguration", "label": "logbackmetricsautoconfiguration", "shape": "dot", "size": 3}, {"group": 3, "id": "logfilewebendpointproperties", "label": "logfilewebendpointproperties", "shape": "dot", "size": 8}, {"group": 3, "id": "loggersendpointautoconfiguration", "label": "loggersendpointautoconfiguration", "shape": "dot", "size": 3}, {"group": 3, "id": "metricsaspectsautoconfiguration", "label": "metricsaspectsautoconfiguration", "shape": "dot", "size": 3}, {"group": 3, "id": "threaddumpendpointautoconfiguration", "label": "threaddumpendpointautoconfiguration", "shape": "dot", "size": 3}, {"group": 6, "id": "conditionsreportendpointautoconfiguration", "label": "conditionsreportendpointautoconfiguration", "shape": "dot", "size": 1}, {"group": 7, "id": "configuration", "label": "configuration", "shape": "dot", "size": 2}, {"group": 7, "id": "webmvcproperties", "label": "webmvcproperties", "shape": "dot", "size": 2}, {"group": 6, "id": "configurationpropertiesreportendpointautoconfiguration", "label": "configurationpropertiesreportendpointautoconfiguration", "shape": "dot", "size": 1}, {"group": 6, "id": "configurationpropertiesreportendpointproperties", "label": "configurationpropertiesreportendpointproperties", "shape": "dot", "size": 1}, {"group": 9, "id": "corsendpointproperties", "label": "corsendpointproperties", "shape": "dot", "size": 1}, {"group": 9, "id": "webendpointproperties", "label": "webendpointproperties", "shape": "dot", "size": 1}, {"group": 4, "id": "crashcontrollerintegrationtests", "label": "crashcontrollerintegrationtests", "shape": "dot", "size": 2}, {"group": 4, "id": "crashcontrollertests", "label": "crashcontrollertests", "shape": "dot", "size": 2}, {"group": 4, "id": "ownercontroller", "label": "ownercontroller", "shape": "dot", "size": 3}, {"group": 4, "id": "ownercontrollertests", "label": "ownercontrollertests", "shape": "dot", "size": 3}, {"group": 4, "id": "petcontroller", "label": "petcontroller", "shape": "dot", "size": 3}, {"group": 4, "id": "petcontrollertests", "label": "petcontrollertests", "shape": "dot", "size": 3}, {"group": 4, "id": "pettypeformatter", "label": "pettypeformatter", "shape": "dot", "size": 3}, {"group": 4, "id": "pettypeformattertests", "label": "pettypeformattertests", "shape": "dot", "size": 3}, {"group": 4, "id": "vetcontroller", "label": "vetcontroller", "shape": "dot", "size": 3}, {"group": 4, "id": "vetcontrollertests", "label": "vetcontrollertests", "shape": "dot", "size": 3}, {"group": 4, "id": "vettests", "label": "vettests", "shape": "dot", "size": 3}, {"group": 4, "id": "visitcontroller", "label": "visitcontroller", "shape": "dot", "size": 3}, {"group": 4, "id": "visitcontrollertests", "label": "visitcontrollertests", "shape": "dot", "size": 3}, {"group": 8, "id": "crashcontroller.java", "label": "crashcontroller.java", "shape": "dot", "size": 8}, {"group": 10, "id": "datasourceautoconfiguration", "label": "datasourceautoconfiguration", "shape": "dot", "size": 2}, {"group": 10, "id": "datasourceconfiguration", "label": "datasourceconfiguration", "shape": "dot", "size": 9}, {"group": 10, "id": "springdatawebproperties", "label": "springdatawebproperties", "shape": "dot", "size": 11}, {"group": 10, "id": "datasourcejmxconfiguration", "label": "datasourcejmxconfiguration", "shape": "dot", "size": 2}, {"group": 10, "id": "httpmessageconvertersautoconfiguration", "label": "httpmessageconvertersautoconfiguration", "shape": "dot", "size": 2}, {"group": 10, "id": "jacksonautoconfiguration", "label": "jacksonautoconfiguration", "shape": "dot", "size": 3}, {"group": 10, "id": "jacksonhttpmessageconvertersconfiguration", "label": "jacksonhttpmessageconvertersconfiguration", "shape": "dot", "size": 2}, {"group": 10, "id": "jacksonproperties", "label": "jacksonproperties", "shape": "dot", "size": 3}, {"group": 10, "id": "projectinfoautoconfiguration", "label": "projectinfoautoconfiguration", "shape": "dot", "size": 3}, {"group": 10, "id": "projectinfoproperties", "label": "projectinfoproperties", "shape": "dot", "size": 3}, {"group": 11, "id": "datasourcehealthcontributorautoconfiguration", "label": "datasourcehealthcontributorautoconfiguration", "shape": "dot", "size": 2}, {"group": 11, "id": "datasourcehealthindicatorproperties", "label": "datasourcehealthindicatorproperties", "shape": "dot", "size": 2}, {"group": 11, "id": "healthendpointconfiguration", "label": "healthendpointconfiguration", "shape": "dot", "size": 10}, {"group": 12, "id": "datasourceinitializationconfiguration__beandefinitions.java", "label": "datasourceinitializationconfiguration__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 12, "id": "hibernateproperties__beandefinitions.java", "label": "hibernateproperties__beandefinitions.java", "shape": "dot", "size": 8}, {"group": 12, "id": "sqlinitializationautoconfiguration__beandefinitions.java", "label": "sqlinitializationautoconfiguration__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 3, "id": "datasourcepoolmetricsautoconfiguration", "label": "datasourcepoolmetricsautoconfiguration", "shape": "dot", "size": 2}, {"group": 13, "id": "diskspacehealthcontributorautoconfiguration__beandefinitions.java", "label": "diskspacehealthcontributorautoconfiguration__beandefinitions.java", "shape": "dot", "size": 4}, {"group": 13, "id": "diskspacehealthindicatorproperties__beandefinitions.java", "label": "diskspacehealthindicatorproperties__beandefinitions.java", "shape": "dot", "size": 4}, {"group": 13, "id": "httpclientobservationsautoconfiguration__beandefinitions.java", "label": "httpclientobservationsautoconfiguration__beandefinitions.java", "shape": "dot", "size": 6}, {"group": 13, "id": "scheduledtasksendpointautoconfiguration__beandefinitions.java", "label": "scheduledtasksendpointautoconfiguration__beandefinitions.java", "shape": "dot", "size": 6}, {"group": 13, "id": "webmvcobservationautoconfiguration__beandefinitions.java", "label": "webmvcobservationautoconfiguration__beandefinitions.java", "shape": "dot", "size": 6}, {"group": 6, "id": "dispatcherservletautoconfiguration", "label": "dispatcherservletautoconfiguration", "shape": "dot", "size": 1}, {"group": 6, "id": "embeddedwebserverfactorycustomizerautoconfiguration", "label": "embeddedwebserverfactorycustomizerautoconfiguration", "shape": "dot", "size": 1}, {"group": 7, "id": "enablewebmvcconfiguration", "label": "enablewebmvcconfiguration", "shape": "dot", "size": 2}, {"group": 7, "id": "webmvcautoconfiguration", "label": "webmvcautoconfiguration", "shape": "dot", "size": 2}, {"group": 6, "id": "endpointautoconfiguration", "label": "endpointautoconfiguration", "shape": "dot", "size": 1}, {"group": 14, "id": "environmentendpointproperties", "label": "environmentendpointproperties", "shape": "dot", "size": 1}, {"group": 14, "id": "environmentendpointautoconfiguration", "label": "environmentendpointautoconfiguration", "shape": "dot", "size": 1}, {"group": 15, "id": "healthcontributorautoconfiguration", "label": "healthcontributorautoconfiguration", "shape": "dot", "size": 1}, {"group": 15, "id": "healthendpointautoconfiguration", "label": "healthendpointautoconfiguration", "shape": "dot", "size": 1}, {"group": 11, "id": "healthendpointproperties", "label": "healthendpointproperties", "shape": "dot", "size": 1}, {"group": 11, "id": "healthendpointwebextensionconfiguration", "label": "healthendpointwebextensionconfiguration", "shape": "dot", "size": 1}, {"group": 11, "id": "infocontributorautoconfiguration", "label": "infocontributorautoconfiguration", "shape": "dot", "size": 2}, {"group": 11, "id": "infocontributorproperties", "label": "infocontributorproperties", "shape": "dot", "size": 2}, {"group": 11, "id": "infoendpointautoconfiguration", "label": "infoendpointautoconfiguration", "shape": "dot", "size": 2}, {"group": 11, "id": "logfilewebendpointautoconfiguration", "label": "logfilewebendpointautoconfiguration", "shape": "dot", "size": 2}, {"group": 11, "id": "springboot", "label": "springboot", "shape": "dot", "size": 2}, {"group": 11, "id": "springpetclinic", "label": "springpetclinic", "shape": "dot", "size": 2}, {"group": 12, "id": "jpabaseconfiguration__beandefinitions.java", "label": "jpabaseconfiguration__beandefinitions.java", "shape": "dot", "size": 1}, {"group": 12, "id": "jpaproperties__beandefinitions.java", "label": "jpaproperties__beandefinitions.java", "shape": "dot", "size": 1}, {"group": 12, "id": "sslautoconfiguration__beandefinitions.java", "label": "sslautoconfiguration__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 12, "id": "sslproperties__beandefinitions.java", "label": "sslproperties__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 12, "id": "taskexecutionautoconfiguration__beandefinitions.java", "label": "taskexecutionautoconfiguration__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 12, "id": "taskexecutionproperties__beandefinitions.java", "label": "taskexecutionproperties__beandefinitions.java", "shape": "dot", "size": 2}, {"group": 13, "id": "restclientobservationconfiguration__beandefinitions.java", "label": "restclientobservationconfiguration__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 13, "id": "resttemplateobservationconfiguration__beandefinitions.java", "label": "resttemplateobservationconfiguration__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 6, "id": "httpencodingautoconfiguration", "label": "httpencodingautoconfiguration", "shape": "dot", "size": 1}, {"group": 3, "id": "integrationmetricsautoconfiguration", "label": "integrationmetricsautoconfiguration", "shape": "dot", "size": 2}, {"group": 8, "id": "java", "label": "java", "shape": "dot", "size": 8}, {"group": 8, "id": "main", "label": "main", "shape": "dot", "size": 8}, {"group": 8, "id": "mysqlintegrationtests.java", "label": "mysqlintegrationtests.java", "shape": "dot", "size": 8}, {"group": 8, "id": "mysqltestapplication.java", "label": "mysqltestapplication.java", "shape": "dot", "size": 8}, {"group": 8, "id": "org", "label": "org", "shape": "dot", "size": 9}, {"group": 8, "id": "petvalidator.java", "label": "petvalidator.java", "shape": "dot", "size": 8}, {"group": 8, "id": "postgres", "label": "postgres", "shape": "dot", "size": 8}, {"group": 8, "id": "samples", "label": "samples", "shape": "dot", "size": 8}, {"group": 8, "id": "specialty.java", "label": "specialty.java", "shape": "dot", "size": 8}, {"group": 8, "id": "springframework", "label": "springframework", "shape": "dot", "size": 9}, {"group": 8, "id": "vet.java", "label": "vet.java", "shape": "dot", "size": 8}, {"group": 8, "id": "vetcontroller.java", "label": "vetcontroller.java", "shape": "dot", "size": 8}, {"group": 8, "id": "vetrepository.java", "label": "vetrepository.java", "shape": "dot", "size": 8}, {"group": 8, "id": "vets.java", "label": "vets.java", "shape": "dot", "size": 8}, {"group": 8, "id": "visit", "label": "visit", "shape": "dot", "size": 8}, {"group": 8, "id": "visitcontroller.java", "label": "visitcontroller.java", "shape": "dot", "size": 8}, {"group": 8, "id": "welcomecontroller.java", "label": "welcomecontroller.java", "shape": "dot", "size": 8}, {"group": 6, "id": "jacksonendpointautoconfiguration", "label": "jacksonendpointautoconfiguration", "shape": "dot", "size": 1}, {"group": 6, "id": "java file", "label": "java file", "shape": "dot", "size": 1}, {"group": 3, "id": "observationproperties", "label": "observationproperties", "shape": "dot", "size": 2}, {"group": 3, "id": "startuptimemetricslistenerautoconfiguration", "label": "startuptimemetricslistenerautoconfiguration", "shape": "dot", "size": 2}, {"group": 3, "id": "taskexecutormetricsautoconfiguration", "label": "taskexecutormetricsautoconfiguration", "shape": "dot", "size": 2}, {"group": 3, "id": "tomcatmetricsautoconfiguration", "label": "tomcatmetricsautoconfiguration", "shape": "dot", "size": 2}, {"group": 6, "id": "multipartautoconfiguration", "label": "multipartautoconfiguration", "shape": "dot", "size": 1}, {"group": 6, "id": "restclientautoconfiguration", "label": "restclientautoconfiguration", "shape": "dot", "size": 1}, {"group": 6, "id": "resttemplateautoconfiguration", "label": "resttemplateautoconfiguration", "shape": "dot", "size": 1}, {"group": 7, "id": "servletwebserverfactory", "label": "servletwebserverfactory", "shape": "dot", "size": 1}, {"group": 7, "id": "web", "label": "web", "shape": "dot", "size": 1}, {"group": 7, "id": "websocketservletautoconfiguration", "label": "websocketservletautoconfiguration", "shape": "dot", "size": 1}, {"group": 6, "id": "transaction", "label": "transaction", "shape": "dot", "size": 1}, {"group": 6, "id": "validation", "label": "validation", "shape": "dot", "size": 1}, {"group": 6, "id": "webproperties", "label": "webproperties", "shape": "dot", "size": 1}, {"group": 16, "id": "taskexecutorconfigurations__beandefinitions.java", "label": "taskexecutorconfigurations__beandefinitions.java", "shape": "dot", "size": 8}, {"group": 16, "id": "taskschedulingautoconfiguration__beandefinitions.java", "label": "taskschedulingautoconfiguration__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 16, "id": "taskschedulingproperties__beandefinitions.java", "label": "taskschedulingproperties__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 16, "id": "templateengineconfigurations__beandefinitions.java", "label": "templateengineconfigurations__beandefinitions.java", "shape": "dot", "size": 8}, {"group": 16, "id": "thymeleafautoconfiguration__beandefinitions.java", "label": "thymeleafautoconfiguration__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 16, "id": "thymeleafproperties__beandefinitions.java", "label": "thymeleafproperties__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 16, "id": "transactionautoconfiguration__beandefinitions.java", "label": "transactionautoconfiguration__beandefinitions.java", "shape": "dot", "size": 8}, {"group": 16, "id": "transactionmanagercustomizationautoconfiguration__beandefinitions.java", "label": "transactionmanagercustomizationautoconfiguration__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 16, "id": "transactionproperties__beandefinitions.java", "label": "transactionproperties__beandefinitions.java", "shape": "dot", "size": 3}, {"group": 17, "id": "webmvcendpointmanagementcontextconfiguration", "label": "webmvcendpointmanagementcontextconfiguration", "shape": "dot", "size": 1}, {"group": 17, "id": "webendpointautoconfiguration", "label": "webendpointautoconfiguration", "shape": "dot", "size": 1}]);
+                  edges = new vis.DataSet([{"from": "../spring-petclinic/build/generated/aotsources/org/springframework/boot/actuate/autoconfigure/metrics/repository/repositorymetricsproperties__beandefinitions.java", "title": "contextual proximity", "to": "cachemeterbinderprovidersconfiguration__beandefinitions.java", "width": 0.75}, {"from": "../spring-petclinic/build/generated/aotsources/org/springframework/boot/actuate/autoconfigure/metrics/repository/repositorymetricsproperties__beandefinitions.java", "title": "both files are related as they both fall under the metrics package of Spring Boot\u0027s Actuate module for monitoring and management, and specifically deal with repository metrics in the spring-petclinic project.", "to": "repositorymetricsautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "/", "title": "contextual proximity", "to": "_pr_isie6", "width": 1.0}, {"from": "/", "title": "contextual proximity", "to": "pr", "width": 2.0}, {"from": "/", "title": "contains functions for creating and registering new language handlers.,contextual proximity", "to": "prettyprint", "width": 2.0}, {"from": "/", "title": "contextual proximity", "to": "prettyprintone", "width": 1.0}, {"from": "/", "title": "is assigned to the PR object, indicating that it is a global variable.,contextual proximity", "to": "window[\u0027pr\u0027]", "width": 2.0}, {"from": "_pr_isie6", "title": "contextual proximity", "to": "pr", "width": 0.5}, {"from": "actuate", "title": "contextual proximity", "to": "metricsautoconfiguration", "width": 1.25}, {"from": "actuate", "title": "ObservationAutoConfiguration is an auto-configuration for Spring Boot Actuator to enable observation functionality.,contextual proximity", "to": "observationautoconfiguration", "width": 1.5}, {"from": "annotationawareaspectjautoproxycreator__beandefinitions", "title": "contextual proximity", "to": "crashcontroller", "width": 0.5}, {"from": "annotationawareaspectjautoproxycreator__beandefinitions", "title": "contextual proximity", "to": "entityutils", "width": 0.5}, {"from": "annotationawareaspectjautoproxycreator__beandefinitions", "title": "The file path \u0027petclinic/build/generated/aotSources/org/springframework/aop/aspectj/annotation/AnnotationAwareAspectJAutoProxyCreator__BeanDefinitions.java\u0027 and the class \u0027AnnotationAwareAspectJAutoProxyCreator\u0027 are both related to AOP configuration in the petclinic application.", "to": "org/springframework/aop/aspectj/annotation/annotationawareaspectjautoproxycreator", "width": 1.0}, {"from": "aopautoconfiguration", "title": "contextual proximity", "to": "applicationavailabilityautoconfiguration", "width": 0.5}, {"from": "aopautoconfiguration", "title": "Both classes are part of the Spring-PetClinic project\u0027s generated autoconfiguration source code, suggesting a potential relationship between auto-configuration packages and aspect-oriented programming (AOP) configuration.,contextual proximity", "to": "autoconfigurationpackages", "width": 1.5}, {"from": "aopautoconfiguration", "title": "contextual proximity", "to": "httpexchangesendpointautoconfiguration", "width": 0.75}, {"from": "aopautoconfiguration", "title": "contextual proximity", "to": "managementcontextautoconfiguration", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "build/generated", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "configurationpropertiesautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "datasourceproperties__beandefinitions.java", "width": 1.0}, {"from": "aotsources", "title": "contextual proximity", "to": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "hibernatejpaautoconfiguration__beandefinitions.java", "width": 0.75}, {"from": "aotsources", "title": "contextual proximity", "to": "hibernatejpaconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "jdbcclientautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "jdbcproperties__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "jdbctemplateautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "aotsources", "title": "contextual proximity", "to": "jparepositoriesautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "lifecycleautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "lifecycleproperties__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "messagesourceautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "org/springframework/boot", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure", "width": 2.5}, {"from": "aotsources", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure/cache/cacheproperties__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure/cache/caffeinecacheconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure/data/jpa", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure/data/web", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "persistenceexceptiontranslationautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "petclinic", "width": 2.25}, {"from": "aotsources", "title": "contextual proximity", "to": "propertyplaceholderautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "aotsources", "title": "contextual proximity", "to": "spring-petclinic", "width": 3.25}, {"from": "aotsources", "title": "contextual proximity", "to": "springdatawebautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "applicationavailabilityautoconfiguration", "title": "Both classes are part of the Spring-PetClinic project\u0027s generated autoconfiguration source code, suggesting a potential relationship between auto-configuration packages and application availability configuration.,contextual proximity", "to": "autoconfigurationpackages", "width": 2.0}, {"from": "applicationavailabilityautoconfiguration", "title": "Both classes are part of the Spring-PetClinic project\u0027s generated autoconfiguration source code, suggesting a potential relationship between cache configuration and application availability configuration.,contextual proximity", "to": "cacheautoconfiguration", "width": 1.5}, {"from": "applicationavailabilityautoconfiguration", "title": "contextual proximity", "to": "httpexchangesendpointautoconfiguration", "width": 1.5}, {"from": "applicationavailabilityautoconfiguration", "title": "contextual proximity", "to": "managementcontextautoconfiguration", "width": 1.0}, {"from": "applicationavailabilityautoconfiguration", "title": "contextual proximity", "to": "managementserverproperties", "width": 0.5}, {"from": "applicationavailabilityautoconfiguration", "title": "contextual proximity", "to": "mappingsendpointautoconfiguration", "width": 0.5}, {"from": "applicationavailabilityautoconfiguration", "title": "contextual proximity", "to": "servletmanagementcontextautoconfiguration", "width": 0.5}, {"from": "auditeventsendpointautoconfiguration__beandefinitions", "title": "contextual proximity", "to": "crashcontroller", "width": 0.5}, {"from": "auditeventsendpointautoconfiguration__beandefinitions", "title": "contextual proximity", "to": "entityutils", "width": 0.5}, {"from": "auditeventsendpointautoconfiguration__beandefinitions", "title": "The file path \u0027petclinic/build/generated/aotSources/org/springframework/boot/actuate/audit/AuditEventsEndpointAutoConfiguration__BeanDefinitions.java\u0027 and the class \u0027AuditEventsEndpointAutoConfiguration\u0027 are both related to audit-events endpoint auto-configuration in the petclinic application.", "to": "org/springframework/boot/actuate/audit/auditeventsendpointautoconfiguration", "width": 1.0}, {"from": "autoconfiguration", "title": "is a feature provided by Spring Boot for automating the configuration process. In this context, \u0027spring-petclinic\u0027 is being built using Spring Boot\u0027s autoconfiguration feature for various modules like transaction, validation, web, etc., which are located in the specified paths.,contextual proximity", "to": "spring-petclinic", "width": 4.25}, {"from": "autoconfigurationpackages", "title": "contextual proximity", "to": "cacheautoconfiguration", "width": 0.5}, {"from": "autoconfigurationpackages", "title": "contextual proximity", "to": "httpexchangesendpointautoconfiguration", "width": 1.5}, {"from": "autoconfigurationpackages", "title": "contextual proximity", "to": "managementcontextautoconfiguration", "width": 1.0}, {"from": "autoconfigurationpackages", "title": "contextual proximity", "to": "managementserverproperties", "width": 0.5}, {"from": "autoconfigurationpackages", "title": "contextual proximity", "to": "mappingsendpointautoconfiguration", "width": 0.5}, {"from": "autoconfigurationpackages", "title": "contextual proximity", "to": "servletmanagementcontextautoconfiguration", "width": 0.5}, {"from": "autoconfigure", "title": "contextual proximity", "to": "servlet", "width": 1.0}, {"from": "availabilityhealthcontributorautoconfiguration", "title": "contextual proximity", "to": "spring-petclinic", "width": 2.0}, {"from": "beandefinitions", "title": "Refers to the metadata used for configuring beans in Spring Framework. In this context, \u0027spring-petclinic\u0027 is being built, and its autoconfiguration classes for different modules are generating BeanDefinitions files, which will be loaded by Spring Boot during the initialization process.,contextual proximity", "to": "spring-petclinic", "width": 4.25}, {"from": "beansendpointautoconfiguration", "title": "contextual proximity", "to": "spring-petclinic", "width": 2.0}, {"from": "boundconfigurationproperties", "title": "contextual proximity", "to": "servlet", "width": 1.0}, {"from": "boundconfigurationproperties", "title": "allows properties to be bound directly to objects and classes, rather than being accessed through methods.", "to": "properties", "width": 1.0}, {"from": "build/generated", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure", "width": 1.25}, {"from": "build/generated", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "cacheautoconfiguration", "title": "contextual proximity", "to": "httpexchangesendpointautoconfiguration", "width": 0.75}, {"from": "cacheautoconfiguration", "title": "contextual proximity", "to": "managementcontextautoconfiguration", "width": 0.5}, {"from": "cacheconfiguration.java", "title": "contextual proximity", "to": "integrationtests.java", "width": 0.5}, {"from": "cacheconfiguration.java", "title": "contextual proximity", "to": "owner", "width": 1.0}, {"from": "cacheconfiguration.java", "title": "contextual proximity", "to": "petclinic", "width": 1.25}, {"from": "cacheconfiguration.java", "title": "contextual proximity", "to": "spring", "width": 0.5}, {"from": "cacheconfiguration.java", "title": "contextual proximity", "to": "src", "width": 0.5}, {"from": "cacheconfiguration.java", "title": "is a java file inside system directory,contextual proximity", "to": "system", "width": 1.75}, {"from": "cacheconfiguration.java", "title": "contextual proximity", "to": "test", "width": 0.5}, {"from": "cacheconfiguration.java", "title": "contextual proximity", "to": "vet", "width": 1.25}, {"from": "cachemeterbinderprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "cachemetricsautoconfiguration__beandefinitions.java", "width": 0.75}, {"from": "cachemeterbinderprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "cachemetricsregistrarconfiguration__beandefinitions.java", "width": 0.75}, {"from": "cachemeterbinderprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "metricsendpointautoconfiguration__beandefinitions.java", "width": 0.75}, {"from": "cachemeterbinderprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "metricsproperties__beandefinitions.java", "width": 0.75}, {"from": "cachemeterbinderprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "repositorymetricsautoconfiguration__beandefinitions.java", "width": 0.75}, {"from": "cachemeterbinderprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "simplemetricsexportautoconfiguration__beandefinitions.java", "width": 0.75}, {"from": "cachemeterbinderprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "simpleproperties__beandefinitions.java", "width": 0.75}, {"from": "cachemeterbinderprovidersconfiguration__beandefinitions.java", "title": "both files are related as they both fall under the metrics package of Spring Boot\u0027s Actuate module for monitoring and management, and specifically deal with metrics for systems and caches.,contextual proximity", "to": "systemmetricsautoconfiguration__beandefinitions.java", "width": 1.75}, {"from": "cachesendpointautoconfiguration", "title": "contextual proximity", "to": "spring-petclinic", "width": 2.0}, {"from": "client", "title": "Refers to the entity that initiates communication with a server. In this context, \u0027spring-petclinic\u0027 is being built, and its autoconfiguration class for web client handling is located in the specified path.,contextual proximity", "to": "spring-petclinic", "width": 4.25}, {"from": "clinicservice", "title": "contextual proximity", "to": "crashcontroller", "width": 0.5}, {"from": "clinicservice", "title": "contextual proximity", "to": "entityutils", "width": 0.5}, {"from": "clinicservice", "title": "The file path \u0027petclinic/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java\u0027 and the interface \u0027ClinicService\u0027 are both related to clinic-related functionality in the petclinic application.", "to": "clinicservicetests", "width": 1.0}, {"from": "clinicservicetests", "title": "contextual proximity", "to": "crashcontroller", "width": 0.5}, {"from": "clinicservicetests", "title": "contextual proximity", "to": "entityutils", "width": 0.5}, {"from": "compositemeterregistryautoconfiguration", "title": "contextual proximity", "to": "heapdumpwebendpointautoconfiguration", "width": 0.5}, {"from": "compositemeterregistryautoconfiguration", "title": "contextual proximity", "to": "jvmmetricsautoconfiguration", "width": 0.5}, {"from": "compositemeterregistryautoconfiguration", "title": "contextual proximity", "to": "logbackmetricsautoconfiguration", "width": 0.5}, {"from": "compositemeterregistryautoconfiguration", "title": "contextual proximity", "to": "logfilewebendpointproperties", "width": 2.0}, {"from": "compositemeterregistryautoconfiguration", "title": "contextual proximity", "to": "loggersendpointautoconfiguration", "width": 0.5}, {"from": "compositemeterregistryautoconfiguration", "title": "contextual proximity", "to": "metricsaspectsautoconfiguration", "width": 0.5}, {"from": "compositemeterregistryautoconfiguration", "title": "contextual proximity", "to": "metricsautoconfiguration", "width": 1.0}, {"from": "compositemeterregistryautoconfiguration", "title": "contextual proximity", "to": "threaddumpendpointautoconfiguration", "width": 0.5}, {"from": "conditionsreportendpointautoconfiguration", "title": "contextual proximity", "to": "spring-petclinic", "width": 2.0}, {"from": "configuration", "title": "contextual proximity", "to": "servlet", "width": 1.0}, {"from": "configuration", "title": "contains configuration properties related to the Spring Web MVC framework.", "to": "webmvcproperties", "width": 1.0}, {"from": "configurationpropertiesautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure", "width": 1.25}, {"from": "configurationpropertiesautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "configurationpropertiesreportendpointautoconfiguration", "title": "contextual proximity", "to": "spring-petclinic", "width": 2.0}, {"from": "configurationpropertiesreportendpointproperties", "title": "contextual proximity", "to": "spring-petclinic", "width": 2.0}, {"from": "corsendpointproperties", "title": "Both CorsEndpointProperties and WebEndpointProperties are properties classes related to endpoints in Spring Boot\u0027s actuate module.", "to": "webendpointproperties", "width": 1.0}, {"from": "crashcontroller", "title": "The file path \u0027petclinic/src/test/java/org/springframework/samples/petclinic/system/CrashControllerIntegrationTests.java\u0027 and the class \u0027CrashController\u0027 are both related to crash-related functionality in the petclinic application.,contextual proximity", "to": "crashcontrollerintegrationtests", "width": 1.5}, {"from": "crashcontroller", "title": "The file path \u0027petclinic/src/test/java/org/springframework/samples/petclinic/system/CrashControllerTests.java\u0027 and the class \u0027CrashController\u0027 are both related to crash-related functionality in the petclinic application.,contextual proximity", "to": "crashcontrollertests", "width": 1.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "entityutils", "width": 1.0}, {"from": "crashcontroller", "title": "contextual proximity", "to": "org/springframework/aop/aspectj/annotation/annotationawareaspectjautoproxycreator", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "org/springframework/boot/actuate/audit/auditeventsendpointautoconfiguration", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "ownercontroller", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "ownercontrollertests", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "petclinic", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "petcontroller", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "petcontrollertests", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "pettypeformatter", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "pettypeformattertests", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "vet", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "vetcontroller", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "vetcontrollertests", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "vettests", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "visitcontroller", "width": 0.5}, {"from": "crashcontroller", "title": "contextual proximity", "to": "visitcontrollertests", "width": 0.5}, {"from": "crashcontroller.java", "title": "contextual proximity", "to": "integrationtests.java", "width": 0.5}, {"from": "crashcontroller.java", "title": "contextual proximity", "to": "owner", "width": 1.0}, {"from": "crashcontroller.java", "title": "contextual proximity", "to": "petclinic", "width": 1.25}, {"from": "crashcontroller.java", "title": "contextual proximity", "to": "spring", "width": 0.5}, {"from": "crashcontroller.java", "title": "contextual proximity", "to": "src", "width": 0.5}, {"from": "crashcontroller.java", "title": "is a java file inside system directory,contextual proximity", "to": "system", "width": 1.75}, {"from": "crashcontroller.java", "title": "contextual proximity", "to": "test", "width": 0.5}, {"from": "crashcontroller.java", "title": "contextual proximity", "to": "vet", "width": 1.25}, {"from": "crashcontrollerintegrationtests", "title": "contextual proximity", "to": "entityutils", "width": 0.5}, {"from": "crashcontrollertests", "title": "contextual proximity", "to": "entityutils", "width": 0.5}, {"from": "datasourceautoconfiguration", "title": "contextual proximity", "to": "datasourceconfiguration", "width": 0.5}, {"from": "datasourceautoconfiguration", "title": "contextual proximity", "to": "springdatawebproperties", "width": 1.0}, {"from": "datasourceconfiguration", "title": "contextual proximity", "to": "datasourcejmxconfiguration", "width": 0.5}, {"from": "datasourceconfiguration", "title": "contextual proximity", "to": "httpmessageconvertersautoconfiguration", "width": 0.5}, {"from": "datasourceconfiguration", "title": "contextual proximity", "to": "jacksonautoconfiguration", "width": 0.5}, {"from": "datasourceconfiguration", "title": "contextual proximity", "to": "jacksonhttpmessageconvertersconfiguration", "width": 0.5}, {"from": "datasourceconfiguration", "title": "contextual proximity", "to": "jacksonproperties", "width": 0.5}, {"from": "datasourceconfiguration", "title": "contextual proximity", "to": "projectinfoautoconfiguration", "width": 0.5}, {"from": "datasourceconfiguration", "title": "contextual proximity", "to": "projectinfoproperties", "width": 0.5}, {"from": "datasourceconfiguration", "title": "contextual proximity", "to": "springdatawebproperties", "width": 2.0}, {"from": "datasourcehealthcontributorautoconfiguration", "title": "These two classes are related as the former auto-configures DataSourceHealthContributors, whereas the latter contains their properties.", "to": "datasourcehealthindicatorproperties", "width": 1.0}, {"from": "datasourcehealthcontributorautoconfiguration", "title": "contextual proximity", "to": "healthendpointconfiguration", "width": 0.5}, {"from": "datasourcehealthindicatorproperties", "title": "contextual proximity", "to": "healthendpointconfiguration", "width": 0.5}, {"from": "datasourceinitializationconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "hibernateproperties__beandefinitions.java", "width": 0.5}, {"from": "datasourceinitializationconfiguration__beandefinitions.java", "title": "both are related to initialization of SQL databases using Spring Data Source and AutoConfiguration", "to": "sqlinitializationautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "datasourcejmxconfiguration", "title": "contextual proximity", "to": "springdatawebproperties", "width": 1.0}, {"from": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "datasourceproperties__beandefinitions.java", "width": 2.0}, {"from": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "hibernatejpaautoconfiguration__beandefinitions.java", "width": 1.5}, {"from": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "hibernatejpaconfiguration__beandefinitions.java", "width": 1.0}, {"from": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbcclientautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbcproperties__beandefinitions.java", "width": 1.0}, {"from": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbctemplateautoconfiguration__beandefinitions.java", "width": 2.0}, {"from": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "width": 1.0}, {"from": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "petclinic", "width": 3.5}, {"from": "datasourcepoolmetadataprovidersconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 4.5}, {"from": "datasourcepoolmetricsautoconfiguration", "title": "contextual proximity", "to": "metricsautoconfiguration", "width": 1.25}, {"from": "datasourcepoolmetricsautoconfiguration", "title": "contextual proximity", "to": "observationautoconfiguration", "width": 0.5}, {"from": "datasourceproperties__beandefinitions.java", "title": "contextual proximity", "to": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "width": 2.0}, {"from": "datasourceproperties__beandefinitions.java", "title": "contextual proximity", "to": "hibernatejpaautoconfiguration__beandefinitions.java", "width": 3.0}, {"from": "datasourceproperties__beandefinitions.java", "title": "contextual proximity", "to": "hibernatejpaconfiguration__beandefinitions.java", "width": 2.0}, {"from": "datasourceproperties__beandefinitions.java", "title": "contextual proximity", "to": "jdbcclientautoconfiguration__beandefinitions.java", "width": 2.0}, {"from": "datasourceproperties__beandefinitions.java", "title": "One is a specific implementation of the other,contextual proximity", "to": "jdbcproperties__beandefinitions.java", "width": 3.0}, {"from": "datasourceproperties__beandefinitions.java", "title": "contextual proximity", "to": "jdbctemplateautoconfiguration__beandefinitions.java", "width": 4.0}, {"from": "datasourceproperties__beandefinitions.java", "title": "contextual proximity", "to": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "width": 2.0}, {"from": "datasourceproperties__beandefinitions.java", "title": "contextual proximity", "to": "petclinic", "width": 7.0}, {"from": "datasourceproperties__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 9.0}, {"from": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "hibernatejpaautoconfiguration__beandefinitions.java", "width": 1.5}, {"from": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "hibernatejpaconfiguration__beandefinitions.java", "width": 1.0}, {"from": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbcclientautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbcproperties__beandefinitions.java", "width": 1.0}, {"from": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbctemplateautoconfiguration__beandefinitions.java", "width": 2.0}, {"from": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "width": 1.0}, {"from": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "petclinic", "width": 3.5}, {"from": "datasourcetransactionmanagerautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 4.5}, {"from": "diskspacehealthcontributorautoconfiguration__beandefinitions.java", "title": "Both classes are related as they both contribute to Spring Boot Actuator\u0027s autoconfiguration process for monitoring disk space usage and health indicators.", "to": "diskspacehealthindicatorproperties__beandefinitions.java", "width": 1.0}, {"from": "diskspacehealthcontributorautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "httpclientobservationsautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "diskspacehealthcontributorautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "scheduledtasksendpointautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "diskspacehealthcontributorautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "webmvcobservationautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "diskspacehealthindicatorproperties__beandefinitions.java", "title": "contextual proximity", "to": "httpclientobservationsautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "diskspacehealthindicatorproperties__beandefinitions.java", "title": "contextual proximity", "to": "scheduledtasksendpointautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "diskspacehealthindicatorproperties__beandefinitions.java", "title": "contextual proximity", "to": "webmvcobservationautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "dispatcherservletautoconfiguration", "title": "Refers to the feature provided by Spring Boot for automating the configuration process for DispatcherServlet, which is a front controller in Spring MVC. In this context, \u0027spring-petclinic\u0027 is being built, and its autoconfiguration class for DispatcherServletAutoConfiguration is located in the specified path.,contextual proximity", "to": "spring-petclinic", "width": 4.25}, {"from": "embeddedwebserverfactorycustomizerautoconfiguration", "title": "Refers to the feature provided by Spring Boot for customizing the embedded web server factory. In this context, \u0027spring-petclinic\u0027 is being built, and its autoconfiguration class for EmbeddedWebServerFactoryCustomizerAutoConfiguration is located in the specified path.,contextual proximity", "to": "spring-petclinic", "width": 4.25}, {"from": "enablewebmvcconfiguration", "title": "contextual proximity", "to": "servlet", "width": 1.0}, {"from": "enablewebmvcconfiguration", "title": "enables the Spring Web MVC framework in a web application.", "to": "webmvcautoconfiguration", "width": 1.0}, {"from": "endpointautoconfiguration", "title": "contextual proximity", "to": "spring-petclinic", "width": 2.0}, {"from": "entityutils", "title": "The file path \u0027petclinic/src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java\u0027 and the class \u0027EntityUtils\u0027 are both related to entity-related functionality in the petclinic application.", "to": "entityutils", "width": 1.0}, {"from": "entityutils", "title": "contextual proximity", "to": "org/springframework/aop/aspectj/annotation/annotationawareaspectjautoproxycreator", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "org/springframework/boot/actuate/audit/auditeventsendpointautoconfiguration", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "ownercontroller", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "ownercontrollertests", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "petclinic", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "petcontroller", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "petcontrollertests", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "pettypeformatter", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "pettypeformattertests", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "vet", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "vetcontroller", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "vetcontrollertests", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "vettests", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "visitcontroller", "width": 0.5}, {"from": "entityutils", "title": "contextual proximity", "to": "visitcontrollertests", "width": 0.5}, {"from": "environmentendpointproperties", "title": "EnvironmentEndpointProperties and EnvironmentEndpointAutoConfiguration are both properties and auto-configuration classes related to endpoints in Spring Boot\u0027s actuate module that provide access to environment information.", "to": "environmentendpointautoconfiguration", "width": 1.0}, {"from": "healthcontributorautoconfiguration", "title": "Both HealthContributorAutoConfiguration and HealthEndpointAutoConfiguration are auto-configuration classes related to health checks in Spring Boot\u0027s actuate module.", "to": "healthendpointautoconfiguration", "width": 1.0}, {"from": "healthendpointconfiguration", "title": "contextual proximity", "to": "healthendpointproperties", "width": 0.5}, {"from": "healthendpointconfiguration", "title": "contextual proximity", "to": "healthendpointwebextensionconfiguration", "width": 0.5}, {"from": "healthendpointconfiguration", "title": "contextual proximity", "to": "infocontributorautoconfiguration", "width": 0.5}, {"from": "healthendpointconfiguration", "title": "contextual proximity", "to": "infocontributorproperties", "width": 0.5}, {"from": "healthendpointconfiguration", "title": "contextual proximity", "to": "infoendpointautoconfiguration", "width": 0.5}, {"from": "healthendpointconfiguration", "title": "contextual proximity", "to": "logfilewebendpointautoconfiguration", "width": 0.5}, {"from": "healthendpointconfiguration", "title": "contextual proximity", "to": "springboot", "width": 0.5}, {"from": "healthendpointconfiguration", "title": "contextual proximity", "to": "springpetclinic", "width": 0.5}, {"from": "heapdumpwebendpointautoconfiguration", "title": "Both classes are generated through Spring\u0027s Ahead-of-Time (AOT) compilation for the Spring Boot Actuator module, which provides a REST endpoint for retrieving and rotating heap dumps, and an auto-configuration class for endpoints related to management, respectively.,contextual proximity", "to": "logfilewebendpointproperties", "width": 2.0}, {"from": "heapdumpwebendpointautoconfiguration", "title": "contextual proximity", "to": "metricsautoconfiguration", "width": 0.5}, {"from": "hibernatejpaautoconfiguration__beandefinitions.java", "title": "One is used as a dependency in the other,contextual proximity", "to": "hibernatejpaconfiguration__beandefinitions.java", "width": 2.5}, {"from": "hibernatejpaautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbcclientautoconfiguration__beandefinitions.java", "width": 1.5}, {"from": "hibernatejpaautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbcproperties__beandefinitions.java", "width": 1.5}, {"from": "hibernatejpaautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbctemplateautoconfiguration__beandefinitions.java", "width": 3.0}, {"from": "hibernatejpaautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "width": 1.5}, {"from": "hibernatejpaautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "petclinic", "width": 5.25}, {"from": "hibernatejpaautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 6.75}, {"from": "hibernatejpaconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbcclientautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "hibernatejpaconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbcproperties__beandefinitions.java", "width": 1.0}, {"from": "hibernatejpaconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbctemplateautoconfiguration__beandefinitions.java", "width": 2.0}, {"from": "hibernatejpaconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "width": 1.0}, {"from": "hibernatejpaconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "petclinic", "width": 3.5}, {"from": "hibernatejpaconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 4.5}, {"from": "hibernateproperties__beandefinitions.java", "title": "contextual proximity", "to": "jpabaseconfiguration__beandefinitions.java", "width": 0.5}, {"from": "hibernateproperties__beandefinitions.java", "title": "contextual proximity", "to": "jpaproperties__beandefinitions.java", "width": 0.5}, {"from": "hibernateproperties__beandefinitions.java", "title": "contextual proximity", "to": "sqlinitializationautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "hibernateproperties__beandefinitions.java", "title": "contextual proximity", "to": "sslautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "hibernateproperties__beandefinitions.java", "title": "contextual proximity", "to": "sslproperties__beandefinitions.java", "width": 0.5}, {"from": "hibernateproperties__beandefinitions.java", "title": "contextual proximity", "to": "taskexecutionautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "hibernateproperties__beandefinitions.java", "title": "contextual proximity", "to": "taskexecutionproperties__beandefinitions.java", "width": 0.5}, {"from": "httpclientobservationsautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "restclientobservationconfiguration__beandefinitions.java", "width": 0.5}, {"from": "httpclientobservationsautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "resttemplateobservationconfiguration__beandefinitions.java", "width": 0.5}, {"from": "httpclientobservationsautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "scheduledtasksendpointautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "httpclientobservationsautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "webmvcobservationautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "httpencodingautoconfiguration", "title": "Refers to the feature provided by Spring Boot for automating the configuration process for HTTP request encoding and response decoding. In this context, \u0027spring-petclinic\u0027 is being built, and its autoconfiguration class for HttpEncodingAutoConfiguration is located in the specified path.,contextual proximity", "to": "spring-petclinic", "width": 4.25}, {"from": "httpexchangesendpointautoconfiguration", "title": "contextual proximity", "to": "managementcontextautoconfiguration", "width": 1.5}, {"from": "httpexchangesendpointautoconfiguration", "title": "contextual proximity", "to": "managementserverproperties", "width": 0.75}, {"from": "httpexchangesendpointautoconfiguration", "title": "contextual proximity", "to": "mappingsendpointautoconfiguration", "width": 0.75}, {"from": "httpexchangesendpointautoconfiguration", "title": "contextual proximity", "to": "servletmanagementcontextautoconfiguration", "width": 0.75}, {"from": "httpmessageconvertersautoconfiguration", "title": "The \u0027build/generated/aotSources\u0027 directory contains both the properties for Spring Data Web and the auto-configuration class for HTTP message converters in Spring Boot.,contextual proximity", "to": "springdatawebproperties", "width": 2.0}, {"from": "infocontributorautoconfiguration", "title": "These two classes are related as the former auto-configures InfoContributors, whereas the latter contains their properties.", "to": "infocontributorproperties", "width": 1.0}, {"from": "infoendpointautoconfiguration", "title": "The former auto-configures the info endpoints for Spring Boot Actuator, and the latter is a Spring Boot application that provides pet clinic services.", "to": "springpetclinic", "width": 1.0}, {"from": "integrationmetricsautoconfiguration", "title": "contextual proximity", "to": "metricsautoconfiguration", "width": 1.25}, {"from": "integrationmetricsautoconfiguration", "title": "contextual proximity", "to": "observationautoconfiguration", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "java", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "main", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "mysqlintegrationtests.java", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "mysqltestapplication.java", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "org", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "owner", "width": 2.0}, {"from": "integrationtests.java", "title": "is a java file inside petclinic directory,contextual proximity", "to": "petclinic", "width": 3.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "petvalidator.java", "width": 0.5}, {"from": "integrationtests.java", "title": "is the same file as above, but for postgres integration tests,contextual proximity", "to": "postgres", "width": 1.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "samples", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "specialty.java", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "spring", "width": 1.0}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "springframework", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "src", "width": 1.0}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "system", "width": 1.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "test", "width": 1.0}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "vet", "width": 2.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "vet.java", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "vetcontroller.java", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "vetrepository.java", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "vets.java", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "visit", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "visitcontroller.java", "width": 0.5}, {"from": "integrationtests.java", "title": "contextual proximity", "to": "welcomecontroller.java", "width": 0.5}, {"from": "jacksonautoconfiguration", "title": "Both classes are auto-configuration and property classes for Jackson in Spring Boot.", "to": "jacksonproperties", "width": 1.0}, {"from": "jacksonautoconfiguration", "title": "contextual proximity", "to": "springdatawebproperties", "width": 1.0}, {"from": "jacksonendpointautoconfiguration", "title": "contextual proximity", "to": "spring-petclinic", "width": 2.0}, {"from": "jacksonhttpmessageconvertersconfiguration", "title": "The \u0027build/generated/aotSources\u0027 directory contains both the properties for Spring Data Web and the configuration class for Jackson HTTP message converters in Spring Boot.,contextual proximity", "to": "springdatawebproperties", "width": 2.0}, {"from": "jacksonproperties", "title": "contextual proximity", "to": "springdatawebproperties", "width": 1.0}, {"from": "java", "title": "contextual proximity", "to": "owner", "width": 1.0}, {"from": "java", "title": "contextual proximity", "to": "petclinic", "width": 1.25}, {"from": "java", "title": "contextual proximity", "to": "spring", "width": 0.5}, {"from": "java", "title": "is a directory,contextual proximity", "to": "src", "width": 1.5}, {"from": "java", "title": "contextual proximity", "to": "system", "width": 0.75}, {"from": "java", "title": "contextual proximity", "to": "test", "width": 0.5}, {"from": "java", "title": "contextual proximity", "to": "vet", "width": 1.25}, {"from": "java file", "title": "Refers to the file extension \u0027.java\u0027 used for defining classes and interfaces in Java programming language. In this context, \u0027spring-petclinic\u0027 is being built, and its autoconfiguration files for different modules are located in the specified paths with the extension \u0027.java\u0027. These files will be compiled into bytecode by the Java compiler.,contextual proximity", "to": "spring-petclinic", "width": 4.25}, {"from": "jdbcclientautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbcproperties__beandefinitions.java", "width": 1.0}, {"from": "jdbcclientautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "jdbctemplateautoconfiguration__beandefinitions.java", "width": 2.0}, {"from": "jdbcclientautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "width": 1.0}, {"from": "jdbcclientautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "petclinic", "width": 3.5}, {"from": "jdbcclientautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 4.5}, {"from": "jdbcproperties__beandefinitions.java", "title": "contextual proximity", "to": "jdbctemplateautoconfiguration__beandefinitions.java", "width": 2.0}, {"from": "jdbcproperties__beandefinitions.java", "title": "contextual proximity", "to": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "width": 1.0}, {"from": "jdbcproperties__beandefinitions.java", "title": "contextual proximity", "to": "petclinic", "width": 3.5}, {"from": "jdbcproperties__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 4.5}, {"from": "jdbctemplateautoconfiguration__beandefinitions.java", "title": "Both are related to JDBC template, but NamedParameterJdbcTemplateConfiguration is a specific implementation for named parameter queries,One is used as a dependency in the other,contextual proximity", "to": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "width": 4.0}, {"from": "jdbctemplateautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "petclinic", "width": 7.0}, {"from": "jdbctemplateautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 9.0}, {"from": "jparepositoriesautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure", "width": 1.25}, {"from": "jparepositoriesautoconfiguration__beandefinitions.java", "title": "location of the auto-configuration class \u0027JpaRepositoriesAutoConfiguration\u0027 under \u0027org/springframework/boot/autoconfigure/data/jpa\u0027", "to": "org/springframework/boot/autoconfigure/data/jpa", "width": 1.0}, {"from": "jparepositoriesautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "jvmmetricsautoconfiguration", "title": "contextual proximity", "to": "logfilewebendpointproperties", "width": 1.0}, {"from": "jvmmetricsautoconfiguration", "title": "contextual proximity", "to": "metricsautoconfiguration", "width": 0.5}, {"from": "lifecycleautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure", "width": 1.25}, {"from": "lifecycleautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "lifecycleproperties__beandefinitions.java", "title": "location of the properties file for lifecycle-related configurations under \u0027org/springframework/boot\u0027", "to": "org/springframework/boot", "width": 1.0}, {"from": "lifecycleproperties__beandefinitions.java", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure", "width": 1.25}, {"from": "lifecycleproperties__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "logbackmetricsautoconfiguration", "title": "contextual proximity", "to": "logfilewebendpointproperties", "width": 1.0}, {"from": "logbackmetricsautoconfiguration", "title": "contextual proximity", "to": "metricsautoconfiguration", "width": 0.5}, {"from": "logfilewebendpointautoconfiguration", "title": "The former auto-configures log file web endpoints for Spring Boot Actuator, and the latter is a project of Spring Boot framework.", "to": "springboot", "width": 1.0}, {"from": "logfilewebendpointproperties", "title": "contextual proximity", "to": "loggersendpointautoconfiguration", "width": 1.0}, {"from": "logfilewebendpointproperties", "title": "contextual proximity", "to": "metricsaspectsautoconfiguration", "width": 1.0}, {"from": "logfilewebendpointproperties", "title": "contextual proximity", "to": "metricsautoconfiguration", "width": 2.0}, {"from": "logfilewebendpointproperties", "title": "contextual proximity", "to": "threaddumpendpointautoconfiguration", "width": 1.0}, {"from": "loggersendpointautoconfiguration", "title": "contextual proximity", "to": "metricsautoconfiguration", "width": 0.5}, {"from": "main", "title": "contextual proximity", "to": "owner", "width": 1.0}, {"from": "main", "title": "is a directory,contextual proximity", "to": "petclinic", "width": 2.25}, {"from": "main", "title": "contextual proximity", "to": "spring", "width": 0.5}, {"from": "main", "title": "contextual proximity", "to": "src", "width": 0.5}, {"from": "main", "title": "contextual proximity", "to": "system", "width": 0.75}, {"from": "main", "title": "contextual proximity", "to": "test", "width": 0.5}, {"from": "main", "title": "contextual proximity", "to": "vet", "width": 1.25}, {"from": "managementcontextautoconfiguration", "title": "contextual proximity", "to": "managementserverproperties", "width": 0.5}, {"from": "managementcontextautoconfiguration", "title": "contextual proximity", "to": "mappingsendpointautoconfiguration", "width": 0.5}, {"from": "managementcontextautoconfiguration", "title": "contextual proximity", "to": "servletmanagementcontextautoconfiguration", "width": 0.5}, {"from": "messagesourceautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure", "width": 1.25}, {"from": "messagesourceautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "metricsaspectsautoconfiguration", "title": "contextual proximity", "to": "metricsautoconfiguration", "width": 0.5}, {"from": "metricsautoconfiguration", "title": "contextual proximity", "to": "observationautoconfiguration", "width": 2.5}, {"from": "metricsautoconfiguration", "title": "contextual proximity", "to": "observationproperties", "width": 1.25}, {"from": "metricsautoconfiguration", "title": "StartupTimeMetricsListenerAutoConfiguration is a specialized implementation of MetricsAutoConfiguration for startup time monitoring.,contextual proximity", "to": "startuptimemetricslistenerautoconfiguration", "width": 2.25}, {"from": "metricsautoconfiguration", "title": "TaskExecutorMetricsAutoConfiguration is a specialized implementation of MetricsAutoConfiguration for task executors.,contextual proximity", "to": "taskexecutormetricsautoconfiguration", "width": 2.25}, {"from": "metricsautoconfiguration", "title": "contextual proximity", "to": "threaddumpendpointautoconfiguration", "width": 0.5}, {"from": "metricsautoconfiguration", "title": "TomcatMetricsAutoConfiguration is a specialized implementation of MetricsAutoConfiguration for Tomcat servers.,contextual proximity", "to": "tomcatmetricsautoconfiguration", "width": 2.25}, {"from": "metricsendpointautoconfiguration__beandefinitions.java", "title": "both files are related as they both fall under the metrics package of Spring Boot\u0027s Actuate module for monitoring and management.", "to": "metricsproperties__beandefinitions.java", "width": 1.0}, {"from": "multipartautoconfiguration", "title": "Refers to the feature provided by Spring Boot for automating the configuration process for handling multipart requests using Commons FileUpload. In this context, \u0027spring-petclinic\u0027 is being built, and its autoconfiguration class for MultipartAutoConfiguration is located in the specified path.,contextual proximity", "to": "spring-petclinic", "width": 4.25}, {"from": "mysqlintegrationtests.java", "title": "contextual proximity", "to": "owner", "width": 1.0}, {"from": "mysqlintegrationtests.java", "title": "contextual proximity", "to": "petclinic", "width": 1.25}, {"from": "mysqlintegrationtests.java", "title": "contextual proximity", "to": "spring", "width": 0.5}, {"from": "mysqlintegrationtests.java", "title": "contextual proximity", "to": "src", "width": 0.5}, {"from": "mysqlintegrationtests.java", "title": "contextual proximity", "to": "system", "width": 0.75}, {"from": "mysqlintegrationtests.java", "title": "is a java file inside test directory,contextual proximity", "to": "test", "width": 1.5}, {"from": "mysqlintegrationtests.java", "title": "contextual proximity", "to": "vet", "width": 1.25}, {"from": "mysqltestapplication.java", "title": "contextual proximity", "to": "owner", "width": 1.0}, {"from": "mysqltestapplication.java", "title": "contextual proximity", "to": "petclinic", "width": 1.25}, {"from": "mysqltestapplication.java", "title": "contextual proximity", "to": "spring", "width": 0.5}, {"from": "mysqltestapplication.java", "title": "contextual proximity", "to": "src", "width": 0.5}, {"from": "mysqltestapplication.java", "title": "contextual proximity", "to": "system", "width": 0.75}, {"from": "mysqltestapplication.java", "title": "is a java file inside test directory,contextual proximity", "to": "test", "width": 1.5}, {"from": "mysqltestapplication.java", "title": "contextual proximity", "to": "vet", "width": 1.25}, {"from": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "petclinic", "width": 3.5}, {"from": "namedparameterjdbctemplateconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 4.5}, {"from": "observationautoconfiguration", "title": "ObservationProperties are properties that can be set for ObservationAutoConfiguration.,contextual proximity", "to": "observationproperties", "width": 1.5}, {"from": "observationautoconfiguration", "title": "contextual proximity", "to": "startuptimemetricslistenerautoconfiguration", "width": 0.5}, {"from": "observationautoconfiguration", "title": "contextual proximity", "to": "taskexecutormetricsautoconfiguration", "width": 0.5}, {"from": "observationautoconfiguration", "title": "contextual proximity", "to": "tomcatmetricsautoconfiguration", "width": 0.5}, {"from": "org", "title": "contextual proximity", "to": "owner", "width": 1.0}, {"from": "org", "title": "contextual proximity", "to": "petclinic", "width": 1.25}, {"from": "org", "title": "contextual proximity", "to": "spring", "width": 0.5}, {"from": "org", "title": "belongs to the package", "to": "springframework", "width": 1.0}, {"from": "org", "title": "contextual proximity", "to": "src", "width": 0.5}, {"from": "org", "title": "contextual proximity", "to": "system", "width": 0.75}, {"from": "org", "title": "contextual proximity", "to": "test", "width": 0.5}, {"from": "org", "title": "contextual proximity", "to": "vet", "width": 1.25}, {"from": "org/springframework/boot", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure", "width": 1.25}, {"from": "org/springframework/boot", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "org/springframework/boot/autoconfigure", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure/cache/cacheproperties__beandefinitions.java", "width": 1.25}, {"from": "org/springframework/boot/autoconfigure", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure/cache/caffeinecacheconfiguration__beandefinitions.java", "width": 1.25}, {"from": "org/springframework/boot/autoconfigure", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure/data/jpa", "width": 1.25}, {"from": "org/springframework/boot/autoconfigure", "title": "contextual proximity", "to": "org/springframework/boot/autoconfigure/data/web", "width": 1.25}, {"from": "org/springframework/boot/autoconfigure", "title": "location of the auto-configuration class \u0027PersistenceExceptionTranslationAutoConfiguration\u0027 under \u0027org/springframework/boot/autoconfigure\u0027,contextual proximity", "to": "persistenceexceptiontranslationautoconfiguration__beandefinitions.java", "width": 2.25}, {"from": "org/springframework/boot/autoconfigure", "title": "contextual proximity", "to": "petclinic", "width": 1.25}, {"from": "org/springframework/boot/autoconfigure", "title": "location of the auto-configuration class \u0027PropertyPlaceholderAutoConfiguration\u0027 under \u0027org/springframework/boot/autoconfigure\u0027,contextual proximity", "to": "propertyplaceholderautoconfiguration__beandefinitions.java", "width": 2.25}, {"from": "org/springframework/boot/autoconfigure", "title": "contextual proximity", "to": "spring-petclinic", "width": 2.5}, {"from": "org/springframework/boot/autoconfigure", "title": "contextual proximity", "to": "springdatawebautoconfiguration__beandefinitions.java", "width": 1.25}, {"from": "org/springframework/boot/autoconfigure/cache/cacheproperties__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "org/springframework/boot/autoconfigure/cache/caffeinecacheconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "org/springframework/boot/autoconfigure/data/jpa", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "org/springframework/boot/autoconfigure/data/web", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "org/springframework/boot/autoconfigure/data/web", "title": "location of the auto-configuration class \u0027SpringDataWebAutoConfiguration\u0027 under \u0027org/springframework/boot/autoconfigure/data/web\u0027", "to": "springdatawebautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "owner", "title": "is a directory inside petclinic directory,contextual proximity", "to": "petclinic", "width": 6.0}, {"from": "owner", "title": "contextual proximity", "to": "petvalidator.java", "width": 1.0}, {"from": "owner", "title": "contextual proximity", "to": "postgres", "width": 1.0}, {"from": "owner", "title": "contextual proximity", "to": "samples", "width": 1.0}, {"from": "owner", "title": "contextual proximity", "to": "specialty.java", "width": 1.0}, {"from": "owner", "title": "contextual proximity", "to": "spring", "width": 2.0}, {"from": "owner", "title": "contextual proximity", "to": "springframework", "width": 1.0}, {"from": "owner", "title": "contextual proximity", "to": "src", "width": 2.0}, {"from": "owner", "title": "contextual proximity", "to": "system", "width": 3.0}, {"from": "owner", "title": "contextual proximity", "to": "test", "width": 2.0}, {"from": "owner", "title": "contextual proximity", "to": "vet", "width": 5.0}, {"from": "owner", "title": "contextual proximity", "to": "vet.java", "width": 1.0}, {"from": "owner", "title": "contextual proximity", "to": "vetcontroller.java", "width": 1.0}, {"from": "owner", "title": "contextual proximity", "to": "vetrepository.java", "width": 1.0}, {"from": "owner", "title": "contextual proximity", "to": "vets.java", "width": 1.0}, {"from": "owner", "title": "contextual proximity", "to": "visit", "width": 1.0}, {"from": "owner", "title": "contextual proximity", "to": "visitcontroller.java", "width": 1.0}, {"from": "owner", "title": "contextual proximity", "to": "welcomecontroller.java", "width": 1.0}, {"from": "ownercontroller", "title": "The file path \u0027petclinic/src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java\u0027 and the class \u0027OwnerController\u0027 are both related to owner-related functionality in the petclinic application.", "to": "ownercontrollertests", "width": 1.0}, {"from": "persistenceexceptiontranslationautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "petclinic", "title": "contextual proximity", "to": "petvalidator.java", "width": 1.25}, {"from": "petclinic", "title": "contextual proximity", "to": "postgres", "width": 1.25}, {"from": "petclinic", "title": "contextual proximity", "to": "samples", "width": 1.25}, {"from": "petclinic", "title": "contextual proximity", "to": "specialty.java", "width": 1.25}, {"from": "petclinic", "title": "belongs to the project/application,contextual proximity", "to": "spring", "width": 3.5}, {"from": "petclinic", "title": "contextual proximity", "to": "spring-petclinic", "width": 16.5}, {"from": "petclinic", "title": "contextual proximity", "to": "springframework", "width": 1.25}, {"from": "petclinic", "title": "contextual proximity", "to": "src", "width": 2.5}, {"from": "petclinic", "title": "contextual proximity", "to": "system", "width": 3.75}, {"from": "petclinic", "title": "contextual proximity", "to": "test", "width": 2.5}, {"from": "petclinic", "title": "contextual proximity", "to": "vet", "width": 6.5}, {"from": "petclinic", "title": "contextual proximity", "to": "vet.java", "width": 1.25}, {"from": "petclinic", "title": "contextual proximity", "to": "vetcontroller.java", "width": 1.25}, {"from": "petclinic", "title": "contextual proximity", "to": "vetrepository.java", "width": 1.25}, {"from": "petclinic", "title": "contextual proximity", "to": "vets.java", "width": 1.25}, {"from": "petclinic", "title": "contextual proximity", "to": "visit", "width": 1.25}, {"from": "petclinic", "title": "contextual proximity", "to": "visitcontroller.java", "width": 1.25}, {"from": "petclinic", "title": "contextual proximity", "to": "welcomecontroller.java", "width": 1.25}, {"from": "petcontroller", "title": "The file path \u0027petclinic/src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java\u0027 and the class \u0027PetController\u0027 are both related to pet-related functionality in the petclinic application.", "to": "petcontrollertests", "width": 1.0}, {"from": "pettypeformatter", "title": "The file path \u0027petclinic/src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java\u0027 and the class \u0027PetTypeFormatter\u0027 are both related to pet-type formatting functionality in the petclinic application.", "to": "pettypeformattertests", "width": 1.0}, {"from": "petvalidator.java", "title": "contextual proximity", "to": "spring", "width": 0.5}, {"from": "petvalidator.java", "title": "contextual proximity", "to": "src", "width": 0.5}, {"from": "petvalidator.java", "title": "contextual proximity", "to": "system", "width": 0.75}, {"from": "petvalidator.java", "title": "contextual proximity", "to": "test", "width": 0.5}, {"from": "petvalidator.java", "title": "contextual proximity", "to": "vet", "width": 1.25}, {"from": "postgres", "title": "contextual proximity", "to": "spring", "width": 0.5}, {"from": "postgres", "title": "contextual proximity", "to": "src", "width": 0.5}, {"from": "postgres", "title": "contextual proximity", "to": "system", "width": 0.75}, {"from": "postgres", "title": "contextual proximity", "to": "test", "width": 0.5}, {"from": "postgres", "title": "contextual proximity", "to": "vet", "width": 1.25}, {"from": "pr", "title": "contextual proximity", "to": "prettyprint", "width": 0.5}, {"from": "pr", "title": "contextual proximity", "to": "prettyprintone", "width": 0.5}, {"from": "pr", "title": "contextual proximity", "to": "window[\u0027pr\u0027]", "width": 0.5}, {"from": "projectinfoautoconfiguration", "title": "Both classes are auto-configuration and property classes for project information in Spring Boot.", "to": "projectinfoproperties", "width": 1.0}, {"from": "projectinfoautoconfiguration", "title": "contextual proximity", "to": "springdatawebproperties", "width": 1.0}, {"from": "projectinfoproperties", "title": "contextual proximity", "to": "springdatawebproperties", "width": 1.0}, {"from": "properties", "title": "contextual proximity", "to": "servlet", "width": 1.0}, {"from": "propertyplaceholderautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "spring-petclinic", "width": 0.5}, {"from": "restclientautoconfiguration", "title": "Refers to the feature provided by Spring Boot for automating the configuration process for web clients that communicate using RESTful APIs. In this context, \u0027spring-petclinic\u0027 is being built, and its autoconfiguration class for RestClientAutoConfiguration is located in the specified path.,contextual proximity", "to": "spring-petclinic", "width": 4.25}, {"from": "restclientobservationconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "scheduledtasksendpointautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "restclientobservationconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "webmvcobservationautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "resttemplateautoconfiguration", "title": "Refers to the feature provided by Spring Boot for automating the configuration process for web clients that use RestTemplate for communicating with RESTful APIs. In this context, \u0027spring-petclinic\u0027 is being built, and its autoconfiguration class for RestTemplateAutoConfiguration is located in the specified path.,contextual proximity", "to": "spring-petclinic", "width": 4.25}, {"from": "resttemplateobservationconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "scheduledtasksendpointautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "resttemplateobservationconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "webmvcobservationautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "samples", "title": "belongs to the package,contextual proximity", "to": "spring", "width": 1.5}, {"from": "samples", "title": "contextual proximity", "to": "src", "width": 0.5}, {"from": "samples", "title": "contextual proximity", "to": "system", "width": 0.75}, {"from": "samples", "title": "contextual proximity", "to": "test", "width": 0.5}, {"from": "samples", "title": "contextual proximity", "to": "vet", "width": 1.25}, {"from": "scheduledtasksendpointautoconfiguration__beandefinitions.java", "title": "Both classes are related as they both contribute to Spring Boot Actuator\u0027s autoconfiguration process for observability.,Both classes are related as they both contribute to Spring Boot Actuator\u0027s autoconfiguration process for exposing scheduled tasks endpoints.,contextual proximity", "to": "webmvcobservationautoconfiguration__beandefinitions.java", "width": 3.0}, {"from": "servlet", "title": "contextual proximity", "to": "servletwebserverfactory", "width": 1.0}, {"from": "servlet", "title": "is a component used in web application development to provide functionality for servlets, which are small programs that process requests and generate responses.,contextual proximity", "to": "web", "width": 2.0}, {"from": "servlet", "title": "contextual proximity", "to": "webmvcautoconfiguration", "width": 1.0}, {"from": "servlet", "title": "contextual proximity", "to": "webmvcproperties", "width": 1.0}, {"from": "servlet", "title": "contextual proximity", "to": "websocketservletautoconfiguration", "width": 1.0}, {"from": "simplemetricsexportautoconfiguration__beandefinitions.java", "title": "both files are related as they both fall under the metrics package of Spring Boot\u0027s Actuate module for monitoring and management, and specifically deal with simple metric exports and their properties.", "to": "simpleproperties__beandefinitions.java", "width": 1.0}, {"from": "specialty.java", "title": "contextual proximity", "to": "spring", "width": 0.5}, {"from": "specialty.java", "title": "contextual proximity", "to": "src", "width": 0.5}, {"from": "specialty.java", "title": "contextual proximity", "to": "system", "width": 0.75}, {"from": "specialty.java", "title": "contextual proximity", "to": "test", "width": 0.5}, {"from": "specialty.java", "title": "is a java file inside vet directory,contextual proximity", "to": "vet", "width": 2.25}, {"from": "spring", "title": "contextual proximity", "to": "springframework", "width": 0.5}, {"from": "spring", "title": "contextual proximity", "to": "src", "width": 1.0}, {"from": "spring", "title": "contextual proximity", "to": "system", "width": 1.5}, {"from": "spring", "title": "contextual proximity", "to": "test", "width": 1.0}, {"from": "spring", "title": "contextual proximity", "to": "vet", "width": 2.5}, {"from": "spring", "title": "contextual proximity", "to": "vet.java", "width": 0.5}, {"from": "spring", "title": "contextual proximity", "to": "vetcontroller.java", "width": 0.5}, {"from": "spring", "title": "contextual proximity", "to": "vetrepository.java", "width": 0.5}, {"from": "spring", "title": "contextual proximity", "to": "vets.java", "width": 0.5}, {"from": "spring", "title": "contextual proximity", "to": "visit", "width": 0.5}, {"from": "spring", "title": "contextual proximity", "to": "visitcontroller.java", "width": 0.5}, {"from": "spring", "title": "contextual proximity", "to": "welcomecontroller.java", "width": 0.5}, {"from": "spring-petclinic", "title": "contextual proximity", "to": "springdatawebautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "spring-petclinic", "title": "contextual proximity", "to": "transaction", "width": 3.25}, {"from": "spring-petclinic", "title": "contextual proximity", "to": "validation", "width": 3.25}, {"from": "spring-petclinic", "title": "contextual proximity", "to": "webproperties", "width": 3.25}, {"from": "springdatawebproperties", "title": "Both properties are defined in the \u0027build/generated/aotSources\u0027 directory for Spring Data Web and Spring Boot Autoconfigure.", "to": "springdatawebproperties", "width": 1.0}, {"from": "springframework", "title": "contextual proximity", "to": "src", "width": 0.5}, {"from": "springframework", "title": "contextual proximity", "to": "system", "width": 0.75}, {"from": "springframework", "title": "contextual proximity", "to": "test", "width": 0.5}, {"from": "springframework", "title": "contextual proximity", "to": "vet", "width": 1.25}, {"from": "src", "title": "contextual proximity", "to": "system", "width": 1.5}, {"from": "src", "title": "contextual proximity", "to": "test", "width": 1.0}, {"from": "src", "title": "contextual proximity", "to": "vet", "width": 2.5}, {"from": "src", "title": "contextual proximity", "to": "vet.java", "width": 0.5}, {"from": "src", "title": "contextual proximity", "to": "vetcontroller.java", "width": 0.5}, {"from": "src", "title": "contextual proximity", "to": "vetrepository.java", "width": 0.5}, {"from": "src", "title": "contextual proximity", "to": "vets.java", "width": 0.5}, {"from": "src", "title": "contextual proximity", "to": "visit", "width": 0.5}, {"from": "src", "title": "contextual proximity", "to": "visitcontroller.java", "width": 0.5}, {"from": "src", "title": "contextual proximity", "to": "welcomecontroller.java", "width": 0.5}, {"from": "sslautoconfiguration__beandefinitions.java", "title": "both are related to SSL (Secure Sockets Layer) configuration and AutoConfiguration", "to": "sslproperties__beandefinitions.java", "width": 1.0}, {"from": "system", "title": "contextual proximity", "to": "test", "width": 1.5}, {"from": "system", "title": "contextual proximity", "to": "vet", "width": 3.75}, {"from": "system", "title": "contextual proximity", "to": "vet.java", "width": 0.75}, {"from": "system", "title": "contextual proximity", "to": "vetcontroller.java", "width": 0.75}, {"from": "system", "title": "contextual proximity", "to": "vetrepository.java", "width": 0.75}, {"from": "system", "title": "contextual proximity", "to": "vets.java", "width": 0.75}, {"from": "system", "title": "contextual proximity", "to": "visit", "width": 0.75}, {"from": "system", "title": "contextual proximity", "to": "visitcontroller.java", "width": 0.75}, {"from": "system", "title": "contextual proximity", "to": "welcomecontroller.java", "width": 0.75}, {"from": "taskexecutionautoconfiguration__beandefinitions.java", "title": "both are related to the execution of tasks using Spring Boot\u0027s Task Execution", "to": "taskexecutionproperties__beandefinitions.java", "width": 1.0}, {"from": "taskexecutorconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "taskschedulingautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "taskexecutorconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "taskschedulingproperties__beandefinitions.java", "width": 0.5}, {"from": "taskexecutorconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "templateengineconfigurations__beandefinitions.java", "width": 1.0}, {"from": "taskexecutorconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "thymeleafautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "taskexecutorconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "thymeleafproperties__beandefinitions.java", "width": 0.5}, {"from": "taskexecutorconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "transactionautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "taskexecutorconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "transactionmanagercustomizationautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "taskexecutorconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "transactionproperties__beandefinitions.java", "width": 0.5}, {"from": "taskschedulingautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "templateengineconfigurations__beandefinitions.java", "width": 0.5}, {"from": "taskschedulingautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "transactionautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "taskschedulingproperties__beandefinitions.java", "title": "contextual proximity", "to": "templateengineconfigurations__beandefinitions.java", "width": 0.5}, {"from": "taskschedulingproperties__beandefinitions.java", "title": "contextual proximity", "to": "transactionautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "templateengineconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "thymeleafautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "templateengineconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "thymeleafproperties__beandefinitions.java", "width": 0.5}, {"from": "templateengineconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "transactionautoconfiguration__beandefinitions.java", "width": 1.0}, {"from": "templateengineconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "transactionmanagercustomizationautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "templateengineconfigurations__beandefinitions.java", "title": "contextual proximity", "to": "transactionproperties__beandefinitions.java", "width": 0.5}, {"from": "test", "title": "contextual proximity", "to": "vet", "width": 2.5}, {"from": "test", "title": "contextual proximity", "to": "vet.java", "width": 0.5}, {"from": "test", "title": "contextual proximity", "to": "vetcontroller.java", "width": 0.5}, {"from": "test", "title": "contextual proximity", "to": "vetrepository.java", "width": 0.5}, {"from": "test", "title": "contextual proximity", "to": "vets.java", "width": 0.5}, {"from": "test", "title": "contextual proximity", "to": "visit", "width": 0.5}, {"from": "test", "title": "contextual proximity", "to": "visitcontroller.java", "width": 0.5}, {"from": "test", "title": "contextual proximity", "to": "welcomecontroller.java", "width": 0.5}, {"from": "thymeleafautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "transactionautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "thymeleafproperties__beandefinitions.java", "title": "contextual proximity", "to": "transactionautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "transactionautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "transactionmanagercustomizationautoconfiguration__beandefinitions.java", "width": 0.5}, {"from": "transactionautoconfiguration__beandefinitions.java", "title": "contextual proximity", "to": "transactionproperties__beandefinitions.java", "width": 0.5}, {"from": "vet", "title": "contextual proximity", "to": "vet.java", "width": 1.25}, {"from": "vet", "title": "contextual proximity", "to": "vetcontroller.java", "width": 1.25}, {"from": "vet", "title": "contextual proximity", "to": "vetrepository.java", "width": 1.25}, {"from": "vet", "title": "contextual proximity", "to": "vets.java", "width": 1.25}, {"from": "vet", "title": "contextual proximity", "to": "visit", "width": 1.25}, {"from": "vet", "title": "contextual proximity", "to": "visitcontroller.java", "width": 1.25}, {"from": "vet", "title": "contextual proximity", "to": "welcomecontroller.java", "width": 1.25}, {"from": "vet", "title": "The file path \u0027petclinic/src/test/java/org/springframework/samples/petclinic/vet/VetTests.java\u0027 and the interface \u0027Vet\u0027 are both related to vet-related functionality in the petclinic application.", "to": "vettests", "width": 1.0}, {"from": "vetcontroller", "title": "The file path \u0027petclinic/src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java\u0027 and the class \u0027VetController\u0027 are both related to vet-related functionality in the petclinic application.", "to": "vetcontrollertests", "width": 1.0}, {"from": "visitcontroller", "title": "The file path \u0027petclinic/src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java\u0027 and the class \u0027VisitController\u0027 are both related to visit-related functionality in the petclinic application.", "to": "visitcontrollertests", "width": 1.0}, {"from": "webmvcendpointmanagementcontextconfiguration", "title": "WebMvcEndpointManagementContextConfiguration and WebEndpointAutoConfiguration are both auto-configuration classes related to endpoints in Spring Boot\u0027s actuate module.", "to": "webendpointautoconfiguration", "width": 1.0}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": true,
+        "filter": [
+            "physics"
+        ]
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "forceAtlas2Based": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.015,
+            "damping": 0.4,
+            "gravitationalConstant": -31,
+            "springConstant": 0.08,
+            "springLength": 100
+        },
+        "solver": "forceAtlas2Based",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+                  // if this network requires displaying the configure window,
+                  // put it in its div
+                  options.configure["container"] = document.getElementById("config");
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+                    network.on("selectNode", neighbourhoodHighlight);
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

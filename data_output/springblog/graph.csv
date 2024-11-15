@@ -1,0 +1,417 @@
+node_1|node_2|edge|chunk_id
+bootstrappaginator|$|jQuery is used to initialize the BootstrapPaginator class, which is a custom pagination component for Bootstrap. The $ symbol represents jQuery itself.|e5746b7a5e4d42d88a08779430e1781a
+element|bootstrappaginator|The constructor of the BootstrapPaginator class takes an element as one of its arguments, which is the HTML element that contains the pagination component.|e5746b7a5e4d42d88a08779430e1781a
+options|bootstrappaginator|The constructor also accepts options as an argument. These options can be used to customize the behavior of the pagination component, such as specifying the major version of Bootstrap being used.|e5746b7a5e4d42d88a08779430e1781a
+version|bootstrappaginator|If the user is using Bootstrap version 2 or higher, they can specify the major version via the 'bootstrapMajorVersion' option. This information helps to determine whether certain HTML elements are required for the pagination component.|e5746b7a5e4d42d88a08779430e1781a
+id|bootstrappaginator|The constructor also retrieves the 'id' attribute of the HTML element that contains the pagination component. This is likely used to uniquely identify the pagination element within the page.|e5746b7a5e4d42d88a08779430e1781a
+version|bootstrappaginator/element|If the user is using Bootstrap version 2, then the HTML element that contains the pagination component must be a 'div' element. This information is used to ensure compatibility with the version of Bootstrap being used.|e5746b7a5e4d42d88a08779430e1781a
+version|bootstrappaginator/element|If the user is using Bootstrap version 3, then the HTML element that contains the pagination component must be an 'ul' element. This information is used to ensure compatibility with the version of Bootstrap being used.|e5746b7a5e4d42d88a08779430e1781a
+pages|this.getpages()|Extracted ontology term 'pages' is related to the function call 'this.getPages()'|5ac721b57709423bb86bf744d992249c
+first|show(pages.first)|Extracted ontology term 'first' is related to the function call 'show(pages.first)' when the context mentions this.|5ac721b57709423bb86bf744d992249c
+last|show(pages.last)|Extracted ontology term 'last' is related to the function call 'show(pages.last)' when the context mentions this.|5ac721b57709423bb86bf744d992249c
+page-clicked|[event, type, page]|Extracted ontology term 'page-clicked' is related to the event argument '[event, type, page]' when triggered in the context of this.|5ac721b57709423bb86bf744d992249c
+page|currenttarget.bootstrappaginator('show', page)|Extracted ontology term 'page' is related to the function call 'currentTarget.bootstrapPaginator('show', page)' when the context mentions currentTarget and this.|5ac721b57709423bb86bf744d992249c
+first|bootstrappaginator('showfirst')|Extracted ontology term 'first' is related to the function call 'bootstrapPaginator('showFirst')' when the context mentions currentTarget and this.|5ac721b57709423bb86bf744d992249c
+prev|bootstrappaginator('showprevious')|Extracted ontology term 'prev' is related to the function call 'bootstrapPaginator('showPrevious')' when the context mentions currentTarget and this.|5ac721b57709423bb86bf744d992249c
+next|bootstrappaginator('shownext')|Extracted ontology term 'next' is related to the function call 'bootstrapPaginator('showNext')' when the context mentions currentTarget and this.|5ac721b57709423bb86bf744d992249c
+last|bootstrappaginator('showlast')|Extracted ontology term 'last' is related to the function call 'bootstrapPaginator('showLast')' when the context mentions currentTarget and this.|5ac721b57709423bb86bf744d992249c
+containerclass|getvaluefromoption(this.options.containerclass, this.$element)|Extracted ontology term 'containerClass' is related to the function call 'getValueFromOption(this.options.containerClass, this.$element)' when the context mentions this.|5ac721b57709423bb86bf744d992249c
+size|"this.options.size || 'normal'"|"Extracted ontology term 'size' is related to the expression 'this.options.size || 'normal'"|5ac721b57709423bb86bf744d992249c
+alignment|"this.options.alignment || 'left'"|"Extracted ontology term 'alignment' is related to the expression 'this.options.alignment || 'left'"|5ac721b57709423bb86bf744d992249c
+pages|this.getpages()|Extracted ontology term 'pages' is related to the function call 'this.getPages()'|5ac721b57709423bb86bf744d992249c
+pagination|size|is a type of pagination with a specific size|8abdb79a66154a6db19b42328ddf8a82
+pagination|class'|has a class called 'pagination'|8abdb79a66154a6db19b42328ddf8a82
+pagination|containerclass|can have a container class|8abdb79a66154a6db19b42328ddf8a82
+bootstrapmajorversion|pagination|is used in pagination with a specific version of Bootstrap|8abdb79a66154a6db19b42328ddf8a82
+size|large|can have a size called 'large'|8abdb79a66154a6db19b42328ddf8a82
+size|small|can have a size called 'small'|8abdb79a66154a6db19b42328ddf8a82
+size|mini|can have a size called 'mini'|8abdb79a66154a6db19b42328ddf8a82
+alignment|pagination|is associated with the pagination's alignment|8abdb79a66154a6db19b42328ddf8a82
+alignment|center|can have an alignment called 'center'|8abdb79a66154a6db19b42328ddf8a82
+alignment|right|can have an alignment called 'right'|8abdb79a66154a6db19b42328ddf8a82
+containerclass|listcontainer|is associated with the container's class|8abdb79a66154a6db19b42328ddf8a82
+listcontainer|pagination|is a container for pagination items|8abdb79a66154a6db19b42328ddf8a82
+listcontainerclass|listcontainer|can have a class called 'listContainerClass'|8abdb79a66154a6db19b42328ddf8a82
+type|first|is the type of pagination item|8abdb79a66154a6db19b42328ddf8a82
+first|page|represents the first page in pagination|8abdb79a66154a6db19b42328ddf8a82
+prev|page|represents the previous page in pagination|8abdb79a66154a6db19b42328ddf8a82
+next|page|represents the next page in pagination|8abdb79a66154a6db19b42328ddf8a82
+last|page|represents the last page in pagination|8abdb79a66154a6db19b42328ddf8a82
+itemcontainer|li|is a type of container for storing items.|cb88a7de76834b3587e60a42e7e8b61b
+itemcontent|a|is a type of content that is contained in an item.|cb88a7de76834b3587e60a42e7e8b61b
+text|itemcontent|is the content displayed within an item.|cb88a7de76834b3587e60a42e7e8b61b
+title|itemcontainer|is a type of label that is associated with an item container.|cb88a7de76834b3587e60a42e7e8b61b
+type|first|is a type of page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+type|last|is also a type of page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+type|prev|is another type of page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+type|next|is yet another type of page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+page|first|is a numerical identifier that distinguishes between different instances of pages or sections within the context.|cb88a7de76834b3587e60a42e7e8b61b
+page|last|is another numerical identifier that also distinguishes between different instances of pages or sections within the context.|cb88a7de76834b3587e60a42e7e8b61b
+page|prev|is yet another numerical identifier that helps in identifying previous pages or sections within the context.|cb88a7de76834b3587e60a42e7e8b61b
+page|next|is a final numerical identifier that distinguishes between next pages or sections within the context.|cb88a7de76834b3587e60a42e7e8b61b
+shouldshowpage|first|indicates whether the first page or section should be displayed in the context or not.|cb88a7de76834b3587e60a42e7e8b61b
+shouldshowpage|last|similarly, indicates whether the last page or section should be displayed in the context or not.|cb88a7de76834b3587e60a42e7e8b61b
+shouldshowpage|prev|indicates whether the previous page or section should be displayed in the context or not.|cb88a7de76834b3587e60a42e7e8b61b
+shouldshowpage|next|finally, indicates whether the next page or section should be displayed in the context or not.|cb88a7de76834b3587e60a42e7e8b61b
+itemtexts|first|represents the text associated with the first page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+itemtexts|last|similarly, represents the text associated with the last page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+itemtexts|prev|represents the text associated with the previous page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+itemtexts|next|finally, represents the text associated with the next page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+tooltiptitles|first|represents the title of the tooltip that is displayed when the mouse cursor is over the first page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+tooltiptitles|last|similarly, represents the title of the tooltip that is displayed when the mouse cursor is over the last page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+tooltiptitles|prev|represents the title of the tooltip that is displayed when the mouse cursor is over the previous page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+tooltiptitles|next|finally, represents the title of the tooltip that is displayed when the mouse cursor is over the next page or section within the context.|cb88a7de76834b3587e60a42e7e8b61b
+setcurrentpage|this|belongs to|cb61e9e2113c4af0a390b2e94bae8504
+itemcontainerclass|itemcontainer|is assigned to|cb61e9e2113c4af0a390b2e94bae8504
+type|this.onpageitemclicked|is passed as argument|cb61e9e2113c4af0a390b2e94bae8504
+pageurl|"itemcontent.attr(""href"")"|"is used to set ""href"" attribute"|cb61e9e2113c4af0a390b2e94bae8504
+bootstraptooltipoptions|tooltipopts|is extended with|cb61e9e2113c4af0a390b2e94bae8504
+title|"itemcontent.attr(""title"") || itemcontent.tooltip()"|"is set as ""title"" attribute or used to initialize tooltip"|cb61e9e2113c4af0a390b2e94bae8504
+securityconfig|springblog|SpringBlog is a package containing the given context.|dc821b859276417d9cfea73a98beae29
+springblog|com.raysmond.blog|com.raysmond.blog is a subpackage of SpringBlog.|dc821b859276417d9cfea73a98beae29
+securityconfig|springbootapplication|SpringBootApplication is an interface implemented by SecurityConfig, which allows it to be automatically detected as a Spring Boot application.|dc821b859276417d9cfea73a98beae29
+securityconfig|configuration|SecurityConfig is annotated with the @Configuration annotation, allowing it to be processed by Spring's ConfigurationClassPostProcessor.|dc821b859276417d9cfea73a98beae29
+securityconfig|websecurityconfigureradapter|SecurityConfig extends WebSecurityConfigurerAdapter, providing a default implementation for configuring Spring Security.|dc821b859276417d9cfea73a98beae29
+securityconfig|authenticationmanagerbuilder|SecurityConfig uses AuthenticationManagerBuilder to configure the authentication manager, which is responsible for authenticating users.|dc821b859276417d9cfea73a98beae29
+userservice|securityconfig|SecurityConfig injects userService into itself, allowing it to authenticate users using the userService class.|dc821b859276417d9cfea73a98beae29
+passwordencoder|springblog|PasswordEncoder is used by SpringBootApplication to encode passwords securely within the SpringBlog package.|dc821b859276417d9cfea73a98beae29
+standardpasswordencoder|passwordencoder|StandardPasswordEncoder is a specific implementation of PasswordEncoder, which is used by default in Spring Boot applications.|dc821b859276417d9cfea73a98beae29
+remembermeservices|securityconfig|SecurityConfig creates an instance of rememberMeServices and configures it with a unique key and the userService class.|dc821b859276417d9cfea73a98beae29
+addcorsmappings|registry|is a method of CorsRegistry class|c0275fb9d18c4c4a8522599ba0aab3b3
+env.acceptsprofiles|if statement|is used to check the environment profile in conditional statements|c0275fb9d18c4c4a8522599ba0aab3b3
+localhost:8080|allowedorigins|specifies the allowed origins or domains for cross-origin requests|c0275fb9d18c4c4a8522599ba0aab3b3
+*|allowedmethods|allows all HTTP methods as permitted by the server configuration|c0275fb9d18c4c4a8522599ba0aab3b3
+*|allowedheaders|allows all headers to be sent in cross-origin requests|c0275fb9d18c4c4a8522599ba0aab3b3
+true|allowcredentials|enables or disables the sending of credentials (such as cookies) with cross-domain requests|c0275fb9d18c4c4a8522599ba0aab3b3
+3600|maxage|specifies the maximum amount of time in seconds that the preflight response is cached by the browser|c0275fb9d18c4c4a8522599ba0aab3b3
+pygmentsservice|springblog|is a class defined in com.raysmond.blog.support.web package under SpringBlog project|c0275fb9d18c4c4a8522599ba0aab3b3
+pythoninterpreter|pygmentsservice|is used for syntax highlighting in PygmentsService class|c0275fb9d18c4c4a8522599ba0aab3b3
+pygmentsservice|syntaxhighlightservice|implements SyntaxHighlightService|1c029ceddd00401490c0494975f72dc0
+pythoninterpreter|content|set('code', content)|1c029ceddd00401490c0494975f72dc0
+result|pygmentsservice|get('result', String.class)|1c029ceddd00401490c0494975f72dc0
+pygmentsverbatimserializer|instance|INSTANCE = new PygmonsVerbatimSerializer()|1c029ceddd00401490c0494975f72dc0
+syntaxhighlightservice|pygmentsverbatimserializer|syntaxHighlightService = new PygmonsService()|1c029ceddd00401490c0494975f72dc0
+viewhelper|appsetting|is a constructor parameter of ViewHelper|80e2bfd5a8bd4b75a33c07e9da6d974c
+starttime|viewhelper|is a member variable of ViewHelper|80e2bfd5a8bd4b75a33c07e9da6d974c
+getresponsetime|viewhelper|is a method of ViewHelper that returns the current time in milliseconds since Unix epoch minus the startTime|80e2bfd5a8bd4b75a33c07e9da6d974c
+starttime|viewhelper|is set by the constructor of ViewHelper using the appSetting argument|80e2bfd5a8bd4b75a33c07e9da6d974c
+date_format|viewhelper|is a class variable of type DateFormat in ViewHelper|80e2bfd5a8bd4b75a33c07e9da6d974c
+getformatteddate|viewhelper|is a method that formats the given Date or ZonedDateTime using the respective formatter based on whether it is null or not|80e2bfd5a8bd4b75a33c07e9da6d974c
+date_format_month_day|viewhelper|is a class variable of type SimpleDateFormat in ViewHelper that formats the date as month and day only|80e2bfd5a8bd4b75a33c07e9da6d974c
+metatitle|viewhelper|is a method that concatenates the title and site name with spaces in between|80e2bfd5a8bd4b75a33c07e9da6d974c
+getapplicationenv|viewhelper|is a method to get the application environment|80e2bfd5a8bd4b75a33c07e9da6d974c
+setapplicationenv|viewhelper|is a setter method for setting the application environment|80e2bfd5a8bd4b75a33c07e9da6d974c
+message_attribute|message|is a class variable of type String in Message that represents the name of the flash attribute used to store messages in web contexts|80e2bfd5a8bd4b75a33c07e9da6d974c
+message|message|is a constructor argument and a member variable of type String in Message representing the message to be displayed|80e2bfd5a8bd4b75a33c07e9da6d974c
+type|message|is a constructor argument and a member variable of type Type in Message that represents the type of message|80e2bfd5a8bd4b75a33c07e9da6d974c
+adderrorattribute|message|In this method, a message with a danger type is added to either RedirectAttributes or Model using the addAttribute method. The Message object contains both the message string and its associated type (danger). The args parameter allows for additional dynamic information to be included in the message.|d11b7fc349d545b8bb29b29e516beccb
+addinfoattribute|message|This method is similar to addErrorAttribute, but the Message object's type is set to INFO instead of DANGER. The args parameter still allows for dynamic information to be included in the message.|d11b7fc349d545b8bb29b29e516beccb
+addwarningattribute|message|This method adds a warning Message object to either RedirectAttributes or Model, using the addAttribute method. The args parameter allows for additional dynamic information to be included in the message.|d11b7fc349d545b8bb29b29e516beccb
+addsuccessattribute|model|In this method, a success Message object is added directly to Model using the addAttribute method. The args parameter still allows for dynamic information to be included in the message.|d11b7fc349d545b8bb29b29e516beccb
+adderrorattribute|model|This method adds a danger Message object directly to Model using the addAttribute method. The args parameter still allows for dynamic information to be included in the message.|d11b7fc349d545b8bb29b29e516beccb
+addinfoattribute|model|This method adds an INFO Message object directly to Model using the addAttribute method. The args parameter still allows for dynamic information to be included in the message.|d11b7fc349d545b8bb29b29e516beccb
+addwarningattribute|model|This method adds a warning Message object directly to Model using the addAttribute method. The args parameter still allows for dynamic information to be included in the message.|d11b7fc349d545b8bb29b29e516beccb
+message|danger|The danger type is a specific level of severity for error messages, allowing them to be distinguished from other types of messages. The Message object contains both the message string and its associated type.|d11b7fc349d545b8bb29b29e516beccb
+message|info|The INFO type is a less severe level of severity for informational messages, again allowing them to be distinguished from other types of messages. The Message object contains both the message string and its associated type.|d11b7fc349d545b8bb29b29e516beccb
+message|warning|The warning type is a less severe level of severity for error messages, indicating that the error may be recoverable. The Message object contains both the message string and its associated type.|d11b7fc349d545b8bb29b29e516beccb
+addattribute|redirectattributes|This method adds a flash attribute to RedirectAttributes, which is a key-value map used to pass data between the server and client during redirection.|d11b7fc349d545b8bb29b29e516beccb
+addattribute|model|This method adds an attribute directly to Model, which is a JavaBeans component used for request processing.|d11b7fc349d545b8bb29b29e516beccb
+pegdownmarkdownservice|pegdown|The class PegDownMarkdownService has a private field called pegdown, which is an instance of the PegDownProcessor.|0b3e3c5ea7c14053b438e8435f25e9a0
+pegdown|extensions.all ^ extensions.extanchorlinks|The constructor of PegDownMarkdownService creates a new PegDownProcessor with the value of Extensions.ALL ^ Extensions.EXTANCHORLINKS passed as an argument.|0b3e3c5ea7c14053b438e8435f25e9a0
+flexmarkmarkdownservice|java.util.arrays|The class FlexmarkMarkdownService uses the Arrays class to do something, although it's not explicitly mentioned in this context.|0b3e3c5ea7c14053b438e8435f25e9a0
+flexmarkmarkdownservice|markdownservice|extends MarkdownService interface|35867d738fbd48959acf8d22302099d1
+com.raysmond.blog.models.setting|package|is a part of package com.raysmond.blog.models|35867d738fbd48959acf8d22302099d1
+com.raysmond.blog.support.web.impl|flexmarkmarkdownservice|is implemented in the class FlexmarkMarkdownService|35867d738fbd48959acf8d22302099d1
+parser|mutabledataset|takes MutableDataSet as an argument|35867d738fbd48959acf8d22302099d1
+tablesextension|arrays.aslist()|is added to Arrays.asList() in the options parameter of FlexmarkMarkdownService's constructor|35867d738fbd48959acf8d22302099d1
+autolinkextension|arrays.aslist()|is added to Arrays.asList() in the options parameter of FlexmarkMarkdownService's constructor|35867d738fbd48959acf8d22302099d1
+strikethroughextension|arrays.aslist()|is added to Arrays.asList() in the options parameter of FlexmarkMarkdownService's constructor|35867d738fbd48959acf8d22302099d1
+htmlrenderer.soft_break|// uncomment to convert soft-breaks to hard breaks|is commented out in the options parameter of FlexmarkMarkdownService's constructor|35867d738fbd48959acf8d22302099d1
+parser|parser.parse(content)|parses the content using Parser in FlexmarkMarkdownService's renderToHtml method|35867d738fbd48959acf8d22302099d1
+htmlrenderer|renderer.render(document)|renders the document using HtmlRenderer in FlexmarkMarkdownService's renderToHtml method|35867d738fbd48959acf8d22302099d1
+setting|_key|The Setting class has a private String member variable called key, which is unique and required.|cc58ad1740c74f259770ba8bfaec2e7f
+setting|_value|The Setting class has a private Serializable member variable called value, which can hold any serializable data.|cc58ad1740c74f259770ba8bfaec2e7f
+tag|name|The Tag class has a private String member variable called name, which is required and unique.|cc58ad1740c74f259770ba8bfaec2e7f
+post|tags|"The Post class has a private List of Tags called tags, which are loaded lazily using FetchType.LAZY and mappedBy = ""tags""."|cc58ad1740c74f259770ba8bfaec2e7f
+user|posts|A User can have multiple Posts, and a Post can be associated with one User through the 'posts' field in the User entity|f4ca026a089249b99d26ee9c4c810aac
+user|email|Each User is uniquely identified by an email address, which is stored in the 'email' field of the User entity|f4ca026a089249b99d26ee9c4c810aac
+user|password|Each User has a password, which is stored in the 'password' field of the User entity and should be kept secure|f4ca026a089249b99d26ee9c4c810aac
+user|role|Each User can have an assigned role, which is either 'ADMIN' or 'USER', and is stored in the 'role' field of the User entity|f4ca026a089249b99d26ee9c4c810aac
+post|user|Each Post can be associated with one User, who is responsible for creating or publishing the content, through the 'user' field in the Post entity|f4ca026a089249b99d26ee9c4c810aac
+basemodel|abstract base model class|is a type of model class used for entities, and is inherited by other entity classes to provide common functionality such as timestamps for creation and update times.|cfba6265f92148fdbd7b2cd4ae41a736
+long|long|are both data types used to store large integer values in Java.|cfba6265f92148fdbd7b2cd4ae41a736
+@id|@generatedvalue|are both annotations used for database mapping in Hibernate, with @Id indicating a primary key and @GeneratedValue generating unique IDs automatically.|cfba6265f92148fdbd7b2cd4ae41a736
+@column|@mappedsuperclass|are both annotations used for database mapping in Hibernate, with @Column specifying column attributes and @MappedSuperclass denoting a superclass that is mapped.|cfba6265f92148fdbd7b2cd4ae41a736
+zoneddatetime|createdat|is a Java class used for storing dates and times with time zones, while CreatedAt is a variable representing the date and time of creation.|cfba6265f92148fdbd7b2cd4ae41a736
+zoneddatetime|updatedat|similarly represents the updated date and time in this model.|cfba6265f92148fdbd7b2cd4ae41a736
+prepersist|preupdate|are both annotations used to execute code before persisting or updating a record, respectively.|cfba6265f92148fdbd7b2cd4ae41a736
+post|user|A post is associated with a user.|25b2b36233db4f1b8f11969e1cdf88df
+post|title|A post has a title.|25b2b36233db4f1b8f11969e1cdf88df
+content|post|A post has content.|25b2b36233db4f1b8f11969e1cdf88df
+renderedcontent|post|The rendered version of a post's content is associated with the post.|25b2b36233db4f1b8f11969e1cdf88df
+summary|post|A post has a summary.|25b2b36233db4f1b8f11969e1cdf88df
+renderedsummary|post|The rendered version of a post's summary is associated with the post.|25b2b36233db4f1b8f11969e1cdf88df
+posttype|page|Enum constant PAGE of PostType represents a type of post in the blog application.|ed52eba161d24181835126b1de80228f
+posttype|post|Enum constant POST of PostType represents a type of post in the blog application.|ed52eba161d24181835126b1de80228f
+postformat|html|Enum constant HTML of PostFormat represents a format for displaying a post.|ed52eba161d24181835126b1de80228f
+postformat|markdown|Enum constant MARKDOWN of PostFormat represents a format for storing and editing posts.|ed52eba161d24181835126b1de80228f
+poststatus|draft|Enum constant DRAFT of PostStatus represents the status of a post that has not been published yet.|ed52eba161d24181835126b1de80228f
+poststatus|published|Enum constant PUBLISHED of PostStatus represents the status of a post that has already been published.|ed52eba161d24181835126b1de80228f
+notfoundexception|httpstatus|The NotFoundException is a runtime exception that extends HttpStatus.|ae075027c4634a8ab89c9eaf4776e0c5
+notfoundexception|springbootapplication|The NotFoundException is used to handle not found errors in SpringBootApplications.|ae075027c4634a8ab89c9eaf4776e0c5
+springbootapplication|controlleradvice|Both ControllerAdvice and SpringBootApplication are annotations used in SpringBootApplications.|ae075027c4634a8ab89c9eaf4776e0c5
+exceptionhandlercontroller|springbootapplication|ExceptionHandlerController is a class that extends SpringBootApplication.|ae075027c4634a8ab89c9eaf4776e0c5
+httpservletrequest|modelandview|The HttpServletRequest class can be used to obtain information about the request being made, while the ModelAndView class is used to pass data to the view.|ae075027c4634a8ab89c9eaf4776e0c5
+httpstatus|notfoundexception|The HttpStatus class provides constants for HTTP status codes, and the NotFoundException class is used to handle not found errors in SpringBootApplications that extend HttpStatus.|ae075027c4634a8ab89c9eaf4776e0c5
+springbootapplication|exceptionhandlercontroller|Both SpringBootApplication and ExceptionHandlerController are parts of a SpringBootApplication.|ae075027c4634a8ab89c9eaf4776e0c5
+exception|httpservletrequest|The exception is raised in the context of a request made by the client. The HttpServletRequest object provides information about the request made by the client.|ec0a318fdade48ad806ade9eaa5fe8c5
+exception|exception|The exception class used to handle exceptional cases in this context is Exception.|ec0a318fdade48ad806ade9eaa5fe8c5
+model|modelandview|In this context, the ModelAndView object is used to pass data between the controller and view. It is a centralized mechanism for passing data between these two layers in Spring MVC.|ec0a318fdade48ad806ade9eaa5fe8c5
+httpservletrequest|requesturi|The requestURI property of HttpServletRequest is used to obtain the requested resource from the client.|ec0a318fdade48ad806ade9eaa5fe8c5
+exception|throwables.getrootcause(exception).getmessage()|In this context, the getRootCause() method of Throwables class is used to identify the root cause of an exception chain. The message property of the identified exception is then accessed.|ec0a318fdade48ad806ade9eaa5fe8c5
+httpservletrequest|getrequesturi()|The getRequestURI() method of HttpServletRequest class is used to retrieve the requested resource from the client.|ec0a318fdade48ad806ade9eaa5fe8c5
+adminusercontroller|springblog|AdminUserController is a controller in the SpringBlog project.|3b702c25d93043fe8d1eaf18b60b50df
+userservice|adminusercontroller|AdminUserController is dependent on UserService to perform user-related tasks.|3b702c25d93043fe8d1eaf18b60b50df
+userrepository|userservice|UserService uses UserRepository to interact with the database and retrieve or save users.|3b702c25d93043fe8d1eaf18b60b50df
+user|model|The user object is passed as a model attribute to the profile view, allowing for display of user information.|3b702c25d93043fe8d1eaf18b60b50df
+currentuser()|userservice|The currentUser() method is used by UserController to retrieve the currently logged-in user from UserService.|3b702c25d93043fe8d1eaf18b60b50df
+admincontroller|springblog|AdminController is a part of SpringBlog|471119649c124188925d378081602fef
+com.raysmond.blog.admin.controllers|com.raysmond.blog|com.raysmond.blog.admin.controllers is a part of com.raysmond.blog|471119649c124188925d378081602fef
+admincontroller|springblog|SpringBlog provides functionality to AdminController|471119649c124188925d378081602fef
+com.raysmond.blog.forms.settingsform|admincontroller|AdminController uses com.raysmond.blog.forms.SettingsForm|471119649c124188925d378081602fef
+appsetting|admincontroller|AdminController interacts with AppSetting|471119649c124188925d378081602fef
+messagehelper|admincontroller|AdminController uses MessageHelper|471119649c124188925d378081602fef
+dtoutil|admincontroller|AdminController uses DTOUtil|471119649c124188925d378081602fef
+model|admincontroller|AdminController interacts with Model|471119649c124188925d378081602fef
+errors|admincontroller|AdminController uses Errors|471119649c124188925d378081602fef
+admincontroller|controller|AdminController is a type of Controller|b97406f658714e33b20219781b14c47c
+appsetting|settingsform|AppSetting and SettingsForm are related as AppSetting is being mapped to SettingsForm using DTOUtil.map(appSetting, SettingsForm.class)|b97406f658714e33b20219781b14c47c
+model|settingsform|Model is being used to pass settingsForm to the view|b97406f658714e33b20219781b14c47c
+settingsform|sitename|siteName is a property of SettingsForm|b97406f658714e33b20219781b14c47c
+settingsform|siteslogan|siteSlogan is a property of SettingsForm|b97406f658714e33b20219781b14c47c
+settingsform|pagesize|pageSize is a property of SettingsForm|b97406f658714e33b20219781b14c47c
+errors|settingsform|Errors is being used to check if errors exist in settingsForm before updating AppSetting|b97406f658714e33b20219781b14c47c
+create|post|In this method, a new Post object is created using the information from the PostForm.|510ac613998340b2addd079f35413b75
+post|http request method|This method handles POST requests to create a new post.|510ac613998340b2addd079f35413b75
+postservice.createpost(post)|postservice.createpost()|The Post object is passed to the createPost() method of the PostService class to save it to the database.|510ac613998340b2addd079f35413b75
+postrepository.findone(long)|postrepository.findone()|The findOne() method is used to retrieve the Post object from the database with the specified ID (represented by a Long data type).|510ac613998340b2addd079f35413b75
+admin/posts/new|"redirect:""/admin/posts"""|After successfully creating a new post, the user is redirected to the /admin/posts URL (represented by a string enclosed in quotes).|510ac613998340b2addd079f35413b75
+admin/posts_edit|"return ""admin/posts_edit"""|If there are errors with the form data, the user is redirected to the /admin/posts_edit URL (represented by a string enclosed in quotes).|510ac613998340b2addd079f35413b75
+user|post.setuser(userrepository.findbyemail(principal.getname()))|The user associated with the post is set using the email address of the currently logged-in user (obtained from the Principal object).|510ac613998340b2addd079f35413b75
+posttag|postservice.parsetagnames(postform.getposttags())|The list of tag names entered by the user is parsed and converted into a list of PostTag objects.|510ac613998340b2addd079f35413b75
+post|http request method|This method handles POST requests to delete an existing post.|510ac613998340b2addd079f35413b75
+long|{postid:[0-9]+}|The ID of the post being deleted is obtained from the URL path parameter (represented by a Long data type with regular expression constraints).|510ac613998340b2addd079f35413b75
+post|http request method|This method handles POST requests to update an existing post.|510ac613998340b2addd079f35413b75
+{postid:[0-9]+}|"value = ""{postid:[0-9]+}"""|The ID of the post being updated is obtained from the URL path parameter (represented by a string enclosed in quotes).|510ac613998340b2addd079f35413b75
+postform|postform postform|The PostForm object contains information about the updated post.|510ac613998340b2addd079f35413b75
+errors|errors errors|The Errors object contains information about any validation errors with the form data.|510ac613998340b2addd079f35413b75
+model|model.addattribute()|The Model object is used to add attributes (such as lists of values) to be passed to the view layer for rendering.|510ac613998340b2addd079f35413b75
+poststatus|poststatus.values()|The PostStatus class contains a list of possible statuses for posts (obtained using the values() method).|510ac613998340b2addd079f35413b75
+posttype|posttype.values()|The PostType class contains a list of possible types for posts (obtained using the values() method).|510ac613998340b2addd079f35413b75
+postformat|postformat.values()|The PostFormat class contains a list of possible formats for posts (obtained using the values() method).|510ac613998340b2addd079f35413b75
+userrepository|jparepository|extends relationship|b032cb9cdd594eb392e970c71f9e33c9
+userrepository|repository|implements relationship|b032cb9cdd594eb392e970c71f9e33c9
+tagrepository|jparepository|extends relationship|b032cb9cdd594eb392e970c71f9e33c9
+tagrepository|repository|implements relationship|b032cb9cdd594eb392e970c71f9e33c9
+settingrepository|jparepository|extends relationship|b032cb9cdd594eb392e970c71f9e33c9
+settingrepository|repository|implements relationship|b032cb9cdd594eb392e970c71f9e33c9
+user|long|data type used as primary key in User entity|b032cb9cdd594eb392e970c71f9e33c9
+tag|long|data type used as primary key in Tag entity|b032cb9cdd594eb392e970c71f9e33c9
+setting|long|data type used as primary key in Setting entity|b032cb9cdd594eb392e970c71f9e33c9
+userrepository|user|method to retrieve User by email|b032cb9cdd594eb392e970c71f9e33c9
+setting|key|The method findByKey() in class SettingRepository retrieves a Setting object by its key.|7b39762783e14d2286e43386253133e1
+post|permalink|The method findByPermalinkAndPostStatus() in class PostRepository returns a Post object with the specified permalink and post status.|7b39762783e14d2286e43386253133e1
+post|posttype|The method findAllByPostType() in class PostRepository retrieves a Page of Post objects that belong to the specified PostType.|7b39762783e14d2286e43386253133e1
+post|poststatus|The method findAllByPostTypeAndPostStatus() in class PostRepository returns a Page of Post objects with the specified PostType and post status.|7b39762783e14d2286e43386253133e1
+post|tag|The method findByTag() in class PostRepository retrieves a Page of Post objects associated with a specific tag.|7b39762783e14d2286e43386253133e1
+settingsform|sitename|is a required field in the SettingsForm class, representing the name of the website.|2e18153949f4432c9a55c6260c4d350f
+settingsform|siteslogan|is a required field in the SettingsForm class, representing the slogan or tagline of the website.|2e18153949f4432c9a55c6260c4d350f
+settingsform|pagesize|is a required integer field in the SettingsForm class, representing the number of posts displayed on each page by default.|2e18153949f4432c9a55c6260c4d350f
+settingsform|intro|is an optional string field in the SettingsForm class, representing a brief introduction or description about the website.|2e18153949f4432c9a55c6260c4d350f
+settingsform|pictureurl|is an optional string field in the SettingsForm class, representing the URL of an image associated with the website.|2e18153949f4432c9a55c6260c4d350f
+userform|password|is a required string field in the UserForm class, representing the current password for authentication purposes.|2e18153949f4432c9a55c6260c4d350f
+userform|newpassword|is an optional string field in the UserForm class, representing the new password to be set by the user during password change or reset operations.|2e18153949f4432c9a55c6260c4d350f
+post|format|can take one of the following integer values: PostFormat.HTML (1) or PostFormat.TEXT (0), representing the format of the post content.|2e18153949f4432c9a55c6260c4d350f
+post|status|can take one of the following integer values: PostStatus.DRAFT (-1) or PostStatus.PUBLISHED (0), representing the status of the post.|2e18153949f4432c9a55c6260c4d350f
+post|type|can take one of the following integer values: PostType.PAGE (-1) or PostType.POST (0), representing the type of the post.|2e18153949f4432c9a55c6260c4d350f
+postform|dtoutil|is a type of class used for data transfer in web applications. Both classes are used to facilitate data transfer between client and server-side applications.|cc898eae77fd4750860593fb30d58727
+modelmapper|postform|ModelMapper is a utility class used to map objects from one form to another. PostForm can be mapped to other classes using ModelMapper.|cc898eae77fd4750860593fb30d58727
+modelmapper|dtoutil|ModelMapper is also used in DTOUtil, which further emphasizes the use of ModelMapper for object mapping.|cc898eae77fd4750860593fb30d58727
+poststatus|postform|PostStatus is a nested class inside PostForm. It can be considered as a property or attribute of PostForm.|cc898eae77fd4750860593fb30d58727
+posttype|postform|Similar to PostStatus, PostType is another nested class of PostForm.|cc898eae77fd4750860593fb30d58727
+markdown|html|processes a string using MarkdownService and returns the HTML output|2f4711c7449a43b28ddeb83a6778c4b1
+com.raysmond.blog.utils.markdown|pegdownmarkdownservice|both are implementations of MarkdownService interface|2f4711c7449a43b28ddeb83a6778c4b1
+usercontroller|springbootapplication|SpringBootApplication is the main class that initializes and runs the whole application, while UserController is a controller class for handling user-related requests|2f4711c7449a43b28ddeb83a6778c4b1
+postcontroller|controller|is a type of component in Spring MVC framework.|e9a07c315879491aac3632f25c511266
+postservice|postservice|is an instance of PostService interface, provided through dependency injection mechanism.|e9a07c315879491aac3632f25c511266
+com.raysmond.blog.controllers|controller|belongs to package com.raysmond.blog.controllers in the given context.|e9a07c315879491aac3632f25c511266
+posttype|posttype|is an enumerated data type for categorizing posts based on their content.|e9a07c315879491aac3632f25c511266
+lists|guava library|belongs to Google Guava library, which is being utilized for creating List collections in the given context.|e9a07c315879491aac3632f25c511266
+maps|guava library|belongs to Google Guava library, which is being utilized for creating Map collections in the given context.|e9a07c315879491aac3632f25c511266
+notfoundexception|exception|is a custom exception class defined by the author for handling resource not found scenarios.|e9a07c315879491aac3632f25c511266
+post|model|represents a blog post, which is being used as a model object for rendering views.|e9a07c315879491aac3632f25c511266
+postcontroller|postservice|is autowired by PostController|29c39592a2a245a0932fcdafd7d7548f
+postcontroller|getarchiveposts()|method in PostController class|29c39592a2a245a0932fcdafd7d7548f
+postservice|getarchiveposts()|method in PostService interface|29c39592a2a245a0932fcdafd7d7548f
+postservice|getpublishedpostbypermalink(string)|method in PostService interface|29c39592a2a245a0932fcdafd7d7548f
+post|getid()|method to get the ID of the post|29c39592a2a245a0932fcdafd7d7548f
+post|getcreatedat()|method to get the creation date of the post|29c39592a2a245a0932fcdafd7d7548f
+map|maps.newhashmap()|a method used to initialize a new empty HashMap in Java|29c39592a2a245a0932fcdafd7d7548f
+lists|lists.newarraylist()|a method used to initialize a new empty ArrayList in Java|29c39592a2a245a0932fcdafd7d7548f
+posttype|post|a constant value representing the type of post, defined in PostController class|29c39592a2a245a0932fcdafd7d7548f
+postservice|incrementviews(long)|a method used to increment the number of views for a specific post ID|29c39592a2a245a0932fcdafd7d7548f
+posttype|type|In the context, 'postType' and 'type' are synonyms used to refer to the category or genre of a post.|5c5d642c0e0449a0b5c440584ada47cf
+model.addattribute|assignment statement|In this context, 'model.addAttribute' and 'assignment statement' are related as they both involve assigning values to variables.|5c5d642c0e0449a0b5c440584ada47cf
+posttype|post|In the context, 'postType' and 'post' have a direct relationship as they both appear in the same method call.|5c5d642c0e0449a0b5c440584ada47cf
+postservice.getposttags|tag|In this context, 'postService.getPostTags' and 'tags' have a direct relationship as they both involve accessing information about the tags associated with a post.|5c5d642c0e0449a0b5c440584ada47cf
+tagcontroller|controller|In this context, 'TagController' and 'controller' are synonyms used to refer to the component responsible for handling incoming requests related to tags.|5c5d642c0e0449a0b5c440584ada47cf
+tagservice|service|In this context, 'tagService' and 'service' have a direct relationship as they both refer to a component responsible for providing functionality related to tags.|5c5d642c0e0449a0b5c440584ada47cf
+postcontroller|controller|In the context, 'PostController' and 'controller' are synonyms used to refer to the component responsible for handling incoming requests related to posts.|5c5d642c0e0449a0b5c440584ada47cf
+postservice|service|In this context, 'postService' and 'service' have a direct relationship as they both refer to a component responsible for providing functionality related to posts.|5c5d642c0e0449a0b5c440584ada47cf
+homecontroller|com.raysmond.blog.controllers.homecontroller|is a subclass of com.raysmond.blog.controllers.HomeController and implements the java.lang.annotation.Annotation interface.|c5ab21e0c49e44fc951d82884be0a4f7
+homecontroller|com.raysmond.blog.services.appsetting|is used by HomeController in method showTag to access AppSetting object through dependency injection.|c5ab21e0c49e44fc951d82884be0a4f7
+postservice|com.raysmond.blog.services.postservice|is accessed and used by HomeController in method showTag to retrieve Post objects based on a tag.|c5ab21e0c49e44fc951d82884be0a4f7
+showtag|public string showtag(...)|is a public method of the class com.raysmond.blog.controllers.HomeController, which returns a view name for rendering.|c5ab21e0c49e44fc951d82884be0a4f7
+model|javax.servlet.jsp.pagecontext.getattribute(...)|is used to add attributes to the model in the method showTag of HomeController, such as tag, posts, page, and totalPages.|c5ab21e0c49e44fc951d82884be0a4f7
+tag|tag tag = tagservice.gettag(tagname);|is a local variable in the method showTag of HomeController used to store the Tag object retrieved from the tagService.|c5ab21e0c49e44fc951d82884be0a4f7
+posts|page<post> posts = postservice.findpostsbytag(tagname, page, appsetting.getpagesize());|is a local variable in the method showTag of HomeController used to store the Page object containing all the Post objects related to the specified tag.|c5ab21e0c49e44fc951d82884be0a4f7
+page|"model.addattribute(""page"", page + 1);"|is a local variable in the method showTag of HomeController, initialized with default value, used to pass the current page number to the view for display.|c5ab21e0c49e44fc951d82884be0a4f7
+totalpages|"model.addattribute(""totalpages"");"|is a local variable in the method showTag of HomeController used to pass the total number of pages containing related posts to the view for display.|c5ab21e0c49e44fc951d82884be0a4f7
+homecontroller|postservice|HomeController is using the postService to retrieve all published posts.|780634c24b9745e9a31a1053b346aba0
+homecontroller|appsetting|HomeController is using appSetting to get the page size for retrieving posts.|780634c24b9745e9a31a1053b346aba0
+tagservice|tagrepository|TagService is using TagRepository to find, create, delete and retrieve all tags.|780634c24b9745e9a31a1053b346aba0
+cachesettingservice|com.raysmond.blog.services.settingservice|implements SettingService|0a0e82ce359e4b00b75ca02bf34990bc
+raysmond|author|author of CacheSettingService class|0a0e82ce359e4b00b75ca02bf34990bc
+springblog|com.raysmond.blog.services.cachesettingservice|belongs to SpringBlog project|0a0e82ce359e4b00b75ca02bf34990bc
+blog|com.raysmond.blog.services.cachesettingservice|located in blog package|0a0e82ce359e4b00b75ca02bf34990bc
+monolith|src/main/java/com/raysmond/blog/services/cachesettingservice.java|path to CacheSettingService class file in monolith directory|0a0e82ce359e4b00b75ca02bf34990bc
+tag|com.raysmond.blog.models|defined in com.raysmond.blog.models package|0a0e82ce359e4b00b75ca02bf34990bc
+tagrepository|com.raysmond.blog.services.cachesettingservice|has a field named tagRepository of type TagRepository in CacheSettingService class|0a0e82ce359e4b00b75ca02bf34990bc
+deletetag|public void deletetag(tag tag)|method named deleteTag takes Tag object as argument in CacheSettingService interface|0a0e82ce359e4b00b75ca02bf34990bc
+getalltags|public list<tag> getalltags()|method named getAllTags returns a list of Tags in CacheSettingService interface|0a0e82ce359e4b00b75ca02bf34990bc
+findall|list<tag>|method findAll from TagRepository interface returns List of Tags|0a0e82ce359e4b00b75ca02bf34990bc
+settingrepository|settingrepository|field named settingRepository has a type SettingRepository in CacheSettingService class|0a0e82ce359e4b00b75ca02bf34990bc
+cacheevict|@cacheevict|annotation @CacheEvict is used to evict cache entries in CacheSettingService interface method|0a0e82ce359e4b00b75ca02bf34990bc
+cacheable|@cacheable|annotation @Cacheable is used to make a method's result cacheable in CacheSettingService interface method|0a0e82ce359e4b00b75ca02bf34990bc
+transactional|@transactional|annotation @Transactional is used for transaction management in CacheSettingService class constructor and interfaces methods|0a0e82ce359e4b00b75ca02bf34990bc
+serializable|serializable|interface Serializable used to represent serialized object data in CacheSettingService interface method get()|0a0e82ce359e4b00b75ca02bf34990bc
+userservice|userdetailsservice|UserService class implements UserDetailsService interface, which is used to load user details from the database or other data sources|aa6ae90d9ed74a32b609c5d23964f3ce
+userrepository|userservice|UserService class interacts with UserRepository to save and fetch users from the database|aa6ae90d9ed74a32b609c5d23964f3ce
+passwordencoder|userservice|UserService class injects PasswordEncoder for password encryption|aa6ae90d9ed74a32b609c5d23964f3ce
+userrepository|userservice|UserService class interacts with userRepository to fetch and save users from the database|aa6ae90d9ed74a32b609c5d23964f3ce
+constants.default_admin_email|user|User class constructor takes email and password as arguments, which can be fetched from constants for default admin user|aa6ae90d9ed74a32b609c5d23964f3ce
+securitycontextholder|authentication|Spring Security's SecurityContextHolder is a thread-local storage mechanism used to store authentication object, which contains details of the currently authenticated user|aa6ae90d9ed74a32b609c5d23964f3ce
+grantedauthority|authentication|Spring Security's Authentication class holds a list of GrantedAuthorities that represent permissions or roles granted to the user|aa6ae90d9ed74a32b609c5d23964f3ce
+simplegrantedauthority|grantedauthority|Spring Security's SimpleGrantedAuthority class implements GrantedAuthority interface for representing roles or permissions granted to the user|aa6ae90d9ed74a32b609c5d23964f3ce
+userdetailsservice|securitycontextholder|Spring Security's UserDetailsService is an interface used to load user details from the database, which can be implemented by UserService class and injected into Spring Security configuration|aa6ae90d9ed74a32b609c5d23964f3ce
+userdetails|authentication|Spring Security's Authentication class holds a UserDetails object that contains details of the currently authenticated user|aa6ae90d9ed74a32b609c5d23964f3ce
+userrepository.findbyemail(string)|getsuperuser()|getSuperUser() method checks if superuser already exists, and creates it if not by invoking UserRepository's findByEmail method with email as argument|aa6ae90d9ed74a32b609c5d23964f3ce
+settingservice|interface|Belongs to package com.raysmond.blog.services, provides methods for accessing and storing settings with keys and values.|e154ce5ce2c746c28820770c62b02bb0
+appsetting|class|Inherits from SettingService interface, contains constants representing specific settings such as SITE_NAME, SITE_SLOGAN, PAGE_SIZE. Implements private variables for these settings and provides methods to access them.|e154ce5ce2c746c28820770c62b02bb0
+site_name|setting|Represented by constant SITE_NAME in AppSetting class, is accessible through interface SettingService's get(String key) method.|e154ce5ce2c746c28820770c62b02bb0
+site_slogan|setting|Represented by constant SITE_SLOGAN in AppSetting class, is accessible through interface SettingService's get(String key) method.|e154ce5ce2c746c28820770c62b02bb0
+page_size|setting|Represented by constant PAGE_SIZE in AppSetting class, is accessible through interface SettingService's get(String key) method. Default value can also be provided using interface SettingService's get(String key, Serializable defaultValue) method.|e154ce5ce2c746c28820770c62b02bb0
+createspringuser|method|Extracted from the given context, creates a new User object in SpringSecurity framework and returns it as an org.springframework.security.core.userdetails.User object.|e154ce5ce2c746c28820770c62b02bb0
+createauthority|method|Extracted from the given context, creates a new GrantedAuthority object in SpringSecurity framework and returns it as an org.springframework.security.core.userdetails.User object.|e154ce5ce2c746c28820770c62b02bb0
+user|class|Inherits from interface org.springframework.security.core.userdetails.User, represents a user account in SpringSecurity framework.|e154ce5ce2c746c28820770c62b02bb0
+springblog|package|Contains classes related to the SpringBlog application.|e154ce5ce2c746c28820770c62b02bb0
+com|domain|Provides a hierarchical namespace for packages and types in Java programming language.|e154ce5ce2c746c28820770c62b02bb0
+postservice|com.raysmond.blog.services|Is a type of class or interface in Java package com.raysmond.blog.|0d49d80679db48b6810729633a21fe64
+postservice|services|Is part of the Java package com.raysmond.blog.|0d49d80679db48b6810729633a21fe64
+postrepository|com.raysmond.blog.repositories|Is a type of interface in Java package com.raysmond.blog.|0d49d80679db48b6810729633a21fe64
+postservice|postrepository|Interacts with or depends on the PostRepository for handling database operations related to posts.|0d49d80679db48b6810729633a21fe64
+constants|com.raysmond.blog|Is a type of class or interface in Java package com.raysmond.blog.|0d49d80679db48b6810729633a21fe64
+postservice|constants|Uses the Constants class for accessing constants specific to this blog.|0d49d80679db48b6810729633a21fe64
+notfoundexception|com.raysmond.blog.error|Is a type of exception in Java package com.raysmond.blog.error.|0d49d80679db48b6810729633a21fe64
+postservice|notfoundexception|Throws the NotFoundException if the requested post is not found in the database.|0d49d80679db48b6810729633a21fe64
+post|com.raysmond.blog.models|Is a type of class or interface in Java package com.raysmond.blog.models.|0d49d80679db48b6810729633a21fe64
+tag|com.raysmond.blog.models|Is a type of class or interface in Java package com.raysmond.blog.models.|0d49d80679db48b6810729633a21fe64
+postformat|com.raysmond.blog.models.support|Is a type of enum or interface in Java package com.raysmond.blog.models.support.|0d49d80679db48b6810729633a21fe64
+poststatus|com.raysmond.blog.models.support|Is a type of enum or interface in Java package com.raysmond.blog.models.support.|0d49d80679db48b6810729633a21fe64
+posttype|com.raysmond.blog.models.support|Is a type of enum or interface in Java package com.raysmond.blog.models.support.|0d49d80679db48b6810729633a21fe64
+postrepository|post|Provides CRUD operations for the Post entity.|0d49d80679db48b6810729633a21fe64
+pagerequest|org.springframework.data.domain|Is a type of class or interface in Java package org.springframework.data.domain.|0d49d80679db48b6810729633a21fe64
+postservice|pagerequest|Uses the PageRequest class to implement pagination for listing posts.|0d49d80679db48b6810729633a21fe64
+markdownservice|com.raysmond.blog.support.web|Is a type of interface in Java package com.raysmond.blog.support.web.|0d49d80679db48b6810729633a21fe64
+postservice|markdownservice|Uses the MarkdownService to convert post content from Markdown format to HTML for displaying on the blog.|0d49d80679db48b6810729633a21fe64
+createpost|post|method to create a post and pass it to the repository|f792b11b5ccb4859a6129e2fba5761b9
+tag|tagnames|set of tags associated with a post, parsed from a string using tagService|f792b11b5ccb4859a6129e2fba5761b9
+tagservice|findorcreatebyname|method to find or create a Tag with the given name|f792b11b5ccb4859a6129e2fba5761b9
+postrepository|findbytag|method to find all posts associated with a specific tag, returning Page of Posts|f792b11b5ccb4859a6129e2fba5761b9
+pagerequest|"new pagerequest(page, pagesize, sort.direction.desc, ""createdat"")"|construct for paginating search results using Spring Data's Pageable interface|f792b11b5ccb4859a6129e2fba5761b9
+poststatus|published|enum defining published status of a post, used to filter search results by tag and status|f792b11b5ccb4859a6129e2fba5761b9
+postrepository|countpostsbytags|method to count the number of posts associated with all unique tags (excluding drafts), asynchronously|f792b11b5ccb4859a6129e2fba5761b9
+bootstrappaginator|$|is a jQuery object that is used to select DOM elements in this context.|6b222efc9f3349d084a4ecf335449c07
+bootstrappaginator|options|is an optional argument passed by the user, which contains specific settings for the pagination component. It can be used to customize various aspects of the pagination, such as the size and color scheme.|6b222efc9f3349d084a4ecf335449c07
+bootstrappaginator|element|is a required argument that specifies the HTML element where the pagination component will be inserted. It can be any valid jQuery selector, such as '#my-pagination' or '.my-class'.|6b222efc9f3349d084a4ecf335449c07
+bootstrappaginator|version|is an optional argument that specifies the major version number of Bootstrap being used. It can take values 2 or 3, and it is used to ensure compatibility between the pagination component and the specific version of Bootstrap being used.|6b222efc9f3349d084a4ecf335449c07
+bootstrappaginator|id|is an optional attribute that can be added to the HTML element where the pagination component will be inserted. It is used to give a unique identifier to the pagination, which can be useful for accessing it from other parts of the application.|6b222efc9f3349d084a4ecf335449c07
+context|this|belongs to the context|5e06815d3f944ddbbedc500052c9c07e
+currentpage|this|is a property of this object in the context|5e06815d3f944ddbbedc500052c9c07e
+lastpage|this|is a property of this object in the context|5e06815d3f944ddbbedc500052c9c07e
+options|this|has an attribute called options in the context|5e06815d3f944ddbbedc500052c9c07e
+totalpages|parseint(this.options.totalpages, 10)|is a result of parsing the value of totalPages from the options object passed to setOptions method of this|5e06815d3f944ddbbedc500052c9c07e
+numberofpages|parseint(this.options.numberofpages, 10)|is a result of parsing the value of numberOfPages from the options object passed to setOptions method of this|5e06815d3f944ddbbedc500052c9c07e
+currentpage|this.setcurrentpage(options.currentpage)|is updated by passing its value from options object to setCurrentPage method of this|5e06815d3f944ddbbedc500052c9c07e
+listen|this|contains a function called listen in the context|5e06815d3f944ddbbedc500052c9c07e
+$element|this|is an attribute of this object in the context|5e06815d3f944ddbbedc500052c9c07e
+off|$element|is a jQuery function used to remove event handlers bound to the element specified by $element|5e06815d3f944ddbbedc500052c9c07e
+bind|$element|is a jQuery function that attaches an event handler for all elements that match the jQuery selector provided as its argument|5e06815d3f944ddbbedc500052c9c07e
+options|onpageclicked|is used to bind the 'page-clicked' event in the context|5e06815d3f944ddbbedc500052c9c07e
+$element|off|is used to remove all 'page-changed' and 'page-clicked' event handlers bound to $element|5e06815d3f944ddbbedc500052c9c07e
+destroy|this|contains a function called destroy in the context|5e06815d3f944ddbbedc500052c9c07e
+$element|empty|is a jQuery function used to remove all child nodes of an element and optionally their descendants, including text nodes|5e06815d3f944ddbbedc500052c9c07e
+pages|this|belongsTo|ae3bc9209cad4b10a6a1752a372b9625
+pages|getpages()|invokesMethod|ae3bc9209cad4b10a6a1752a372b9625
+pages.first|this|belongsTo|ae3bc9209cad4b10a6a1752a372b9625
+pages.first|show()|invokesMethod|ae3bc9209cad4b10a6a1752a372b9625
+this.getpages()|pages.first|accessesVariable|ae3bc9209cad4b10a6a1752a372b9625
+showlast|this|belongsTo|ae3bc9209cad4b10a6a1752a372b9625
+pages.last|this|belongsTo|ae3bc9209cad4b10a6a1752a372b9625
+pages.last|show()|invokesMethod|ae3bc9209cad4b10a6a1752a372b9625
+this.getpages()|pages.last|accessesVariable|ae3bc9209cad4b10a6a1752a372b9625
+onpageitemclicked|this|belongsTo|ae3bc9209cad4b10a6a1752a372b9625
+event.data.type|type|isAttributeOf|ae3bc9209cad4b10a6a1752a372b9625
+event.data.page|page|isAttributeOf|ae3bc9209cad4b10a6a1752a372b9625
+$element|this|belongsTo|ae3bc9209cad4b10a6a1752a372b9625
+show(pages.first)|this.$element|invokesMethod|ae3bc9209cad4b10a6a1752a372b9625
+bootstrappaginator|$element|accessesVariable|ae3bc9209cad4b10a6a1752a372b9625
+showfirst|this|belongsTo|ae3bc9209cad4b10a6a1752a372b9625
+bootstrappaginator|showfirst|invokesMethodOf|ae3bc9209cad4b10a6a1752a372b9625
+showprevious|this|belongsTo|ae3bc9209cad4b10a6a1752a372b9625
+bootstrappaginator|showprevious|invokesMethodOf|ae3bc9209cad4b10a6a1752a372b9625
+shownext|this|belongsTo|ae3bc9209cad4b10a6a1752a372b9625
+bootstrappaginator|shownext|invokesMethodOf|ae3bc9209cad4b10a6a1752a372b9625
+showlast|this|belongsTo|ae3bc9209cad4b10a6a1752a372b9625
+bootstrappaginator|showlast|invokesMethodOf|ae3bc9209cad4b10a6a1752a372b9625
+onpageclicked|this|belongsTo|ae3bc9209cad4b10a6a1752a372b9625
+event|this|invokesMethod|ae3bc9209cad4b10a6a1752a372b9625
+originalevent|event|isAttributeOf|ae3bc9209cad4b10a6a1752a372b9625
+type|event|accessesVariable|ae3bc9209cad4b10a6a1752a372b9625
+page|event|accessesVariable|ae3bc9209cad4b10a6a1752a372b9625
+$element|this|invokesMethod|ae3bc9209cad4b10a6a1752a372b9625
+page-clicked|$element|triggersEvent|ae3bc9209cad4b10a6a1752a372b9625
+context|itemcontainer|contains|5ebfb47196644dbc8cdefab094622c84
+itemcontainer|itemcontent|holds|5ebfb47196644dbc8cdefab094622c84
+itemcontainer|text|has content|5ebfb47196644dbc8cdefab094622c84
+itemcontainer|title|shows title|5ebfb47196644dbc8cdefab094622c84
+itemcontainer|itemcontainerclass|has class|5ebfb47196644dbc8cdefab094622c84
+context|type|is associated with|5ebfb47196644dbc8cdefab094622c84
+context|page|belongs to|5ebfb47196644dbc8cdefab094622c84
+context|currentpage|applies to current page|5ebfb47196644dbc8cdefab094622c84
+itemcontent|a|is represented by|5ebfb47196644dbc8cdefab094622c84
+type|first|represents first page|5ebfb47196644dbc8cdefab094622c84
+page|first|is first page|5ebfb47196644dbc8cdefab094622c84
+type|last|represents last page|5ebfb47196644dbc8cdefab094622c84
+page|last|is last page|5ebfb47196644dbc8cdefab094622c84
+type|prev|represents previous page|5ebfb47196644dbc8cdefab094622c84
+page|prev|is previous page|5ebfb47196644dbc8cdefab094622c84
+type|next|represents next page|5ebfb47196644dbc8cdefab094622c84
+page|next|is next page|5ebfb47196644dbc8cdefab094622c84
+itemcontainer|itemcontent|is associated with|ce146e9e0b354d96916270e833300a11
+itemcontent|text|contains|ce146e9e0b354d96916270e833300a11
+itemcontainerclass|itemcontainer|is assigned to|ce146e9e0b354d96916270e833300a11
+itemcontentclass|itemcontent|is assigned to|ce146e9e0b354d96916270e833300a11
+this.options.pageurl|itemcontent|provides a link to|ce146e9e0b354d96916270e833300a11
+title|tooltipopts|is used as the title in|ce146e9e0b354d96916270e833300a11
+title|itemcontent|is displayed as a tooltip for|ce146e9e0b354d96916270e833300a11

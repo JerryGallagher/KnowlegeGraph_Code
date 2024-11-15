@@ -1,0 +1,924 @@
+node_1|node_2|edge|chunk_id|node_3|node_4|edge_1|edge_2
+account|userid|A user's unique identification number assigned by the system.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|email|The email address associated with the user's account.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|firstname|The first name of the user.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|lastname|The last name of the user.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|status|The current status of the user's account, such as active or inactive.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|address1|The primary address associated with the user's account.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|address2|An optional secondary address associated with the user's account.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|city|The city in which the user is located.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|state|The state or province in which the user is located.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|zip|The zip code associated with the user's address.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|country|The country in which the user is located.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|phone|The user's contact phone number.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|favouritecategoryid|An optional category associated with the user's preferences.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|languagepreference|The user's preferred language for interaction with the system.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|listoption|A boolean flag indicating whether the user has opted to receive email notifications about product listings.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|banneroption|A boolean flag indicating whether the user has opted to see banner advertisements.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+account|bannername|The name of a specific banner that the user has previously selected.|28c4cf26aeff4a75b7dff80bdb6f42ad||||
+cart|jpetstore|Cart is a class located in the jpetstore project.|1d1530ecebdc4c48bf829539106d365d||||
+domain|cart|Cart is a class under the domain package of this project.|1d1530ecebdc4c48bf829539106d365d||||
+com|ibatis|This class belongs to the com.ibatis package within the jpetstore project.|1d1530ecebdc4c48bf829539106d365d||||
+src|web|The file containing this code is located in the src/WEB directory of the project.|1d1530ecebdc4c48bf829539106d365d||||
+inf|classes|This Java class file is stored under the INF/classes directory.|1d1530ecebdc4c48bf829539106d365d||||
+com|ibatis||1d1530ecebdc4c48bf829539106d365d|jpetstore|domain|Cart is a class of the jpetstore project, which falls under the com.ibatis package within the domain package.|Both jpetstore and domain are subpackages of com.ibatis.
+jpetstore|cart||1d1530ecebdc4c48bf829539106d365d|address2|setAddress2|The Cart class has a member variable named address2.|This variable can be set using the setAddress2() method.
+cart|address2||1d1530ecebdc4c48bf829539106d365d|getAddress2||The Cart class has a getter method named getAddress2().|This method can be used to retrieve the value of the address2 variable.
+city|setcity|The Cart class has a member variable named city, and it has a setter method named setCity().|1d1530ecebdc4c48bf829539106d365d||||
+state|setstate|The Cart class has a member variable named state, and it has a setter method named setState().|1d1530ecebdc4c48bf829539106d365d||||
+zip|setzip|The Cart class has a member variable named zip, and it has a setter method named setZip().|1d1530ecebdc4c48bf829539106d365d||||
+country|setcountry|The Cart class has a member variable named country, and it has a setter method named setCountry().|1d1530ecebdc4c48bf829539106d365d||||
+phone|setphone|The Cart class has a member variable named phone, and it has a setter method named setPhone().|1d1530ecebdc4c48bf829539106d365d||||
+favouritecategoryid|setfavouritecategoryid|The Cart class has a member variable named favouriteCategoryId, and it has a setter method named setFavouriteCategoryId().|1d1530ecebdc4c48bf829539106d365d||||
+languagepreference|setlanguagepreference|The Cart class has a member variable named languagePreference, and it has a setter method named setLanguagePreference().|1d1530ecebdc4c48bf829539106d365d||||
+listoption|islistoption|The Cart class has a boolean member variable named listOption, and it has a getter method named isListOption().|1d1530ecebdc4c48bf829539106d365d||||
+banneroption|isbanneroption|The Cart class has a boolean member variable named bannerOption, and it has a getter method named isBannerOption().|1d1530ecebdc4c48bf829539106d365d||||
+bannername|setbannername|The Cart class has a member variable named bannerName, and it has a setter method named setBannerName().|1d1530ecebdc4c48bf829539106d365d||||
+setquantitybyitemid|itemid|is the identifier for a specific item in the cart|350ff86b9b964aba852f7e3ca6d60c70||||
+setquantitybyitemid|quantity|represents the amount of the specified item being ordered|350ff86b9b964aba852f7e3ca6d60c70||||
+cartitem|item|is a reference to the specific item being ordered in this cart entry|350ff86b9b964aba852f7e3ca6d60c70||||
+getsubtotal|subtotal|represents the total cost of all items in the cart with the given itemId|350ff86b9b964aba852f7e3ca6d60c70||||
+item|listprice|denotes the standard price of a particular item, before any discounts or promotions are applied|350ff86b9b964aba852f7e3ca6d60c70||||
+cartitem|quantity|is used to determine how many instances of the specified item are being ordered in this cart entry|350ff86b9b964aba852f7e3ca6d60c70||||
+category|categoryid|uniquely identifies a specific category or product line within the store's inventory|350ff86b9b964aba852f7e3ca6d60c70||||
+item|product|An Item is associated with a specific Product.|161e7cbbd74e4c3d8729a01494005e56||||
+itemid|item|The itemId property represents the unique identifier for an Item.|161e7cbbd74e4c3d8729a01494005e56||||
+productid|product|The productId property links an Item to its corresponding Product.|161e7cbbd74e4c3d8729a01494005e56||||
+listprice|item|The listPrice property represents the retail price of an Item.|161e7cbbd74e4c3d8729a01494005e56||||
+unitcost|item|The unitCost property denotes the cost per unit for an Item.|161e7cbbd74e4c3d8729a01494005e56||||
+supplierid|item|The supplierId property specifies the ID of the supplier who provides the Item.|161e7cbbd74e4c3d8729a01494005e56||||
+status|item|The status property signifies the current state of an Item, such as 'in stock' or 'out of stock'.|161e7cbbd74e4c3d8729a01494005e56||||
+attribute1|item|The attribute1 property allows for additional customization of an Item.|161e7cbbd74e4c3d8729a01494005e56||||
+attribute2|item|The attribute2 property provides further personalization options for an Item.|161e7cbbd74e4c3d8729a01494005e56||||
+attribute3|item|The attribute3 property offers additional customizability choices for an Item.|161e7cbbd74e4c3d8729a01494005e56||||
+attribute4|item|The attribute4 property enables further customization options for an Item.|161e7cbbd74e4c3d8729a01494005e56||||
+attribute5|item|The attribute5 property allows for additional tailoring choices for an Item.|161e7cbbd74e4c3d8729a01494005e56||||
+getitemid|tostring|method toString is called to concatenate itemId and productId in a parenthesis for string representation of the object|2f5558a7458f4495b53b66e64ef8be67||||
+productid|getitemid.trim()|the getItemId() method returns the item identifier, which is concatenated with trimmed productId to form a key for representation|2f5558a7458f4495b53b66e64ef8be67||||
+productid|tostring|productId is passed as argument to toString() method for string representation|2f5558a7458f4495b53b66e64ef8be67||||
+supplierid|getsupplierid|the getSupplierId() method returns the identifier of supplier associated with the product|2f5558a7458f4495b53b66e64ef8be67||||
+listprice|getlistprice|the getListPrice() method returns the list price of the product|2f5558a7458f4495b53b66e64ef8be67||||
+unitcost|getunitcost|the getUnitCost() method returns the unit cost of the product|2f5558a7458f4495b53b66e64ef8be67||||
+status|getstatus|the getStatus() method returns the status of the product|2f5558a7458f4495b53b66e64ef8be67||||
+attribute1|getattribute1|the getAttribute1() method returns the first attribute associated with the product|2f5558a7458f4495b53b66e64ef8be67||||
+attribute2|getattribute2|the getAttribute2() method returns the second attribute associated with the product|2f5558a7458f4495b53b66e64ef8be67||||
+attribute3|getattribute3|the getAttribute3() method returns the third attribute associated with the product|2f5558a7458f4495b53b66e64ef8be67||||
+attribute4|getattribute4|the getAttribute4() method returns the fourth attribute associated with the product|2f5558a7458f4495b53b66e64ef8be67||||
+attribute5|getattribute5|the getAttribute5() method returns the fifth attribute associated with the product|2f5558a7458f4495b53b66e64ef8be67||||
+lineitem|item|In the class LineItem, there is a reference to Item through the field item.|333d58bcbd32400abb3c7a248f1eee7b||||
+itemid|item|The attribute itemId of LineItem refers to the object Item.|333d58bcbd32400abb3c7a248f1eee7b||||
+unitprice|bigdecimal|In the class LineItem, the variable unitprice is of type BigDecimal.|333d58bcbd32400abb3c7a248f1eee7b||||
+orderid|int|The variable orderId in the class LineItem is of data type int.|333d58bcbd32400abb3c7a248f1eee7b||||
+linenumber|int|Similarly, the variable lineNumber in the class LineItem is also an integer (of type int).|333d58bcbd32400abb3c7a248f1eee7b||||
+order|int orderid|Order is a class that has an integer variable named 'orderId'|da82cace4a4e4badadc6a3b87f4242bd||||
+order|string userid|Order is associated with a string variable named 'userId' in another class named 'Account'|da82cace4a4e4badadc6a3b87f4242bd||||
+date|date orderdate|Both variables are of type Date and are used to store the order date|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string shipaddress1|Both variables are of type String and are used to store the shipping address line 1|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string shipaddress2|Both variables are of type String and are used to store the shipping address line 2 (optional)|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string shipcity|Both variables are of type String and are used to store the city part of the shipping address|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string shipstate|Both variables are of type String and are used to store the state part of the shipping address|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string shipzip|Both variables are of type String and are used to store the zip code part of the shipping address|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string shipcountry|Both variables are of type String and are used to store the country part of the shipping address|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string billaddress1|Both variables are of type String and are used to store the billing address line 1|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string billaddress2|Both variables are of type String and are used to store the billing address line 2 (optional)|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string billcity|Both variables are of type String and are used to store the city part of the billing address|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string billstate|Both variables are of type String and are used to store the state part of the billing address|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string billzip|Both variables are of type String and are used to store the zip code part of the billing address|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string billcountry|Both variables are of type String and are used to store the country part of the billing address|da82cace4a4e4badadc6a3b87f4242bd||||
+list|list lineitems|Both variables are of type List and are used to store a list of items in the order|da82cace4a4e4badadc6a3b87f4242bd||||
+bigdecimal|bigdecimal totalprice|Both variables are of type BigDecimal and are used to store the total price of the order|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string billtofirstname|Both variables are of type String and are used to store the first name part of the billing address (optional)|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string billtolastname|Both variables are of type String and are used to store the last name part of the billing address (optional)|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string shiptofirstname|Both variables are of type String and are used to store the first name part of the shipping address|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string shiptolastname|Both variables are of type String and are used to store the last name part of the shipping address|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string creditcard|Both variables are of type String and are used to store the credit card number (optional)|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string expirydate|Both variables are of type String and are used to store the credit card expiration date (optional)|da82cace4a4e4badadc6a3b87f4242bd||||
+string|string courier|Both variables are of type String and are used to store the name of the courier delivering the order|da82cace4a4e4badadc6a3b87f4242bd||||
+shipaddress1|getshipaddress1|method for retrieving the first line of ship's address|744dd62831b9438389181f841918940c||||
+shipaddress1|setshipaddress1|method for setting the first line of ship's address|744dd62831b9438389181f841918940c||||
+shipaddress2|getshipaddress2|method for retrieving the second line of ship's address|744dd62831b9438389181f841918940c||||
+shipaddress2|setshipaddress2|method for setting the second line of ship's address|744dd62831b9438389181f841918940c||||
+shipcity|getshipcity|method for retrieving the city part of ship's address|744dd62831b9438389181f841918940c||||
+shipcity|setshipcity|method for setting the city part of ship's address|744dd62831b9438389181f841918940c||||
+shipstate|getshipstate|method for retrieving the state part of ship's address|744dd62831b9438389181f841918940c||||
+shipstate|setshipstate|method for setting the state part of ship's address|744dd62831b9438389181f841918940c||||
+shipzip|getshipzip|method for retrieving the zip code part of ship's address|744dd62831b9438389181f841918940c||||
+shipzip|setshipzip|method for setting the zip code part of ship's address|744dd62831b9438389181f841918940c||||
+shipcountry|getshipcountry|method for retrieving the country part of ship's address|744dd62831b9438389181f841918940c||||
+shipcountry|setshipcountry|method for setting the country part of ship's address|744dd62831b9438389181f841918940c||||
+billaddress1|getbilladdress1|method for retrieving the first line of bill's address|744dd62831b9438389181f841918940c||||
+billaddress1|setbilladdress1|method for setting the first line of bill's address|744dd62831b9438389181f841918940c||||
+billaddress2|getbilladdress2|method for retrieving the second line of bill's address|744dd62831b9438389181f841918940c||||
+billaddress2|setbilladdress2|method for setting the second line of bill's address|744dd62831b9438389181f841918940c||||
+billcity|getbillcity|method for retrieving the city part of bill's address|744dd62831b9438389181f841918940c||||
+billcity|setbillcity|method for setting the city part of bill's address|744dd62831b9438389181f841918940c||||
+billstate|getbillstate|method for retrieving the state part of bill's address|744dd62831b9438389181f841918940c||||
+billstate|setbillstate|method for setting the state part of bill's address|744dd62831b9438389181f841918940c||||
+getbillzip|billzip|retrieves the zip code associated with the billing address|6541d6b3c39841b68ad665fb0a4b98d5||||
+setbillzip|billzip|sets the zip code for the billing address|6541d6b3c39841b68ad665fb0a4b98d5||||
+getbillcountry|billcountry|retrieves the country associated with the billing address|6541d6b3c39841b68ad665fb0a4b98d5||||
+setbillcountry|billcountry|sets the country for the billing address|6541d6b3c39841b68ad665fb0a4b98d5||||
+getcourier|courier|returns the name of the courier company used for delivery|6541d6b3c39841b68ad665fb0a4b98d5||||
+setcourier|courier|sets the name of the courier company used for delivery|6541d6b3c39841b68ad665fb0a4b98d5||||
+gettotalprice|totalprice|retrieves the total price of the order|6541d6b3c39841b68ad665fb0a4b98d5||||
+settotalprice|totalprice|sets the total price of the order|6541d6b3c39841b68ad665fb0a4b98d5||||
+getbilltofirstname|billtofirstname|retrieves the first name associated with the billing address|6541d6b3c39841b68ad665fb0a4b98d5||||
+setbilltofirstname|billtofirstname|sets the first name for the billing address|6541d6b3c39841b68ad665fb0a4b98d5||||
+getbilltolastname|billtolastname|retrieves the last name associated with the billing address|6541d6b3c39841b68ad665fb0a4b98d5||||
+setbilltolastname|billtolastname|sets the last name for the billing address|6541d6b3c39841b68ad665fb0a4b98d5||||
+getshiptofirstname|shiptofirstname|retrieves the first name associated with the shipping address|6541d6b3c39841b68ad665fb0a4b98d5||||
+setshiptofirstname|shiptofirstname|sets the first name for the shipping address|6541d6b3c39841b68ad665fb0a4b98d5||||
+getshiptolastname|shiptolastname|retrieves the last name associated with the shipping address|6541d6b3c39841b68ad665fb0a4b98d5||||
+setshiptolastname|shiptolastname|sets the last name for the shipping address|6541d6b3c39841b68ad665fb0a4b98d5||||
+getcreditcard|creditcard|returns the credit card details|6541d6b3c39841b68ad665fb0a4b98d5||||
+setcreditcard|creditcard|sets the credit card details|6541d6b3c39841b68ad665fb0a4b98d5||||
+getexpirydate|expirydate|retrieves the expiry date of the credit card|6541d6b3c39841b68ad665fb0a4b98d5||||
+setexpirydate|expirydate|sets the expiry date for the credit card|6541d6b3c39841b68ad665fb0a4b98d5||||
+getcardtype|cardtype|retrieves the type of credit card being used|6541d6b3c39841b68ad665fb0a4b98d5||||
+setcardtype|cardtype|sets the type of credit card being used|6541d6b3c39841b68ad665fb0a4b98d5||||
+product|categoryid|The Product is associated with a CategoryId.|a407135d3d2d414d9c364497881ef3da||||
+product|name|The Product has a Name.|a407135d3d2d414d9c364497881ef3da||||
+product|description|The Product has a Description.|a407135d3d2d414d9c364497881ef3da||||
+product|image|The Product has an Image.|a407135d3d2d414d9c364497881ef3da||||
+com.ibatis.jpetstore.domain.product|com.ibatis.jpetstore.domain.categoryid|The com.ibatis.jpetstore.domain.Product object is associated with a CategoryId.|a407135d3d2d414d9c364497881ef3da||||
+com.ibatis.jpetstore.domain.product|java.lang.string|The com.ibatis.jpetstore.domain.Product class has a java.lang.String attribute named productId which is trimmed.|a407135d3d2d414d9c364497881ef3da||||
+com.ibatis.jpetstore.domain.product|java.lang.string|The com.ibatis.jpetstore.domain.Product class has a java.lang.String attribute named image.|a407135d3d2d414d9c364497881ef3da||||
+com.ibatis.jpetstore.domain.product|java.lang.string|The com.ibatis.jpetstore.domain.Product class has a java.lang.String attribute named name.|a407135d3d2d414d9c364497881ef3da||||
+com.ibatis.jpetstore.domain.product|java.lang.string|The com.ibatis.jpetstore.domain.Product class has a java.lang.String attribute named description.|a407135d3d2d414d9c364497881ef3da||||
+com.ibatis.jpetstore.domain.categoryid|java.lang.string|The CategoryId is represented as a java.lang.String.|a407135d3d2d414d9c364497881ef3da||||
+sequence|domain|The class Sequence is a part of the package com.ibatis.jpetstore.domain.|97355d240b854d56aa241b682c57d0f6||||
+accountdao|dao|The interface AccountDao belongs to the package com.ibatis.jpetstore.persistence.dao.|97355d240b854d56aa241b682c57d0f6||||
+signon|domain|The class Signon is a part of the package com.ibatis.jpetstore.domain.|97355d240b854d56aa241b682c57d0f6||||
+username|signon|The attribute username belongs to the class Signon.|97355d240b854d56aa241b682c57d0f6||||
+password|signon|The attribute password belongs to the class Signon.|97355d240b854d56aa241b682c57d0f6||||
+getusername|signon|The method getUsername() is a part of the class Signon.|97355d240b854d56aa241b682c57d0f6||||
+setusername|signon|The method setUsername(String) is a part of the class Signon.|97355d240b854d56aa241b682c57d0f6||||
+getpassword|signon|The method getPassword() is a part of the class Signon.|97355d240b854d56aa241b682c57d0f6||||
+setpassword|signon|The method setPassword(String) is a part of the class Signon.|97355d240b854d56aa241b682c57d0f6||||
+account|daoexception|Account and DaoException are both classes imported from the same package, implying a potential exception handling mechanism in place for account-related operations.|2b1dd6b463634e9587be226fcf3dc08c||||
+accountdao|categorydao|Both AccountDao and CategoryDao are interfaces inherited from Dao interface, indicating their usage as database access objects (DAOs) for manipulating corresponding domain classes.|2b1dd6b463634e9587be226fcf3dc08c||||
+accountdao|categorydao|Both AccountDao and CategoryDao are defined in the same package jpetstore, suggesting potential related functionality or shared data access requirements.|2b1dd6b463634e9587be226fcf3dc08c||||
+accountdao|daotransaction|AccountDao's method parameters include DaoTransaction object, signifying a possible transactional context management mechanism for executing account-related database operations.|2b1dd6b463634e9587be226fcf3dc08c||||
+categorydao|categorylist|CategoryDao returns CategoryList object in its getCategoryList method, implying the possible association of Categories with a list data structure.|2b1dd6b463634e9587be226fcf3dc08c||||
+getitem|itemdao|interface InventoryDao in package com.ibatis.jpetstore.persistence.dao extends Dao|99ab4f36368a496db4f731e41768939f||||
+itemdao|getitem|method getItem(DaoTransaction, String) throws DaoException defined in interface ItemDao in package com.ibatis.jpetstore.persistence.dao|99ab4f36368a496db4f731e41768939f||||
+itemdao|getitemlist|method getItemList() throws DaoException defined in interface ItemDao in package com.ibatis.jpetstore.persistence.dao|99ab4f36368a496db4f731e41768939f||||
+itemdao|updateinventoryquantity|method updateInventoryQuantity(DaoTransaction, String, int) throws DaoException defined in interface InventoryDao extended from interface Dao|99ab4f36368a496db4f731e41768939f||||
+itemdao|lineitemdao|class LineItemDao in package com.ibatis.jpetstore.persistence.dao extends Dao|99ab4f36368a496db4f731e41768939f||||
+lineitemdao|insertlineitem|method insertLineItem(DaoTransaction, LineItem) throws DaoException defined in interface LineItemDao in package com.ibatis.jpetstore.persistence.dao|99ab4f36368a496db4f731e41768939f||||
+lineitemdao|getitemlistbyorderid|method getLineItemsByOrderId(DaoTransaction, int) throws DaoException defined in interface LineItemDao in package com.ibatis.jpetstore.persistence.dao|99ab4f36368a496db4f731e41768939f||||
+lineitemdao|itemdao|class ItemDao in package com.ibatis.jpetstore.persistence.dao extends Dao|99ab4f36368a496db4f731e41768939f||||
+itemdao|lineitemdao|class LineItemDao in package com.ibatis.jpetstore.persistence.dao extends Dao|99ab4f36368a496db4f731e41768939f||||
+signondao|daotransaction|The method getProductList in the SignonDao class takes a DaoTransaction as an argument.|194b56bd9f2248bc824af419913b757f||||
+getproductlist|signondao|The getProductList method belongs to the SignonDao interface.|194b56bd9f2248bc824af419913b757f||||
+getproductlistbycategory|signondao|Another method available in the SignonDao interface is getProductListByCategory.|194b56bd9f2248bc824af419913b757f||||
+getproductlistbykeyword|signondao|The third method of the SignonDao interface is called getProductListByKeyword.|194b56bd9f2248bc824af419913b757f||||
+getsignon|signondao|A separate method named getSignon exists in the SignonDao interface.|194b56bd9f2248bc824af419913b757f||||
+updatesignon|signondao|The SignonDao interface also includes a method called updateSignon.|194b56bd9f2248bc824af419913b757f||||
+insertsignon|signondao|The last method present in the SignonDao interface is insertSignon.|194b56bd9f2248bc824af419913b757f||||
+getsignon|signondao|The getSignon method of the SignonDao interface takes two arguments, username and password.|194b56bd9f2248bc824af419913b757f||||
+signon|getsignon|The getSignon method returns an object of type Signon.|194b56bd9f2248bc824af419913b757f||||
+basecachedao|dao.cache|The BaseCacheDao class is present in the package com.ibatis.jpetstore.persistence.dao.cache.|194b56bd9f2248bc824af419913b757f||||
+basecachedao|dao|BaseCacheDao is an example of how DAO provides a pluggable framework.|620c963d3bc74fe88ee7c9fbcc92ba34||||
+max_items_per_channel|cacheing|In practice, caching can be done declaratively through SQL Maps, making this somewhat redundant.|620c963d3bc74fe88ee7c9fbcc92ba34||||
+channels|cachechannel|Channels are applied per class....so if you only have one cache DAO, then you only have one channel.|620c963d3bc74fe88ee7c9fbcc92ba34||||
+basecachedao|channels|When getting or putting an item in a channel, synchronization is applied on CHANNELS.|620c963d3bc74fe88ee7c9fbcc92ba34||||
+channel|cache|A CacheChannel holds a cache and a list of keys.|620c963d3bc74fe88ee7c9fbcc92ba34||||
+basecachedao|getchannel|If a channel for the class is not found in CHANNELS, a new one is created.|620c963d3bc74fe88ee7c9fbcc92ba34||||
+cachechannel|cache|CacheChannel contains a HashMap named cache to store data.|8e25a507d18d454da5803c507356c40f||||
+cachechannel|keys|CacheChannel maintains a List named keys to store identifiers of cached items.|8e25a507d18d454da5803c507356c40f||||
+petstorecachedao|itemdao|PetStoreCacheDao utilizes another DAO called itemMapDao to fetch cached items by their IDs.|8e25a507d18d454da5803c507356c40f||||
+petstorecachedao|productdao|PetStoreCacheDao implements ProductDao interface and uses a Map-based DAO called productMapDao to retrieve products from cache.|8e25a507d18d454da5803c507356c40f||||
+petstorecachedao|categorydao|PetStoreCacheDao provides a method for getting categories from cache and delegates the task to categoryMapDao, which is another Map-based DAO.|8e25a507d18d454da5803c507356c40f||||
+petstorecachedao|inventorydao|PetStoreCacheDao implements InventoryDao interface and employs inventoryMapDao, a Map-based DAO for accessing inventory items from cache.|8e25a507d18d454da5803c507356c40f||||
+getproductlist|productdao.getproductlist|method 'getProductList' returns a list of products retrieved from productDao.|e0f24133c7104bac9fc6b7e82cf7bc3b||||
+productlist|productdao|object 'productList' is the result returned by method 'getProductList' on object 'productDao'.|e0f24133c7104bac9fc6b7e82cf7bc3b||||
+getitemlist|itemdao.getitemlist|method 'getItemList' returns a list of items retrieved from itemDao.|e0f24133c7104bac9fc6b7e82cf7bc3b||||
+getproductlistbycategory|categoryid|parameter 'categoryId' is required to filter the products by category.|e0f24133c7104bac9fc6b7e82cf7bc3b||||
+getproductlistbykeyword|keyword|parameter 'keyword' is required to search for products by keyword.|e0f24133c7104bac9fc6b7e82cf7bc3b||||
+getitem|itemdao.getitem|method 'getItem' returns an item with the specified ID from itemDao.|e0f24133c7104bac9fc6b7e82cf7bc3b||||
+getitemlistbyproduct|productid|parameter 'productId' is required to retrieve a list of items associated with the specified product.|e0f24133c7104bac9fc6b7e82cf7bc3b||||
+updateaccount|executeupdate|is invoked inside the updateAccount method|d569c4a9f3ac4359a8eddcb0b5d8d62e||||
+updateprofile|executeupdate|is invoked inside the updateAccount method|d569c4a9f3ac4359a8eddcb0b5d8d62e||||
+insertaccount|executeupdate|is invoked inside the insertAccount method|d569c4a9f3ac4359a8eddcb0b5d8d62e||||
+insertprofile|executeupdate|is invoked inside the insertAccount method|d569c4a9f3ac4359a8eddcb0b5d8d62e||||
+basemapdao|daomanager|is accessed to retrieve sqlMap in static block|d569c4a9f3ac4359a8eddcb0b5d8d62e||||
+basemapdao|daomanager|is initialized as a protected static field|d569c4a9f3ac4359a8eddcb0b5d8d62e||||
+mappedstatementname|sqlmap|is a part of|9f7a83c34d9f46b6941dbb24f9f9e44b||||
+executeupdate|mappedstatement|contains|9f7a83c34d9f46b6941dbb24f9f9e44b||||
+conn|executesql|is executed by|9f7a83c34d9f46b6941dbb24f9f9e44b||||
+conn|mappedstatement|belongs to|9f7a83c34d9f46b6941dbb24f9f9e44b||||
+parameterobject|executeupdate|is passed as argument to|9f7a83c34d9f46b6941dbb24f9f9e44b||||
+parameterobject|sqlmap.queryforlist|can also be passed to|9f7a83c34d9f46b6941dbb24f9f9e44b||||
+parameterobject|executequeryforobject|is passed as argument to|9f7a83c34d9f46b6941dbb24f9f9e44b||||
+trans|sqlmap.queryforlist|belongs to|9f7a83c34d9f46b6941dbb24f9f9e44b||||
+trans|executequeryforobject|belongs to|9f7a83c34d9f46b6941dbb24f9f9e44b||||
+categorydao|basemapdao|implements interface 'CategoryDao' and also inherits from 'BaseMapDao'|727c8467fbb54c1782931a63326cdb50||||
+categorydao|com.ibatis.jpetstore.persistence.dao.map|belongs to package 'com.ibatis.jpetstore.persistence.dao.map'|727c8467fbb54c1782931a63326cdb50||||
+categorydao|com.ibatis.jpetstore.domain|interacts with package 'com.ibatis.jpetstore.domain'|727c8467fbb54c1782931a63326cdb50||||
+basemapdao|com.ibatis.db.dao|inherited from class 'BaseMapDao' in package 'com.ibatis.db.dao'|727c8467fbb54c1782931a63326cdb50||||
+categorydao|com.ibatis.jpetstore.persistence.dao|located within package 'com.ibatis.jpetstore.persistence.dao'|727c8467fbb54c1782931a63326cdb50||||
+getnextid method of class 'categorymapdao'|sequence class|uses 'Sequence' class to generate IDs|727c8467fbb54c1782931a63326cdb50||||
+sequence class|'com.ibatis.db.sqlmap.client.sqlmapclient'|is used by SqlMapClient to manage sequences|727c8467fbb54c1782931a63326cdb50||||
+getnextid method of class 'categorymapdao'|'com.ibatis.db.dao.impl.abstractbasesqlmapper'|is used by AbstractBaseSQLMapper in SqlMapClient|727c8467fbb54c1782931a63326cdb50||||
+getnextid method of class 'categorymapdao'|'com.ibatis.db.dao'|belongs to package 'com.ibatis.db.dao'|727c8467fbb54c1782931a63326cdb50||||
+categorydao|category|The method getCategory in the class CategoryMapDao takes a categoryId as an argument and returns a Category object using executeQueryForObject. This suggests that Category is a subclass or interface of CategoryDao, which provides methods for working with categories.|1a5e45b9284a42eb8ff787a8d8929528||||
+categorydao|daotransaction|The method getCategory in the class CategoryMapDao takes a DaoTransaction object as an argument. This indicates that DaoTransaction is a required parameter for executing database transactions related to categories.|1a5e45b9284a42eb8ff787a8d8929528||||
+categorymapdao|basemapdao|The class CategoryMapDao extends the class BaseMapDao. This suggests that BaseMapDao provides common functionality for working with maps and is possibly a superclass of CategoryMapDao.|1a5e45b9284a42eb8ff787a8d8929528||||
+categorydao|list|The method getCategoryList in the class CategoryMapDao returns a List object using executeQueryForList. This indicates that the method returns a list of categories.|1a5e45b9284a42eb8ff787a8d8929528||||
+inventorymapdao|itemdao|The interface InventoryDao is implemented by the class InventoryMapDao, as indicated by the extends statement in the code. This suggests that InventoryMapDao provides methods for working with inventory items.|1a5e45b9284a42eb8ff787a8d8929528||||
+inventorymapdao|item|The method updateInventoryQuantity in the class InventoryMapDao takes an Item object as an argument. This indicates that Item is a required parameter for updating inventory quantities.|1a5e45b9284a42eb8ff787a8d8929528||||
+basemapdao|daotransaction|The methods getCategory and getCategoryList in the class CategoryMapDao take DaoTransaction objects as arguments. This suggests that DaoTransaction is a required parameter for executing database transactions related to categories.|1a5e45b9284a42eb8ff787a8d8929528||||
+inventorymapdao|basemapdao|The class InventoryMapDao extends the class BaseMapDao. This suggests that BaseMapDao provides common functionality for working with maps and is possibly a superclass of InventoryMapDao.|1a5e45b9284a42eb8ff787a8d8929528||||
+item|string|The variable itemId in the class Item is declared as a String object. This suggests that itemId is a property or field of an inventory item, such as the unique identifier for a specific product.|1a5e45b9284a42eb8ff787a8d8929528||||
+item|int|The variable quantity in the class Item is declared as an int object. This suggests that quantity is a property or field of an inventory item, such as the current number of units in stock.|1a5e45b9284a42eb8ff787a8d8929528||||
+itemmapdao|basemapdao|extends BaseMapDao|11f6aa0e45d24eae9d404179a0d5cc3a||||
+itemmapdao|daotransaction|parameter of getItem and getItemList methods|11f6aa0e45d24eae9d404179a0d5cc3a||||
+itemmapdao|string itemid|parameter of getItem method|11f6aa0e45d24eae9d404179a0d5cc3a||||
+itemmapdao|string productid|parameter of getItemListByProduct method|11f6aa0e45d24eae9d404179a0d5cc3a||||
+itemmapdao|item|returns Item object in getItem method|11f6aa0e45d24eae9d404179a0d5cc3a||||
+itemmapdao|list|returns List of Items objects in getItemList and getItemListByProduct methods|11f6aa0e45d24eae9d404179a0d5cc3a||||
+com.ibatis.db.dao.basedao|com.ibatis.db.sqlmap.sqlmapclient|is accessed in executeQueryForList and executeQueryForObject methods|11f6aa0e45d24eae9d404179a0d5cc3a||||
+item|product|has a Product object as product field|11f6aa0e45d24eae9d404179a0d5cc3a||||
+com.ibatis.jpetstore.domain.item|com.ibatis.jpetstore.persistence.dao.map.itemmapdao|is a class used in ItemMapDao for mapping items|11f6aa0e45d24eae9d404179a0d5cc3a||||
+com.ibatis.jpetstore.domain.product|com.ibatis.jpetstore.persistence.dao.map.itemmapdao|is a class used in ItemMapDao for mapping products related to items|11f6aa0e45d24eae9d404179a0d5cc3a||||
+com.ibatis.db.sqlmap.client|com.ibatis.db.dao.basedao|is extended by BaseDao in order to access SqlMapClient|11f6aa0e45d24eae9d404179a0d5cc3a||||
+lineitemmapdao|com.ibatis.jpetstore.persistence.dao.map|is a subclass of|c8775f8cf415479f946037ac4c7c86d4||||
+basemapdao|lineitemmapdao|extends|c8775f8cf415479f946037ac4c7c86d4||||
+itemdao|lineitemmapdao|has a reference to|c8775f8cf415479f946037ac4c7c86d4||||
+daotransaction|insertlineitem|takes a parameter of type|c8775f8cf415479f946037ac4c7c86d4||||
+lineitem|insertlineitem|returns void and takes a parameter of type|c8775f8cf415479f946037ac4c7c86d4||||
+daotransaction|getlineitemsbyorderid|takes a parameter of type|c8775f8cf415479f946037ac4c7c86d4||||
+int|getlineitemsbyorderid|takes a parameter of type|c8775f8cf415479f946037ac4c7c86d4||||
+list|getlineitemsbyorderid|returns List and takes a parameter of type|c8775f8cf415479f946037ac4c7c86d4||||
+integerkey|list|is a subclass of|c8775f8cf415479f946037ac4c7c86d4||||
+lineitem|getlineitemsbyorderid|is contained in|c8775f8cf415479f946037ac4c7c86d4||||
+itemdao|getlineitemsbyorderid|is called on|c8775f8cf415479f946037ac4c7c86d4||||
+orderdao|com.ibatis.jpetstore.persistence.dao.orderdao|is a type of|8ae371e19b774f2296fab4272adf7a5d||||
+basemapdao|com.ibatis.jpetstore.persistence.dao.map.basemapdao|is a type of|8ae371e19b774f2296fab4272adf7a5d||||
+ordermapdao|com.ibatis.jpetstore.persistence.dao.map.ordermapdao|is a subclass of|8ae371e19b774f2296fab4272adf7a5d||||
+integerkey|java.util.integer|is a type of|8ae371e19b774f2296fab4272adf7a5d||||
+stringkey|java.lang.string|is a type of|8ae371e19b774f2296fab4272adf7a5d||||
+order|com.ibatis.jpetstore.domain.order|is a subclass of|8ae371e19b774f2296fab4272adf7a5d||||
+list|java.util.list|is a supertype of|8ae371e19b774f2296fab4272adf7a5d||||
+ordermapdao|com.ibatis.jpetstore.persistence.dao.map.ordermapdao|has method 'getOrder' with parameter type 'DaoTransaction, int' and return type 'Order'|8ae371e19b774f2296fab4272adf7a5d||||
+orderdao|com.ibatis.jpetstore.persistence.dao.orderdao|has method 'getOrder' with parameter type 'DaoTransaction, int' and return type 'Order'|8ae371e19b774f2296fab4272adf7a5d||||
+ordermapdao|com.ibatis.jpetstore.persistence.dao.map.ordermapdao|has method 'getOrdersByUserId' with parameter type 'DaoTransaction, String' and return type 'List'|8ae371e19b774f2296fab4272adf7a5d||||
+orderdao|com.ibatis.jpetstore.persistence.dao.orderdao|has method 'getOrdersByUserId' with parameter type 'DaoTransaction, String' and return type 'List'|8ae371e19b774f2296fab4272adf7a5d||||
+ordermapdao|com.ibatis.jpetstore.persistence.dao.map.ordermapdao|has method 'insertOrder' with parameter type 'DaoTransaction, Order' and return type 'void'|8ae371e19b774f2296fab4272adf7a5d||||
+basemapdao|com.ibatis.jpetstore.persistence.dao.map.basemapdao|has method 'insertOrder' with parameter type 'DaoTransaction, Order' and return type 'void'|8ae371e19b774f2296fab4272adf7a5d||||
+ordermapdao|com.ibatis.jpetstore.persistence.dao.map.ordermapdao|has method 'getNextOrderId' with parameter type 'DaoException' and return type 'int'|8ae371e19b774f2296fab4272adf7a5d||||
+basemapdao|com.ibatis.jpetstore.persistence.dao.map.basemapdao|has method 'getNextOrderId' with parameter type 'DaoException' and return type 'int'|8ae371e19b774f2296fab4272adf7a5d||||
+integerkey|java.util.integer|is a subtype of|8ae371e19b774f2296fab4272adf7a5d||||
+stringkey|java.lang.string|is a subtype of|8ae371e19b774f2296fab4272adf7a5d||||
+additemtocartaction|baseaction|is a type of Action in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+doperform|additemtocartaction|is a method of AddItemToCartAction in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+mapping|actionmapping|is assigned to mapping in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+form|actionform|is assigned to form in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+request|httpservletrequest|is assigned to request in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+response|httpservletresponse|is assigned to response in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+cartform|cartform|is assigned to form in the method doPerform of AddItemToCartAction in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+success|boolean|is a variable named success in the method doPerform of AddItemToCartAction in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+itemdao|itemdao|is assigned to itemDao in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+item|item|is assigned to item when retrieving it from itemDao in the method doPerform of AddItemToCartAction in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+daomanager|daomanager|is a static field named daoManager of type DaoManager in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+trans|daotransaction|is assigned to trans when obtaining it from daoManager in the method doPerform of AddItemToCartAction in the context provided.|40941f96a4bf4ec690409fc101e5bb10||||
+baseaction|daomanager|is accessed and initialized in the static block of BaseAction class.|459276bf4c854962b36fcea4e62c1730||||
+daomanager|resources|Resources are used to obtain configuration properties for DaoManager.|459276bf4c854962b36fcea4e62c1730||||
+baseaction.daomanager|accountdao|BaseAction's daoManager is used to obtain AccountDao instance.|459276bf4c854962b36fcea4e62c1730||||
+baseaction.daomanager|categorydao|BaseAction's daoManager is used to obtain CategoryDao instance.|459276bf4c854962b36fcea4e62c1730||||
+baseaction.daomanager|inventorydao|BaseAction's daoManager is used to obtain InventoryDao instance.|459276bf4c854962b36fcea4e62c1730||||
+baseaction.daomanager|itemdao|BaseAction's daoManager is used to obtain ItemDao instance.|459276bf4c854962b36fcea4e62c1730||||
+baseaction.daomanager|lineitemdao|BaseAction's daoManager is used to obtain LineItemDao instance.|459276bf4c854962b36fcea4e62c1730||||
+baseaction.daomanager|orderdao|BaseAction's daoManager is used to obtain OrderDao instance.|459276bf4c854962b36fcea4e62c1730||||
+baseaction.daomanager|productdao|BaseAction's daoManager is used to obtain ProductDao instance.|459276bf4c854962b36fcea4e62c1730||||
+baseaction.daomanager|signondao|BaseAction's daoManager is used to obtain SignonDao instance.|459276bf4c854962b36fcea4e62c1730||||
+editaccountaction|baseaction|is a type of Action in Struts framework|a7b38172cae34bb59098662b1c1cc3b7||||
+accountform|actionform|is used to collect and validate user input for an action method|a7b38172cae34bb59098662b1c1cc3b7||||
+accountdao|daomanager|is accessed through daoManager in this context|a7b38172cae34bb59098662b1c1cc3b7||||
+acctform.getaccount()|accountdao.updateaccount(trans, acctform.getaccount())|updates an account object through accountDao with changes made in acctForm|a7b38172cae34bb59098662b1c1cc3b7||||
+productdao|acctform.getaccount().getfavouritecategoryid()|returns a list of products based on the favourite category id of an account object|a7b38172cae34bb59098662b1c1cc3b7||||
+signondao|new signon()|updates password for a given user through signonDao|a7b38172cae34bb59098662b1c1cc3b7||||
+newaccountaction|com.ibatis.jpetstore.domain.account|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package interacts with the Account domain object from the com.ibatis.jpetstore.domain package to perform account-related operations.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|accountform|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package handles requests for creating new accounts and receives input from an AccountForm object.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|daomanager|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package accesses the DAO (Data Access Object) layer for database operations using a DaoManager object.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|orderdao|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package invokes methods of an OrderDao object to retrieve a list of orders for the currently logged-in user.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|productdao|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package accesses a ProductDao object to retrieve a list of products for the user's favorite category.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|httpservletrequest|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package interacts with a HttpServletRequest object to extract parameters and attributes from HTTP requests.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|httpservletresponse|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package sends response data to an HTTP client using a HttpServletResponse object.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|com.ibatis.db.dao.daotransaction|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package invokes methods of a DaoTransaction object to manage database transactions and handle concurrency issues.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|com.ibatis.db.dao.basedao|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package interacts with a BaseDao superclass for DAO methods related to database operations.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|com.ibatis.db.sqlmap.client.sqlmapclient|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package uses a SqlMapClient object to interact with the iBATIS framework for data access operations.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|org.apache.struts.action.actionform|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package implements the ActionForm interface to handle user input and request data.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|com.ibatis.jpetstore.domain.accountform|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package receives and validates input data from an AccountForm object, which is a subclass of ActionForm.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|com.ibatis.jpetstore.domain.account|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package creates, updates, and deletes accounts using an Account domain object.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|com.ibatis.jpetstore.domain.product|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package accesses product data using a Product domain object.|1f80951c5ba244008d4a7492cd21190b||||
+newaccountaction|com.ibatis.jpetstore.domain.productcategory|The NewAccountAction class in the com.ibatis.jpetstore.presentation.action package accesses product category data using a ProductCategory domain object.|1f80951c5ba244008d4a7492cd21190b||||
+neworderformaction|orderform|belongsTo|8500435335d24b3789645a00afc9fea8||||
+neworderformaction|mapping|isAssociatedWith|8500435335d24b3789645a00afc9fea8||||
+orderform|isshippingaddressrequired|hasProperty|8500435335d24b3789645a00afc9fea8||||
+mapping|findforward|providesMethod|8500435335d24b3789645a00afc9fea8||||
+orderform|getorderid|providesAttribute|8500435335d24b3789645a00afc9fea8||||
+lineitemdao|insertlineitem|performsOperation|8500435335d24b3789645a00afc9fea8||||
+orderform|getorder|providesAttribute|8500435335d24b3789645a00afc9fea8||||
+lineitemdao|getlineitemsbyorderid|performsOperationWithParameter|8500435335d24b3789645a00afc9fea8||||
+orderdao|insertorder|performsOperation|8500435335d24b3789645a00afc9fea8||||
+inventorydao|updateinventoryquantity|performsOperation|8500435335d24b3789645a00afc9fea8||||
+orderform|getorder|providesAttribute|8500435335d24b3789645a00afc9fea8||||
+request|getattribute|accessesAttribute|8500435335d24b3789645a00afc9fea8||||
+request|setattribute|setsAttribute|8500435335d24b3789645a00afc9fea8||||
+trans|commit|executesMethod|8500435335d24b3789645a00afc9fea8||||
+trans|release|executesMethod|8500435335d24b3789645a00afc9fea8||||
+request|getsession|accessesAttribute|8500435335d24b3789645a00afc9fea8||||
+request|setattribute|setsAttribute|8500435335d24b3789645a00afc9fea8||||
+daomanager|gettransaction|accessesMethod|8500435335d24b3789645a00afc9fea8||||
+neworderformaction|orderdao|NewOrderFormAction invokes OrderDao through daoManager to retrieve an instance of OrderDao for processing orders.|7798b3c3a3a44f6ba1004e240d823ee1||||
+neworderformaction|com.ibatis.jpetstore.presentation.form.accountform|NewOrderFormAction retrieves AccountForm from session attribute 'accountForm' to verify user authentication.|7798b3c3a3a44f6ba1004e240d823ee1||||
+neworderformaction|com.ibatis.jpetstore.presentation.form.cartform|NewOrderFormAction retrieves CartForm from session attribute 'cartForm' to initialize a new order.|7798b3c3a3a44f6ba1004e240d823ee1||||
+removeitemfromcartaction|com.ibatis.jpetstore.domain.product|RemoveItemFromCartAction operates on Product domain objects.|7798b3c3a3a44f6ba1004e240d823ee1||||
+searchproductsaction|baseaction|is a type of Action|fcd0233a049e43d8a82ba41dd8be536a||||
+removeitemfromcartaction|baseaction|is a type of Action|fcd0233a049e43d8a82ba41dd8be536a||||
+item|cartform|is accessed through CartForm|fcd0233a049e43d8a82ba41dd8be536a||||
+cartform|httpservletrequest|contains information from HttpServletRequest|fcd0233a049e43d8a82ba41dd8be536a||||
+cartitem|cartform|is stored in CartForm|fcd0233a049e43d8a82ba41dd8be536a||||
+searchproductsaction|httpservletrequest|accesses information from HttpServletRequest|fcd0233a049e43d8a82ba41dd8be536a||||
+string|"request.getparameter(""keyword"")"|is accessed through request.getParameter() in SearchProductsAction|fcd0233a049e43d8a82ba41dd8be536a||||
+signonaction|baseaction|SignonAction is a subclass of BaseAction|2581b427ae4343b484f237d4012f89f5||||
+accountform|signonaction|SignonAction has a reference to AccountForm|2581b427ae4343b484f237d4012f89f5||||
+accountform|username|Username is an attribute of AccountForm|2581b427ae4343b484f237d4012f89f5||||
+accountform|password|Password is an attribute of AccountForm|2581b427ae4343b484f237d4012f89f5||||
+signondao|daomanager|SignonDao can be accessed through DaoManager|2581b427ae4343b484f237d4012f89f5||||
+signon|signondao|getSignon() method of SignonDao returns a Signon object|2581b427ae4343b484f237d4012f89f5||||
+accountdao|daomanager|AccountDao can be accessed through DaoManager|2581b427ae4343b484f237d4012f89f5||||
+account|accountdao|getAccount() method of AccountDao returns an Account object|2581b427ae4343b484f237d4012f89f5||||
+productdao|daomanager|ProductDao can be accessed through DaoManager|2581b427ae4343b484f237d4012f89f5||||
+productlist|productdao|getProductListByCategory() method of ProductDao returns a ProductList object|2581b427ae4343b484f237d4012f89f5||||
+accountform|account|Signon action sets account to AccountForm after signon|2581b427ae4343b484f237d4012f89f5||||
+updatecartquantitiesaction|baseaction|is a type of Action in the given context.|15b654aa9c12435ba4879cfef4ecaa15||||
+updatecartquantitiesaction|action|is a subclass of ActionForm in the given context.|15b654aa9c12435ba4879cfef4ecaa15||||
+updatecartquantitiesaction|com.ibatis.jpetstore.presentation.action|belongs to the package com.ibatis.jpetstore.presentation.action in the given context.|15b654aa9c12435ba4879cfef4ecaa15||||
+cartform|actionform|is a type of ActionForm in the given context.|15b654aa9c12435ba4879cfef4ecaa15||||
+cartitem|com.ibatis.jpetstore.domain|belongs to the package com.ibatis.jpetstore.domain in the given context.|15b654aa9c12435ba4879cfef4ecaa15||||
+cartform|updatecartquantitiesaction|is a field of UpdateCartQuantitiesAction in the given context.|15b654aa9c12435ba4879cfef4ecaa15||||
+itemid|cartitem|is a field of CartItem in the given context.|15b654aa9c12435ba4879cfef4ecaa15||||
+cartitems|cartform|is an iterator of CartForm in the given context.|15b654aa9c12435ba4879cfef4ecaa15||||
+request|httpservletrequest|is a parameter passed to UpdateCartQuantitiesAction in the given context.|15b654aa9c12435ba4879cfef4ecaa15||||
+response|httpservletresponse|is a parameter passed to UpdateCartQuantitiesAction in the given context.|15b654aa9c12435ba4879cfef4ecaa15||||
+accountform|baseform|inherits from BaseForm|9e912ee05c624367ab7566313643f57f||||
+accountform|com.ibatis.jpetstore.presentation.form.accountform|defining class com.ibatis.jpetstore.presentation.form.AccountForm|9e912ee05c624367ab7566313643f57f||||
+com.ibatis.jpetstore.presentation.form.accountform|com.ibatis.jpetstore.domain.|no relation found|9e912ee05c624367ab7566313643f57f||||
+com.ibatis.jpetstore.presentation.form.accountform|account|has a property called 'account'|9e912ee05c624367ab7566313643f57f||||
+com.ibatis.jpetstore.presentation.form.accountform|list languages|has a list of items called 'languages'|9e912ee05c624367ab7566313643f57f||||
+com.ibatis.jpetstore.presentation.form.accountform|list categories|has a list of items called 'categories'|9e912ee05c624367ab7566313643f57f||||
+com.ibatis.jpetstore.presentation.form.accountform|string username|has a string property called 'username'|9e912ee05c624367ab7566313643f57f||||
+com.ibatis.jpetstore.presentation.form.accountform|string password|has a string property called 'password'|9e912ee05c624367ab7566313643f57f||||
+com.ibatis.jpetstore.presentation.form.accountform|string repeatedpassword|has a string property called 'repeatedPassword'|9e912ee05c624367ab7566313643f57f||||
+com.ibatis.jpetstore.presentation.form.accountform|list mylist|has a list of items called 'myList'|9e912ee05c624367ab7566313643f57f||||
+com.ibatis.jpetstore.presentation.form.accountform|string forwardaction|has a string property called 'forwardAction'|9e912ee05c624367ab7566313643f57f||||
+accountform|com.ibatis.jpetstore.presentation.action.|no relation found|9e912ee05c624367ab7566313643f57f||||
+accountform|actionmapping mapping|has a property called 'mapping'|9e912ee05c624367ab7566313643f57f||||
+accountform|account|is associated with|009b18efe3e34729a0c03342dfe400ff||||
+username|accountform|belongs to|009b18efe3e34729a0c03342dfe400ff||||
+mylist|accountform|is a property of|009b18efe3e34729a0c03342dfe400ff||||
+forwardaction|accountform|is a field in|009b18efe3e34729a0c03342dfe400ff||||
+password|accountform|is a field in|009b18efe3e34729a0c03342dfe400ff||||
+repeatedpassword|accountform|is a field in|009b18efe3e34729a0c03342dfe400ff||||
+languages|accountform|is a list in|009b18efe3e34729a0c03342dfe400ff||||
+categories|accountform|is a list in|009b18efe3e34729a0c03342dfe400ff||||
+validate|accountform|is a field in|009b18efe3e34729a0c03342dfe400ff||||
+validate|validate_edit_account|if statement to check if validate is not null and if VALIDATE_EDIT_ACCOUNT is equal to it|3ebda43775704e379e4792a1639f8e14||||
+validate|validate_new_account|if statement to check if validate is not null and if VALIDATE_NEW_ACCOUNT is equal to it|3ebda43775704e379e4792a1639f8e14||||
+account.setuserid|getusername|assignment operator used to set user id for the account object using getUsername() method|3ebda43775704e379e4792a1639f8e14||||
+account|status|property of account object named status is being set to 'OK'|3ebda43775704e379e4792a1639f8e14||||
+password|repeatedpassword|conditional statement checking if password and repeatedPassword are not null, and their equality|3ebda43775704e379e4792a1639f8e14||||
+errors|actionform|variable errors is used to store ActionError objects. This variable is an attribute of ActionForm class.|3ebda43775704e379e4792a1639f8e14||||
+account.error.userid.required|getusername()|if statement to check if user id for the account object is not empty using getUsername() method|3ebda43775704e379e4792a1639f8e14||||
+firstname|account|property of account object named firstName|3ebda43775704e379e4792a1639f8e14||||
+lastname|account|property of account object named lastName|3ebda43775704e379e4792a1639f8e14||||
+email|account|property of account object named email|3ebda43775704e379e4792a1639f8e14||||
+phone|account|property of account object named phone|3ebda43775704e379e4792a1639f8e14||||
+address1|account|property of account object named address1|3ebda43775704e379e4792a1639f8e14||||
+city|account|property of account object named city|3ebda43775704e379e4792a1639f8e14||||
+state|account|property of account object named state|3ebda43775704e379e4792a1639f8e14||||
+zip|account|property of account object named zip|3ebda43775704e379e4792a1639f8e14||||
+country|account|property of account object named country|3ebda43775704e379e4792a1639f8e14||||
+cartform|cart|Belongs to CartForm, initialized with a new Cart object|8a6e788d91ab455cb54bfe1014068f51||||
+cartform|workingitemid|Contains a workingItemId property|8a6e788d91ab455cb54bfe1014068f51||||
+categoryform|categoryform|Extends BaseForm and implements ActionForm interface|8a6e788d91ab455cb54bfe1014068f51||||
+categoryform|categoryid|Contains a categoryId property|8a6e788d91ab455cb54bfe1014068f51||||
+categoryform|category|Contains a Category object called category|8a6e788d91ab455cb54bfe1014068f51||||
+categoryform|productlist|Contains a List of products called productList|8a6e788d91ab455cb54bfe1014068f51||||
+emptyform|emptyform|Extends BaseForm and implements ActionForm interface|8a6e788d91ab455cb54bfe1014068f51||||
+item|product|An item belongs to a specific product.|c6c623919f9b43c198dbe70381053415||||
+itemform|item|The ItemForm class is used to input information for a specific item.|c6c623919f9b43c198dbe70381053415||||
+itemform|product|The Product property of the ItemForm class is used to associate an item with its corresponding product.|c6c623919f9b43c198dbe70381053415||||
+baseform|itemform|ItemForm extends BaseForm, which provides a common form structure for all forms in the application.|c6c623919f9b43c198dbe70381053415||||
+mastercard|american express|Both MasterCard and American Express are examples of credit cards, which are accepted as payment methods in this context.|3bedde49c5c94de7808dbe0d0fc01729||||
+orderform|card_type_list|The class OrderForm contains a list of accepted credit card types, which is initialized with MasterCard and American Express in this specific implementation.|3bedde49c5c94de7808dbe0d0fc01729||||
+confirmed|orderform|The boolean variable confirmed is a property of the OrderForm class, which can be set to true or false by the user.|3bedde49c5c94de7808dbe0d0fc01729||||
+shippingaddressrequired|orderform|The boolean variable shippingAddressRequired is also a property of the OrderForm class, and it determines whether the user needs to provide a shipping address or not.|3bedde49c5c94de7808dbe0d0fc01729||||
+order.getcreditcard()|actionerrors errors|If the credit card field in the order object is empty, an error will be added to the list of action errors during validation.|3bedde49c5c94de7808dbe0d0fc01729||||
+order.getexpirydate()|actionerrors errors|The same applies to the expiry date field in the order object.|3bedde49c5c94de7808dbe0d0fc01729||||
+order.getcardtype()|actionerrors errors|And also for the type of credit card used (stored in the cardType property of the Order class).|3bedde49c5c94de7808dbe0d0fc01729||||
+order.getshiptofirstname()|actionerrors errors|If any of these fields are empty, an error will be added to the list of action errors, indicating that this field is required.|3bedde49c5c94de7808dbe0d0fc01729||||
+order.error.shiptofirstname.required|order|The 'order' object contains the required 'shipToFirstName'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.shiptolastname.required|order|The 'order' object contains the required 'shipToLastName'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.shipaddress1.required|order|The 'order' object contains the required 'shipAddress1'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.shipcity.required|order|The 'order' object contains the required 'shipCity'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.shipstate.required|order|The 'order' object contains the required 'shipState'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.shipzip.required|order|The 'order' object contains the required 'shipZip'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.shipcountry.required|order|The 'order' object contains the required 'shipCountry'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.billtofirstname.required|order|The 'order' object contains the required 'billToFirstName'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.billtolastname.required|order|The 'order' object contains the required 'billToLastName'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.billaddress1.required|order|The 'order' object contains the required 'billAddress1'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.billcity.required|order|The 'order' object contains the required 'billCity'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.billstate.required|order|The 'order' object contains the required 'billState'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.billzip.required|order|The 'order' object contains the required 'billZip'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order.error.billcountry.required|order|The 'order' object contains the required 'billCountry'|a16a8e1cc6d3495e97b63145d790c1eb||||
+order|errors|addErrorIfStringEmpty is a method in the order class that takes errors, a string representing the error message for bill country being required, and the billCountry property of the order object as arguments.|b62cdd7918ac41a294f9a87dd7266075||||
+order.getbillcountry()|errors|is passed to the addErrorIfStringEmpty method if the string returned by getBillCountry is empty or null.|b62cdd7918ac41a294f9a87dd7266075||||
+productform|baseform|ProductForm extends BaseForm, which suggests that ProductForm inherits some functionality from BaseForm.|b62cdd7918ac41a294f9a87dd7266075||||
+productid|productform|is a property of the ProductForm class that can be accessed using getProductId() and setProductId() methods.|b62cdd7918ac41a294f9a87dd7266075||||
+product|productform|is a property of the ProductForm class that holds an instance of the Product class, which can be accessed using getProduct() and setProduct() methods.|b62cdd7918ac41a294f9a87dd7266075||||
+itemlist|productform|is a property of the ProductForm class that holds a list of items associated with the product being edited, which can be accessed using getItemList() and setItemList() methods.|b62cdd7918ac41a294f9a87dd7266075||||
+node_1|node_2|edge|chunk_id
+account|userid|String userId; represents the unique identifier for a user in this application's domain.|24481914343a43d99d5ff3c1f46dddea
+account|email|String email; holds the registered email address of the user.|24481914343a43d99d5ff3c1f46dddea
+account|firstname|String firstName; stores the given name of the user.|24481914343a43d99d5ff3c1f46dddea
+account|lastname|String lastName; contains the family name or surname of the user.|24481914343a43d99d5ff3c1f46dddea
+account|status|String status; indicates the current state or condition of the user's account in this system.|24481914343a43d99d5ff3c1f46dddea
+account|address1|String address1; holds the primary street address or house number of the user's residence.|24481914343a43d99d5ff3c1f46dddea
+account|address2|String address2; stores any additional or secondary address information for the user's address.|24481914343a43d99d5ff3c1f46dddea
+account|city|String city; denotes the name of the town, city, or village where the user resides.|24481914343a43d99d5ff3c1f46dddea
+account|state|String state; specifies the abbreviated or full name of the province, state, or region in which the user's residence is located.|24481914343a43d99d5ff3c1f46dddea
+account|zip|String zip; holds the postal code, ZIP code, or pin code of the user's address.|24481914343a43d99d5ff3c1f46dddea
+account|country|String country; indicates the name or code for the nation or country in which the user's residence is situated.|24481914343a43d99d5ff3c1f46dddea
+account|phone|String phone; saves the user's contact number or telephone number.|24481914343a43d99d5ff3c1f46dddea
+account|favouritecategoryid|String favouriteCategoryId; denotes the unique identifier for the preferred product category of the user.|24481914343a43d99d5ff3c1f46dddea
+account|languagepreference|String languagePreference; specifies the user's chosen or preferred language for interacting with this application.|24481914343a43d99d5ff3c1f46dddea
+account|listoption|boolean listOption; determines whether the user has opted to receive email lists or promotional emails from this system.|24481914343a43d99d5ff3c1f46dddea
+account|banneroption|boolean bannerOption; indicates whether the user has selected to view or hide graphical advertisements or banners on this platform.|24481914343a43d99d5ff3c1f46dddea
+account|bannername|String bannerName; holds the title, label, or description of a displayed banner or advertisement.|24481914343a43d99d5ff3c1f46dddea
+cart|web|is a part of or is related to|accff122f31949ad8ae6446e5b49c737
+jpetstore|cart|belongs to|accff122f31949ad8ae6446e5b49c737
+com.ibatis.jpetstore.domain|cart|is a class within|accff122f31949ad8ae6446e5b49c737
+java|cart|is written in|accff122f31949ad8ae6446e5b49c737
+cart|domain|is a type of|accff122f31949ad8ae6446e5b49c737
+com.ibatis.jpetstore.domain|cart||accff122f31949ad8ae6446e5b49c737
+src|/web/inf/classes/com/ibatis/jpetstore/domain/cart.java|is located in|accff122f31949ad8ae6446e5b49c737
+cart|itemmap|is a property of Cart, which is a HashMap called itemMap that contains CartItems as values.|255aefd7ad2a4363a988f11673accf59
+itemmap|item|Each key in the itemMap is an Item object, which represents an item in the cart.|255aefd7ad2a4363a988f11673accf59
+itemmap|cartitem|The value of each entry in the itemMap is a CartItem object, which contains information about a specific quantity of an Item.|255aefd7ad2a4363a988f11673accf59
+cartitem|item|A CartItem object corresponds to a specific Item object and keeps track of its quantity in the cart.|255aefd7ad2a4363a988f11673accf59
+itemmap|hashmap|The itemMap property is implemented as a synchronizedMap wrapped around a HashMap for concurrency management.|255aefd7ad2a4363a988f11673accf59
+itemmap|collection|The getCartItems() method returns an iterator over the values of the itemMap, which are all CartItem objects.|255aefd7ad2a4363a988f11673accf59
+itemmap|iterator|The getNumberOfItems() method returns the size of the itemMap, i.e., the total number of items in the cart.|255aefd7ad2a4363a988f11673accf59
+setquantitybyitemid|itemid|is the identifier for a specific product in the cart.|bf395dcae79c4689a27b72bba5f3e378
+cartitem|itemmap|is a map that associates item identifiers with their corresponding CartItems.|bf395dcae79c4689a27b72bba5f3e378
+getsubtotal|subtotal|calculates the total price of all items in the cart by multiplying their quantities and list prices.|bf395dcae79c4689a27b72bba5f3e378
+item|listprice|is the retail price for a specific product.|bf395dcae79c4689a27b72bba5f3e378
+cartitem|item|is the product being purchased by the customer.|bf395dcae79c4689a27b72bba5f3e378
+category|categoryid|is a unique identifier for a specific product category.|bf395dcae79c4689a27b72bba5f3e378
+getitemid|tostring|is a method in the given class|10b17fdeb5514365b9301cfe3487fcea
+productid|getproductid|returns the value of the productId variable in the class|10b17fdeb5514365b9301cfe3487fcea
+supplierid|getsupplierid|returns the value of the supplierId variable in the class|10b17fdeb5514365b9301cfe3487fcea
+listprice|getlistprice|returns the value of the listPrice variable in the class|10b17fdeb5514365b9301cfe3487fcea
+unitcost|getunitcost|returns the value of the unitCost variable in the class|10b17fdeb5514365b9301cfe3487fcea
+status|getstatus|returns the value of the status variable in the class|10b17fdeb5514365b9301cfe3487fcea
+attribute1|getattribute1|returns the value of the attribute1 variable in the class|10b17fdeb5514365b9301cfe3487fcea
+attribute2|getattribute2|returns the value of the attribute2 variable in the class|10b17fdeb5514365b9301cfe3487fcea
+attribute3|getattribute3|returns the value of the attribute3 variable in the class|10b17fdeb5514365b9301cfe3487fcea
+attribute4|getattribute4|returns the value of the attribute4 variable in the class|10b17fdeb5514365b9301cfe3487fcea
+attribute5|getattribute5|returns the value of the attribute5 variable in the class|10b17fdeb5514365b9301cfe3487fcea
+lineitem|item|In the context provided, 'LineItem' is a class that contains information about an item in an order. It has a reference to the 'Item' object, which contains details such as itemId and listPrice.|21667be70b134e5db7f333a50c490051
+orderid|lineitem|The 'orderId' is an integer that identifies a specific order in the system. It is associated with the 'LineItem' class, which keeps track of items for that particular order.|21667be70b134e5db7f333a50c490051
+linenumber|lineitem|The 'lineNumber' is an integer that specifies the position of a particular item within its corresponding order. It belongs to the 'LineItem' class.|21667be70b134e5db7f333a50c490051
+itemid|string|The 'itemId' is a string that uniquely identifies an item in the system. It is part of both the 'Item' and 'LineItem' classes.|21667be70b134e5db7f333a50c490051
+quantity|int|The 'quantity' is a number that represents how many of a particular item have been ordered. It belongs to the 'LineItem' class.|21667be70b134e5db7f333a50c490051
+unitprice|bigdecimal|The 'unitPrice' is a monetary value that represents the price of a single unit of an item. It is part of both the 'Item' and 'LineItem' classes, but is stored as a 'BigDecimal' in 'LineItem' due to its decimal nature.|21667be70b134e5db7f333a50c490051
+order|orderid|Order has an integer identifier called orderId|48dbbb7a9ebf4be6894213cf050823f3
+order|userid|Order is associated with a user identified by userId|48dbbb7a9ebf4be6894213cf050823f3
+order|orderdate|Order has a date called orderDate|48dbbb7a9ebf4be6894213cf050823f3
+order.shipaddress1|order|Shipping address line 1 is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+order.shipaddress2|order|Shipping address line 2 is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+order.shipcity|order|Shipping city is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+order.shipstate|order|Shipping state is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+order.shipzip|order|Shipping zip code is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+order.shipcountry|order|Shipping country is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+order.billaddress1|order|Billing address line 1 is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+order.billaddress2|order|Billing address line 2 is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+order.billcity|order|Billing city is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+order.billstate|order|Billing state is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+order.billzip|order|Billing zip code is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+order.billcountry|order|Billing country is associated with the Order object|48dbbb7a9ebf4be6894213cf050823f3
+account|userid|User's identifier in the system is userId|48dbbb7a9ebf4be6894213cf050823f3
+account|firstname|User's first name is firstName|48dbbb7a9ebf4be6894213cf050823f3
+account.lastname|account|User's last name is associated with the Account object|48dbbb7a9ebf4be6894213cf050823f3
+account.address1|account|User's billing/shipping address line 1 is associated with the Account object|48dbbb7a9ebf4be6894213cf050823f3
+account.address2|account|User's billing/shipping address line 2 is associated with the Account object|48dbbb7a9ebf4be6894213cf050823f3
+account.city|account|User's city is associated with the Account object|48dbbb7a9ebf4be6894213cf050823f3
+account.state|account|User's state is associated with the Account object|48dbbb7a9ebf4be6894213cf050823f3
+account.zip|account|User's zip code is associated with the Account object|48dbbb7a9ebf4be6894213cf050823f3
+account.country|account|User's country is associated with the Account object|48dbbb7a9ebf4be6894213cf050823f3
+cart.itemlist|cart|Cart's item list is stored in itemList|48dbbb7a9ebf4be6894213cf050823f3
+bigdecimal|unitprice|Unit price of an order item is represented by BigDecimal type|48dbbb7a9ebf4be6894213cf050823f3
+orderid|getorderid|method to retrieve the unique order identifier|bc8d9f8ce407465088c693ad280472a5
+userid|getuserid|method to retrieve the user's account ID|bc8d9f8ce407465088c693ad280472a5
+orderdate|getorderdate|method to retrieve the date when the order was placed|bc8d9f8ce407465088c693ad280472a5
+shipaddress1|shipaddress1|address where the product will be shipped|bc8d9f8ce407465088c693ad280472a5
+cart|getcartitems|list of products in the customer's shopping cart|bc8d9f8ce407465088c693ad280472a5
+orderid|lineitem.setorderid(int)|relationship between a line item and the corresponding order|bc8d9f8ce407465088c693ad280472a5
+lineitems|getlineitems()|list of line items for an order|bc8d9f8ce407465088c693ad280472a5
+lineitem|lineitem(int, int, cartitem)|constructor to create a new line item object|bc8d9f8ce407465088c693ad280472a5
+lineitem|getorderid()|method to retrieve the order ID associated with the current line item|bc8d9f8ce407465088c693ad280472a5
+lineitem|setorderid(int)|method to set the order ID for the current line item|bc8d9f8ce407465088c693ad280472a5
+cartitem|addlineitem(cartitem)|method to add a cart item to the list of line items for an order|bc8d9f8ce407465088c693ad280472a5
+orderid|lineitem.getorderid()|relationship between an order and its corresponding line items|bc8d9f8ce407465088c693ad280472a5
+shipaddress1|billtofirstname + ' ' + billtolastname|the address where the product will be shipped is the same as the billing address for this customer|bc8d9f8ce407465088c693ad280472a5
+shipaddress1|account.getaddress1()|relationship between the shipping address and the account information for this customer|bc8d9f8ce407465088c693ad280472a5
+billaddress1|account.getaddress1()|the billing address is stored in the customer's account information|bc8d9f8ce407465088c693ad280472a5
+shipcity|account.getcity()|relationship between the shipping address and the account information for this customer|bc8d9f8ce407465088c693ad280472a5
+billcity|account.getcity()|the billing address is stored in the customer's account information|bc8d9f8ce407465088c693ad280472a5
+shipstate|account.getstate()|relationship between the shipping address and the account information for this customer|bc8d9f8ce407465088c693ad280472a5
+billstate|account.getstate()|the billing address is stored in the customer's account information|bc8d9f8ce407465088c693ad280472a5
+shipzip|account.getzip()|relationship between the shipping address and the account information for this customer|bc8d9f8ce407465088c693ad280472a5
+billzip|account.getzip()|the billing address is stored in the customer's account information|bc8d9f8ce407465088c693ad280472a5
+shipcountry|account.getcountry()|relationship between the shipping address and the account information for this customer|bc8d9f8ce407465088c693ad280472a5
+billcountry|account.getcountry()|the billing address is stored in the customer's account information|bc8d9f8ce407465088c693ad280472a5
+totalprice|cart.getsubtotal()|relationship between the total price of an order and the contents of the shopping cart|bc8d9f8ce407465088c693ad280472a5
+getshipaddress1|shipaddress1|method 'getShipAddress1' returns the value of the 'shipAddress1' variable|bea818b5d3484234b48ae1f91b4c2c30
+shipaddress1|string|data type of 'shipAddress1' is String|bea818b5d3484234b48ae1f91b4c2c30
+getshipaddress2|shipaddress2|method 'getShipAddress2' returns the value of the 'shipAddress2' variable|bea818b5d3484234b48ae1f91b4c2c30
+shipaddress2|string|data type of 'shipAddress2' is String|bea818b5d3484234b48ae1f91b4c2c30
+getshipcity|shipcity|method 'getShipCity' returns the value of the 'shipCity' variable|bea818b5d3484234b48ae1f91b4c2c30
+shipcity|string|data type of 'shipCity' is String|bea818b5d3484234b48ae1f91b4c2c30
+getshipstate|shipstate|method 'getShipState' returns the value of the 'shipState' variable|bea818b5d3484234b48ae1f91b4c2c30
+shipstate|string|data type of 'shipState' is String|bea818b5d3484234b48ae1f91b4c2c30
+getshipzip|shipzip|method 'getShipZip' returns the value of the 'shipZip' variable|bea818b5d3484234b48ae1f91b4c2c30
+shipzip|string|data type of 'shipZip' is String|bea818b5d3484234b48ae1f91b4c2c30
+getshipcountry|shipcountry|method 'getShipCountry' returns the value of the 'shipCountry' variable|bea818b5d3484234b48ae1f91b4c2c30
+shipcountry|string|data type of 'shipCountry' is String|bea818b5d3484234b48ae1f91b4c2c30
+getbilladdress1|billaddress1|method 'getBillAddress1' returns the value of the 'billAddress1' variable|bea818b5d3484234b48ae1f91b4c2c30
+billaddress1|string|data type of 'billAddress1' is String|bea818b5d3484234b48ae1f91b4c2c30
+getbilladdress2|billaddress2|method 'getBillAddress2' returns the value of the 'billAddress2' variable|bea818b5d3484234b48ae1f91b4c2c30
+billaddress2|string|data type of 'billAddress2' is String|bea818b5d3484234b48ae1f91b4c2c30
+getbillcity|billcity|method 'getBillCity' returns the value of the 'billCity' variable|bea818b5d3484234b48ae1f91b4c2c30
+billcity|string|data type of 'billCity' is String|bea818b5d3484234b48ae1f91b4c2c30
+getbillstate|billstate|method 'getBillState' returns the value of the 'billState' variable|bea818b5d3484234b48ae1f91b4c2c30
+billstate|string|data type of 'billState' is String|bea818b5d3484234b48ae1f91b4c2c30
+getbillzip|billzip|method 'getBillZip' returns the value of the 'billZip' variable|bea818b5d3484234b48ae1f91b4c2c30
+billzip|string|data type of 'billZip' is String|bea818b5d3484234b48ae1f91b4c2c30
+product|categoryid|Relationship between a product and its category ID, often represented as a foreign key in a database.|6116de0c5e0149fe8bd8212ee870b2b8
+product|name|The name of the product is an essential characteristic of it.|6116de0c5e0149fe8bd8212ee870b2b8
+product|description|Additional information about a product that provides further details.|6116de0c5e0149fe8bd8212ee870b2b8
+product|image|A visual representation of the product, often used for marketing purposes.|6116de0c5e0149fe8bd8212ee870b2b8
+productid|categoryid|The category ID that a particular product belongs to is necessary for its classification and organization within a database or inventory system.|6116de0c5e0149fe8bd8212ee870b2b8
+accountdao|dao|AccountDao is a type of dao (data access object)|4acc29f98b424ecdbe5965e8af71ab67
+accountdao|persistence|AccountDao belongs to the package com.ibatis.jpetstore.persistence|4acc29f98b424ecdbe5965e8af71ab67
+com.ibatis.jpetstore.domain|account|Account is a class in the package com.ibatis.jpetstore.domain|4acc29f98b424ecdbe5965e8af71ab67
+com.ibatis.jpetstore.domain|sequence|Sequence is a class in the package com.ibatis.jpetstore.domain|4acc29f98b424ecdbe5965e8af71ab67
+com.ibatis.jpetstore.domain|signon|Signon is a class in the package com.ibatis.jpetstore.domain|4acc29f98b424ecdbe5965e8af71ab67
+com.ibatis.jpetstore.domain|setter|Setter refers to methods with set prefix in classes of the package com.ibatis.jpetstore.domain|4acc29f98b424ecdbe5965e8af71ab67
+com.ibatis.jpetstore.domain|getter|Getter refers to methods with get prefix in classes of the package com.ibatis.jpetstore.domain|4acc29f98b424ecdbe5965e8af71ab67
+java.lang|string|String is a data type used for storing and manipulating textual information in Java|4acc29f98b424ecdbe5965e8af71ab67
+com.ibatis.jpetstore.domain|description|Description is a field of type String in the class Item in the package com.ibatis.jpetstore.domain|4acc29f98b424ecdbe5965e8af71ab67
+account|dao|is a type of DAO, used to access data in the database for an application.|3f63653f00544f4d908d5ab47030818f
+accountdao|account|operates on instances of Account to perform CRUD operations in the database.|3f63653f00544f4d908d5ab47030818f
+accountdao|daotransaction|is used to manage transactions when accessing data from multiple DAOs within a single unit of work.|3f63653f00544f4d908d5ab47030818f
+categorydao|category|operates on instances of Category to perform CRUD operations in the database.|3f63653f00544f4d908d5ab47030818f
+categorydao|daotransaction|is used to manage transactions when accessing data from multiple DAOs within a single unit of work.|3f63653f00544f4d908d5ab47030818f
+inventorydao|inventory|operates on instances of Inventory to perform CRUD operations in the database, updating inventory quantities.|3f63653f00544f4d908d5ab47030818f
+itemdao|daotransaction|ItemDao is used to perform database operations on Item domain objects, and DaoTransaction is a context object through which transactional resources such as connections and statements can be accessed.|be0548dc1c414e95833257d8f071cfc1
+itemdao|string itemid|The method updateInventoryQuantity() in the ItemDao interface takes a String parameter representing the ID of an item.|be0548dc1c414e95833257d8f071cfc1
+itemdao|int quantity|The method updateInventoryQuantity() in the ItemDao interface also takes an integer parameter representing the new quantity of the item.|be0548dc1c414e95833257d8f071cfc1
+itemdao|daoexception|The methods getItem() and updateInventoryQuantity() in the ItemDao interface throw DaoException to indicate that a data access error occurred during their execution.|be0548dc1c414e95833257d8f071cfc1
+itemdao|com.ibatis.jpetstore.persistence.dao.item|The getItem() method in the ItemDao interface returns an Item object representing a specific item.|be0548dc1c414e95833257d8f071cfc1
+itemdao|com.ibatis.jpetstore.persistence.dao.daotransaction|The getItem() method in the ItemDao interface takes a DaoTransaction object as its argument to provide database access resources.|be0548dc1c414e95833257d8f071cfc1
+itemdao|com.ibatis.db.dao.dao|The ItemDao interface extends the abstract Dao class, which provides common functionality for data access in iBATIS.|be0548dc1c414e95833257d8f071cfc1
+itemdao|java.util.list|The getItemList() method in the ItemDao interface returns a List of all items.|be0548dc1c414e95833257d8f071cfc1
+itemdao|string productid|The getItemListByProduct() method in the ItemDao interface takes a String parameter representing the ID of a product and returns a List of items associated with that product.|be0548dc1c414e95833257d8f071cfc1
+lineitemdao|daotransaction|The LineItemDao interface is used to perform database operations on LineItem domain objects, and DaoTransaction is a context object through which transactional resources such as connections and statements can be accessed.|be0548dc1c414e95833257d8f071cfc1
+lineitemdao|lineitem|The insertLineItem() method in the LineItemDao interface adds a new LineItem object to the database.|be0548dc1c414e95833257d8f071cfc1
+lineitemdao|int orderid|The getLineItemsByOrderId() method in the LineItemDao interface takes an integer parameter representing the ID of an order and returns a List of line items associated with that order.|be0548dc1c414e95833257d8f071cfc1
+lineitemdao|com.ibatis.jpetstore.persistence.dao.daoexception|The methods insertLineItem() and getLineItemsByOrderId() in the LineItemDao interface throw DaoException to indicate that a data access error occurred during their execution.|be0548dc1c414e95833257d8f071cfc1
+lineitemdao|com.ibatis.jpetstore.persistence.dao.daotransaction|The insertLineItem() method in the LineItemDao interface takes a DaoTransaction object as its argument to provide database access resources.|be0548dc1c414e95833257d8f071cfc1
+lineitemdao|java.util.list|The getLineItemsByOrderId() method in the LineItemDao interface returns a List of line items associated with a specific order.|be0548dc1c414e95833257d8f071cfc1
+com.ibatis.jpetstore.persistence.dao.itemdao|com.ibatis.jpetstore.persistence.dao.lineitemdao|Both ItemDao and LineItemDao provide database access functionality for the JPetStore application.|be0548dc1c414e95833257d8f071cfc1
+getlineitemsbyorderid|orderdao|is a method of the OrderDao interface which retrieves all line items associated with a specific order identified by the given order ID|7bd947520b3a43eb86769f1ae0664c36
+getorder|orderdao|is a method of the OrderDao interface which retrieves detailed information about an order identified by the given order ID|7bd947520b3a43eb86769f1ae0664c36
+getordersbyuserid|orderdao|is a method of the OrderDao interface which retrieves all orders associated with a specific user identified by the given username|7bd947520b3a43eb86769f1ae0664c36
+orderdao|daotransaction|is used as an argument in the methods of the OrderDao interface to provide a data access transaction context for database operations|7bd947520b3a43eb86769f1ae0664c36
+insertorder|orderdao|is a method of the OrderDao interface which creates a new order in the database|7bd947520b3a43eb86769f1ae0664c36
+getnextorderid|orderdao|is a method of the OrderDao interface which returns the next available order ID to be assigned by the system for new orders|7bd947520b3a43eb86769f1ae0664c36
+productdao|daotransaction|is used as an argument in the methods of the ProductDao interface to provide a data access transaction context for database operations|7bd947520b3a43eb86769f1ae0664c36
+getproduct|productdao|is a method of the ProductDao interface which retrieves detailed information about a specific product identified by the given product ID|7bd947520b3a43eb86769f1ae0664c36
+getproductlist|productdao|is a method of the ProductDao interface which retrieves a list of all products currently available in the system|7bd947520b3a43eb86769f1ae0664c36
+list|getproductlist|List is a collection of elements, and getProductList is a method in a class that returns a List containing product information.|0038c3bd107540d3b41c4398e4a4d36d
+daotransaction|trans|DaoTransaction represents a database transaction and trans is a parameter passed to the methods to initiate the transaction.|0038c3bd107540d3b41c4398e4a4d36d
+list|getproductlistbycategory|List is a collection of elements, and getProductListByCategory is a method in a class that returns a List containing product information filtered by categoryId.|0038c3bd107540d3b41c4398e4a4d36d
+daotransaction|trans|DaoTransaction represents a database transaction and trans is a parameter passed to the methods to initiate the transaction.|0038c3bd107540d3b41c4398e4a4d36d
+list|getproductlistbykeyword|List is a collection of elements, and getProductListByKeyword is a method in a class that returns a List containing product information filtered by keyword.|0038c3bd107540d3b41c4398e4a4d36d
+daotransaction|trans|DaoTransaction represents a database transaction and trans is a parameter passed to the methods to initiate the transaction.|0038c3bd107540d3b41c4398e4a4d36d
+signon|getsignon|Signon is a class representing user authentication information, and getSignon is a method in a class that returns a Signon object based on provided username and password.|0038c3bd107540d3b41c4398e4a4d36d
+daotransaction|trans|DaoTransaction represents a database transaction and trans is a parameter passed to the methods to initiate the transaction.|0038c3bd107540d3b41c4398e4a4d36d
+signon|signon|Signon is a class representing user authentication information, and signon is a variable name used in the updateSignon() method to pass an updated Signon object.|0038c3bd107540d3b41c4398e4a4d36d
+daotransaction|trans|DaoTransaction represents a database transaction and trans is a parameter passed to the methods to initiate the transaction.|0038c3bd107540d3b41c4398e4a4d36d
+signon|signon|Signon is a class representing user authentication information, and signon is a variable name used in the insertSignon() method to pass a new Signon object.|0038c3bd107540d3b41c4398e4a4d36d
+daotransaction|trans|DaoTransaction represents a database transaction and trans is a parameter passed to the methods to initiate the transaction.|0038c3bd107540d3b41c4398e4a4d36d
+signondao|signondao|SignonDao is an interface representing methods for working with Signon objects.|0038c3bd107540d3b41c4398e4a4d36d
+com.ibatis|jpetstore|com.ibatis and jpetstore are packages used to organize classes and interfaces within a Java project, and this line indicates that the SignonDao class is located in the com.ibatis.jpetstore package.|0038c3bd107540d3b41c4398e4a4d36d
+basecachedao|cache|BaseCacheDao is a superclass for cache-aware DAOs, and 'cache' is a subpackage within the com.ibatis.jpetstore package.|0038c3bd107540d3b41c4398e4a4d36d
+list|getproductlist(daotransaction trans)|List is a collection of elements, and getProductList(DaoTransaction trans) is a method in the class where this code snippet is located.|0038c3bd107540d3b41c4398e4a4d36d
+list|getproductlistbycategory(daotransaction trans, string categoryid)|List is a collection of elements, and getProductListByCategory(DaoTransaction trans, String categoryId) is a method in the class where this code snippet is located.|0038c3bd107540d3b41c4398e4a4d36d
+list|getproductlistbykeyword(daotransaction trans, string keyword)|List is a collection of elements, and getProductListByKeyword(DaoTransaction trans, String keyword) is a method in the class where this code snippet is located.|0038c3bd107540d3b41c4398e4a4d36d
+daotransaction|trans|DaoTransaction represents a database transaction and 'trans' is a parameter passed to these methods for initiating transactions.|0038c3bd107540d3b41c4398e4a4d36d
+basecachedao|dao|BaseCacheDao is an example of how DAO provides a pluggable framework.|6cd5fb7f64d441eba4741253057bb4ac
+basecachedao|cache|BaseCacheDao contains a cache.|6cd5fb7f64d441eba4741253057bb4ac
+basecachedao|max_items_per_channel|BaseCacheDao has a constant MAX_ITEMS_PER_CHANNEL.|6cd5fb7f64d441eba4741253057bb4ac
+basecachedao|channels|BaseCacheDao uses a Map called CHANNELS to store CacheChannels.|6cd5fb7f64d441eba4741253057bb4ac
+basecachedao|getclass()|BaseCacheDao retrieves the appropriate CacheChannel from CHANNELS based on its class.|6cd5fb7f64d441eba4741253057bb4ac
+cachechannel|cache|Each CacheChannel contains a Map called cache to store objects.|6cd5fb7f64d441eba4741253057bb4ac
+cachechannel|keys|Each CacheChannel also contains a List called keys to keep track of the keys used to access objects from its cache.|6cd5fb7f64d441eba4741253057bb4ac
+cachechannel|cache|contains a map called cache which stores data|41ea21fd766b4c39ad3cc183da7eb56f
+cachechannel|keys|maintains a list of keys associated with the stored data|41ea21fd766b4c39ad3cc183da7eb56f
+petstorecachedao|itemdao|extends BaseCacheDao and provides implementation for item related operations through ItemMapDao|41ea21fd766b4c39ad3cc183da7eb56f
+petstorecachedao|productdao|extends BaseCacheDao and provides implementation for product related operations through ProductMapDao|41ea21fd766b4c39ad3cc183da7eb56f
+petstorecachedao|categorydao|extends BaseCacheDao and provides implementation for category related operations through CategoryMapDao|41ea21fd766b4c39ad3cc183da7eb56f
+petstorecachedao|inventorydao|extends BaseCacheDao and provides implementation for inventory related operations through InventoryMapDao|41ea21fd766b4c39ad3cc183da7eb56f
+com.ibatis.jpetstore.persistence.dao.cache|basecachedao|is a parent class which provides basic cache functionality for DAOs|41ea21fd766b4c39ad3cc183da7eb56f
+getproductlist|productdao.getproductlist|belongs to method 'getProductList' which calls 'productDao.getProductList'|f3af89a5dee54ba884861457f858bee6
+getproductlist|list|returns a list of products called 'list'|f3af89a5dee54ba884861457f858bee6
+list|productdao|stored in variable 'list' after being retrieved from 'productDao'|f3af89a5dee54ba884861457f858bee6
+getproductlistbycategory|categoryid|takes a category ID as parameter|f3af89a5dee54ba884861457f858bee6
+getproductlistbycategory|productdao.getproductlistbycategory|belongs to method 'getProductListByCategory' which calls 'productDao.getProductListByCategory'|f3af89a5dee54ba884861457f858bee6
+getproductlistbycategory|list|returns a list of products called 'list'|f3af89a5dee54ba884861457f858bee6
+getitem|itemid|takes an item ID as parameter|f3af89a5dee54ba884861457f858bee6
+getitem|itemdao.getitem|belongs to method 'getItem' which calls 'itemDao.getItem'|f3af89a5dee54ba884861457f858bee6
+getitem|item|returns an Item object|f3af89a5dee54ba884861457f858bee6
+getitemlist|itemdao.getitemlist|belongs to method 'getItemList' which calls 'itemDao.getItemList'|f3af89a5dee54ba884861457f858bee6
+getitemlist|list|returns a list of Items called 'list'|f3af89a5dee54ba884861457f858bee6
+getitemlistbyproduct|productid|takes a product ID as parameter|f3af89a5dee54ba884861457f858bee6
+getitemlistbyproduct|itemdao.getitemlistbyproduct|belongs to method 'getItemListByProduct' which calls 'itemDao.getItemListByProduct'|f3af89a5dee54ba884861457f858bee6
+getitemlistbyproduct|list|returns a list of Items called 'list'|f3af89a5dee54ba884861457f858bee6
+updateaccount|executeupdate|is called by|3417e22b1b6b4d92b702682b1830b80d
+updateprofile|executeupdate|is called by|3417e22b1b6b4d92b702682b1830b80d
+basemapdao|sqlmap|uses|3417e22b1b6b4d92b702682b1830b80d
+resources|xmlsqlmapbuilder|is used by|3417e22b1b6b4d92b702682b1830b80d
+daomanager|getinstance|is invoked by|3417e22b1b6b4d92b702682b1830b80d
+basemapdao|daomanager|has|3417e22b1b6b4d92b702682b1830b80d
+resources|getresourceasreader|is used by|3417e22b1b6b4d92b702682b1830b80d
+executeupdate|mappedstatementname|is a parameter passed to the executeUpdate method in this context|911ada9111be4fc9a206b5c2ffa08d7a
+executequeryforlist|mappedstatementname|is a parameter passed to the executeQueryForList method in this context|911ada9111be4fc9a206b5c2ffa08d7a
+executequeryforobject|mappedstatementname|is a parameter passed to the executeQueryForObject method in this context|911ada9111be4fc9a206b5c2ffa08d7a
+sqlmap|mappedstatement|contains the mappedStatement object being used in this context|911ada9111be4fc9a206b5c2ffa08d7a
+connection|conn|is assigned to a variable named 'conn' when retrieved from the transaction object|911ada9111be4fc9a206b5c2ffa08d7a
+categorydao|basemapdao|implements CategoryDao and inherits from BaseMapDao|ee83a8f26b7246fb8e8c7060c571c372
+com.ibatis.jpetstore.persistence.dao.map|categorymapdao|is a class in package com.ibatis.jpetstore.persistence.dao.map|ee83a8f26b7246fb8e8c7060c571c372
+com.ibatis.jpetstore.domain.|category|is a domain object used for category management in JPetStore|ee83a8f26b7246fb8e8c7060c571c372
+categorymapdao|com.ibatis.db.dao.|inherits map-based functionality from com.ibatis.db.dao.|ee83a8f26b7246fb8e8c7060c571c372
+categorymapdao|com.ibatis.jpetstore.persistence.dao.|is a DAO (Data Access Object) for category management in JPetStore|ee83a8f26b7246fb8e8c7060c571c372
+categorymapdao|com.ibatis.db.sqlmap.|uses SQL Maps from com.ibatis.db.sqlmap.|ee83a8f26b7246fb8e8c7060c571c372
+categorymapdao|java.util.|may utilize collections from java.util.|ee83a8f26b7246fb8e8c7060c571c372
+categorymapdao|categorydao|inherits interface CategoryDao|7d829bf1477d4ed1bce01541890c8141
+categorymapdao|basemapdao|extends class BaseMapDao|7d829bf1477d4ed1bce01541890c8141
+inventorymapdao|inventorydao|implements interface InventoryDao|7d829bf1477d4ed1bce01541890c8141
+categorymapdao|item|uses class Item in getCategory method|7d829bf1477d4ed1bce01541890c8141
+inventorymapdao|item|uses class Item in updateInventoryQuantity method|7d829bf1477d4ed1bce01541890c8141
+itemmapdao|basemapdao|extends|f8827b0a82ad42859f37221deaf18ce2
+itemmapdao|com.ibatis.jpetstore.persistence.dao.map.itemdao|implements|f8827b0a82ad42859f37221deaf18ce2
+basemapdao|com.ibatis.db.dao.basedao|extends|f8827b0a82ad42859f37221deaf18ce2
+item|com.ibatis.jpetstore.domain.item||f8827b0a82ad42859f37221deaf18ce2
+product|com.ibatis.jpetstore.domain.product||f8827b0a82ad42859f37221deaf18ce2
+item|product|item.getProduct(productId)|f8827b0a82ad42859f37221deaf18ce2
+basemapdao|com.ibatis.db.dao.basedao|executesQueryForList, executeQueryForObject and executeQueryForObject methods of the latter class|f8827b0a82ad42859f37221deaf18ce2
+basemapdao|com.ibatis.db.sqlmap.sqlmapclientcallback|supports sqlMapClient, SqlSessionFactory and TransientSqlSessionFactory as arguments|f8827b0a82ad42859f37221deaf18ce2
+basemapdao|com.ibatis.jpetstore.persistence.dao.map.itemdao|is a type of ItemDao|f8827b0a82ad42859f37221deaf18ce2
+list|java.util.list||f8827b0a82ad42859f37221deaf18ce2
+lineitemmapdao|basemapdao|is a type of|7dbc28dc70634557a3e1eafa8d95965c
+lineitemdao|lineitemmapdao|implements|7dbc28dc70634557a3e1eafa8d95965c
+itemdao|lineitemmapdao|has a reference to|7dbc28dc70634557a3e1eafa8d95965c
+orderid|getlineitemsbyorderid|parameter for method call|7dbc28dc70634557a3e1eafa8d95965c
+list|getlineitemsbyorderid|return type of method|7dbc28dc70634557a3e1eafa8d95965c
+integerkey|list|element type for List|7dbc28dc70634557a3e1eafa8d95965c
+lineitem|list|element type for List|7dbc28dc70634557a3e1eafa8d95965c
+daotransaction|insertlineitem|parameter for method call|7dbc28dc70634557a3e1eafa8d95965c
+int|orderid|parameter for method getLineItemsByOrderId|7dbc28dc70634557a3e1eafa8d95965c
+com.ibatis.jpetstore.persistence.dao.map|com.ibatis.db.sqlmap|imported class from package|7dbc28dc70634557a3e1eafa8d95965c
+com.ibatis.db.dao|com.ibatis.db.sqlmap|imported class from package|7dbc28dc70634557a3e1eafa8d95965c
+com.ibatis.jpetstore.domain|com.ibatis.db.dao|imported class from package|7dbc28dc70634557a3e1eafa8d95965c
+com.ibatis.jpetstore.persistence.dao|com.ibatis.jpetstore.domain|imported class from package|7dbc28dc70634557a3e1eafa8d95965c
+ordermapdao|com.ibatis.jpetstore.persistence.dao.map|is a type of|8977bf7da4834786a1bcd3bbf8f2670b
+basemapdao|com.ibatis.jpetstore.persistence.dao.map|extends|8977bf7da4834786a1bcd3bbf8f2670b
+ordermapdao|com.ibatis.db.dao.daotransaction|takes in as parameter|8977bf7da4834786a1bcd3bbf8f2670b
+getorder|getorder|same function name|8977bf7da4834786a1bcd3bbf8f2670b
+executequeryforobject|getorder|called by|8977bf7da4834786a1bcd3bbf8f2670b
+integerkey|orderid|passed as parameter|8977bf7da4834786a1bcd3bbf8f2670b
+getordersbyuserid|getordersbyuserid|same function name|8977bf7da4834786a1bcd3bbf8f2670b
+executequeryforlist|getordersbyuserid|called by|8977bf7da4834786a1bcd3bbf8f2670b
+stringkey|userid|passed as parameter|8977bf7da4834786a1bcd3bbf8f2670b
+insertorder|insertorder|same function name|8977bf7da4834786a1bcd3bbf8f2670b
+order|order|same variable name|8977bf7da4834786a1bcd3bbf8f2670b
+executeupdate|insertorder|called by|8977bf7da4834786a1bcd3bbf8f2670b
+insertorderstatus|insertorder|also called by|8977bf7da4834786a1bcd3bbf8f2670b
+getnextorderid|getnextorderid|same function name|8977bf7da4834786a1bcd3bbf8f2670b
+getnextid|getnextorderid|called by|8977bf7da4834786a1bcd3bbf8f2670b
+additemtocartaction|baseaction|is a type of BaseAction|7f44ca1abcf14af9af43377655fa6454
+additemtocartaction|com.ibatis.jpetstore.presentation.action.|belongs to the package com.ibatis.jpetstore.presentation.action.|7f44ca1abcf14af9af43377655fa6454
+additemtocartaction|com.ibatis.jpetstore.presentation.|is part of the package com.ibatis.jpetstore.presentation.|7f44ca1abcf14af9af43377655fa6454
+additemtocartaction|javax.servlet.http.|requires the class javax.servlet.http.|7f44ca1abcf14af9af43377655fa6454
+additemtocartaction|org.apache.struts.action.|belongs to the package org.apache.struts.action.|7f44ca1abcf14af9af43377655fa6454
+signonmapdao|basemapdao|is a type of BaseMapDao|7f44ca1abcf14af9af43377655fa6454
+signonmapdao|com.ibatis.jpetstore.persistence.dao.|belongs to the package com.ibatis.jpetstore.persistence.dao.|7f44ca1abcf14af9af43377655fa6454
+signonmapdao|com.ibatis.jpetstore.persistence.|is part of the package com.ibatis.jpetstore.persistence.|7f44ca1abcf14af9af43377655fa6454
+signonmapdao|com.ibatis.db.dao.|requires the class com.ibatis.db.dao.|7f44ca1abcf14af9af43377655fa6454
+signonmapdao|com.ibatis.jpetstore.domain.|is part of the package com.ibatis.jpetstore.domain.|7f44ca1abcf14af9af43377655fa6454
+signon|com.ibatis.jpetstore.domain.|belongs to the package com.ibatis.jpetstore.domain.|7f44ca1abcf14af9af43377655fa6454
+signon|com.ibatis.jpetstore.|is part of the package com.ibatis.jpetstore.|7f44ca1abcf14af9af43377655fa6454
+signonmapdao|signon|uses the class Signon|7f44ca1abcf14af9af43377655fa6454
+additemtocartaction|baseaction|is a type of Action in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+com.ibatis.jpetstore.presentation.action|baseaction|belongs to the package com.ibatis.jpetstore.presentation.action in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+org.apache.struts.action|additemtocartaction|is a type of Action implemented by org.apache.struts.action in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+httpservletresponse|additemtocartaction|is used by AddItemToCartAction in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+httpservletrequest|additemtocartaction|is used by AddItemToCartAction in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+cartform|additemtocartaction|is passed as a parameter to AddItemToCartAction in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+doperform|additemtocartaction|is a method of AddItemToCartAction in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+mapping|additemtocartaction|is used by AddItemToCartAction to find forward in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+form|additemtocartaction|is passed as a parameter to AddItemToCartAction in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+request|additemtocartaction|is used by AddItemToCartAction in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+response|additemtocartaction|is used by AddItemToCartAction in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+itemdao|baseaction|is used by BaseAction to access itemDao in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+item|additemtocartaction|is accessed using itemDao in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+cartform.getworkingitemid()|additemtocartaction|is used to retrieve the Item ID from the CartForm object in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+cartform.getcart().containsitemid(cartform.getworkingitemid())|additemtocartaction|is used to check if the Item ID is already added in Cart object of CartForm in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+cartform.getcart().incrementquantitybyitemid(cartform.getworkingitemid())|additemtocartaction|is used to increment the quantity of Item with given Item ID in Cart object of CartForm in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+success|additemtocartaction|is assigned a boolean value in AddItemToCartAction based on the condition in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+trans|additemtocartaction|is accessed using daoManager to initiate transactions in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+itemdao.getitem(trans, cartform.getworkingitemid())|additemtocartaction|is used to access itemDao and retrieve Item object with given Item ID using trans variable in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+message|request|is set as an attribute of request object in AddItemToCartAction when there is an error adding Item to Cart in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+item|cartform.getcart().additem(item)|is added to Cart object of CartForm using itemDao in AddItemToCartAction when Item is not already present in the Cart in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+baseaction|org.apache.struts.action|is a subclass of Action implemented by BaseAction in the presented context.|86ca433ea90844e59a9fb60bb1913d3f
+baseaction|daomanager|is associated with|7b7d19532fb54e86bae41434c84f9027
+baseaction|action|is a subclass of|7b7d19532fb54e86bae41434c84f9027
+daomanager|"daomanager.configure(resources.getresourceasstream(""properties/dao.xml""))"|initializes|7b7d19532fb54e86bae41434c84f9027
+daomanager|daomanager.getinstance()|returns instance of|7b7d19532fb54e86bae41434c84f9027
+accountdao|"daomanager.getdao(""account"")"|retrieved from daoManager by getting instance of|7b7d19532fb54e86bae41434c84f9027
+categorydao|"daomanager.getdao(""category"")"|retrieved from daoManager by getting instance of|7b7d19532fb54e86bae41434c84f9027
+inventorydao|"daomanager.getdao(""inventory"")"|retrieved from daoManager by getting instance of|7b7d19532fb54e86bae41434c84f9027
+itemdao|"daomanager.getdao(""item"")"|retrieved from daoManager by getting instance of|7b7d19532fb54e86bae41434c84f9027
+lineitemdao|"daomanager.getdao(""lineitem"")"|retrieved from daoManager by getting instance of|7b7d19532fb54e86bae41434c84f9027
+orderdao|"daomanager.getdao(""order"")"|retrieved from daoManager by getting instance of|7b7d19532fb54e86bae41434c84f9027
+productdao|"daomanager.getdao(""product"")"|retrieved from daoManager by getting instance of|7b7d19532fb54e86bae41434c84f9027
+signondao|"daomanager.getdao(""signon"")"|retrieved from daoManager by getting instance of|7b7d19532fb54e86bae41434c84f9027
+node_1|node_2|edge|chunk_id
+donothingaction|baseaction|subclass relationship, 'DoNothingAction' is a subclass of 'BaseAction'|41dbb7bbcadb4b73b011921bb6581e8f
+com.ibatis.jpetstore.presentation.action.editaccountaction|com.ibatis.jpetstore.presentation.action.donothingaction|subclass relationship, 'EditAccountAction' is a subclass of 'DoNothingAction'|41dbb7bbcadb4b73b011921bb6581e8f
+com.ibatis.db.dao.dao|com.ibatis.jpetstore.domain.account|usages relation, 'DAO' is used to interact with instances of 'Account'|41dbb7bbcadb4b73b011921bb6581e8f
+com.ibatis.jpetstore.presentation.form.accountform|com.ibatis.jpetstore.domain.account|mapping relation, 'AccountForm' is used to extract data for mapping it to instances of 'Account'|41dbb7bbcadb4b73b011921bb6581e8f
+org.apache.struts.action.|javax.servlet.http.|importing relation, 'org.apache.struts.action.' imports 'javax.servlet.http.'|41dbb7bbcadb4b73b011921bb6581e8f
+editaccountformaction|baseaction|is a type of action in Struts framework, which extends BaseAction for performing customized actions specific to the EditAccountForm.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|accountform|works with AccountForm object passed as parameter to doPerform() method in Struts framework for editing account information.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.getsession().getattribute(""accountform"")"|retrieves the AccountForm object from session attribute and stores it in workingAcctForm for further processing.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|workingacctform|is used as a temporary variable to store the AccountForm object obtained from session and perform necessary operations on it.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.getsession().setattribute(""workingaccountform"")"|stores the modified AccountForm object in session attribute for further use by other Struts actions.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.getsession().removeattribute(""workingaccountform"")"|removes the temporary workingAcctForm object from session for avoiding memory leaks.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"mapping.findforward(""success"")"|redirects to success page upon successful execution of doPerform() method.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.setattribute(""message"", ""your account was not updated because the submitted information was not validated."")"|sets a message attribute in request for displaying error message on failure page.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"mapping.findforward(""failure"")"|redirects to failure page upon unsuccessful execution of doPerform() method due to validation errors.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.setattribute(""message"", ""there was a problem updating your account information. cause: "") + e"")"|sets a message attribute in request for displaying error message on failure page with exception details.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.setattribute(""message"", ""your account was not updated because the submitted information was not validated."")"|sets a message attribute in request for displaying error message on failure page.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"mapping.findforward(""unknown-error"")"|redirects to unknown error page upon unsuccessful execution of doPerform() method due to unknown errors.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|username = acctform.getaccount().getuserid()|extracts the username from AccountForm object for further processing by DaoTransaction class.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|accountdao.getaccount(trans, username)|retrieves the account information from database using getAccount() method of AccountDao class with trans and username arguments.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|daomanager.gettransaction()|creates a new transaction for executing DB operations using getTransaction() method of DaoManager class.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|acctdao.getaccount(trans, username)|retrieves the account information from database for a particular user using getAccount() method of AccountDao class.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|daomanager.release()|releases the transaction obtained by getTransaction() method of DaoManager class for DB operations.|a935c952b3324639a3f1157f7ab0b3fa
+indexaction|categorydao|uses to retrieve category list|810f8d249e0249ac8f51f394ceddd142
+listordersaction|accountform|receives instance of AccountForm for accessing account information|810f8d249e0249ac8f51f394ceddd142
+newaccountformaction|com.ibatis.jpetstore.presentation.action|is a subclass of|dcb255390cae4d519b1ad671d2d57f99
+baseaction|org.apache.struts.action|is a subclass of|dcb255390cae4d519b1ad671d2d57f99
+httpsessionbindinglistener|javax.servlet.http.httpsessionbindinglistener|implements|dcb255390cae4d519b1ad671d2d57f99
+accountdao|com.ibatis.db.dao|is used by|dcb255390cae4d519b1ad671d2d57f99
+productdao|com.ibatis.db.dao|is used by|dcb255390cae4d519b1ad671d2d57f99
+accountform|com.ibatis.jpetstore.presentation.form|is referenced by|dcb255390cae4d519b1ad671d2d57f99
+transaction|com.ibatis.db.transaction|is used by|dcb255390cae4d519b1ad671d2d57f99
+signon|com.ibatis.jpetstore.domain|is referenced by|dcb255390cae4d519b1ad671d2d57f99
+signondao|com.ibatis.db.dao|is used by|dcb255390cae4d519b1ad671d2d57f99
+neworderformaction|com|is a package or namespace of|0303f4e6b16d4a31b5bc62cc9193f14c
+neworderformaction|jpetstore|is a subpackage, module or component of|0303f4e6b16d4a31b5bc62cc9193f14c
+neworderformaction|presentation|is a subpackage, module or component of|0303f4e6b16d4a31b5bc62cc9193f14c
+neworderformaction|action|is a subclass, type or instance of|0303f4e6b16d4a31b5bc62cc9193f14c
+orderform|neworderformaction|is an attribute, property or field of|0303f4e6b16d4a31b5bc62cc9193f14c
+orderdao|daomanager|is accessed by or refers to|0303f4e6b16d4a31b5bc62cc9193f14c
+lineitemdao|daomanager|is accessed by or refers to|0303f4e6b16d4a31b5bc62cc9193f14c
+inventorydao|daomanager|is accessed by or refers to|0303f4e6b16d4a31b5bc62cc9193f14c
+orderform.getorder()|orderdao.getorder()|returns the same element as|0303f4e6b16d4a31b5bc62cc9193f14c
+orderform.getorderid()|lineitemdao.getlineitemsbyorderid()|returns the same element as|0303f4e6b16d4a31b5bc62cc9193f14c
+neworderformaction|baseaction|NewOrderFormAction is a subclass of BaseAction|b659e27e8a0843aca42021631836b450
+neworderformaction|daomanager|NewOrderFormAction uses daoManager to get OrderDao object|b659e27e8a0843aca42021631836b450
+doperform|neworderformaction|doPerform is a method of NewOrderFormAction|b659e27e8a0843aca42021631836b450
+acctform|request.getsession().getattribute()|NewOrderFormAction retrieves acctForm object from request session|b659e27e8a0843aca42021631836b450
+cartform|request.getsession().getattribute()|NewOrderFormAction retrieves cartForm object from request session|b659e27e8a0843aca42021631836b450
+orderdao|"daomanager.getdao(""order"")"|"NewOrderFormAction gets OrderDao object from daoManager using ""Order"" string parameter"|b659e27e8a0843aca42021631836b450
+signonforwardaction|request.setattribute()|NewOrderFormAction sets signonForwardAction attribute in request|b659e27e8a0843aca42021631836b450
+global-orderform|signonforwardaction|global-orderform is a value of signonForwardAction attribute|b659e27e8a0843aca42021631836b450
+global-signon|request.setattribute()|NewOrderFormAction sets global-signon attribute in request|b659e27e8a0843aca42021631836b450
+accountform|"request.getsession().getattribute(""accountform"")"|"NewOrderFormAction retrieves accountForm object from request session using ""accountForm"" string parameter"|b659e27e8a0843aca42021631836b450
+removeitemfromcartaction|com.ibatis.jpetstore.presentation.action|RemoveItemFromCartAction is a class in com.ibatis.jpetstore.presentation.action package|b659e27e8a0843aca42021631836b450
+orderform|request.getsession().getattribute()|NewOrderFormAction retrieves OrderForm object from request session|b659e27e8a0843aca42021631836b450
+searchproductsaction|baseaction|is a type of Action in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.jpetstore.presentation.action.searchproductsaction|com.ibatis.jpetstore.presentation.action.baseaction|is a subclass of BaseAction in the presented context|363fabf3a715477983d0ee6ebab999f1
+org.apache.struts.action.requestprocessor|actionservlet|is a part of ActionServlet in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.jpetstore.presentation.form.cartform|org.apache.struts.action.actionform|is a subclass of ActionForm in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.jpetstore.domain.|item|is related to Item through the RemoveItemFromCartAction|363fabf3a715477983d0ee6ebab999f1
+org.apache.struts.action.actionmapping|com.ibatis.jpetstore.presentation.action.removeitemfromcartaction|is a part of RemoveItemFromCartAction in the presented context|363fabf3a715477983d0ee6ebab999f1
+org.apache.struts.util.|requestutils|is a part of HttpServletRequest in the presented context|363fabf3a715477983d0ee6ebab999f1
+javax.servlet.|httpservletresponse|is a part of HttpServletResponse in the presented context|363fabf3a715477983d0ee6ebab999f1
+java.util.|list|is a part of ArrayList in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.db.|daoexception|is thrown by DAOs in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.jpetstore.domain.|cart|contains Items in the presented context|363fabf3a715477983d0ee6ebab999f1
+javax.servlet.http.|httpservletrequest|is used to access HTTP request parameters and headers in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.jpetstore.presentation.action.|removeitemfromcartaction|removes an Item from a Cart based on its ID in the presented context|363fabf3a715477983d0ee6ebab999f1
+keyword|productlist|The 'keyword' parameter is used to search for products, which are stored in the 'productList'.|1b73752a646248ee9088c717aa1006d1
+signoffaction|workingaccountform|In the 'SignoffAction', the session attribute 'workingAccountForm' is removed.|1b73752a646248ee9088c717aa1006d1
+signoffaction|accountform|In the 'SignoffAction', the session attribute 'accountForm' is removed.|1b73752a646248ee9088c717aa1006d1
+signoffaction|workingorderform|In the 'SignoffAction', the session attribute 'workingOrderForm' is removed.|1b73752a646248ee9088c717aa1006d1
+signoffaction|cartform|In the 'SignoffAction', the session attribute 'cartForm' is removed.|1b73752a646248ee9088c717aa1006d1
+updatecartquantitiesaction|baseaction|is a type of action in Struts framework.|3915f4f08fca492d830b3d59b68e6e53
+updatecartquantitiesaction|com.ibatis.jpetstore.presentation.action|belongs to the package com.ibatis.jpetstore.presentation.action in the JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+updatecartquantitiesaction|com.ibatis.jpetstore.presentation|is a part of presentation layer of JPetStore application.|3915f4f08fca492d830b3d59b68e6e53
+updatecartquantitiesaction|com.ibatis.jpetstore|belongs to the com.ibatis.jpetstore package which contains classes for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+updatecartquantitiesaction|com.ibatis|is a part of ibatis library used in this application.|3915f4f08fca492d830b3d59b68e6e53
+baseaction|actionsupport|extends ActionSupport class which provides support for the Struts action framework.|3915f4f08fca492d830b3d59b68e6e53
+cartform|com.ibatis.jpetstore.presentation.form|belongs to the com.ibatis.jpetstore.presentation.form package which contains form classes for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+cartform|com.ibatis.jpetstore.presentation|is a part of presentation layer of JPetStore application.|3915f4f08fca492d830b3d59b68e6e53
+cartform|com.ibatis.jpetstore|belongs to the com.ibatis.jpetstore package which contains classes for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+cartitem|com.ibatis.jpetstore.domain|belongs to the domain layer which represents the data objects in the JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+cartitem|com.ibatis.jpetstore|belongs to the com.ibatis.jpetstore package which contains classes for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+cartitem|item|is associated with Item class which represents an item in the store.|3915f4f08fca492d830b3d59b68e6e53
+com.ibatis.jpetstore|web-inf|contains web application configuration and resources for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+com.ibatis.jpetstore|src|contains Java source files for the JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+web-inf|classes|contains compiled class files for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+updatecartquantitiesaction|request.getparameter(itemid)|accesses the request parameter 'itemId' to obtain the new quantity value.|3915f4f08fca492d830b3d59b68e6e53
+cartform|getcart()|returns a Cart object which contains the cart items for the user.|3915f4f08fca492d830b3d59b68e6e53
+cartform|setaccount(account)|sets the account information obtained from the login process.|3915f4f08fca492d830b3d59b68e6e53
+cartform|setpassword(null)|resets the password to null after successful login.|3915f4f08fca492d830b3d59b68e6e53
+cartitem|getitem()|returns the Item object associated with this CartItem.|3915f4f08fca492d830b3d59b68e6e53
+com.ibatis.jpetstore.domain|com.ibatis.jpetstore|contains domain classes for JPetStore project which represent the data entities in the store.|3915f4f08fca492d830b3d59b68e6e53
+httpservletrequest|request.getparameter(itemid)|provides access to request parameters in a web application using Struts framework.|3915f4f08fca492d830b3d59b68e6e53
+com.ibatis.jpetstore|src|contains the Java source files for classes and resources related to JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+item|com.ibatis.jpetstore.domain|represents an item in the store which includes information such as product details, price, and quantity.|3915f4f08fca492d830b3d59b68e6e53
+httpservletresponse|response|provides access to the HTTP response for a web application using Struts framework.|3915f4f08fca492d830b3d59b68e6e53
+viewcategoryaction|categorydao|ViewCategoryAction uses CategoryDao to retrieve Category object for specified Category ID|2020f7666faf4850970af146a51d9073
+viewcategoryaction|categoryform|ViewCategoryAction interacts with CategoryForm to get and set category information|2020f7666faf4850970af146a51d9073
+viewcategoryaction|mapping|ViewCategoryAction is mapped to a specific ActionMapping|2020f7666faf4850970af146a51d9073
+viewcategoryaction|httpservletrequest|ViewCategoryAction receives information through HttpServletRequest object|2020f7666faf4850970af146a51d9073
+viewcategoryaction|httpservletresponse|ViewCategoryAction sends response to client using HttpServletResponse object|2020f7666faf4850970af146a51d9073
+viewitemaction|productdao|ViewItemAction uses ProductDao to retrieve product list for specified Category ID|2020f7666faf4850970af146a51d9073
+viewitemaction|categoryform|ViewItemAction interacts with CategoryForm to get and set category information|2020f7666faf4850970af146a51d9073
+viewitemaction|mapping|ViewItemAction is mapped to a specific ActionMapping|2020f7666faf4850970af146a51d9073
+viewitemaction|httpservletrequest|ViewItemAction receives information through HttpServletRequest object|2020f7666faf4850970af146a51d9073
+viewitemaction|httpservletresponse|ViewItemAction sends response to client using HttpServletResponse object|2020f7666faf4850970af146a51d9073
+viewitemaction|baseaction|is a type of Action in the context.|2dfc20be4ba144879b62d7ccb9d6130d
+viewitemaction|mapping|interacts with to determine the forward to take.|2dfc20be4ba144879b62d7ccb9d6130d
+viewitemaction|form|manipulates and uses this object for storing user data.|2dfc20be4ba144879b62d7ccb9d6130d
+viewitemaction|httpservletrequest|is used to access request attributes and parameters sent by client.|2dfc20be4ba144879b62d7ccb9d6130d
+viewitemaction|httpservletresponse|is used to send HTTP responses back to the client.|2dfc20be4ba144879b62d7ccb9d6130d
+daotransaction|itemdao|is used to retrieve Item object by its ID.|2dfc20be4ba144879b62d7ccb9d6130d
+daotransaction|productdao|is used to retrieve Product object by Item's product ID.|2dfc20be4ba144879b62d7ccb9d6130d
+itemform|viewitemaction|is an argument passed to the ViewItemAction.|2dfc20be4ba144879b62d7ccb9d6130d
+itemform|product|represents a product associated with an Item.|2dfc20be4ba144879b62d7ccb9d6130d
+itemform|item|is used to store and retrieve Item data through the ViewItemAction.|2dfc20be4ba144879b62d7ccb9d6130d
+vieworderaction|baseaction|is a type of Action in the context.|2dfc20be4ba144879b62d7ccb9d6130d
+vieworderaction|mapping|interacts with to determine the forward to take.|2dfc20be4ba144879b62d7ccb9d6130d
+vieworderaction|form|manipulates and uses this object for storing user data.|2dfc20be4ba144879b62d7ccb9d6130d
+vieworderaction|httpservletrequest|is used to access request attributes and parameters sent by client.|2dfc20be4ba144879b62d7ccb9d6130d
+vieworderaction|httpservletresponse|is used to send HTTP responses back to the client.|2dfc20be4ba144879b62d7ccb9d6130d
+daotransaction|itemdao|is used to retrieve Item object by its ID.|2dfc20be4ba144879b62d7ccb9d6130d
+daotransaction|orderdao|is used to retrieve Order object by an unknown identifier in the context.|2dfc20be4ba144879b62d7ccb9d6130d
+productform|product|ProductForm is used to interact with a specific product, and the product object (of type Product) is retrieved using productDao.getProduct(trans, prodForm.getProductId()).|d9222a3758554b4aa86631de8f0ca9c5
+itemdao|itemlist|The itemDao is used to retrieve a list of items (of type List) for the specified product using itemDao.getItemListByProduct(trans, prodForm.getProductId()).|d9222a3758554b4aa86631de8f0ca9c5
+request|message|"If the product cannot be found, an error message (of type String) is set as an attribute of the request object using request.setAttribute(""message"", ""Error viewing Product. Could not find Product for Product ID specified."")."|d9222a3758554b4aa86631de8f0ca9c5
+forwardaction|success|"Depending on whether the product was found or not, a different forward action is set using return mapping.findForward(""failure"") and return mapping.findForward(""success"")."|d9222a3758554b4aa86631de8f0ca9c5
+accountform|username|The AccountForm class is used to handle forms related to user accounts, and the username field (of type String) is accessed using username.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|password|The password field (of type String) is also accessed using password.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|repeatedpassword|The repeatedPassword field (also of type String) may be used to verify the user's password.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|languages|The languages field (of type List) contains a list of available languages, which can be accessed using languages.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|categories|Similarly, the categories field (also of type List) may contain a list of available categories.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|validate|"The validate field (of type String) is used to identify which form validation action should be taken (either ""editAccount"" or ""newAccount"")."|d9222a3758554b4aa86631de8f0ca9c5
+accountform|mylist|The myList field (of type List) may contain some arbitrary list of values.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|account|Belongs to AccountForm and is a property of it.|8be17bec52764f38828e8bdf8d21c85a
+username|accountform.getusername()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setusername|accountform|Used to set the value of username property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+mylist|accountform.getmylist()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setmylist|accountform|Used to set the value of myList property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+forwardaction|accountform|Contains the action that is executed when the form is submitted.|8be17bec52764f38828e8bdf8d21c85a
+password|accountform.getpassword()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setpassword|accountform|Used to set the value of password property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+repeatedpassword|accountform|Contains the repeated password entered by the user for confirmation.|8be17bec52764f38828e8bdf8d21c85a
+account|accountform.getaccount()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setaccount|accountform|Used to set the value of account property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+languages|accountform.getlanguages()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setlanguages|accountform|Used to set the value of languages property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+categories|accountform.getcategories()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setcategories|accountform|Used to set the value of categories property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+validate|accountform.getvalidate()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a

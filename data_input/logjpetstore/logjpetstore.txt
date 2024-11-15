@@ -1,0 +1,4206 @@
+? petstore-cvs.log
+? build/wars
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/build/build.bat,v
+Working file: build/build.bat
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/build/build.properties,v
+Working file: build/build.properties
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2002/09/10 02:54:25;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/build/build.xml,v
+Working file: build/build.xml
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/db2/Contributor.txt,v
+Working file: ddl/db2/Contributor.txt
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/db2/JPetShop_DataLoad_DB2.sql,v
+Working file: ddl/db2/JPetShop_DataLoad_DB2.sql
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/27 03:57:36;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +2 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/db2/JPetShop_Schema_DB2.sql,v
+Working file: ddl/db2/JPetShop_Schema_DB2.sql
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +19 -6
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/db2-400/Contributor.txt,v
+Working file: ddl/db2-400/Contributor.txt
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/db2-400/JPetShop_DataLoad_AS400.sql,v
+Working file: ddl/db2-400/JPetShop_DataLoad_AS400.sql
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/27 03:57:36;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:46;  author: cbegin;  state: Exp;  lines: +6 -4
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/db2-400/JPetShop_Schema_AS400.sql,v
+Working file: ddl/db2-400/JPetShop_Schema_AS400.sql
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:46;  author: cbegin;  state: Exp;  lines: +12 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/hypersonic/Contributor.txt,v
+Working file: ddl/hypersonic/Contributor.txt
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/hypersonic/JPetShop_DataLoad_HSQL.sql,v
+Working file: ddl/hypersonic/JPetShop_DataLoad_HSQL.sql
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/27 03:57:36;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +1 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/hypersonic/JPetShop_Schema_HSQL.sql,v
+Working file: ddl/hypersonic/JPetShop_Schema_HSQL.sql
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +3 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/mssql/Contributor.txt,v
+Working file: ddl/mssql/Contributor.txt
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/11/16 16:40:59;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/mssql/JPetShop_DataLoad_MSSQL.sql,v
+Working file: ddl/mssql/JPetShop_DataLoad_MSSQL.sql
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/11/16 16:36:52;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/mssql/JPetShop_Schema_MSSQL.sql,v
+Working file: ddl/mssql/JPetShop_Schema_MSSQL.sql
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/11/16 16:36:52;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/mysql/Contributor.txt,v
+Working file: ddl/mysql/Contributor.txt
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/mysql/JPetShop_DataLoad_MySQL.sql,v
+Working file: ddl/mysql/JPetShop_DataLoad_MySQL.sql
+head: 1.4
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 4;	selected revisions: 4
+description:
+----------------------------
+revision 1.4
+date: 2002/10/26 04:55:44;  author: cbegin;  state: Exp;  lines: +93 -94
+*** empty log message ***
+----------------------------
+revision 1.3
+date: 2002/09/27 03:57:37;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +2 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/mysql/JPetShop_Schema_MySQL.sql,v
+Working file: ddl/mysql/JPetShop_Schema_MySQL.sql
+head: 1.4
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 4;	selected revisions: 4
+description:
+----------------------------
+revision 1.4
+date: 2002/10/26 04:55:44;  author: cbegin;  state: Exp;  lines: +38 -25
+*** empty log message ***
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +13 -6
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/oracle/JPetShop_DataLoad_ORACLE.sql,v
+Working file: ddl/oracle/JPetShop_DataLoad_ORACLE.sql
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/27 03:57:37;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +2 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/oracle/JPetShop_Schema_ORACLE.sql,v
+Working file: ddl/oracle/JPetShop_Schema_ORACLE.sql
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +13 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/pointbase/JPetShop_DataLoad_PB.sql,v
+Working file: ddl/pointbase/JPetShop_DataLoad_PB.sql
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/27 03:57:37;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +2 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/pointbase/JPetShop_Schema_PB.sql,v
+Working file: ddl/pointbase/JPetShop_Schema_PB.sql
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +11 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/postgresql/JPetShop_DataLoad_PGSQL.sql,v
+Working file: ddl/postgresql/JPetShop_DataLoad_PGSQL.sql
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/27 03:57:37;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +2 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/ddl/postgresql/JPetShop_Schema_PGSQL.sql,v
+Working file: ddl/postgresql/JPetShop_Schema_PGSQL.sql
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 01:15:47;  author: cbegin;  state: Exp;  lines: +11 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/devlib/ant.jar,v
+Working file: devlib/ant.jar
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/devlib/crimson.jar,v
+Working file: devlib/crimson.jar
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/devlib/jaxp.jar,v
+Working file: devlib/jaxp.jar
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/devlib/servlet.jar,v
+Working file: devlib/servlet.jar
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/doc/License.txt,v
+Working file: doc/License.txt
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/doc/release.txt,v
+Working file: doc/release.txt
+head: 1.6
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 6;	selected revisions: 6
+description:
+----------------------------
+revision 1.6
+date: 2003/02/18 00:42:49;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.5
+date: 2003/02/18 00:40:59;  author: cbegin;  state: Exp;  lines: +10 -4
+*** empty log message ***
+----------------------------
+revision 1.4
+date: 2002/10/01 04:51:36;  author: cbegin;  state: Exp;  lines: +2 -2
+*** empty log message ***
+----------------------------
+revision 1.3
+date: 2002/09/10 03:26:23;  author: cbegin;  state: Exp;  lines: +2 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 03:25:43;  author: cbegin;  state: Exp;  lines: +7 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/doc/Attic/to-do.txt,v
+Working file: doc/to-do.txt
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:45:47;  author: cbegin;  state: dead;  lines: +0 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/help.html,v
+Working file: src/help.html
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/index.html,v
+Working file: src/index.html
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/count-this.sql,v
+Working file: src/WEB-INF/count-this.sql
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/11/18 04:23:42;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/struts-config.xml,v
+Working file: src/WEB-INF/struts-config.xml
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2002/08/23 06:42:06;  author: cbegin;  state: Exp;  lines: +146 -268
+Included updated struts-config from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/web.xml,v
+Working file: src/WEB-INF/web.xml
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/Account.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/domain/Account.java
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/Cart.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/domain/Cart.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:06;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/CartItem.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/domain/CartItem.java
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/Category.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/domain/Category.java
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/Item.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/domain/Item.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:06;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/LineItem.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/domain/LineItem.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:06;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/Order.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/domain/Order.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:06;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +3 -15
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/Product.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/domain/Product.java
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/Sequence.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/domain/Sequence.java
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/09/10 02:55:21;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/domain/Signon.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/domain/Signon.java
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/AccountDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/AccountDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:12;  author: cbegin;  state: Exp;  lines: +2 -4
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/CategoryDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/CategoryDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:12;  author: cbegin;  state: Exp;  lines: +2 -4
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/InventoryDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/InventoryDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:12;  author: cbegin;  state: Exp;  lines: +1 -3
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/ItemDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/ItemDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:12;  author: cbegin;  state: Exp;  lines: +2 -4
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/LineItemDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/LineItemDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:12;  author: cbegin;  state: Exp;  lines: +2 -4
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/OrderDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/OrderDao.java
+head: 1.4
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 4;	selected revisions: 4
+description:
+----------------------------
+revision 1.4
+date: 2003/02/18 00:38:12;  author: cbegin;  state: Exp;  lines: +2 -4
+*** empty log message ***
+----------------------------
+revision 1.3
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +4 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/ProductDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/ProductDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:12;  author: cbegin;  state: Exp;  lines: +2 -4
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/SignonDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/SignonDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:12;  author: cbegin;  state: Exp;  lines: +2 -4
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/cache/BaseCacheDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/cache/BaseCacheDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:25;  author: cbegin;  state: Exp;  lines: +6 -3
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/cache/PetStoreCacheDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/cache/PetStoreCacheDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +10 -13
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +2 -2
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/AccountMapDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/AccountMapDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +4 -6
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/BaseMapDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/BaseMapDao.java
+head: 1.5
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 5;	selected revisions: 5
+description:
+----------------------------
+revision 1.5
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +13 -33
+*** empty log message ***
+----------------------------
+revision 1.4
+date: 2003/01/23 02:17:54;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.3
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +7 -7
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +26 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/CategoryMapDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/CategoryMapDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +4 -6
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/InventoryMapDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/InventoryMapDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +3 -5
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +2 -2
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/ItemMapDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/ItemMapDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +4 -7
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/LineItemMapDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/LineItemMapDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +4 -7
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/OrderMapDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/OrderMapDao.java
+head: 1.4
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 4;	selected revisions: 4
+description:
+----------------------------
+revision 1.4
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +4 -7
+*** empty log message ***
+----------------------------
+revision 1.3
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +4 -4
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +5 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/ProductMapDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/ProductMapDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +4 -6
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/SignonMapDao.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/SignonMapDao.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +3 -5
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +2 -2
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Account.xml,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Account.xml
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +8 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Category.xml,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Category.xml
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Item.xml,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Item.xml
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +8 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/LineItem.xml,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/LineItem.xml
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +7 -2
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Order.xml,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Order.xml
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +9 -4
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Product.xml,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Product.xml
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +8 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:28;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Profile.xml,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Profile.xml
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +7 -2
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Sequence.xml,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Sequence.xml
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +7 -2
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/09/10 02:55:54;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Signon.xml,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/Signon.xml
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +8 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/compatibility.txt,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/compatibility.txt
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +1 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/sql-map-config.xml,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/persistence/dao/map/sql/sql-map-config.xml
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/AddItemToCartAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/AddItemToCartAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/BaseAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/BaseAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +5 -15
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/DoNothingAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/DoNothingAction.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +2 -5
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/EditAccountAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/EditAccountAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/EditAccountFormAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/EditAccountFormAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/IndexAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/IndexAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +4 -7
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/ListOrdersAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/ListOrdersAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +5 -8
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/NewAccountAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/NewAccountAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/NewAccountFormAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/NewAccountFormAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/NewOrderAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/NewOrderAction.java
+head: 1.4
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 4;	selected revisions: 4
+description:
+----------------------------
+revision 1.4
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -10
+*** empty log message ***
+----------------------------
+revision 1.3
+date: 2002/11/05 02:30:28;  author: cbegin;  state: Exp;  lines: +4 -4
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/NewOrderFormAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/NewOrderFormAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +4 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +4 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/RemoveItemFromCartAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/RemoveItemFromCartAction.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +4 -7
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/SearchProductsAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/SearchProductsAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +4 -7
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/SignoffAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/SignoffAction.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +2 -5
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/SignonAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/SignonAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -10
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/UpdateCartQuantitiesAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/UpdateCartQuantitiesAction.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +4 -7
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/ViewCategoryAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/ViewCategoryAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/ViewItemAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/ViewItemAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -10
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/ViewOrderAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/ViewOrderAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/ViewProductAction.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/action/ViewProductAction.java
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +6 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/AccountForm.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/AccountForm.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +3 -5
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/BaseForm.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/BaseForm.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +2 -4
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/CartForm.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/CartForm.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/CategoryForm.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/CategoryForm.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/EmptyForm.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/EmptyForm.java
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/ItemForm.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/ItemForm.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +1 -2
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/OrderForm.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/OrderForm.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +3 -4
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/ProductForm.java,v
+Working file: src/WEB-INF/classes/com/ibatis/jpetstore/presentation/form/ProductForm.java
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/properties/Logger.properties,v
+Working file: src/WEB-INF/classes/properties/Logger.properties
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/properties/app-resources.properties,v
+Working file: src/WEB-INF/classes/properties/app-resources.properties
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/classes/properties/dao.xml,v
+Working file: src/WEB-INF/classes/properties/dao.xml
+head: 1.5
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 5;	selected revisions: 5
+description:
+----------------------------
+revision 1.5
+date: 2003/02/23 03:11:32;  author: cbegin;  state: Exp;  lines: +9 -3
+*** empty log message ***
+----------------------------
+revision 1.4
+date: 2003/02/18 00:47:41;  author: cbegin;  state: Exp;  lines: +3 -3
+*** empty log message ***
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +5 -18
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/09/12 03:40:11;  author: cbegin;  state: Exp;  lines: +1 -1
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/lib/Attic/ibatis-common.jar,v
+Working file: src/WEB-INF/lib/ibatis-common.jar
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2002/09/12 03:16:30;  author: cbegin;  state: dead;  lines: +0 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/lib/ibatis-db.jar,v
+Working file: src/WEB-INF/lib/ibatis-db.jar
+head: 1.4
+branch:
+locks: strict
+access list:
+symbolic names:
+keyword substitution: b
+total revisions: 4;	selected revisions: 4
+description:
+----------------------------
+revision 1.4
+date: 2003/02/23 03:11:39;  author: cbegin;  state: Exp;  lines: +182 -147
+*** empty log message ***
+----------------------------
+revision 1.3
+date: 2003/02/18 00:38:26;  author: cbegin;  state: Exp;  lines: +231 -145
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/11/08 07:53:23;  author: cbegin;  state: Exp;  lines: +180 -248
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/09/12 03:16:30;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/lib/jdbc2_0-stdext.jar,v
+Working file: src/WEB-INF/lib/jdbc2_0-stdext.jar
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/lib/jdom.jar,v
+Working file: src/WEB-INF/lib/jdom.jar
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/lib/postgresql.jar,v
+Working file: src/WEB-INF/lib/postgresql.jar
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/lib/struts.jar,v
+Working file: src/WEB-INF/lib/struts.jar
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/lib/xerces.jar,v
+Working file: src/WEB-INF/lib/xerces.jar
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/lib/yoshida.jar,v
+Working file: src/WEB-INF/lib/yoshida.jar
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/tld/struts-bean.tld,v
+Working file: src/WEB-INF/tld/struts-bean.tld
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/tld/struts-config_1_0.dtd,v
+Working file: src/WEB-INF/tld/struts-config_1_0.dtd
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/tld/struts-form.tld,v
+Working file: src/WEB-INF/tld/struts-form.tld
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/tld/struts-html.tld,v
+Working file: src/WEB-INF/tld/struts-html.tld
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/tld/struts-logic.tld,v
+Working file: src/WEB-INF/tld/struts-logic.tld
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/tld/struts-template.tld,v
+Working file: src/WEB-INF/tld/struts-template.tld
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/tld/struts.tld,v
+Working file: src/WEB-INF/tld/struts.tld
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/tld/web-app_2_2.dtd,v
+Working file: src/WEB-INF/tld/web-app_2_2.dtd
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/tld/web-app_2_3.dtd,v
+Working file: src/WEB-INF/tld/web-app_2_3.dtd
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/WEB-INF/tld/yoshida.tld,v
+Working file: src/WEB-INF/tld/yoshida.tld
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/bird1.jpg,v
+Working file: src/dataimages/bird1.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/bird2.jpg,v
+Working file: src/dataimages/bird2.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/cat1.jpg,v
+Working file: src/dataimages/cat1.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/cat2.jpg,v
+Working file: src/dataimages/cat2.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/dog1.jpg,v
+Working file: src/dataimages/dog1.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/dog2.jpg,v
+Working file: src/dataimages/dog2.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/dog3.jpg,v
+Working file: src/dataimages/dog3.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/dog4.jpg,v
+Working file: src/dataimages/dog4.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/dog5.jpg,v
+Working file: src/dataimages/dog5.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/dog6.jpg,v
+Working file: src/dataimages/dog6.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/fish1.jpg,v
+Working file: src/dataimages/fish1.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/fish2.jpg,v
+Working file: src/dataimages/fish2.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/fish3.jpg,v
+Working file: src/dataimages/fish3.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/fish4.jpg,v
+Working file: src/dataimages/fish4.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/lizard1.jpg,v
+Working file: src/dataimages/lizard1.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/dataimages/snake1.jpg,v
+Working file: src/dataimages/snake1.jpg
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/banner_birds.gif,v
+Working file: src/images/banner_birds.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/banner_cats.gif,v
+Working file: src/images/banner_cats.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/banner_dogs.gif,v
+Working file: src/images/banner_dogs.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/banner_fish.gif,v
+Working file: src/images/banner_fish.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/banner_reptiles.gif,v
+Working file: src/images/banner_reptiles.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/birds_icon.gif,v
+Working file: src/images/birds_icon.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/bkg-sidebar.gif,v
+Working file: src/images/bkg-sidebar.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/bkg-topbar.gif,v
+Working file: src/images/bkg-topbar.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/button_add_to_cart.gif,v
+Working file: src/images/button_add_to_cart.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/button_checkout.gif,v
+Working file: src/images/button_checkout.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/button_continue.gif,v
+Working file: src/images/button_continue.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/button_next.gif,v
+Working file: src/images/button_next.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/button_prev.gif,v
+Working file: src/images/button_prev.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/button_previous.gif,v
+Working file: src/images/button_previous.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/button_proceed.gif,v
+Working file: src/images/button_proceed.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/button_register_now.gif,v
+Working file: src/images/button_register_now.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/button_remove.gif,v
+Working file: src/images/button_remove.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/button_submit.gif,v
+Working file: src/images/button_submit.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/button_update_cart.gif,v
+Working file: src/images/button_update_cart.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/cart.gif,v
+Working file: src/images/cart.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/cartHL.gif,v
+Working file: src/images/cartHL.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/cats_icon.gif,v
+Working file: src/images/cats_icon.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/dogs_icon.gif,v
+Working file: src/images/dogs_icon.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/fish_icon.gif,v
+Working file: src/images/fish_icon.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/help.gif,v
+Working file: src/images/help.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/helpHL.gif,v
+Working file: src/images/helpHL.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/logo-topbar.gif,v
+Working file: src/images/logo-topbar.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/my_account.gif,v
+Working file: src/images/my_account.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/my_accountHL.gif,v
+Working file: src/images/my_accountHL.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/poweredby.gif,v
+Working file: src/images/poweredby.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/reptiles_icon.gif,v
+Working file: src/images/reptiles_icon.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/search.gif,v
+Working file: src/images/search.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/separator.gif,v
+Working file: src/images/separator.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/sign-in.gif,v
+Working file: src/images/sign-in.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/sign-inHL.gif,v
+Working file: src/images/sign-inHL.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/sign-out.gif,v
+Working file: src/images/sign-out.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/sign-outHL.gif,v
+Working file: src/images/sign-outHL.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/sm_birds.gif,v
+Working file: src/images/sm_birds.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/sm_cats.gif,v
+Working file: src/images/sm_cats.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/sm_dogs.gif,v
+Working file: src/images/sm_dogs.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/sm_fish.gif,v
+Working file: src/images/sm_fish.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/sm_reptiles.gif,v
+Working file: src/images/sm_reptiles.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/images/splash.gif,v
+Working file: src/images/splash.gif
+head: 1.1
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: b
+total revisions: 1;	selected revisions: 1
+description:
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/Cart.jsp,v
+Working file: src/jsp/Cart.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +71 -65
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/Category.jsp,v
+Working file: src/jsp/Category.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -7
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +35 -30
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/Checkout.jsp,v
+Working file: src/jsp/Checkout.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +68 -60
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/ConfirmOrder.jsp,v
+Working file: src/jsp/ConfirmOrder.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +103 -95
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/EditAccountForm.jsp,v
+Working file: src/jsp/EditAccountForm.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -7
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +28 -24
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/Error.jsp,v
+Working file: src/jsp/Error.jsp
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -4
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/IncludeAccountFields.jsp,v
+Working file: src/jsp/IncludeAccountFields.jsp
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +2 -0
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/IncludeBottom.jsp,v
+Working file: src/jsp/IncludeBottom.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +3 -0
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +8 -12
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/IncludeMyList.jsp,v
+Working file: src/jsp/IncludeMyList.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +3 -0
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +23 -19
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/IncludeQuickHeader.jsp,v
+Working file: src/jsp/IncludeQuickHeader.jsp
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +18 -16
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/IncludeTop.jsp,v
+Working file: src/jsp/IncludeTop.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +4 -1
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +38 -42
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/Item.jsp,v
+Working file: src/jsp/Item.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +56 -51
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/ListOrders.jsp,v
+Working file: src/jsp/ListOrders.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +29 -24
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/NewAccountForm.jsp,v
+Working file: src/jsp/NewAccountForm.jsp
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -4
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/NewOrderForm.jsp,v
+Working file: src/jsp/NewOrderForm.jsp
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -4
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/Product.jsp,v
+Working file: src/jsp/Product.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -8
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +55 -47
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/SearchProducts.jsp,v
+Working file: src/jsp/SearchProducts.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +37 -29
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/ShippingForm.jsp,v
+Working file: src/jsp/ShippingForm.jsp
+head: 1.2
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.1
+keyword substitution: kv
+total revisions: 2;	selected revisions: 2
+description:
+----------------------------
+revision 1.2
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -4
+*** empty log message ***
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/SignonForm.jsp,v
+Working file: src/jsp/SignonForm.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -7
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +36 -32
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/ViewOrder.jsp,v
+Working file: src/jsp/ViewOrder.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -9
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +127 -121
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================
+
+RCS file: /cvsroot/ibatisjpetstore/jpetstore/src/jsp/index.jsp,v
+Working file: src/jsp/index.jsp
+head: 1.3
+branch:
+locks: strict
+access list:
+symbolic names:
+	VERSION-1-1-0: 1.2
+keyword substitution: kv
+total revisions: 3;	selected revisions: 3
+description:
+----------------------------
+revision 1.3
+date: 2002/09/10 02:54:26;  author: cbegin;  state: Exp;  lines: +0 -6
+*** empty log message ***
+----------------------------
+revision 1.2
+date: 2002/08/23 06:41:19;  author: cbegin;  state: Exp;  lines: +42 -55
+Included updated files from Scioworks.
+----------------------------
+revision 1.1
+date: 2002/08/23 06:28:29;  author: cbegin;  state: Exp;
+*** empty log message ***
+=============================================================================

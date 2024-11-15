@@ -1,0 +1,1444 @@
+text|source|chunk_id
+"public ActionForward perform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException { try { return doPerform(mapping, form, request, response); } catch (Exception e) { e.printStackTrace(); request.setAttribute(""message"", ""Unhandled Exception: "" + e.toString()); return mapping.findForward(""unknown-error""); } }
+
+public abstract ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception;
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/DoNothingAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class DoNothingAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception { return mapping.findForward(""success""); } }
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/EditAccountAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class EditAccountAction extends BaseAction {"|data_input/jpetstore/jpetstore.txt|41dbb7bbcadb4b73b011921bb6581e8f
+";
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class EditAccountAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+AccountForm acctForm = (AccountForm) form;
+
+try {
+
+if (AccountForm.VALIDATE_EDIT_ACCOUNT.equals(acctForm.getValidate())) {
+
+acctForm.getAccount().setListOption(request.getParameter(""account.listOption"") != null);
+
+acctForm.getAccount().setBannerOption(request.getParameter(""account.bannerOption"") != null);
+
+DaoTransaction trans = daoManager.getTransaction();
+
+accountDao.updateAccount(trans, acctForm.getAccount());
+
+acctForm.setMyList(productDao.getProductListByCategory(trans, acctForm.getAccount().getFavouriteCategoryId()));
+
+if (acctForm.getPassword() != null && acctForm.getPassword().length() > 0) { Signon signon = new Signon(); signon.setUsername(acctForm.getUsername()); signon.setPassword(acctForm.getPassword()); signonDao.updateSignon(trans, signon); }
+
+trans.commit();
+
+acctForm.setAccount(accountDao.getAccount(trans, acctForm.getAccount().getUserId()));
+
+trans.release();
+
+request.getSession().setAttribute(""accountForm"", acctForm);
+
+request.getSession().removeAttribute(""workingAccountForm"");"|data_input/jpetstore/jpetstore.txt|214c55593f194ca785de82917b221053
+"trans.release();
+
+request.getSession().setAttribute(""accountForm"", acctForm);
+
+request.getSession().removeAttribute(""workingAccountForm"");
+
+return mapping.findForward(""success""); } else { request.setAttribute(""message"", ""Your account was not updated because the submitted information was not validated. ""); return mapping.findForward(""failure""); } } catch (Exception e) { request.setAttribute(""message"", ""There was a problem updating your Account Information. Cause: "" + e); return mapping.findForward(""unknown-error""); }
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/EditAccountFormAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class EditAccountFormAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+AccountForm workingAcctForm = (AccountForm) form; AccountForm acctForm = (AccountForm) request.getSession().getAttribute(""accountForm"");
+
+String username = acctForm.getAccount().getUserId();
+
+if (workingAcctForm.getAccount() == null) { DaoTransaction trans = daoManager.getTransaction(); workingAcctForm.setAccount(accountDao.getAccount(trans, username)); workingAcctForm.setUsername(workingAcctForm.getAccount().getUserId()); trans.release(); }"|data_input/jpetstore/jpetstore.txt|a935c952b3324639a3f1157f7ab0b3fa
+"if (workingAcctForm.getCategories() == null) { DaoTransaction trans = daoManager.getTransaction(); workingAcctForm.setCategories(categoryDao.getCategoryList(trans)); trans.release(); }
+
+return mapping.findForward(""success"");
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/IndexAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+import java.util.
+
+;
+
+public class IndexAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+DaoTransaction trans = daoManager.getTransaction();
+
+List list = categoryDao.getCategoryList(trans);
+
+trans.release();
+
+request.setAttribute(""categoryList"", list);
+
+return mapping.findForward(""success"");
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/ListOrdersAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+import java.util.
+
+;
+
+public class ListOrdersAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+AccountForm acctForm = (AccountForm) form;"|data_input/jpetstore/jpetstore.txt|810f8d249e0249ac8f51f394ceddd142
+"AccountForm acctForm = (AccountForm) form;
+
+DaoTransaction trans = daoManager.getTransaction();
+
+List list = orderDao.getOrdersByUserId(trans, acctForm.getAccount().getUserId()); request.setAttribute(""orderList"", list);
+
+trans.release();
+
+return mapping.findForward(""success"");
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/NewAccountAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class NewAccountAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+AccountForm acctForm = (AccountForm) form;
+
+try {
+
+if (AccountForm.VALIDATE_NEW_ACCOUNT.equals(acctForm.getValidate())) {
+
+acctForm.getAccount().setListOption(request.getParameter(""account.listOption"") != null);
+
+acctForm.getAccount().setBannerOption(request.getParameter(""account.bannerOption"") != null);
+
+DaoTransaction trans = daoManager.getTransaction();
+
+accountDao.insertAccount(trans, acctForm.getAccount());
+
+acctForm.setMyList(productDao.getProductListByCategory(trans, acctForm.getAccount().getFavouriteCategoryId()));"|data_input/jpetstore/jpetstore.txt|6282cd15eea34a46886810908fc3a692
+"acctForm.setMyList(productDao.getProductListByCategory(trans, acctForm.getAccount().getFavouriteCategoryId()));
+
+if (acctForm.getPassword() != null && acctForm.getPassword().length() > 0) { Signon signon = new Signon(); signon.setUsername(acctForm.getUsername()); signon.setPassword(acctForm.getPassword()); signonDao.insertSignon(trans, signon); }
+
+trans.commit();
+
+acctForm.setAccount(accountDao.getAccount(trans, acctForm.getAccount().getUserId()));
+
+trans.release();
+
+request.getSession().setAttribute(""accountForm"", acctForm);
+
+request.getSession().removeAttribute(""workingAccountForm"");
+
+return mapping.findForward(""success""); } else { request.setAttribute(""message"", ""Your account was not created because the submitted information was not validated. ""); return mapping.findForward(""failure""); } } catch (Exception e) { request.setAttribute(""message"", ""There was a problem creating your Account Information. Cause: "" + e); return mapping.findForward(""unknown-error""); }
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/NewAccountFormAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class NewAccountFormAction extends BaseAction {"|data_input/jpetstore/jpetstore.txt|dcb255390cae4d519b1ad671d2d57f99
+";
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class NewAccountFormAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+AccountForm workingAcctForm = new AccountForm();
+
+request.getSession().removeAttribute(""workingAccountForm"");
+
+request.getSession().setAttribute(""workingAccountForm"", workingAcctForm);
+
+if (workingAcctForm.getAccount() == null) { workingAcctForm.setAccount(new Account()); }
+
+if (workingAcctForm.getCategories() == null) { DaoTransaction trans = daoManager.getTransaction(); workingAcctForm.setCategories(categoryDao.getCategoryList(trans)); trans.release(); }
+
+return mapping.findForward(""success"");
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/NewOrderAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+import java.util.
+
+;
+
+public class NewOrderAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+OrderForm orderForm = (OrderForm) form;"|data_input/jpetstore/jpetstore.txt|6c3a6ef6dd7c421abdc89082d4c31962
+"OrderForm orderForm = (OrderForm) form;
+
+if (orderForm.isShippingAddressRequired()) { return mapping.findForward(""shipping""); } else if (!orderForm.isConfirmed()) { return mapping.findForward(""confirm""); } else if (orderForm.getOrder() != null) { DaoTransaction trans = daoManager.getTransaction(); orderDao.insertOrder(trans, orderForm.getOrder()); Iterator i = orderForm.getOrder().getLineItems(); while (i.hasNext()) { LineItem item = (LineItem) i.next(); lineItemDao.insertLineItem(trans, item); inventoryDao.updateInventoryQuantity(trans, item.getItemId(), item.getItem().getQuantity() - item.getQuantity()); } request.getSession().removeAttribute(""workingOrderForm""); request.getSession().removeAttribute(""cartForm"");
+
+//Order order = orderDao.getOrder(trans, orderForm.getOrder().getOrderId()); //List list = lineItemDao.getLineItemsByOrderId(trans, order.getOrderId());
+
+request.setAttribute(""order"", orderForm.getOrder());
+
+request.setAttribute(""itemList"", orderForm.getOrder().getLineItems());
+
+trans.commit();
+
+trans.release();
+
+request.setAttribute(""message"", ""Thank you, your order has been submitted. "");
+
+return mapping.findForward(""success""); } else { request.setAttribute(""message"", ""An error occurred processing your order (order was null). ""); return mapping.findForward(""failure""); }
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/NewOrderFormAction.java
+
+package com.ibatis.jpetstore.presentation.action;"|data_input/jpetstore/jpetstore.txt|0303f4e6b16d4a31b5bc62cc9193f14c
+"INF/classes/com/ibatis/jpetstore/presentation/action/NewOrderFormAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.jpetstore.persistence.dao.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class NewOrderFormAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+OrderDao orderDao = (OrderDao) daoManager.getDao(""Order"");
+
+AccountForm acctForm = (AccountForm) request.getSession().getAttribute(""accountForm""); CartForm cartForm = (CartForm) request.getSession().getAttribute(""cartForm"");
+
+if (acctForm == null || acctForm.getAccount() == null) { request.setAttribute(""signonForwardAction"", ""global-orderform""); return mapping.findForward(""global-signon""); } else { if (cartForm != null) { OrderForm orderForm = (OrderForm) form; orderForm.getOrder().initOrder(orderDao.getNextOrderId(),acctForm.getAccount(), cartForm.getCart()); return mapping.findForward(""success""); } else { request.setAttribute(""message"", ""An order could not be created because a cart could not be found. ""); return mapping.findForward(""failure""); }
+
+}
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/RemoveItemFromCartAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.jpetstore.domain.
+
+;"|data_input/jpetstore/jpetstore.txt|b659e27e8a0843aca42021631836b450
+"package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class RemoveItemFromCartAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+CartForm cartForm = (CartForm) form;
+
+Item item = cartForm.getCart().removeItemById(cartForm.getWorkingItemId());
+
+if (item == null) { request.setAttribute(""message"", ""Attempted to remove null CartItem from Cart. ""); return mapping.findForward(""failure""); } else { return mapping.findForward(""success""); } }
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/SearchProductsAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+import java.util.
+
+;
+
+public class SearchProductsAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+String keyword = request.getParameter(""keyword"");"|data_input/jpetstore/jpetstore.txt|363fabf3a715477983d0ee6ebab999f1
+"String keyword = request.getParameter(""keyword"");
+
+if (keyword == null || keyword.length() < 1) { request.setAttribute(""message"", ""Please enter a keyword to search for, then press the search button. ""); return mapping.findForward(""failure""); } else { StringBuffer buffer = new StringBuffer(""%"").append(keyword.toLowerCase()).append(""%""); DaoTransaction trans = daoManager.getTransaction();
+
+List productList = productDao.getProductListByKeyword(trans, buffer.toString());
+
+trans.release();
+
+request.setAttribute(""productList"", productList);
+
+return mapping.findForward(""success"");
+
+}
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/SignoffAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class SignoffAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+request.getSession().removeAttribute(""workingAccountForm"");
+
+request.getSession().removeAttribute(""accountForm"");
+
+request.getSession().removeAttribute(""workingOrderForm"");
+
+request.getSession().removeAttribute(""cartForm"");
+
+return mapping.findForward(""success"");
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/SignonAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;"|data_input/jpetstore/jpetstore.txt|1b73752a646248ee9088c717aa1006d1
+"package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class SignonAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+request.getSession().removeAttribute(""workingAccountForm"");
+
+request.getSession().removeAttribute(""accountForm"");
+
+AccountForm acctForm = (AccountForm) form;
+
+String username = acctForm.getUsername();
+
+String password = acctForm.getPassword();
+
+String forwardAction = acctForm.getForwardAction();
+
+acctForm = new AccountForm();
+
+acctForm.setForwardAction(forwardAction);
+
+request.getSession().setAttribute(""accountForm"", acctForm);
+
+DaoTransaction trans = daoManager.getTransaction();
+
+Signon signon = signonDao.getSignon(trans, username, password); Account account = null; if (signon != null) { acctForm.setUsername(signon.getUsername()); account = accountDao.getAccount(trans, signon.getUsername()); acctForm.setMyList(productDao.getProductListByCategory(trans, account.getFavouriteCategoryId())); }
+
+trans.release();"|data_input/jpetstore/jpetstore.txt|e2dc618a988d41d39c0a965a07c2de2d
+"trans.release();
+
+if (signon == null || account == null) { request.setAttribute(""message"", ""Invalid username or password. Signon failed. ""); return mapping.findForward(""failure""); } else { acctForm.setAccount(account); acctForm.setPassword(null); if (acctForm.getForwardAction() == null || acctForm.getForwardAction().length() < 1) { return mapping.findForward(""success""); } else { return mapping.findForward(acctForm.getForwardAction()); } }
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/UpdateCartQuantitiesAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+import java.util.
+
+;
+
+public class UpdateCartQuantitiesAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception { CartForm cartForm = (CartForm) form;
+
+Iterator cartItems = cartForm.getCart().getCartItems(); while (cartItems.hasNext()) { CartItem cartItem = (CartItem) cartItems.next(); String itemId = cartItem.getItem().getItemId(); try { int quantity = Integer.parseInt(request.getParameter(itemId)); cartForm.getCart().setQuantityByItemId(itemId, quantity); if (quantity < 1) { cartItems.remove(); } } catch (Exception e) { //ignore on purpose } }
+
+return mapping.findForward(""success"");
+
+}
+
+}"|data_input/jpetstore/jpetstore.txt|3915f4f08fca492d830b3d59b68e6e53
+"return mapping.findForward(""success"");
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/ViewCategoryAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+import java.util.
+
+;
+
+public class ViewCategoryAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+CategoryForm catForm = (CategoryForm) form;
+
+DaoTransaction trans = daoManager.getTransaction();
+
+Category category = categoryDao.getCategory(trans, catForm.getCategoryId()); List productList = productDao.getProductListByCategory(trans, catForm.getCategoryId());
+
+catForm.setCategory(category);
+
+catForm.setProductList(productList);
+
+trans.release();
+
+if (category == null) { request.setAttribute(""message"", ""Error viewing Category. Could not find Category for Category ID specified. ""); return mapping.findForward(""failure""); } else { return mapping.findForward(""success""); }
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/ViewItemAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;"|data_input/jpetstore/jpetstore.txt|2020f7666faf4850970af146a51d9073
+";
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class ViewItemAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+ItemForm itemForm = (ItemForm) form;
+
+DaoTransaction trans = daoManager.getTransaction();
+
+Item item = itemDao.getItem(trans, itemForm.getItemId()); Product product = null; if (item != null) { product = productDao.getProduct(trans, item.getProductId()); } itemForm.setProduct(product); itemForm.setItem(item);
+
+trans.release();
+
+if (item == null) { request.setAttribute(""message"", ""Error viewing Item. Could not find Item for Item ID specified. ""); return mapping.findForward(""failure""); } else { return mapping.findForward(""success""); }
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/ViewOrderAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+import java.util.
+
+;
+
+public class ViewOrderAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {"|data_input/jpetstore/jpetstore.txt|2dfc20be4ba144879b62d7ccb9d6130d
+"public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+AccountForm acctForm = (AccountForm) form;
+
+DaoTransaction trans = daoManager.getTransaction();
+
+int orderId = Integer.parseInt(request.getParameter(""orderId""));
+
+Order order = orderDao.getOrder(trans, orderId);
+
+List list = lineItemDao.getLineItemsByOrderId(trans, order.getOrderId());
+
+trans.release();
+
+if (acctForm.getAccount().getUserId().equals(order.getUserId())) { request.setAttribute(""order"", order); request.setAttribute(""itemList"", list); return mapping.findForward(""success""); } else { request.setAttribute(""message"", ""You may only view your own orders. ""); return mapping.findForward(""failure""); }
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/action/ViewProductAction.java
+
+package com.ibatis.jpetstore.presentation.action;
+
+import com.ibatis.db.dao.
+
+;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import com.ibatis.jpetstore.presentation.form.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+import java.util.
+
+;
+
+public class ViewProductAction extends BaseAction {
+
+public ActionForward doPerform(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+ProductForm prodForm = (ProductForm) form;
+
+DaoTransaction trans = daoManager.getTransaction();"|data_input/jpetstore/jpetstore.txt|c2e7682b982f4301a5041da36c44e9e3
+"ProductForm prodForm = (ProductForm) form;
+
+DaoTransaction trans = daoManager.getTransaction();
+
+Product product = productDao.getProduct(trans, prodForm.getProductId()); List itemList = itemDao.getItemListByProduct(trans, prodForm.getProductId());
+
+prodForm.setProduct(product);
+
+prodForm.setItemList(itemList);
+
+trans.release();
+
+if (product == null) { request.setAttribute(""message"", ""Error viewing Product. Could not find Product for Product ID specified. ""); return mapping.findForward(""failure""); } else { return mapping.findForward(""success""); }
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/form/AccountForm.java
+
+package com.ibatis.jpetstore.presentation.form;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+import java.util.
+
+;
+
+public class AccountForm extends BaseForm {
+
+public static final ArrayList LANGUAGE_LIST = new ArrayList();
+
+public static final String VALIDATE_EDIT_ACCOUNT = ""editAccount""; public static final String VALIDATE_NEW_ACCOUNT = ""newAccount"";
+
+private String username;
+
+private String password;
+
+private String repeatedPassword;
+
+private List languages;
+
+private List categories;
+
+private String validate;
+
+private List myList;
+
+private String forwardAction;
+
+private Account account;
+
+static {
+
+LANGUAGE_LIST.add(""english"");
+
+LANGUAGE_LIST.add(""japanese"");
+
+}
+
+public AccountForm() {
+
+languages = LANGUAGE_LIST;
+
+}
+
+public String getUsername() {
+
+return username;
+
+}"|data_input/jpetstore/jpetstore.txt|d9222a3758554b4aa86631de8f0ca9c5
+"LANGUAGE_LIST.add(""japanese"");
+
+}
+
+public AccountForm() {
+
+languages = LANGUAGE_LIST;
+
+}
+
+public String getUsername() {
+
+return username;
+
+}
+
+public void setUsername(String username) { this.username = username; }
+
+public List getMyList() {
+
+return myList;
+
+}
+
+public void setMyList(List myList) { this.myList = myList; }
+
+public String getForwardAction() {
+
+return forwardAction;
+
+}
+
+public void setForwardAction(String forwardAction) { this.forwardAction = forwardAction; }
+
+public String getPassword() {
+
+return password;
+
+}
+
+public void setPassword(String password) { this.password = password; }
+
+public String getRepeatedPassword() {
+
+return repeatedPassword;
+
+}
+
+public void setRepeatedPassword(String repeatedPassword) { this.repeatedPassword = repeatedPassword; }
+
+public Account getAccount() {
+
+return account;
+
+}
+
+public void setAccount(Account account) { this.account = account; }
+
+public List getLanguages() {
+
+return languages;
+
+}
+
+public void setLanguages(List languages) { this.languages = languages; }
+
+public List getCategories() {
+
+return categories;
+
+}
+
+public void setCategories(List categories) { this.categories = categories; }
+
+public String getValidate() {
+
+return validate;
+
+}
+
+public void setValidate(String validate) { this.validate = validate; }
+
+public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) { ActionErrors errors = new ActionErrors();"|data_input/jpetstore/jpetstore.txt|8be17bec52764f38828e8bdf8d21c85a
+"if (validate != null) { if (VALIDATE_EDIT_ACCOUNT.equals(validate) || VALIDATE_NEW_ACCOUNT.equals(validate)) { if (VALIDATE_NEW_ACCOUNT.equals(validate)) { account.setUserId(getUsername()); account.setStatus(""OK""); addErrorIfStringEmpty(errors, ""account.error.userid.required"", this.getUsername()); if (password == null || password.length() < 1 || !password.equals(repeatedPassword)) { errors.add(""ActionForm"", new ActionError(""account.error.password.missing"")); } } if (password != null && password.length() > 0) { if (!password.equals(repeatedPassword)) { errors.add(""ActionForm"", new ActionError(""account.error.password.mismatch"")); } } addErrorIfStringEmpty(errors, ""account.error.firstName.required"", this.account.getFirstName()); addErrorIfStringEmpty(errors, ""account.error.lastName.required"", this.account.getLastName()); addErrorIfStringEmpty(errors, ""account.error.email.required"", this.account.getEmail()); addErrorIfStringEmpty(errors, ""account.error.phone.required"", this.account.getPhone()); addErrorIfStringEmpty(errors, ""account.error.address1.required"", this.account.getAddress1()); addErrorIfStringEmpty(errors, ""account.error.city.required"", this.account.getCity()); addErrorIfStringEmpty(errors, ""account.error.state.required"", this.account.getState()); addErrorIfStringEmpty(errors, ""account.error.zip.required"", this.account.getZip()); addErrorIfStringEmpty(errors, ""account.error.country.required"", this.account.getCountry()); } }
+
+return errors;
+
+}"|data_input/jpetstore/jpetstore.txt|d3bb1b6ac00442aba9881fa0a9758369
+"return errors;
+
+}
+
+public void reset(ActionMapping mapping, HttpServletRequest request) { super.reset(mapping, request); username = null; password = null; repeatedPassword = null;
+
+if (account != null) { username = account.getUserId(); }
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/form/BaseForm.java
+
+package com.ibatis.jpetstore.presentation.form;
+
+import org.apache.struts.action.
+
+;
+
+import java.math.
+
+;
+
+public class BaseForm extends ActionForm {
+
+protected void addErrorIfStringEmpty(ActionErrors errors, String errorResource, String value) { if (value == null || value.trim().length() < 1) { errors.add(""ActionForm"", new ActionError(errorResource)); } }
+
+protected static String formatCurrency(BigDecimal number) { String n = number.toString(); StringBuffer s = new StringBuffer(""$""); int x = n.indexOf('. ');
+
+if (x < 0) { s.append(n); s.append("".00""); } else { String i = n.substring(0, x); String d = n.substring(x + 1); s.append(i); s.append('. '); if (d.length() == 2) { s.append(d); } else if (d.length() == 1) { s.append(d); s.append('0'); } else { s.append(d.substring(0, 2)); } } return s.toString(); }
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/form/CartForm.java
+
+package com.ibatis.jpetstore.presentation.form;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class CartForm extends BaseForm {"|data_input/jpetstore/jpetstore.txt|67b1b075a3754d2fb49cedd6aa29cd59
+"import com.ibatis.jpetstore.domain.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+public class CartForm extends BaseForm {
+
+private Cart cart = new Cart(); private String workingItemId;
+
+public Cart getCart() {
+
+return cart;
+
+}
+
+public void setCart(Cart cart) { this.cart = cart; }
+
+public String getWorkingItemId() {
+
+return workingItemId;
+
+}
+
+public void setWorkingItemId(String workingItemId) { this.workingItemId = workingItemId; }
+
+public void reset(ActionMapping mapping, HttpServletRequest request) { super.reset(mapping, request); workingItemId = null; } }
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/form/CategoryForm.java
+
+package com.ibatis.jpetstore.presentation.form;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import java.util.
+
+;
+
+public class CategoryForm extends BaseForm {
+
+private String categoryId;
+
+private Category category;
+
+private List productList;
+
+public String getCategoryId() {
+
+return categoryId;
+
+}
+
+public void setCategoryId(String categoryId) { this.categoryId = categoryId; }
+
+public Category getCategory() {
+
+return category;
+
+}
+
+public void setCategory(Category category) { this.category = category; }
+
+public List getProductList() {
+
+return productList;
+
+}
+
+public void setProductList(List productList) { this.productList = productList; }
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/form/EmptyForm.java
+
+package com.ibatis.jpetstore.presentation.form;"|data_input/jpetstore/jpetstore.txt|94d965b48f6f4fcdba830ec78317bbd1
+"}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/form/EmptyForm.java
+
+package com.ibatis.jpetstore.presentation.form;
+
+public class EmptyForm extends BaseForm {
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/form/ItemForm.java
+
+package com.ibatis.jpetstore.presentation.form;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+public class ItemForm extends BaseForm {
+
+private String itemId;
+
+private Product product;
+
+private Item item;
+
+public String getItemId() {
+
+return itemId;
+
+}
+
+public void setItemId(String itemId) { this.itemId = itemId; }
+
+public Product getProduct() {
+
+return product;
+
+}
+
+public void setProduct(Product product) { this.product = product; }
+
+public Item getItem() {
+
+return item;
+
+}
+
+public void setItem(Item item) { this.item = item; }
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/form/OrderForm.java
+
+package com.ibatis.jpetstore.presentation.form;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import org.apache.struts.action.
+
+;
+
+import javax.servlet.http.
+
+;
+
+import java.util.
+
+;
+
+public class OrderForm extends BaseForm {
+
+private static final List CARD_TYPE_LIST = new ArrayList();
+
+private Order order;
+
+private boolean shippingAddressRequired;
+
+private boolean confirmed;
+
+private List cardTypeList;
+
+static {
+
+CARD_TYPE_LIST.add(""Visa"");
+
+CARD_TYPE_LIST.add(""MasterCard"");
+
+CARD_TYPE_LIST.add(""American Express"");
+
+}
+
+public OrderForm() {
+
+this.order = new Order();"|data_input/jpetstore/jpetstore.txt|ddae834bb8d241508d27abe8fd239504
+"CARD_TYPE_LIST.add(""MasterCard"");
+
+CARD_TYPE_LIST.add(""American Express"");
+
+}
+
+public OrderForm() {
+
+this.order = new Order();
+
+this.shippingAddressRequired = false;
+
+this.cardTypeList = CARD_TYPE_LIST;
+
+this.confirmed = false;
+
+}
+
+public boolean isConfirmed() {
+
+return confirmed;
+
+}
+
+public void setConfirmed(boolean confirmed) { this.confirmed = confirmed; }
+
+public Order getOrder() {
+
+return order;
+
+}
+
+public void setOrder(Order order) { this.order = order; }
+
+public boolean isShippingAddressRequired() {
+
+return shippingAddressRequired;
+
+}
+
+public void setShippingAddressRequired(boolean shippingAddressRequired) { this.shippingAddressRequired = shippingAddressRequired; }
+
+public void reset(ActionMapping mapping, HttpServletRequest request) { super.reset(mapping, request); shippingAddressRequired = false;
+
+}
+
+public List getCreditCardTypes() {
+
+return cardTypeList;
+
+}
+
+public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) { ActionErrors errors = new ActionErrors();
+
+if (!this.isShippingAddressRequired()) {
+
+addErrorIfStringEmpty(errors, ""order.error.creditCard.required"", order.getCreditCard());
+
+addErrorIfStringEmpty(errors, ""order.error.expiryDate.required"", order.getExpiryDate());
+
+addErrorIfStringEmpty(errors, ""order.error.cardType.required"", order.getCardType());
+
+addErrorIfStringEmpty(errors, ""order.error.shipToFirstName.required"", order.getShipToFirstName());"|data_input/jpetstore/jpetstore.txt|bdeae781a68642c286cd1a3f3690cf6c
+"addErrorIfStringEmpty(errors, ""order.error.shipToFirstName.required"", order.getShipToFirstName());
+
+addErrorIfStringEmpty(errors, ""order.error.shipToLastName.required"", order.getShipToLastName());
+
+addErrorIfStringEmpty(errors, ""order.error.shipAddress1.required"", order.getShipAddress1());
+
+addErrorIfStringEmpty(errors, ""order.error.shipCity.required"", order.getShipCity());
+
+addErrorIfStringEmpty(errors, ""order.error.shipState.required"", order.getShipState());
+
+addErrorIfStringEmpty(errors, ""order.error.shipZip.required"", order.getShipZip());
+
+addErrorIfStringEmpty(errors, ""order.error.shipCountry.required"", order.getShipCountry());
+
+addErrorIfStringEmpty(errors, ""order.error.billToFirstName.required"", order.getBillToFirstName());
+
+addErrorIfStringEmpty(errors, ""order.error.billToLastName.required"", order.getBillToLastName());
+
+addErrorIfStringEmpty(errors, ""order.error.billAddress1.required"", order.getBillAddress1());
+
+addErrorIfStringEmpty(errors, ""order.error.billCity.required"", order.getBillCity());
+
+addErrorIfStringEmpty(errors, ""order.error.billState.required"", order.getBillState());
+
+addErrorIfStringEmpty(errors, ""order.error.billZip.required"", order.getBillZip());
+
+addErrorIfStringEmpty(errors, ""order.error.billCountry.required"", order.getBillCountry());
+
+}"|data_input/jpetstore/jpetstore.txt|68852ce7a545467f89427646d96d290c
+"addErrorIfStringEmpty(errors, ""order.error.billCountry.required"", order.getBillCountry());
+
+}
+
+if (errors.size() > 0) { order.setBillAddress1(order.getShipAddress1()); order.setBillAddress2(order.getShipAddress2()); order.setBillToFirstName(order.getShipToFirstName()); order.setBillToLastName(order.getShipToLastName()); order.setBillCity(order.getShipCity()); order.setBillCountry(order.getShipCountry()); order.setBillState(order.getShipState()); order.setBillZip(order.getShipZip()); }
+
+return errors;
+
+}
+
+}
+
+../jpetstore/src/WEB
+
+INF/classes/com/ibatis/jpetstore/presentation/form/ProductForm.java
+
+package com.ibatis.jpetstore.presentation.form;
+
+import com.ibatis.jpetstore.domain.
+
+;
+
+import java.util.
+
+;
+
+public class ProductForm extends BaseForm {
+
+private String productId;
+
+private Product product;
+
+private List itemList;
+
+public String getProductId() {
+
+return productId;
+
+}
+
+public void setProductId(String productId) { this.productId = productId; }
+
+public Product getProduct() {
+
+return product;
+
+}
+
+public void setProduct(Product product) { this.product = product; }
+
+public List getItemList() {
+
+return itemList;
+
+}
+
+public void setItemList(List itemList) { this.itemList = itemList; }
+
+}"|data_input/jpetstore/jpetstore.txt|eab2c19a3ed14bb68a23f50bb988851d

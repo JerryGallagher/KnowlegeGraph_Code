@@ -1,0 +1,1314 @@
+node_1|node_2|edge|chunk_id|node_3|node_4|relation|node_5|edge_1|edge_2|edge_3
+ibm|copyright license|The text 'Copyright LICENSE:' indicates that IBM holds the copyright for the sample code, and the license allows for its use in developing, using, marketing or distributing application programs conforming to the application programming interface for the operating platform. This relationship between IBM and Copyright License is established.|3816d092f22a44288a952f3a5a014272|||||||
+ibm|sample source code|The text 'Found 39 source code files:' indicates that IBM provides sample source code in source code form, which can be copied, modified, and distributed for developing, using, marketing or distributing application programs conforming to the application programming interface for the operating platform. This relationship between IBM and Sample Source Code is established.|3816d092f22a44288a952f3a5a014272|||||||
+ibm|package|The text 'package com.ibm.websphere.samples.pbw.bean;' indicates that the sample source code provided by IBM belongs to a package named 'com.ibm.websphere.samples.pbw.bean'. This relationship between IBM and Package is established.|3816d092f22a44288a952f3a5a014272|||||||
+createbackorder|inventoryid|passed as parameter to create a new BackOrder for the given inventoryID|7d41b97e1ca548578681c3965202c9ae|||||||
+getsingleresult|backorder|used to retrieve an existing BackOrder with the specified ID|7d41b97e1ca548578681c3965202c9ae|||||||
+equals|util.status_orderstock|used to compare the status of the retrieved BackOrder with a predefined constant|7d41b97e1ca548578681c3965202c9ae|||||||
+getquantity|backorder|called on an existing BackOrder object to retrieve its current quantity|7d41b97e1ca548578681c3965202c9ae|||||||
+setquantity|backorder|used to update the quantity of an existing BackOrder object with a new value|7d41b97e1ca548578681c3965202c9ae|||||||
+createnamedquery|em|called on the EntityManager object to retrieve all BackOrders using a named query|7d41b97e1ca548578681c3965202c9ae|||||||
+getresultlist|q|used to execute the previously created named query and return a list of its results|7d41b97e1ca548578681c3965202c9ae|||||||
+findallbackorders|em|the name of the named query used to retrieve all BackOrders|7d41b97e1ca548578681c3965202c9ae|||||||
+persist|b|used to save a new object (BackOrder) into the persistence context managed by the EntityManager object|7d41b97e1ca548578681c3965202c9ae|||||||
+findbyprimarykeyupdate|backorderlocal|called on the local home interface of the entity superclass (Entity) to retrieve a specific entity by its primary key and update it|7d41b97e1ca548578681c3965202c9ae|||||||
+findbyprimarykeyupdate|backorderid|used as an argument to locate a specific BackOrder object by its ID for deletion|7d41b97e1ca548578681c3965202c9ae|||||||
+receiveconfirmation|backorderid|method called to update status of back order with given ID|a0f5247495a943cb918965b549b831b2|||||||
+backorder|em.find(backorder.class, backorderid)|retrieval of BackOrder object using EntityManager and primary key|a0f5247495a943cb918965b549b831b2|||||||
+setstatus|util.status_receivedstock|setting the status of BackOrder object to Util.STATUS_RECEIVEDSTOCK|a0f5247495a943cb918965b549b831b2|||||||
+backordermgr|receiveconfirmation()|method called in BackOrderManager class|a0f5247495a943cb918965b549b831b2|||||||
+util.status_receivedstock|backorderid|status of BackOrder object with given ID is updated to Util.STATUS_RECEIVEDSTOCK|a0f5247495a943cb918965b549b831b2|||||||
+orderstock|backorderid|method called to update quantity and status of BackOrder object with given ID|a0f5247495a943cb918965b549b831b2|||||||
+setbackorderstatus|util.status_orderedstock|setting the status of BackOrder object to Util.STATUS_ORDEREDSTOCK|a0f5247495a943cb918965b549b831b2|||||||
+setbackorderquantity|quantity|setting the quantity of BackOrder object|a0f5247495a943cb918965b549b831b2|||||||
+setbackorderorderdate|backorderid|updating the order date of BackOrder object with given ID|a0f5247495a943cb918965b549b831b2|||||||
+abortorderstock|backorderid|resetting the status of BackOrder object with given ID since the order failed|a0f5247495a943cb918965b549b831b2|||||||
+setbackorderstatus|util.status_orderstock|setting the status of BackOrder object to Util.STATUS_ORDERSTOCK|a0f5247495a943cb918965b549b831b2|||||||
+getbackorderquantity|backorderid|is called with the specified backOrderID parameter to retrieve the quantity of the associated back order.|2b55e3d5fef04d50a171a19d3c4c1915|||||||
+em.find|backorder id|is used to locate the BackOrder object with the given ID in the Entity Manager, which is passed as a parameter to the 'getBackOrderQuantity' method.|2b55e3d5fef04d50a171a19d3c4c1915|||||||
+backorderlocalhome.findbyprimarykey|backorder key|is invoked with the specified BackOrder Key object to locate the BackOrder object from the local PersistenceManager in 'getBackOrderQuantity' method, but not used here.|2b55e3d5fef04d50a171a19d3c4c1915|||||||
+getinventoryid|backorderid|is called with the given backOrderID to retrieve the inventory ID associated with it in 'getBackOrderInventoryID' method.|2b55e3d5fef04d50a171a19d3c4c1915|||||||
+em.find|inventory id|is used to locate the Inventory object with the given ID in the Entity Manager, which is passed as a parameter to 'getBackOrderInventoryID' method.|2b55e3d5fef04d50a171a19d3c4c1915|||||||
+backorderlocalhome.findbyprimarykey|backorder key|is invoked with the specified BackOrder Key object to locate the BackOrder object from the local PersistenceManager in 'getBackOrderInventoryID' method, but not used here.|2b55e3d5fef04d50a171a19d3c4c1915|||||||
+resetbackorderstatus|backorderid|is called with the specified backOrderID parameter to reset the status of the associated back order in 'resetBackOrderStatus' method.|2b55e3d5fef04d50a171a19d3c4c1915|||||||
+backorder|em|The variable 'em' is used to access the entity manager, and the method 'find' is called on it with an argument 'BackOrder.class' and a primary key value 'backOrderID', which allows retrieving a specific BackOrder instance.|2bd56ecc4c3f49d8932690014cd7513d|||||||
+system|currenttimemillis|The built-in Java class 'System' is used to access the current time in milliseconds since the Unix epoch, which is assigned to the variable 'orderDate' of the BackOrder object.|2bd56ecc4c3f49d8932690014cd7513d|||||||
+catalogmgr|../sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/catalogmgr.java|The file path '../sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/bean/CatalogMgr.java' is provided to indicate the location of another Java source code module, which might be related to the current context.|2bd56ecc4c3f49d8932690014cd7513d|||||||
+catalogmgr|entitymanager|relation between CatalogMgr and EntityManager, CatalogMgr is annotated with @PersistenceContext to access EntityManager|684e1b5428fa444584bd72a2a6005c72|||||||
+inventory|catalogmgr|CatalogMgr provides transactional access to inventory items represented by Inventory class through getItems() method|684e1b5428fa444584bd72a2a6005c72|||||||
+getitemsbycategory|catalogmgr|method of CatalogMgr to retrieve inventory items for a specific category|684e1b5428fa444584bd72a2a6005c72|||||||
+int|util.getcategorystrings()|category values passed to getItems() method are obtained from Util.getCategoryStrings()|684e1b5428fa444584bd72a2a6005c72|||||||
+vector<inventory>|getitems()|return type of getItems() method is Vector<Inventory>|684e1b5428fa444584bd72a2a6005c72|||||||
+int|category|category parameter in getItemsByCategory() method|684e1b5428fa444584bd72a2a6005c72|||||||
+vector<inventory>|getitemsbycategory|return type of getItemsByCategory() method is Vector<Inventory>|684e1b5428fa444584bd72a2a6005c72|||||||
+namedquery|"em.createnamedquery(""getitemsbycategory"")"|"NamedQuery ""getItemsByCategory"" is created using EntityManager"|684e1b5428fa444584bd72a2a6005c72|||||||
+getitemslikename|name|a method named getItemsLikeName that takes a parameter named name which is used to search for inventory items by their names.|0fde7a1f1d00454783f75bcd60bbe4c3|||||||
+vector|returntype|the method getItemsLikeName returns a Vector of Inventory objects|0fde7a1f1d00454783f75bcd60bbe4c3|||||||
+em|createnamedquery|the EntityManager object is used to create a named query called 'getItemsLikeName'|0fde7a1f1d00454783f75bcd60bbe4c3|||||||
+query|getresultlist|the Query object is used to retrieve the result list of inventory items that match the search criteria|0fde7a1f1d00454783f75bcd60bbe4c3|||||||
+string|name|the parameter 'name' in the getItemsLikeName method is a String value that includes wildcard characters (%) to perform a search for inventory items with names containing specific text.|0fde7a1f1d00454783f75bcd60bbe4c3| '%'|'%'|||||
+storeitem|getitem|a method named getItem that returns a StoreItem object corresponding to the given ID|0fde7a1f1d00454783f75bcd60bbe4c3|||||||
+inventory|getiteminventory|a method named getItemInventory that retrieves an Inventory object with the specified ID|0fde7a1f1d00454783f75bcd60bbe4c3|||||||
+em|find|the EntityManager object is used to find a specific Inventory object by its ID|0fde7a1f1d00454783f75bcd60bbe4c3|||||||
+em.persist(item)|item|An inventory item is persisted in the database using the EntityManager (em) method.|eb51b078218746dd92d1cb9f9c2c7a51|||||||
+em.flush()|item|The changes made to the inventory item, such as adding or updating it, are flushed to the database using the EntityManager (em) method.|eb51b078218746dd92d1cb9f9c2c7a51|||||||
+return retval;|retval|The method returns a boolean value indicating whether the operation was successful or not.|eb51b078218746dd92d1cb9f9c2c7a51|||||||
+em.remove(em.find(inventory.class, inventoryid));|inventoryid|A specific inventory item with a given ID is removed from the database using the EntityManager (em) method.|eb51b078218746dd92d1cb9f9c2c7a51|||||||
+public boolean additem(storeitem item);|additem(storeitem item)|A StoreItem is added to the inventory using the addItem() method.|eb51b078218746dd92d1cb9f9c2c7a51|||||||
+public boolean additem(new inventory(item));|new inventory(item)|A new Inventory object is created from a StoreItem object to be added to the database.|eb51b078218746dd92d1cb9f9c2c7a51|||||||
+public boolean deleteitem(string inventoryid);|deleteitem(string inventoryid)|A specific inventory item with a given ID is deleted from the database using the deleteItem() method.|eb51b078218746dd92d1cb9f9c2c7a51|||||||
+public byte[] getitemimagebytes(string inventoryid);|getitemimagebytes(string inventoryid)|The image bytes of a specific inventory item with a given ID are retrieved using the getItemImageBytes() method.|eb51b078218746dd92d1cb9f9c2c7a51|||||||
+public void setitemimagebytes(string inventoryid, byte[] imgbytes);|setitemimagebytes(string inventoryid, byte[] imgbytes)|The image bytes of a specific inventory item with a given ID are updated using the setItemImageBytes() method.|eb51b078218746dd92d1cb9f9c2c7a51|||||||
+public void setitemquantity(string inventoryid, int quantity);|setitemquantity(string inventoryid, int quantity)|The quantity of a specific inventory item with a given ID is updated using the setItemQuantity() method.|eb51b078218746dd92d1cb9f9c2c7a51|||||||
+getinv|inventoryid|argument passed to function|43408ba1d08a42b387f1ca556c1fdf95|||||||
+inventory|em.find(inventory.class, inventoryid)|method used to retrieve inventory with given ID from database|43408ba1d08a42b387f1ca556c1fdf95|||||||
+inventoryid|getinv|input parameter for retrieving inventory|43408ba1d08a42b387f1ca556c1fdf95|||||||
+em.find(inventory.class, inventoryid)|inventory inv = em.find(inventory.class, inventoryid)|assignment of retrieved inventory to variable|43408ba1d08a42b387f1ca556c1fdf95|||||||
+em|getinv|member function called on EntityManager object for retrieving inventory|43408ba1d08a42b387f1ca556c1fdf95|||||||
+setquantity|quantity|method called on Inventory object with new quantity value as argument|43408ba1d08a42b387f1ca556c1fdf95|||||||
+quantity|inv.setquantity(quantity)|input parameter for setting quantity of inventory|43408ba1d08a42b387f1ca556c1fdf95|||||||
+lockmodetype.optimistic_force_increment|em.lock(inv, lockmodetype.optimistic_force_increment)|mode used to lock retrieved inventory object for updating|43408ba1d08a42b387f1ca556c1fdf95|||||||
+em.refresh(inv)|getinvupdate|method called on EntityManager object to refresh retrieved inventory object after locking|43408ba1d08a42b387f1ca556c1fdf95|||||||
+inventoryid|getinvupdate|input parameter for retrieving inventory with updated quantity|43408ba1d08a42b387f1ca556c1fdf95|||||||
+customermgr|transactional facade|provides a transactional facade for access to a user DB|30b9a9dbecb946909099bcf22b377da8|||||||
+customermgr|dependent|implementation class of CustomerMgr is Dependent annotation provided by JEE|30b9a9dbecb946909099bcf22b377da8|||||||
+customermgr|serializable|CustomerMgr implements Serializable interface|30b9a9dbecb946909099bcf22b377da8|||||||
+entitymanager|customermgr|EntityManager is a member variable of CustomerMgr|30b9a9dbecb946909099bcf22b377da8|||||||
+unitname|pbw|UnitName is passed to EntityManager as an argument to select the Persistence Unit named PBW|30b9a9dbecb946909099bcf22b377da8|||||||
+customer|entity|Customer is a subclass of Entity class provided by JPA|30b9a9dbecb946909099bcf22b377da8|||||||
+customermgr|create a new user|CustomerMgr's method for creating a new user is called 'createNewUser'|30b9a9dbecb946909099bcf22b377da8|||||||
+customerid|new customer id|customerID parameter of 'createNewUser' method represents the unique identifier for a customer|30b9a9dbecb946909099bcf22b377da8|||||||
+password|password for the customer id|password parameter of 'createNewUser' method is used to set up the user's password|30b9a9dbecb946909099bcf22b377da8|||||||
+firstname||firstName parameter of 'createNewUser' method is an optional parameter which represents the customer's first name|30b9a9dbecb946909099bcf22b377da8|||||||
+util|customermgr|CustomerMgr has a member reference to Util class for simple authentication support|30b9a9dbecb946909099bcf22b377da8|||||||
+customer|customerid|The new customer ID is provided as an input to the method createCustomer.|38b989ff5c2841c89f4aaafbd099ab1d|||||||
+customer|password|The password for the customer ID is also provided as an input to the method createCustomer.|38b989ff5c2841c89f4aaafbd099ab1d|||||||
+customer|firstname|First name of the user is passed as a parameter in the method createCustomer.|38b989ff5c2841c89f4aaafbd099ab1d|||||||
+customer|lastname|Last name of the user is also provided as an input to the method createCustomer.|38b989ff5c2841c89f4aaafbd099ab1d|||||||
+customer|addr1|Address line 1 is specified as a parameter in the method createCustomer.|38b989ff5c2841c89f4aaafbd099ab1d|||||||
+customer|addr2|Address line 2 can also be provided as an input to the method createCustomer.|38b989ff5c2841c89f4aaafbd099ab1d|||||||
+customer|addrcity|The city address information is passed as a parameter in the method createCustomer.|38b989ff5c2841c89f4aaafbd099ab1d|||||||
+customer|addrstate|State address information can also be provided as an input to the method createCustomer.|38b989ff5c2841c89f4aaafbd099ab1d|||||||
+customer|addrzip|Zip code address information is specified as a parameter in the method createCustomer.|38b989ff5c2841c89f4aaafbd099ab1d|||||||
+customer|phone|User's phone number is passed as an input to the method createCustomer.|38b989ff5c2841c89f4aaafbd099ab1d|||||||
+customer|customerid|To retrieve an existing user, customer ID is provided as an argument to the method getCustomer.|38b989ff5c2841c89f4aaafbd099ab1d|||||||
+emailmessage|class|This class encapsulates the info needed to send an email message.|c51689f9260b4e48b59570b7158f9bf8|||||||
+com.ibm.websphere.samples.pbw.bean|package|Belongs to package com.ibm.websphere.samples.pbw.bean|c51689f9260b4e48b59570b7158f9bf8|||||||
+ibm|company|International Business Machines Corp., holds the copyright for this code.|c51689f9260b4e48b59570b7158f9bf8|||||||
+copyright license|license|The sample source code is provided with this license.|c51689f9260b4e48b59570b7158f9bf8|||||||
+source code form|form|This information contains sample code in source code form.|c51689f9260b4e48b59570b7158f9bf8|||||||
+application programming interface|api|Conforms to the application programming interface for the operating platform this code is written for.|c51689f9260b4e48b59570b7158f9bf8|||||||
+developing|purpose|Sample programs can be copied, modified, and distributed for developing applications conforming to the API.|c51689f9260b4e48b59570b7158f9bf8|||||||
+using|purpose|Sample programs can be copied, modified, and distributed for using applications conforming to the API.|c51689f9260b4e48b59570b7158f9bf8|||||||
+marketing|purpose|Sample programs can be copied, modified, and distributed for marketing applications conforming to the API.|c51689f9260b4e48b59570b7158f9bf8|||||||
+distributing application programs|purpose|Sample programs can be copied, modified, and distributed for distributing application programs conforming to the API.|c51689f9260b4e48b59570b7158f9bf8|||||||
+apache license|license|This information does not contain any sample code licensed under the Apache License.|c51689f9260b4e48b59570b7158f9bf8|||||||
+eclipse public license|license|This information does not contain any sample code licensed under the Eclipse Public License.|c51689f9260b4e48b59570b7158f9bf8|||||||
+gpl license|license|This information does not contain any sample code licensed under the GPL License.|c51689f9260b4e48b59570b7158f9bf8|||||||
+lesser general public license|license|This information does not contain any sample code licensed under the Lesser General Public License.|c51689f9260b4e48b59570b7158f9bf8|||||||
+apache software license|license|This information does not contain any sample code licensed under the Apache Software License.|c51689f9260b4e48b59570b7158f9bf8|||||||
+mit license|license|This information does not contain any sample code licensed under the MIT License.|c51689f9260b4e48b59570b7158f9bf8|||||||
+bsd license|license|This information does not contain any sample code licensed under the BSD License.|c51689f9260b4e48b59570b7158f9bf8|||||||
+public domain dedication and license (pddl)|license|This information does not contain any sample code dedicated to the public domain under PDDL.|c51689f9260b4e48b59570b7158f9bf8|||||||
+mozilla public license version 2.0|license|This information does not contain any sample code licensed under the Mozilla Public License Version 2.0.|c51689f9260b4e48b59570b7158f9bf8|||||||
+emailmessage|subject|The 'EMailMessage' class encapsulates the information needed to send an email message, and this class has a field called 'subject'.|d9e169b4566c4a36aae75c2da597acdc|||||||
+emailmessage|htmlcontents|The 'EMailMessage' class encapsulates the information needed to send an email message, and this class has a field called 'htmlContents'.|d9e169b4566c4a36aae75c2da597acdc|||||||
+emailmessage|emailreceiver|The 'EMailMessage' class encapsulates the information needed to send an email message, and this class has a field called 'emailReceiver'.|d9e169b4566c4a36aae75c2da597acdc|||||||
+mailerappexception|||d9e169b4566c4a36aae75c2da597acdc|||||||
+programming interface|operating platform|The programming interface is provided for the operating platform.|9838736b7834442d9eab473de9351777|||||||
+sample code|operating platform|The sample code is written for the operating platform.|9838736b7834442d9eab473de9351777|||||||
+ibm|operating platform|IBM provides the sample source code for the operating platform on an 'AS IS' basis.|9838736b7834442d9eab473de9351777|||||||
+ibm|sample source code|IBM provides the sample source code on an 'AS IS' basis.|9838736b7834442d9eab473de9351777|||||||
+exception|mailer component|The MailerAppException extends the standard Exception and is thrown by the mailer component when there is some failure sending the mail.|9838736b7834442d9eab473de9351777|||||||
+mailerbean|transactional facade for access to order information and notification of buyer of order state.|MailerBean provides a transactional facade for access to Order information and notification of the buyer of order state.|a4682d30029e46ddad8ce0dea4c740c8|||||||
+order|entity representing an order placed by a customer|Order is an entity representing an order placed by a customer|a4682d30029e46ddad8ce0dea4c740c8|||||||
+customer|entity representing a customer|Customer is an entity representing a customer|a4682d30029e46ddad8ce0dea4c740c8|||||||
+entitymanager|java persistence api (jpa) interface used to manage persistence units and their contents|EntityManager is the Java Persistence API (JPA) interface used to manage persistence units and their contents|a4682d30029e46ddad8ce0dea4c740c8|||||||
+em|short for entitymanager, represents a session with the database|em represents a session with the database|a4682d30029e46ddad8ce0dea4c740c8|||||||
+session|javamail interface used to manage email sessions|Session is the JavaMail interface used to manage email sessions|a4682d30029e46ddad8ce0dea4c740c8|||||||
+mailsession|short for session, represents a session with the mail system|mailSession represents a session with the mail system|a4682d30029e46ddad8ce0dea4c740c8|||||||
+orderkey|unique identifier for an order|OrderKey is the unique identifier for an order|a4682d30029e46ddad8ce0dea4c740c8|||||||
+util|utility class used to log debug messages|Util is a utility class used to log debug messages|a4682d30029e46ddad8ce0dea4c740c8|||||||
+createmessage|method used to create the email message for an order|createMessage is the method used to create the email message for an order|a4682d30029e46ddad8ce0dea4c740c8|||||||
+order|shows up in createmessage method when finding order details from database|Order shows up in createMessage method when finding order details from database|a4682d30029e46ddad8ce0dea4c740c8|||||||
+msg|stringbuffer used to store the email message content|msg is the StringBuffer used to store the email message content|a4682d30029e46ddad8ce0dea4c740c8|||||||
+plants by websphere|brand representing this application|Plants By WebSphere is the brand representing this application|a4682d30029e46ddad8ce0dea4c740c8|||||||
+orderkey|thank you|The order number is being thanked for.|1ffc9f30967b4e0397b984784ba69193|||||||
+orderkey|your plants by websphere order|The order number represents a specific Plants By WebSphere order.|1ffc9f30967b4e0397b984784ba69193|||||||
+msg|thank you for your order |The message contains a thank you statement for the order.|1ffc9f30967b4e0397b984784ba69193|||||||
+orderkey|your plants by websphere order will be shipped to:|The order number is associated with a shipping address.|1ffc9f30967b4e0397b984784ba69193|||||||
+order.getshipname()|your plants by websphere order|The ship name is related to the specific order being discussed.|1ffc9f30967b4e0397b984784ba69193|||||||
+"order.getshipaddr1() + "" "" + order.getshipaddr2() "|your plants by websphere order|The shipping address is associated with the specific order.|1ffc9f30967b4e0397b984784ba69193|||||||
+"msg.append(""please save it for your records."")"|your plants by websphere order|The message asks the customer to keep a record of the specific order.|1ffc9f30967b4e0397b984784ba69193|||||||
+orderkey|please save it for your records.|The order number is mentioned in the statement asking the customer to keep a record.|1ffc9f30967b4e0397b984784ba69193|||||||
+customerinfo|your plants by websphere order number |The customer information is related to the specific order being discussed.|1ffc9f30967b4e0397b984784ba69193|||||||
+mimemessage|msg|msg is an instance of MimeMessage in this context.|99648a67483e45e5ae161965ef771506|||||||
+mailsession|msg|msg is initialized using mailSession in this context.|99648a67483e45e5ae161965ef771506|||||||
+setfrom()|msg|The method setFrom() is being called on msg in this context.|99648a67483e45e5ae161965ef771506|||||||
+internetaddress.parse(emessage.getemailreceiver(), false)|msg.setrecipients(...)|The method setRecipients(...) is being called on msg with the argument InternetAddress.parse(eMessage.getEmailReceiver(), false) in this context.|99648a67483e45e5ae161965ef771506|||||||
+emessage.getsubject()|msg.setsubject(|The method setSubject(...) is being called on msg with the argument eMessage.getSubject() in this context.|99648a67483e45e5ae161965ef771506|||||||
+mimebodypart mbp|msg|mbp is being added to msg using the method addBodyPart(...) in this context.|99648a67483e45e5ae161965ef771506|||||||
+mp|msg.setcontent(...)|The method setContent(...) is being called on msg with the argument mp in this context.|99648a67483e45e5ae161965ef771506|||||||
+"util.debug(""mail sent successfully."")"|exception handling block (catch block)|This statement executes when there is an exception while sending mail and it prints a debug message.|99648a67483e45e5ae161965ef771506|||||||
+"util.debug(""error sending mail."")"|exception handling block (catch block)|This statement executes when there is an exception while sending mail and it prints a debug message.|99648a67483e45e5ae161965ef771506|||||||
+"util.debug(""createandsendmail exception : "" + e)"|exception handling block (catch block)|This statement executes when there is an exception while sending mail and it prints a debug message with the exception details.|99648a67483e45e5ae161965ef771506|||||||
+nosupplierexception.java|this context|This class NoSupplierException is being used in this context for handling exceptions related to suppliers.|99648a67483e45e5ae161965ef771506|||||||
+ibm provides the sample source code|as is basis|warranty and disclaimers associated with the sample source code provided by IBM|759449759967409c9178401a1110f59e|||||||
+ibm|copyright international business machines corp.|ownership of intellectual property rights in the sample source code|759449759967409c9178401a1110f59e|||||||
+nosupplierexception|exception|is a subclass of Exception class|759449759967409c9178401a1110f59e|||||||
+populatedbbean|dbbean|uses the ResetDBBean class for resetting the database|759449759967409c9178401a1110f59e|||||||
+resetdbbean|dbbean|is injected into PopulateDBBean class as a dependency|759449759967409c9178401a1110f59e|||||||
+populatedbbean|dbbean|The PopulateDBBean object has a member variable dbBean of type ResetDBBean.|0ba23d01fbd3408cbb85b4405ff7cac0|||||||
+resetdbbean|populatedb|The method populateDB() is defined in the ResetDBBean class.|0ba23d01fbd3408cbb85b4405ff7cac0|||||||
+util|debug|The debug() method is called from the initDB() method of PopulateDBBean to output a message.|0ba23d01fbd3408cbb85b4405ff7cac0|||||||
+com.ibm.websphere.samples.pbw.utils.util|class|The Util class is imported from the specified package.|0ba23d01fbd3408cbb85b4405ff7cac0|||||||
+plantsbywebsphere application|resetbean|The PlantsByWebSphere application is associated with the resetbean class, which implements Serializable and contains methods for deleting all data, populating the database, and injecting dependencies such as CatalogMgr, CustomerMgr, ShoppingCartBean, BackOrderMgr, SuppliersBean, EntityManager, and UserTransaction.|102a79601ce142259024c39b6d42f30a|||||||
+resetbean|@named|The @Named annotation is used to name the resetbean bean for injection purposes.|102a79601ce142259024c39b6d42f30a|||||||
+resetbean|@dependent|The @Dependent annotation indicates that the resetbean bean should be created only once per context, rather than being shared across multiple injected instances.|102a79601ce142259024c39b6d42f30a|||||||
+resetbean|@rolesallowed|The @RolesAllowed annotation specifies that access to the resetbean class is restricted to users with the 'SampAdmin' role.|102a79601ce142259024c39b6d42f30a|||||||
+catalogmgr|catalog|The CatalogMgr interface is injected into the resetbean class as a dependency and used in methods for adding images, deleting all data, and populating the database.|102a79601ce142259024c39b6d42f30a|||||||
+customermgr|customer|The CustomerMgr interface is injected into the resetbean class as a dependency and used in methods for deleting all data and populating the database.|102a79601ce142259024c39b6d42f30a|||||||
+shoppingcartbean|cart|The ShoppingCartBean interface is injected into the resetbean class as a dependency and used in methods for deleting all data and populating the database.|102a79601ce142259024c39b6d42f30a|||||||
+backordermgr|backorderstock|The BackOrderMgr interface is injected into the resetbean class as a dependency and used in methods for deleting all data.|102a79601ce142259024c39b6d42f30a|||||||
+suppliersbean|suppliers|The SuppliersBean interface is injected into the resetbean class as a dependency and used in methods for deleting all data.|102a79601ce142259024c39b6d42f30a|||||||
+entitymanager|em|The EntityManager interface is injected into the resetbean class as a dependency and used in methods for deleting all data, populating the database, and accessing persistence contexts.|102a79601ce142259024c39b6d42f30a|||||||
+usertransaction|tx|The UserTransaction interface is injected into the resetbean class as a dependency and used in methods for executing transactions.|102a79601ce142259024c39b6d42f30a|||||||
+plantsbywebsphere application|inventory table|The PlantsByWebSphere application contains a method called 'populateDB' that populates the INVENTORY table with text using the Util.debug() method for logging debug messages.|102a79601ce142259024c39b6d42f30a|||||||
+inventory table|text|The 'populateDB' method populates the INVENTORY table with text, implying that it contains textual data.|102a79601ce142259024c39b6d42f30a|||||||
+inventory|text...|Populating INVENTORY table with text...|72916ead4aab4dc49fae196314933124|||||||
+util.debug|populating inventory table with text...||72916ead4aab4dc49fae196314933124|||||||
+string[] values|inventory table populated with text...|Found INVENTORY property values:  |72916ead4aab4dc49fae196314933124|||||||
+util.getproperties|string[] values||72916ead4aab4dc49fae196314933124|||||||
+for (int index = 0; index < values.length; index++)|string[] fields||72916ead4aab4dc49fae196314933124|||||||
+util.debug|found inventory property values:  ||72916ead4aab4dc49fae196314933124|||||||
+string[] fields|inventory table populated with text...|Found INVENTORY property values:  |72916ead4aab4dc49fae196314933124|||||||
+id|inventory storeitem||72916ead4aab4dc49fae196314933124|||||||
+name|inventory storeitem||72916ead4aab4dc49fae196314933124|||||||
+heading|inventory storeitem||72916ead4aab4dc49fae196314933124|||||||
+descr|inventory storeitem||72916ead4aab4dc49fae196314933124|||||||
+pkginfo|inventory storeitem||72916ead4aab4dc49fae196314933124|||||||
+image|addimage||72916ead4aab4dc49fae196314933124|||||||
+price|float price = new float(fields[6]).floatvalue();||72916ead4aab4dc49fae196314933124|||||||
+cost|float cost = new float(fields[7]).floatvalue();||72916ead4aab4dc49fae196314933124|||||||
+quantity|int quantity = new integer(fields[8]).intvalue();||72916ead4aab4dc49fae196314933124|||||||
+category|int category = new integer(fields[9]).intvalue();||72916ead4aab4dc49fae196314933124|||||||
+notes|string notes = fields[10];||72916ead4aab4dc49fae196314933124|||||||
+ispublic|boolean ispublic = new boolean(fields[11]).booleanvalue();||72916ead4aab4dc49fae196314933124|||||||
+inventory storeitem|catalog.additem(storeitem);||72916ead4aab4dc49fae196314933124|||||||
+addimage|catalog||72916ead4aab4dc49fae196314933124|||||||
+id|image||72916ead4aab4dc49fae196314933124|||||||
+catalog|addimage||72916ead4aab4dc49fae196314933124|||||||
+order|customerid|Unique identifier assigned to the customer who placed the order|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|billname|Name on the billing statement provided by the customer during checkout|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|billaddr1|Billing address line 1 provided by the customer during checkout|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|billaddr2|Optional second billing address line provided by the customer during checkout|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|billcity|Billing city entered by the customer during checkout|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|billstate|Two-letter state code entered by the customer during checkout|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|billzip|Five-digit zip code entered by the customer during checkout|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|billphone|Telephone number provided by the customer during checkout|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|shipname|Name of the person to whom the package should be delivered|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|shipaddr1|Shipping address line 1 provided by the customer during checkout|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|shipaddr2|Optional second shipping address line provided by the customer during checkout|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|shipcity|Shipping city entered by the customer during checkout|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|shipstate|Two-letter state code entered by the customer during checkout for shipping address|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|shipzip|Five-digit zip code entered by the customer during checkout for shipping address|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|shipphone|Telephone number provided by the customer during checkout for shipping address|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|items|A list of products purchased by the customer|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|shippingmethod|The chosen shipping method for delivery of the package to the customer|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|creditcard|Type of credit card used during checkout (e.g., Visa, Mastercard)|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|ccnum|The 16-digit number printed on the front of a credit card|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|ccexpiremonth|Two-digit expiration month (MM) printed on the front of a credit card|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|ccexpireyear|Four-digit expiration year (YYYY) printed on the front of a credit card|78d63b986f3e404996f2f5e54c89e25e|||||||
+order|cardholder|The name printed on the front of a credit card|78d63b986f3e404996f2f5e54c89e25e|||||||
+create_order|customerid|Util.debug(fields[7]);|9315b41435de45199a60268274f4776c|||||||
+create_order|billname|Util.debug(fields[8]);|9315b41435de45199a60268274f4776c|||||||
+create_order|billaddr1|Util.debug(fields[9]);|9315b41435de45199a60268274f4776c|||||||
+create_order|billaddr2|Util.debug(fields[10]);|9315b41435de45199a60268274f4776c|||||||
+create_order|billcity|Util.debug(fields[11]);|9315b41435de45199a60268274f4776c|||||||
+create_order|billstate|Util.debug(fields[12]);|9315b41435de45199a60268274f4776c|||||||
+create_order|billzip|Util.debug(fields[13]);|9315b41435de45199a60268274f4776c|||||||
+create_order|billphone|Util.debug(fields[14]);|9315b41435de45199a60268274f4776c|||||||
+create_order|shipname|Util.debug(fields[15]);|9315b41435de45199a60268274f4776c|||||||
+create_order|shipaddr1|Util.debug(fields[16]);|9315b41435de45199a60268274f4776c|||||||
+create_order|shipaddr2|Util.debug(fields[17]);|9315b41435de45199a60268274f4776c|||||||
+create_order|shipcity|Util.debug(fields[18]);|9315b41435de45199a60268274f4776c|||||||
+create_order|shipstate|Util.debug(fields[19]);|9315b41435de45199a60268274f4776c|||||||
+create_order|shipzip|Util.debug(fields[20]);|9315b41435de45199a60268274f4776c|||||||
+create_order|creditcard|Util.debug(fields[21]);|9315b41435de45199a60268274f4776c|||||||
+create_order|ccnum|Util.debug(fields[22]);|9315b41435de45199a60268274f4776c|||||||
+create_order|ccexpiremonth|Util.debug(fields[23]);|9315b41435de45199a60268274f4776c|||||||
+create_order|ccexpireyear|Util.debug(fields[24]);|9315b41435de45199a60268274f4776c|||||||
+create_order|cardholder|Util.debug(fields[25]);|9315b41435de45199a60268274f4776c|||||||
+create_order|shippingmethod|Util.debug(fields[26]);|9315b41435de45199a60268274f4776c|||||||
+create_order|items|Util.debug(fields[27]);|9315b41435de45199a60268274f4776c|||||||
+ibm|copyright owner|IBM holds the copyright for the provided sample programs, as stated in the context.|6e81a78bb70b4d399a60cd3cd1b11f9c|||||||
+sample programs|application programming interface|The sample programs conform to a specific application programming interface (API) for a particular operating platform.|6e81a78bb70b4d399a60cd3cd1b11f9c|||||||
+operating platform|application programming interface|The provided sample codes are written specifically for a particular operating platform and its associated API.|6e81a78bb70b4d399a60cd3cd1b11f9c|||||||
+sample code|as-is basis|IBM provides the sample source code 'as is' without any implied warranties or conditions.|6e81a78bb70b4d399a60cd3cd1b11f9c|||||||
+damages|direct, indirect, incidental, special or consequential|IBM will not be liable for any damages arising from the use or operation of the sample source code, including direct, indirect, incidental, special or consequential damages.|6e81a78bb70b4d399a60cd3cd1b11f9c|||||||
+maintenance|support, updates, enhancements or modifications|IBM has no obligation to provide maintenance, support, updates, enhancements, or modifications for the provided sample source code.|6e81a78bb70b4d399a60cd3cd1b11f9c|||||||
+copyright|all rights reserved * licensed materials - property of ibm|The copyright for the provided sample programs is owned by IBM, and all rights are reserved. The licensed materials are also property of IBM.|6e81a78bb70b4d399a60cd3cd1b11f9c|||||||
+package|com.ibm.websphere.samples.pbw.bean|The provided sample code is contained within a specific package named 'com.ibm.websphere.samples.pbw.bean'.|6e81a78bb70b4d399a60cd3cd1b11f9c|||||||
+collection|backorder|The context includes a reference to a collection of 'BackOrder' entities, which are described further in the associated JPA package.|6e81a78bb70b4d399a60cd3cd1b11f9c|||||||
+shoppingcartbean|entitymanager|is associated with|107f6b34c8504487a08db5d82d1e0410|||||||
+shoppingcartbean|transactional|has attribute|107f6b34c8504487a08db5d82d1e0410|||||||
+shoppingcartbean|sessionscoped|has attribute|107f6b34c8504487a08db5d82d1e0410|||||||
+shoppingcartbean|persistencecontext|uses|107f6b34c8504487a08db5d82d1e0410|||||||
+shoppingcartbean|pbw|uses|107f6b34c8504487a08db5d82d1e0410|||||||
+em|items|interacts with|107f6b34c8504487a08db5d82d1e0410|||||||
+inventory|item|is a type of|107f6b34c8504487a08db5d82d1e0410|||||||
+inventory|backorder|can be converted to|107f6b34c8504487a08db5d82d1e0410|||||||
+inventory|customer|is associated with|107f6b34c8504487a08db5d82d1e0410|||||||
+inventory|orderitem|is a part of|107f6b34c8504487a08db5d82d1e0410|||||||
+items|inventory|contains|107f6b34c8504487a08db5d82d1e0410|||||||
+items|item|"If (item.equals(i)) {
+	items.remove(i);
+	break;
+}"|03b686e0dac048bbb3e7af9d2eda6acb|||containment||||
+items|newitems|"ArrayList<Inventory> newItems = new ArrayList<Inventory>();
+for (Inventory i : items) {
+	if (i.getQuantity() > 0) {
+		newItems.add(i);
+	}
+}"|03b686e0dac048bbb3e7af9d2eda6acb|||replacement||||
+items|shoppingcartitem's|"public void setItems(Collection<Inventory> items) {
+	this.items = new ArrayList<Inventory>(items);
+}"|03b686e0dac048bbb3e7af9d2eda6acb|||assignment||||
+items|shoppingcartcontents|"for (int i = 0; i < items.size(); i++) {
+	cartContents.addItem((ShoppingCartItem) items.get(i));
+}"|03b686e0dac048bbb3e7af9d2eda6acb|||conversion||||
+items|inventoryid|String inventoryID = cartContents.getInventoryID(i);|03b686e0dac048bbb3e7af9d2eda6acb|||reference||||
+items|qty|int qty = |03b686e0dac048bbb3e7af9d2eda6acb|||reference||||
+shoppingcart|shopping cart item (si)|Each shopping cart contains one or more shopping cart items (sii).|76dcb7bf294c48859cb6a4203d6204f9|||||||
+inventory|shoppingcartitem|A ShoppingCartItem represents an item being purchased, which is associated with a specific Inventory in the system.|76dcb7bf294c48859cb6a4203d6204f9|||||||
+inventory|shoppingcart|Each shopping cart contains one or more inventories (iv), represented as ShoppingCartItems.|76dcb7bf294c48859cb6a4203d6204f9|||||||
+inventory|inventory|Inventories can have a minimum threshold value to indicate the minimum amount of stock required for that item in order to ensure availability. If the inventory level falls below this threshold, additional inventory should be ordered.|76dcb7bf294c48859cb6a4203d6204f9|||||||
+shoppingcartitem|quantity|Each ShoppingCartItem has a quantity value indicating how many of that item are being purchased.|76dcb7bf294c48859cb6a4203d6204f9|||||||
+order|customer|An order is placed by a customer.|0241883e61b6438799a60e62558956b5|||||||
+customer|billname|The billing name of the customer is provided in the order creation process.|0241883e61b6438799a60e62558956b5|||||||
+customer|billaddr1|The billing address line 1 of the customer is provided in the order creation process.|0241883e61b6438799a60e62558956b5|||||||
+customer|billaddr2|The billing address line 2 of the customer is provided in the order creation process (optional).|0241883e61b6438799a60e62558956b5|||||||
+customer|billcity|The billing city of the customer is provided in the order creation process.|0241883e61b6438799a60e62558956b5|||||||
+customer|billstate|The billing state of the customer is provided in the order creation process.|0241883e61b6438799a60e62558956b5|||||||
+customer|billzip|The billing zip code of the customer is provided in the order creation process.|0241883e61b6438799a60e62558956b5|||||||
+customer|billphone|The billing phone number of the customer is provided in the order creation process.|0241883e61b6438799a60e62558956b5|||||||
+order|shipname|A shipping name is provided for the order.|0241883e61b6438799a60e62558956b5|||||||
+order|shipaddr1|The shipping address line 1 is provided for the order.|0241883e61b6438799a60e62558956b5|||||||
+order|shipaddr2|The shipping address line 2 is provided for the order (optional).|0241883e61b6438799a60e62558956b5|||||||
+order|shipcity|The shipping city is provided for the order.|0241883e61b6438799a60e62558956b5|||||||
+order|shipstate|The shipping state is provided for the order.|0241883e61b6438799a60e62558956b5|||||||
+order|shipzip|The shipping zip code is provided for the order.|0241883e61b6438799a60e62558956b5|||||||
+order|shipphone|The shipping phone number is provided for the order.|0241883e61b6438799a60e62558956b5|||||||
+order|creditcard|A credit card is used to pay for the order.|0241883e61b6438799a60e62558956b5|||||||
+order|ccnum|The credit card number is provided in the order creation process.|0241883e61b6438799a60e62558956b5|||||||
+order|ccexpiremonth|The expiration month of the credit card is provided in the order creation process.|0241883e61b6438799a60e62558956b5|||||||
+order|ccexpireyear|The expiration year of the credit card is provided in the order creation process.|0241883e61b6438799a60e62558956b5|||||||
+order|cardholder|The name printed on the credit card is provided in the order creation process.|0241883e61b6438799a60e62558956b5|||||||
+order|shippingmethod|A shipping method is selected for the order.|0241883e61b6438799a60e62558956b5|||||||
+item|storeitem|An item is ordered from a store item.|0241883e61b6438799a60e62558956b5|||||||
+orderitem|inventory|An order item belongs to an inventory.|0241883e61b6438799a60e62558956b5|||||||
+order|orderitem|A collection of OrderItems belonging to a specific Order.|d015403f7f29471c90b08a9230897033|||||||
+orderitem|order|An item associated with a particular Order.|d015403f7f29471c90b08a9230897033|||||||
+inventory|backorder|A BackOrder is created for an Inventory item when the quantity demanded exceeds availability.|d015403f7f29471c90b08a9230897033|||||||
+backorder|inventory|The inventory item for which a BackOrder has been generated.|d015403f7f29471c90b08a9230897033|||||||
+shoppingcartcontent|hashtable|ShoppingCartContent is a class that utilizes Hashtable to hold a shopping cart's contents.|5b11e63335954411b4e14b7c4501e9d4|||||||
+com.ibm.websphere.samples.pbw.bean.shoppingcartcontent|com.ibm.websphere.samples.pbw.jpa.inventory|ShoppingCartContent and Inventory are both classes used in the context, but they do not have a direct relationship.|5b11e63335954411b4e14b7c4501e9d4|||||||
+java|programminglanguage|Java is a programming language used to write this sample program.|5b11e63335954411b4e14b7c4501e9d4|||||||
+international business machines corp.|organization|IBM is the organization that provides the sample source code and holds the copyright for it.|5b11e63335954411b4e14b7c4501e9d4|||||||
+shoppingcartcontent|table|internal field of the ShoppingCartContent class, which is a Hashtable used to store inventory IDs and quantities|a94fe19f54b84aceb0b671905a52f916|||||||
+hashtable|table|same object as node_1 in previous element|a94fe19f54b84aceb0b671905a52f916|||||||
+int|size|method of the ShoppingCartContent class that returns the number of items currently in the cart using the Hashtable's size method|a94fe19f54b84aceb0b671905a52f916|||||||
+enumeration<string>|myenum|iterator used to traverse through the keys (inventory IDs) of the Hashtable in the getInventoryID method|a94fe19f54b84aceb0b671905a52f916|||||||
+string|retval, inventoryid|variables used to store and return inventory IDs found during iteration through the Hashtable in the getInventoryID method|a94fe19f54b84aceb0b671905a52f916|||||||
+int|index|parameter passed to the getInventoryID method, indicating which item's ID should be returned|a94fe19f54b84aceb0b671905a52f916|||||||
+string|inventoryid|key (i.e., inventory ID) in the Hashtable used to store and retrieve quantities of specific items in the cart|a94fe19f54b84aceb0b671905a52f916|||||||
+integer|quantity, getquantity(string)|value stored for a given inventory ID in the Hashtable used to return the quantity of that item in the cart|a94fe19f54b84aceb0b671905a52f916|||||||
+suppliersbean|sample code|SuppliersBean is a sample code provided for developing, using, marketing or distributing application programs conforming to the application programming interface for the operating platform for which the sample code is written.|b2e1a6a8b85b4dc490c6a4daee0816d2|||||||
+suppliersbean|bean|SuppliersBean is a type of bean (JavaBeans component) used in Java Server Faces (JSF), a component-based user interface framework for Java.|b2e1a6a8b85b4dc490c6a4daee0816d2|||||||
+suppliersbean|j2ee application|SuppliersBean is a part of a J2EE application, which is a collection of enterprise Java components and modules that can be deployed as a single entity.|b2e1a6a8b85b4dc490c6a4daee0816d2|||||||
+table|inventoryid|table is a data structure used to store and organize data in the form of rows and columns, and inventoryID is a unique identifier assigned to each item in inventory.|b2e1a6a8b85b4dc490c6a4daee0816d2|||||||
+integer quantity|inventoryid|Integer quantity is the number of items in stock for a particular product, which can be retrieved using the unique identifier inventoryID.|b2e1a6a8b85b4dc490c6a4daee0816d2|||||||
+suppliersbean|get() method|SuppliersBean has a get() method that returns the quantity of a particular product in stock, identified by its inventoryID.|b2e1a6a8b85b4dc490c6a4daee0816d2|||||||
+integer quantity|return statement|The Integer quantity is returned from the SuppliersBean class when it is called with an inventoryID as a parameter.|b2e1a6a8b85b4dc490c6a4daee0816d2|||||||
+suppliersbean|enterprise bean|is a specific type of Java class used in enterprise application development for implementing business logic and data access methods.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+suppliersbean|serializable|implements the Serializable interface, which allows an object to be serialized (converted into a byte stream) and deserialized (reconstructed from its byte stream) format.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+suppliersbean|dependent|indicates that the bean has a short-lived scope and is created and destroyed by the container each time it is used.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+suppliersbean|entitymanager|is a persistence context that provides a managed, transaction-propagating view of the persistent store.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+suppliersbean|persistencecontext|is an annotation used to inject an EntityManager or EntityManagerFactory into a managed bean's constructor, setter method, or field.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+suppliersbean|com.ibm.websphere.samples.pbw.bean.suppliers|is a specific implementation of the Suppliers class for this application.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+supplier|supplierid|is a unique identifier assigned to each supplier, used to retrieve and update supplier information in the database.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+supplier|name|refers to the name of the supplier as entered by the user.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+supplier|street|represents the physical address of the supplier, including street number and name.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+supplier|city|denotes the city or town where the supplier is located.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+supplier|state|indicates the state or province where the supplier is based.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+supplier|zip|specifies the postal code or zip code for the supplier's location.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+supplier|phone|represents the contact phone number of the supplier.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+supplier|url|denotes a web address or URL for accessing further information about the supplier.|5d9d4f2b40174362806cfe2e75a94bfc|||||||
+backorder|supplier|The BackOrder class in the PBW application for WebSphere interacts with Supplier objects through methods like setPhone and setUrl. The updateSupplier() method of the SuppliersBean class is used to update the details of a specific supplier, which may or may not exist in the database based on a condition. If the supplier does not exist, an error message is displayed using the debug() method of the Util class. An exception is caught and its details are also logged using the debug() method. The findSuppliers() method retrieves all suppliers from the database using the createNamedQuery() method of EntityManager. This method returns a Collection<Supplier> that can be used further in the application.|eeb8c8fd4c2b4eea9fb476147d9b73d9|||||||
+supplier|phone|The setPhone() method of the Supplier class is used to set the phone number of a supplier. This method takes a Phone object as an argument, which represents the contact details of the supplier.|eeb8c8fd4c2b4eea9fb476147d9b73d9|||||||
+supplier|url|The setUrl() method of the Supplier class is used to set the website URL of a supplier. This method takes a String as an argument, which represents the web address of the supplier.|eeb8c8fd4c2b4eea9fb476147d9b73d9|||||||
+supplier|em|The updateSupplier() method of the SuppliersBean class uses EntityManager (EM) to interact with the database. EM is a PersistenceContext object that provides access to managed persistent objects and their relationships.|eeb8c8fd4c2b4eea9fb476147d9b73d9|||||||
+query|em|The findSuppliers() method of the SuppliersBean class uses EntityManager (EM) to retrieve all suppliers from the database. It creates a named query called 'findAllSuppliers' using the createNamedQuery() method of EM.|eeb8c8fd4c2b4eea9fb476147d9b73d9|||||||
+util|debug|The debug() method of the Util class is used to display error messages and other diagnostic information in the application. It takes a String argument representing the message to be displayed.|eeb8c8fd4c2b4eea9fb476147d9b73d9|||||||
+exception|debug|An exception named 'e' is caught in the createSupplier() method of the BackOrder class. Its details are logged using the debug() method of the Util class.|eeb8c8fd4c2b4eea9fb476147d9b73d9|||||||
+backorder|websphere|The PBW application for WebSphere is used to develop and test applications that conform to the operating platform. BackOrder, a sample class included in this application, interacts with Supplier objects using various methods.|eeb8c8fd4c2b4eea9fb476147d9b73d9|||||||
+backorder|backorder|Belong to the same entity, as defined by their annotations and nesting structure in the code|9227c4119e414c46891ef92b4f39bdb3|||||||
+backorder|inventory|Has a relationship with the INVENTORY entity, as indicated by the use of the @JoinColumn and @OneToOne annotations|9227c4119e414c46891ef92b4f39bdb3|||||||
+backorder|status|Is associated with a value for the STATUS attribute, which is a part of the BackOrder entity|9227c4119e414c46891ef92b4f39bdb3|||||||
+inventory|backorder|Has a one-to-many relationship with BackOrders, as denoted by the @OneToMany annotation on the INVENTORY entity|9227c4119e414c46891ef92b4f39bdb3|||||||
+backorder|inventory|The BackOrder entity is related to the Inventory entity through a one-to-one relationship represented by the 'inventory' field.|8fd955be658447f0be616e79e5730839|||||||
+backorder|quantity|The 'quantity' field in the BackOrder entity represents the quantity of the product that is backordered.|8fd955be658447f0be616e79e5730839|||||||
+backorder|status|The 'status' field in the BackOrder entity represents the status of the backorder, which is initially set to 'STATUS_ORDERSTOCK' and can later be updated.|8fd955be658447f0be616e79e5730839|||||||
+backorder|lowdate|The 'lowDate' field in the BackOrder entity represents the date on which the backordered quantity became low, i.e., when it fell below the reorder level.|8fd955be658447f0be616e79e5730839|||||||
+backorder|orderdate|The 'orderDate' field in the BackOrder entity represents the date on which the supplier placed the order for the backordered product.|8fd955be658447f0be616e79e5730839|||||||
+programming interface|operating platform|The sample code provided is written for a specific operating platform and its programming interface.|0917a337fe9a497d9e0497e8d2f96a30|||||||
+ibm|warranties|IBM disclaims all warranties, including but not limited to warranties of merchantability, satisfactory quality, fitness for a particular purpose, title, and non-infringement.|0917a337fe9a497d9e0497e8d2f96a30|||||||
+sample source code|ibm|IBM provides the sample source code on an 'as is' basis without any warranties or conditions.|0917a337fe9a497d9e0497e8d2f96a30|||||||
+direct|indirect|IBM shall not be liable for any direct, indirect, incidental, special or consequential damages arising out of the use or operation of the sample source code.|0917a337fe9a497d9e0497e8d2f96a30|special|consequential|||||
+maintenance|support|IBM has no obligation to provide maintenance, support, updates, enhancements or modifications to the sample source code.|0917a337fe9a497d9e0497e8d2f96a30|updates|enhancements||modifications|||
+copyright|international business machines corp.|The sample source code is copyrighted by International Business Machines Corp. For the year 2001 and 2011.|0917a337fe9a497d9e0497e8d2f96a30|||||||
+licensed materials|property of ibm|The material labeled 'Licensed Materials - Property of IBM' is owned by International Business Machines Corp.|0917a337fe9a497d9e0497e8d2f96a30|||||||
+customer|bean mapping|The class Customer is a bean mapping for the CUSTOMER table.|0917a337fe9a497d9e0497e8d2f96a30|||||||
+customer|entity|The class Customer is annotated as an Entity.|0917a337fe9a497d9e0497e8d2f96a30|||||||
+customer|schema|The table CUSTOMER is associated with the schema APP.|0917a337fe9a497d9e0497e8d2f96a30|APP||||||
+removeallcustomers|named queries|There is a named query called removeAllCustomers defined for the Customer class.|0917a337fe9a497d9e0497e8d2f96a30|||||||
+customer|@table|Customer is defined using annotation @Table with name 'CUSTOMER' and schema 'APP'|f35b95d393494ed6bf3b9384cb38e066|||||||
+customer|namedqueries|Customer has named queries represented by NamedQueries annotation|f35b95d393494ed6bf3b9384cb38e066|||||||
+removeallcustomers|namedquery|removeAllCustomers is a named query defined for Customer using annotation NamedQuery with name 'removeAllCustomers'|f35b95d393494ed6bf3b9384cb38e066|||||||
+customerkey|customer|Customer has a key represented by CustomerKey|f35b95d393494ed6bf3b9384cb38e066|||||||
+password|customer|Password is associated with Customer|f35b95d393494ed6bf3b9384cb38e066|||||||
+firstname|customer|First name of customer is represented by firstName|f35b95d393494ed6bf3b9384cb38e066|||||||
+lastname|customer|Last name of customer is represented by lastName|f35b95d393494ed6bf3b9384cb38e066|||||||
+addr1|customer|Street address of the customer is represented by addr1|f35b95d393494ed6bf3b9384cb38e066|||||||
+addr2|customer|Additional street address of the customer (if any) is represented by addr2|f35b95d393494ed6bf3b9384cb38e066|||||||
+addrcity|customer|City name of the customer's address is represented by addrCity|f35b95d393494ed6bf3b9384cb38e066|||||||
+addrstate|customer|State of the customer's address is represented by addrState|f35b95d393494ed6bf3b9384cb38e066|||||||
+addrzip|customer|Zip code for the customer's address is represented by addrZip|f35b95d393494ed6bf3b9384cb38e066|||||||
+phone|customer|Phone number of the customer is represented by phone|f35b95d393494ed6bf3b9384cb38e066|||||||
+addrcity|customer|Street address of the customer includes their city.|5b0e6550b1c74c0c85e41641376a8400|||||||
+addrstate|customer|Street address of the customer includes their state.|5b0e6550b1c74c0c85e41641376a8400|||||||
+addrzip|customer|Street address of the customer includes their zip code.|5b0e6550b1c74c0c85e41641376a8400|||||||
+phone|customer|Customer's contact details include their phone number.|5b0e6550b1c74c0c85e41641376a8400|||||||
+key|customer|Customer is identified by their unique key.|5b0e6550b1c74c0c85e41641376a8400|||||||
+password|customer|Password is used for authentication of the customer.|5b0e6550b1c74c0c85e41641376a8400|||||||
+firstname|customer|Customer's name consists of their first name.|5b0e6550b1c74c0c85e41641376a8400|||||||
+lastname|customer|Customer's name consists of their last name.|5b0e6550b1c74c0c85e41641376a8400|||||||
+sample code|application programming interface|provided in source code form for developing, using, marketing or distributing application programs conforming to the operating platform for which the sample code is written.|ce5baa4b4e284801ac669dc101fe8942|||||||
+sample code|source code|provided in|ce5baa4b4e284801ac669dc101fe8942|||||||
+sample programs|application programming interface|conforming to the application programming interface for the operating platform for which the sample code is written.|ce5baa4b4e284801ac669dc101fe8942|||||||
+inventory.java|java||ce5baa4b4e284801ac669dc101fe8942|||||||
+pbw|websphere application server|sample code is written for|ce5baa4b4e284801ac669dc101fe8942|||||||
+sample code|copying|may copy, modify, and distribute these sample programs in any form without payment to IBM for the purposes of developing,|ce5baa4b4e284801ac669dc101fe8942|||||||
+sample code|marketing|developing, using, marketing or distributing application programs conforming to the application programming interface for the operating platform for which the sample code is written.|ce5baa4b4e284801ac669dc101fe8942|||||||
+ibm|copyright license|this information contains|ce5baa4b4e284801ac669dc101fe8942|||||||
+sample code|distribution|may distribute these sample programs in any form without payment to IBM for the purposes of developing,|ce5baa4b4e284801ac669dc101fe8942|||||||
+sample code|modification|may copy, modify, and distribute these sample programs in any form without payment to IBM for the purposes of developing,|ce5baa4b4e284801ac669dc101fe8942|||||||
+inventory|products for sale|The Inventory bean provides information about the products that a store has for sale.|c99ef11bc61148258eb7cc256f0d914f|||||||
+inventory|table|The Inventory class is mapped to the INVENTORY table in the APP schema.|c99ef11bc61148258eb7cc256f0d914f|||||||
+entity|bean mapping|The Inventory class is annotated with the @Entity annotation, which maps it to a database table.|c99ef11bc61148258eb7cc256f0d914f|||||||
+namedqueries|named queries|The Inventory class is annotated with the @NamedQueries annotation, which defines named queries for searching inventory data.|c99ef11bc61148258eb7cc256f0d914f|||||||
+inventory|/|The context mentions that the store has 'for sale' items, which implies that there is an inventory of products. The Inventory class and the '/' symbol in the URL indicate a resource or location where these products are being sold.|a922a9df07d4451488b4875cebb6c044|||||||
+inventory|getitemsbycategory|The named query 'getItemsByCategory' is used to retrieve items based on their category, indicating that categories are a way of organizing and classifying products in the inventory.|a922a9df07d4451488b4875cebb6c044|||||||
+inventory|removeallinventory|The named query 'removeAllInventory' is used to delete all items from the inventory, suggesting that there can be a large number of products and the ability to remove them in bulk is necessary.|a922a9df07d4451488b4875cebb6c044|||||||
+inventory|price|The 'price' attribute is present in the Inventory class, indicating that each product has a specific price associated with it.|a922a9df07d4451488b4875cebb6c044|||||||
+inventory|cost|The 'cost' attribute is also present in the Inventory class, possibly indicating the cost of production or acquisition of each product.|a922a9df07d4451488b4875cebb6c044|||||||
+inventory|quantity|The 'quantity' attribute is present, implying that there can be multiple units of a single product available for sale.|a922a9df07d4451488b4875cebb6c044|||||||
+inventory|category|The 'category' attribute is present, indicating that products in the inventory are categorized based on some criteria.|a922a9df07d4451488b4875cebb6c044|||||||
+inventory|ispublic|The 'isPublic' attribute is present, possibly suggesting that there are both public and private products available for sale through the inventory.|a922a9df07d4451488b4875cebb6c044|||||||
+setimage|item.getimage()|sets the image of this inventory item based on the image retrieved from the given item.|238462a473274eb8aa4a880d1c23f55b|||||||
+this.setprice|item.getprice()|sets the price of this inventory item based on the price retrieved from the given item.|238462a473274eb8aa4a880d1c23f55b|||||||
+this.setcost|item.getcost()|sets the cost of this inventory item based on the cost retrieved from the given item.|238462a473274eb8aa4a880d1c23f55b|||||||
+this.setquantity|item.getquantity()|sets the quantity of this inventory item based on the quantity retrieved from the given item.|238462a473274eb8aa4a880d1c23f55b|||||||
+this.setcategory|item.getcategory()|sets the category of this inventory item based on the category retrieved from the given item.|238462a473274eb8aa4a880d1c23f55b|||||||
+this.setnotes|item.getnotes()|sets the notes related to this inventory item based on the notes retrieved from the given item.|238462a473274eb8aa4a880d1c23f55b|||||||
+setispublic|item.ispublic()|sets whether this inventory item is public or not based on whether the given item is public or not.|238462a473274eb8aa4a880d1c23f55b|||||||
+increaseinventory|int quantity|increases the quantity of this inventory item by a specified quantity.|238462a473274eb8aa4a880d1c23f55b|||||||
+order|inventoryid|A unique identifier for the current order within the inventory.|153af64ab1664a33a69e7c877cbc4bdc|||||||
+order|tostring|A method to convert the current Order object into a string representation.|153af64ab1664a33a69e7c877cbc4bdc|||||||
+class|getclass|A method to return the runtime class of the current object.|153af64ab1664a33a69e7c877cbc4bdc|||||||
+string|getsimplename|A method to return the simple name (the name without its package) of the class.|153af64ab1664a33a69e7c877cbc4bdc|||||||
+order|backorder|A reference to a related object representing a backorder for the current order.|153af64ab1664a33a69e7c877cbc4bdc|||||||
+order|setbackorder|A method to set the value of the backOrder field for the current Order object.|153af64ab1664a33a69e7c877cbc4bdc|||||||
+order|getbackorder|A method to return the value of the backOrder field for the current Order object.|153af64ab1664a33a69e7c877cbc4bdc|||||||
+byte[]|imgbytes|A byte array representing an image associated with the current order.|153af64ab1664a33a69e7c877cbc4bdc|||||||
+order|setimgbytes|A method to set the value of the imgbytes field for the current Order object.|153af64ab1664a33a69e7c877cbc4bdc|||||||
+order|getimgbytes|A method to return the value of the imgbytes field for the current Order object.|153af64ab1664a33a69e7c877cbc4bdc|||||||
+entity|order|The class Order is annotated with the @Entity annotation, which indicates that it represents a database table.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+table|order1|The @Table annotation is used to map the entity Order to the ORDER1 table in the APP schema.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+namedqueries|removeallorders|The @NamedQueries annotation indicates that the class Order has one or more named queries, and removeAllOrders is one such query.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+namedquery|removeallorders|The @NamedQuery annotation defines a named query with the name removeAllOrders, which can be used to delete all rows from the ORDER1 table.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+generatedvalue||The @GeneratedValue annotation is used to generate a primary key for the Order entity using the TABLE strategy and the OrderSeq generator.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+generationtype|table|The GenerationType.TABLE constant specifies that a sequence generator should be used to generate primary keys for entities.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+tablegenerator|orderseq|The TableGenerator annotation is used to define a database sequence generator with the name OrderSeq, which will be used to generate primary keys for the Order entity.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+joincolumn||The @JoinColumn annotation is not used in this code snippet, but it can be used to specify a foreign key column for a relationship between entities.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+manytoone||The @ManyToOne annotation is not used in this code snippet, but it can be used to define a unidirectional many-to-one relationship between entities.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+collection|orderitems|The class Order has a transient collection field called OrderItems, which is not persisted to the database but can be used to manage associated entities in memory.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+id||The @Id annotation is used to define a primary key for the Order entity.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+transient|orderitems|The @Transient annotation is used to indicate that the OrderItems field should not be persisted to the database, but can still be accessed in memory.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+entity|orderitem|The class OrderItem represents an entity mapped to a database table for order items.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+table||The @Table annotation is not used in this code snippet, but it can be used to define the mapping of the OrderItem entity to a database table.|d6a2afd99143424e8561cd0dab06b5f9|||||||
+order|customer|A customer places an order.|89e83302b5524ae988031bc9fc9375c4|||||||
+order|orderid|Each Order has a unique identifier (orderID).|89e83302b5524ae988031bc9fc9375c4|||||||
+order|profit|Each Order generates a profit.|89e83302b5524ae988031bc9fc9375c4|||||||
+order|orderitems|An Order consists of one or more orderItems (Collection).|89e83302b5524ae988031bc9fc9375c4|||||||
+orderitem|product|Each OrderItem is associated with a Product.|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|billname|A Customer provides a billing name (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|billaddr1|Each Customer has a billing address line 1 (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|billaddr2|Each Customer may have a billing address line 2 (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|billcity|Each Customer specifies their billing city (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|billstate|Each Customer indicates their billing state (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|billzip|Each Customer provides their billing zip code (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|billphone|A Customer can provide a billing phone number (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|shipname|Each Customer provides a shipping name (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|shipaddr1|Each Customer specifies their shipping address line 1 (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|shipaddr2|Each Customer may have a shipping address line 2 (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|shipcity|Each Customer specifies their shipping city (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|shipstate|Each Customer indicates their shipping state (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|shipzip|Each Customer provides their shipping zip code (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|shipphone|A Customer may provide a shipping phone number (String).|89e83302b5524ae988031bc9fc9375c4|||||||
+customer|order|A Customer places an Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+billname|order|The BillName is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+billaddr1|order|The Billing Address Line 1 is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+billaddr2|order|The Billing Address Line 2 (if any) is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+billcity|order|The Billing City is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+billstate|order|The Billing State is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+billzip|order|The Billing ZIP code is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+shipname|order|The Ship Name (or Shipping Label) is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+shipaddr1|order|The Shipping Address Line 1 is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+shipaddr2|order|The Shipping Address Line 2 (if any) is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+shipcity|order|The Shipping City is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+shipstate|order|The Shipping State is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+shipzip|order|The Shipping ZIP code is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+shipphone|order|The Shipping Phone number (if any) is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+creditcard|order|The Credit Card being used for payment is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+ccnum|creditcard|The Credit Card number is associated with the Credit Card.|01f17850c8f346fda6f2d8235f5eada3|||||||
+ccexpiremonth|creditcard|The Expiration Month of the Credit Card is associated with the Credit Card.|01f17850c8f346fda6f2d8235f5eada3|||||||
+ccexpireyear|creditcard|The Expiration Year of the Credit Card is associated with the Credit Card.|01f17850c8f346fda6f2d8235f5eada3|||||||
+cardholder|creditcard|The Name on the Card being used for payment is associated with the Credit Card.|01f17850c8f346fda6f2d8235f5eada3|||||||
+shippingmethod|order|The Shipping Method chosen by the Customer is associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+items|order|The Items ordered by the Customer are associated with the Order.|01f17850c8f346fda6f2d8235f5eada3|||||||
+order|customer|An order is placed by a specific customer.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|billname|The BillName refers to the specific order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|billaddr1|The BillAddr1 is associated with a particular order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|billaddr2|The BillAddr2 also pertains to the specified order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|billcity|The BillCity is connected to a particular order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|billstate|Similarly, the BillState refers to the specific order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|billzip|The BillZip is associated with a given order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|billphone|The BillPhone is related to the specific order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|shipname|The ShipName also pertains to a particular order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|shipaddr1|Similarly, the ShipAddr1 is connected to a specific order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|shipaddr2|The ShipAddr2 also pertains to a particular order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|shipcity|The ShipCity is associated with the specified order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|shipstate|Similarly, the ShipState refers to the specific order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|shipzip|The ShipZip is related to a particular order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|shipphone|The ShipPhone is associated with the specified order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|creditcard|The CreditCard is related to a specific order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|ccnum|Similarly, the CcNum refers to the specified order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|ccexpiremonth|The CcExpireMonth is associated with a particular order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|ccexpireyear|Similarly, the CcExpireYear refers to the specific order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|cardholder|The CardHolder is related to a particular order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|shippingmethod|Similarly, the ShippingMethod refers to the specific order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+item|order|An item is part of a specific order.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+item|price|The Price refers to the particular item.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+item|cost|Similarly, the Cost refers to the specific item.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|items|An order consists of multiple items.|3b45b0ccde664945aee5bc05b510d5ab|||||||
+order|items|A Collection of OrderItems belongs to an Order.|eaf2d0a5835e4a2297cca599d9bea60c|||||||
+order|orderid|Each Order has a unique identifier called OrderID.|eaf2d0a5835e4a2297cca599d9bea60c|||||||
+collection|orderitems|The Collection containing the OrderItems is referred to as orderItems.|eaf2d0a5835e4a2297cca599d9bea60c|||||||
+float|profit|Each Order generates a Profit, which is a float data type.|eaf2d0a5835e4a2297cca599d9bea60c|||||||
+string|selldate|The date on which an Order was sold is called SellDate and is of String data type.|eaf2d0a5835e4a2297cca599d9bea60c|||||||
+string|shipaddr1|The first line of the shipping address is referred to as ShipAddr1.|eaf2d0a5835e4a2297cca599d9bea60c|||||||
+string|shipaddr2|If available, the second line of the shipping address is called ShipAddr2.|eaf2d0a5835e4a2297cca599d9bea60c|||||||
+string|shipcity|The city to which an Order will be shipped is known as ShipCity and is a String value.|eaf2d0a5835e4a2297cca599d9bea60c|||||||
+string|shipname|The name of the person or organization who ordered this particular shipment is called ShipName.|eaf2d0a5835e4a2297cca599d9bea60c|||||||
+string|shipphone|The phone number of the person or organization to whom an Order will be shipped is known as ShipPhone.|eaf2d0a5835e4a2297cca599d9bea60c|||||||
+int|shippingmethod|Each Order has a shipping method associated with it, which can be represented as an integer value called ShippingMethod.|eaf2d0a5835e4a2297cca599d9bea60c|||||||
+setshippingmethod|shippingmethod|is a method within the OrderItem class that sets the value of the shippingMethod variable|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+getshippingmethod|shippingmethod|is a method within the OrderItem class that returns the value of the shippingMethod variable|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+shipzip|getshipzip|is a variable within the OrderItem class that can be accessed using the getShipZip method|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+setshipzip|shipzip|is a method within the OrderItem class that sets the value of the shipZip variable|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+getshipstate|shipstate|is a variable within the OrderItem class that can be accessed using the getShipState method|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+setshipstate|shipstate|is a method within the OrderItem class that sets the value of the shipState variable|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+orderitem|com.ibm.websphere.samples.pbw.jpa|is a Java class located within the package com.ibm.websphere.samples.pbw.jpa|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+public|setshippingmethod|indicates that the setShippingMethod method has public accessibility within the OrderItem class|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+int|shippingmethod|specifies that the shippingMethod variable in the OrderItem class is of type int|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+string|shipzip|indicates that the shipZip variable in the OrderItem class is of type String|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+string|shipstate|specifies that the shipState variable in the OrderItem class is of type String|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+.java|../sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/jpa/orderitem.java|denotes the file extension and location of the OrderItem.java file|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+(copyright license)||indicates that this label is not associated with a specific node or relation, but rather provides contextual information related to licensing for the sample code|253ea3dc968345a8b9d5ea428b68a8f2|||||||
+orderitem|orderitem|both 'OrderItem' and 'ORDERITEM' represent the same entity in different formats|5768995b84474a6480b44683a06a771e|||||||
+pk|orderitem|PK is an embedded class of OrderItem|5768995b84474a6480b44683a06a771e|||||||
+inventoryid|pk|inventoryID is a field in PK, which is a part of OrderItem's composite primary key|5768995b84474a6480b44683a06a771e|||||||
+order_orderid|pk|ORDER_ORDERID is a field in PK, which is a part of OrderItem's composite primary key|5768995b84474a6480b44683a06a771e|||||||
+orderitem|javax.persistence.entity|OrderItem is annotated with javax.persistence.Entity, making it an entity in JPA|5768995b84474a6480b44683a06a771e|||||||
+orderitem|table|ORDERITEM is mapped to a table named ORDERITEM in the schema APP|5768995b84474a6480b44683a06a771e|||||||
+orderitem|namedqueries|OrderItem has a member variable @NamedQueries, which contains one or more NamedQuery annotations|5768995b84474a6480b44683a06a771e|||||||
+removeallorderitem|namedquery|removeAllOrderItem is the name of a named query defined in OrderItem's @NamedQueries member variable|5768995b84474a6480b44683a06a771e|||||||
+orderitem|javax.persistence.joincolumn|OrderItem has a member variable @JoinColumn, which represents a foreign key column in a join table|5768995b84474a6480b44683a06a771e|||||||
+orderitem|pk|OrderItem and PK are related as OrderItem is an embedded object within a class that also has a PK.|0801b3538561462286ec02dd70342af4|||||||
+inventoryid|orderitem.pk|The inventoryID field in the OrderItem class is included in the PK for this entity, indicating a relationship between inventoryID and OrderItem.PK.|0801b3538561462286ec02dd70342af4|||||||
+order_orderid|orderitem.pk|The order_orderID field in the OrderItem class is included in the PK for this entity, indicating a relationship between order_orderID and OrderItem.PK.|0801b3538561462286ec02dd70342af4|||||||
+name|orderitem|The name field in the OrderItem class represents a key concept related to this entity.|0801b3538561462286ec02dd70342af4|||||||
+pkginfo|orderitem|The pkginfo field in the OrderItem class represents a key concept related to this entity.|0801b3538561462286ec02dd70342af4|||||||
+price|orderitem|The price field in the OrderItem class represents a key concept related to this entity.|0801b3538561462286ec02dd70342af4|||||||
+cost|orderitem|The cost field in the OrderItem class represents a key concept related to this entity.|0801b3538561462286ec02dd70342af4|||||||
+category|orderitem|The category field in the OrderItem class represents a key concept related to this entity.|0801b3538561462286ec02dd70342af4|||||||
+quantity|orderitem|The quantity field in the OrderItem class represents a key concept related to this entity.|0801b3538561462286ec02dd70342af4|||||||
+selldate|orderitem|The sellDate field in the OrderItem class represents a key concept related to this entity.|0801b3538561462286ec02dd70342af4|||||||
+inventoryid|orderitem|The inventoryId field in the OrderItem class is a reference to the Inventory entity, indicating a relationship between OrderItem and Inventory.|0801b3538561462286ec02dd70342af4|||||||
+inventory|orderitem|The inventory field in the OrderItem class is a many-to-one association with the Inventory entity, indicating a relationship between OrderItem and Inventory.|0801b3538561462286ec02dd70342af4|||||||
+order|orderitem|The order field in the OrderItem class is a many-to-one association with the Order entity, indicating a relationship between OrderItem and Order.|0801b3538561462286ec02dd70342af4|||||||
+orderitem|order|A Order is associated with one or more OrderItems.|9e3e2d7480924f7c8107d75d83ecd607|||||||
+orderitem|inventory|An OrderItem represents a specific item from an inventory.|9e3e2d7480924f7c8107d75d83ecd607|||||||
+orderitem|name|The name of the product or service being ordered.|9e3e2d7480924f7c8107d75d83ecd607|||||||
+orderitem|pkginfo|Additional information about the product or service being ordered.|9e3e2d7480924f7c8107d75d83ecd607|||||||
+orderitem|price|The cost of the item being ordered, as set by the seller.|9e3e2d7480924f7c8107d75d83ecd607|||||||
+orderitem|cost|The cost to the retailer for purchasing the item from a supplier.|9e3e2d7480924f7c8107d75d83ecd607|||||||
+orderitem|quantity|The number of units being ordered.|9e3e2d7480924f7c8107d75d83ecd607|||||||
+orderitem|category|The type or classification of the item being ordered, such as electronics, clothing, or food.|9e3e2d7480924f7c8107d75d83ecd607|||||||
+orderitem|selldate|The date on which the item was sold to the customer.|9e3e2d7480924f7c8107d75d83ecd607|||||||
+orderitem|order|Belongs to order|b69143ba12d7498ebf35a003f9588be5|||||||
+orderitem|inventory|Related to inventory through order|b69143ba12d7498ebf35a003f9588be5|||||||
+inventory|category|Has category|b69143ba12d7498ebf35a003f9588be5|||||||
+orderitem|price|Has price|b69143ba12d7498ebf35a003f9588be5|||||||
+orderitem|cost|Has cost|b69143ba12d7498ebf35a003f9588be5|||||||
+orderitem|quantity|Has quantity|b69143ba12d7498ebf35a003f9588be5|||||||
+orderitem|pkginfo|Related to pkginfo|b69143ba12d7498ebf35a003f9588be5|||||||
+inventory|orderitem|Has order item|b69143ba12d7498ebf35a003f9588be5|||||||
+orderkey|string|OrderKey is a class in the Order entity bean that contains a String variable called orderID.|d6a9618f730e4015be8519d39c612180|||||||
+string|orderid|orderID is a variable of type String within the OrderKey class.|d6a9618f730e4015be8519d39c612180|||||||
+orderid|orderkey|OrderKey is a class that holds the order ID for an order. This method compares two OrderKey objects to see if they represent the same order.|7a0e59c54cf745b8984de1ea9428c9ae|||||||
+orderid|java.lang.string|The order ID is a string attribute of the Supplier class, which is used in the OrderKey class to identify an order.|7a0e59c54cf745b8984de1ea9428c9ae|||||||
+supplier|com.ibm.websphere.samples.pbw.jpa.supplier|The Supplier class is defined in this package and contains the orderID attribute.|7a0e59c54cf745b8984de1ea9428c9ae|||||||
+pbw|com.ibm.websphere.samples.pbw|This package is part of the IBM Plant By WebSphere project, which provides sample applications for deploying to WebSphere Application Server.|7a0e59c54cf745b8984de1ea9428c9ae|||||||
+java|com|The Supplier class is defined within the com.ibm package, which is part of the Java language.|7a0e59c54cf745b8984de1ea9428c9ae|||||||
+supplier|entity|In this Java class, 'Supplier' is annotated with '@Entity', making it a persistence entity managed by the Java Persistence API (JPA).|479f5b2e0f6f4760a2b7a58521cc0367|||||||
+supplier|table|The 'Table' annotation specifies that this entity is mapped to the 'SUPPLIER' table in the 'APP' schema.|479f5b2e0f6f4760a2b7a58521cc0367|||||||
+supplier|schema|The schema parameter of the 'Table' annotation points to the 'APP' schema where this entity is mapped.|479f5b2e0f6f4760a2b7a58521cc0367|||||||
+findallsuppliers|namedquery|The 'NamedQueries' annotation specifies that this class contains named queries. 'findAllSuppliers' is one such query which can be used to retrieve all supplier entities.|479f5b2e0f6f4760a2b7a58521cc0367|||||||
+removeallsupplier|namedquery|Another named query 'removeAllSupplier' can be used to delete all supplier entities.|479f5b2e0f6f4760a2b7a58521cc0367|||||||
+supplierid|supplier|A supplier is identified by its unique identifier, which is stored in the 'SupplierID' attribute.|58f4272979f8496dae1eddfa0d56c8fb|||||||
+supplierid|supplier|The 'SupplierID' attribute is set using the constructor with the same name.|58f4272979f8496dae1eddfa0d56c8fb|||||||
+name|supplier|The supplier's name is stored in the 'name' attribute and can be accessed or modified using the corresponding getter and setter methods.|58f4272979f8496dae1eddfa0d56c8fb|||||||
+street|supplier|The street address of the supplier is stored in the 'street' attribute.|58f4272979f8496dae1eddfa0d56c8fb|||||||
+city|supplier|The city where the supplier is located is stored in the 'city' attribute.|58f4272979f8496dae1eddfa0d56c8fb|||||||
+usstate|supplier|The U.S. State where the supplier is located is stored in the 'usstate' attribute.|58f4272979f8496dae1eddfa0d56c8fb|||||||
+zip|supplier|The zip code of the supplier's location is stored in the 'zip' attribute.|58f4272979f8496dae1eddfa0d56c8fb|||||||
+phone|supplier|The phone number of the supplier can be accessed or modified using the corresponding getter and setter methods.|58f4272979f8496dae1eddfa0d56c8fb|||||||
+url|supplier|The URL for the supplier's website (if available) is stored in the 'url' attribute.|58f4272979f8496dae1eddfa0d56c8fb|||||||
+listproperties|sample context|belongsTo|02020615f38d44759855cd19edcce373|||||||
+java|sample context|implementedIn|02020615f38d44759855cd19edcce373|||||||
+com|ibm|organizationalRelationship|02020615f38d44759855cd19edcce373|||||||
+websphere|samples|partOf|02020615f38d44759855cd19edcce373|||||||
+pbw|listproperties|isPartOf|02020615f38d44759855cd19edcce373|||||||
+src|main||02020615f38d44759855cd19edcce373|java||||locatedIn|nestedIn|
+string|url||02020615f38d44759855cd19edcce373|setUrl||||isArgOf|isAssignedToMethod|
+context|import statement|contains|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+import statement|java.io.filenotfoundexception|imports|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+import statement|java.text.numberformat|imports|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+import statement|javax.faces.application.application|imports|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+import statement|javax.faces.application.projectstage|imports|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+import statement|javax.faces.context.facescontext|imports|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+import statement|javax.naming.initialcontext|imports|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+import statement|javax.naming.namingexception|imports|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+context|util class|contains|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|ds_name|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_account|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_cart|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_checkoutfinal|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_help|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_login|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_orderdone|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_orderinfo|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_product|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_promo|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_register|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_shopping|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_backadmin|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_suppliercfg|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_adminhome|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+util class|page_adminactions|has attribute|8c0dff129b7040309dde4a8c6b8d11d6|||||||
+attr_supplier|admin_suppliercfg|Supplier configuration is a type of admin action.|e02f7aafdca749b1a43419d289809aa2|||||||
+admin_suppliercfg|admin_backorder|Administering backorders can be part of supplier configuration.|e02f7aafdca749b1a43419d289809aa2|||||||
+attr_supplier|admin_suppliercfg|Suppliers are configured through admin actions.|e02f7aafdca749b1a43419d289809aa2|||||||
+attr_customer|editaccountinfo|Customers can edit their account information.|e02f7aafdca749b1a43419d289809aa2|||||||
+attr_invitems|invitem|Invited items are part of invitations.|e02f7aafdca749b1a43419d289809aa2|||||||
+attr_results|attr_orderinfo|Results can provide order information to the user.|e02f7aafdca749b1a43419d289809aa2|||||||
+attr_cartitems|attr_cart|Cart items are part of the shopping cart.|e02f7aafdca749b1a43419d289809aa2|||||||
+attr_orderkey|attr_orderid|Order keys uniquely identify orders, and order IDs provide access to specific orders.|e02f7aafdca749b1a43419d289809aa2|||||||
+attr_cart|attr_checkingout|The shopping cart can be used during the checking out process.|e02f7aafdca749b1a43419d289809aa2|||||||
+admin_backorder|admin_populate|Administering backorders may also involve populating data.|e02f7aafdca749b1a43419d289809aa2|||||||
+attr_results|attr_orderinfo|Search results may provide order information to the user.|e02f7aafdca749b1a43419d289809aa2|||||||
+admin_backorder|attr_sftimeout|Administering backorders may involve adjusting session timeouts.|e02f7aafdca749b1a43419d289809aa2|||||||
+action_orderstock|status_orderstock|the action of placing an order for stock|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+status_orderstock|status_orderedstock|the status of the stock order changes to ordered when it is successfully placed|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+status_orderedstock|status_receivedstock|the status of the stock order changes to received when the stock arrives at the warehouse|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+status_receivedstock|status_addedstock|the status of the stock order changes to added when it is successfully integrated into the inventory system|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+default_supplierid|supplier|a supplier can be referred to by either its default ID or its name|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+category_strings[0]|category_strings[1]|flowers and fruits & vegetables are both categories of products that can be ordered|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+category_strings[1]|category_strings[2]|fruits & vegetables and trees are both categories of products that can be ordered|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+category_strings[0]|category_strings[2]|flowers and trees are both categories of products that can be ordered|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+shipping_method_strings[0]|shipping_method_times[0]|standard ground shipping method takes 3 to 6 business days|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+shipping_method_strings[1]|shipping_method_times[1]|second day air shipping method takes 2 to 3 business days|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+shipping_method_strings[2]|shipping_method_times[2]|next day air shipping method takes 1 to 2 business days|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+shipping_method_strings[0]|shipping_method_prices[0]|standard ground shipping method costs $4.99 per order|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+shipping_method_strings[1]|shipping_method_prices[1]|second day air shipping method costs $8.99 per order|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+shipping_method_strings[2]|shipping_method_prices[2]|next day air shipping method costs $12.99 per order|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+initial_ctx|initctx|initial context can be referred to by its default ID or its name|01cb7dca3fab4b4aa85f447d77a2b152|||||||
+shipping_method_prices|4.99f|is a price for shipping method with index 0|fafef6c171d24565bc5b6d1ba2fb4d9d|||||||
+shipping_method_prices|8.99f|is a price for shipping method with index 1|fafef6c171d24565bc5b6d1ba2fb4d9d|||||||
+shipping_method_prices|12.99f|is a price for shipping method with index 2|fafef6c171d24565bc5b6d1ba2fb4d9d|||||||
+getshippingmethod|index|takes an integer representing the selected shipping method as input|fafef6c171d24565bc5b6d1ba2fb4d9d|||||||
+shipping_method_strings|getshippingmethod|returns the string representation of the selected shipping method|fafef6c171d24565bc5b6d1ba2fb4d9d|||||||
+getproperties|name|is used to retrieve the values of a specific property in the PBW Properties file. The name parameter specifies the name of the property for which the values are being requested.|be24df52181343e1b7eab5c230eb8443|||||||
+debug|debugon|is a boolean flag that can be used to toggle debugging output. It is set using the setDebug method and checked using the debugOn method. Debugging output is only displayed if debug is true and ProjectStage is Development or UnitTest.|be24df52181343e1b7eab5c230eb8443|||||||
+debug|msg|is a string parameter passed to the debug method to output a message to the console. The FacesContext and Application classes are used to determine whether debugging should be enabled and at what stage of development or testing.|be24df52181343e1b7eab5c230eb8443|||||||
+copyright license|sample code|contains information that describes the permissions and restrictions for using the provided sample programs. This allows developers to legally utilize and distribute the source code as they see fit, without any payment required to IBM.|eb5704dad0914061af90d2b51c12b3db|||||||
+source code|sample programs|refers to the actual program or programs being provided as a sample or reference for developers.|eb5704dad0914061af90d2b51c12b3db|||||||
+application programming interface|operating platform|describes a specific set of programming rules and functions that are required in order to successfully run applications on a particular operating system or platform.|eb5704dad0914061af90d2b51c12b3db|||||||
+ibm|disclaims all warranties|indicates that IBM is not responsible for any issues, bugs, or problems that may arise from the use of their provided sample code. This can help to protect the company from legal liability.|eb5704dad0914061af90d2b51c12b3db|||||||
+jsf action|combination of jsf action and backing bean support for the account web page|provides for the context|50657776b5404eceb90063b3a1f24fa9|||||||
+accountbean|jsf action and backing bean support for the account web page|is an implementation of|50657776b5404eceb90063b3a1f24fa9|||||||
+accountbean|com.ibm.websphere.samples.pbw.war.accountbean|is a subclass of|50657776b5404eceb90063b3a1f24fa9|||||||
+mailerbean|shoppingcartbean|CustomerMgr is used by|50657776b5404eceb90063b3a1f24fa9|||||||
+customermgr|com.ibm.websphere.samples.pbw.bean.customermgr|is a subclass of|50657776b5404eceb90063b3a1f24fa9|||||||
+mailerbean|mailerappexception|throws|50657776b5404eceb90063b3a1f24fa9|||||||
+facescontext|application|can be accessed from|50657776b5404eceb90063b3a1f24fa9|||||||
+customer|com.ibm.websphere.samples.pbw.jpa.customer|is a subclass of|50657776b5404eceb90063b3a1f24fa9|||||||
+sessionscoped|named|is an annotation used by|50657776b5404eceb90063b3a1f24fa9|||||||
+serializable|com.ibm.websphere.samples.pbw.war.accountbean|implements|50657776b5404eceb90063b3a1f24fa9|||||||
+mailerappexception|com.ibm.websphere.samples.pbw.bean.mailerappexception|is a subclass of|50657776b5404eceb90063b3a1f24fa9|||||||
+customermgr|com.ibm.websphere.samples.pbw.bean.customermgr|uses|50657776b5404eceb90063b3a1f24fa9|||||||
+application|facescontext|can be accessed from|50657776b5404eceb90063b3a1f24fa9|||||||
+shoppingcartbean|com.ibm.websphere.samples.pbw.war.shoppingcartbean|is a subclass of|50657776b5404eceb90063b3a1f24fa9|||||||
+sessionscoped|named|is an annotation used by|50657776b5404eceb90063b3a1f24fa9|||||||
+util|com.ibm.websphere.samples.pbw.utils.util|is a subclass of|50657776b5404eceb90063b3a1f24fa9|||||||
+account|login|In order to access the account functionality, the user is required to log in first by providing their email and password.|b5f5f5c73c874864bbabc13cca1d46ca|||||||
+customer|customer|The 'Account' functionality manages customer details such as name, address, etc. Stored in the 'customer' object.|b5f5f5c73c874864bbabc13cca1d46ca|||||||
+logininfo|logininfo|Contains login credentials (email and password) to authenticate user access.|b5f5f5c73c874864bbabc13cca1d46ca|||||||
+newcustomer|newcustomer|A new customer is created with necessary details such as first name, last name, address, etc. And passed to the 'createCustomer' method of the 'CustomerMgr' for persisting in the system.|b5f5f5c73c874864bbabc13cca1d46ca|||||||
+checkingout|checkingout|The 'checkingOut' flag is set to true when user initiates checkout process from account page. Used for flow control during checkout.|b5f5f5c73c874864bbabc13cca1d46ca|||||||
+orderinfo|orderinfo|Contains details of the user's previous orders for reference during account management.|b5f5f5c73c874864bbabc13cca1d46ca|||||||
+lastordernum|lastordernum|Holds the order number of the last order placed by the user.|b5f5f5c73c874864bbabc13cca1d46ca|||||||
+orderinfo|lastordernum|orderInfo contains the ID of the order, represented by lastOrderNum|eaae962624314252a221e5463b303190|||||||
+util.debug|account.performcompletecheckout|util.Debug is used to print a message containing the order id and Account.performCompleteCheckout method name in debug mode|eaae962624314252a221e5463b303190|||||||
+shoppingcart|inventory|each item in shoppingCart corresponds to an inventory object|eaae962624314252a221e5463b303190|||||||
+inventory|si|Inventory is represented by the variable si during the checkInventory method call|eaae962624314252a221e5463b303190|||||||
+customer|mailer.createandsendmail|customer's information is used as input for the createAndSendMail method of mailer object|eaae962624314252a221e5463b303190|||||||
+orderinfo|shippingaddress1|shipping address components are stored in orderInfo object|eaae962624314252a221e5463b303190|||||||
+orderinfo|shippingaddress2|shipping address components are stored in orderInfo object|eaae962624314252a221e5463b303190|||||||
+orderinfo|shippingcity|shipping address components are stored in orderInfo object|eaae962624314252a221e5463b303190|||||||
+orderinfo|shippingstate|shipping address components are stored in orderInfo object|eaae962624314252a221e5463b303190|||||||
+orderinfo|shippingzip|shipping address components are stored in orderInfo object|eaae962624314252a221e5463b303190|||||||
+orderinfo|shippingphone|shipping address components are stored in orderInfo object|eaae962624314252a221e5463b303190|||||||
+logininfo|message|loginInfo object has a message field which can be accessed by the variable name message|eaae962624314252a221e5463b303190|||||||
+accountservlet|war|is a part of|6d83d9cbe6254e3297e593ab4642b08b|||||||
+com|ibm|belongs to|6d83d9cbe6254e3297e593ab4642b08b|||||||
+websphere|samples|is a part of|6d83d9cbe6254e3297e593ab4642b08b|||||||
+pbw|accountservlet|belongs to|6d83d9cbe6254e3297e593ab4642b08b|||||||
+java|com|is written in|6d83d9cbe6254e3297e593ab4642b08b|||||||
+sourcecodeform|samplecode|takes the form of|6d83d9cbe6254e3297e593ab4642b08b|||||||
+copying|modifying||6d83d9cbe6254e3297e593ab4642b08b|distributing||||can be performed on|sampleCode|
+applicationprograms|conformingto|applicationProgrammingInterface|6d83d9cbe6254e3297e593ab4642b08b|||||||
+operatingplatform|samplecode|is written for|6d83d9cbe6254e3297e593ab4642b08b|||||||
+samplingsourcecode|samplecode|is a type of|6d83d9cbe6254e3297e593ab4642b08b|||||||
+applicationprograms|samplecode|are used in developing|6d83d9cbe6254e3297e593ab4642b08b|||||||
+ibm|warrantydisclaimers|includes|6d83d9cbe6254e3297e593ab4642b08b|||||||
+asisbasis|samplecode|is provided on|6d83d9cbe6254e3297e593ab4642b08b|||||||
+impliedwarranties|samplecode|disclaims|6d83d9cbe6254e3297e593ab4642b08b|||||||
+conditionsofmerchantability|samplecode|disclaims|6d83d9cbe6254e3297e593ab4642b08b|||||||
+conditionsofsatisfactoryquality|samplecode|disclaims|6d83d9cbe6254e3297e593ab4642b08b|||||||
+conditionsoffitnessforaparticularpurpose|samplecode|disclaims|6d83d9cbe6254e3297e593ab4642b08b|||||||
+title|samplecode|disclaims|6d83d9cbe6254e3297e593ab4642b08b|||||||
+conditionsofnoninfringement|samplecode|disclaims|6d83d9cbe6254e3297e593ab4642b08b|||||||
+ibm|liability||6d83d9cbe6254e3297e593ab4642b08b|for damages||||shall not be liable for|direct|damages
+servlet|accountservlet|is a subclass of HttpServlet, used to handle HTTP requests and responses.|71bb52f8b7d041439715c1099acdf52b|||||||
+httpservletrequest|httpservletresponse|are passed as arguments to the doGet() and doPost() methods to handle GET and POST requests respectively.|71bb52f8b7d041439715c1099acdf52b|||||||
+httpservletconfig|servletcontext|can be accessed through the getServletConfig() and getServletContext() methods respectively, to retrieve initialization parameters and request/response attributes.|71bb52f8b7d041439715c1099acdf52b|||||||
+customermgr|catalogmgr|are injected using the @Inject annotation and implement the business logic for customer and catalog management respectively.|71bb52f8b7d041439715c1099acdf52b|||||||
+customer|catalog|are entities defined in the jpa package, used to store and manage customer and catalog data.|71bb52f8b7d041439715c1099acdf52b|||||||
+util|is a utility class containing helper methods for common tasks such as logging and converting timestamps to strings.||71bb52f8b7d041439715c1099acdf52b|||||||
+accountservlet|httpservlet|implements the HttpServlet interface, providing HTTP-based handling of client requests|adeea11b4a594cbd90e9a7c7c6790754|||||||
+accountservlet|httpservletrequest|is passed as an argument to handle incoming GET and POST requests|adeea11b4a594cbd90e9a7c7c6790754|||||||
+accountservlet|httpservletresponse|is passed as an argument to send the response back to the client|adeea11b4a594cbd90e9a7c7c6790754|||||||
+login|customermgr|is injected into the AccountServlet through constructor injection for managing customer login information|adeea11b4a594cbd90e9a7c7c6790754|||||||
+catalog|catalogmgr|is also injected into the AccountServlet through constructor injection for managing catalog information|adeea11b4a594cbd90e9a7c7c6790754|||||||
+performtask|request|The method 'performTask' is called with a 'request' object as its argument.|055d986432794ccda177dc36310788dd|||||||
+performtask|response|The method 'performTask' returns a response to be sent back to the client.|055d986432794ccda177dc36310788dd|||||||
+action|req.getparameter(util.attr_action)|The value of the parameter 'action' is retrieved from the request object.|055d986432794ccda177dc36310788dd|||||||
+userid|"req.getparameter(""userid"")"|The value of the parameter 'userid' is retrieved from the request object.|055d986432794ccda177dc36310788dd|||||||
+passwd|"req.getparameter(""passwd"")"|The value of the parameter 'passwd' is retrieved from the request object.|055d986432794ccda177dc36310788dd|||||||
+updating|req.getparameter(util.attr_updating)|The value of the parameter 'updating' is retrieved from the request object.|055d986432794ccda177dc36310788dd|||||||
+login|login.verifyuserandpassword(userid, passwd)|The 'login' class's 'verifyUserAndPassword' method is called with 'userid' and 'passwd' as arguments.|055d986432794ccda177dc36310788dd|||||||
+util|util.attr_action|'Util' class's static variable 'ATTR_ACTION' is accessed.|055d986432794ccda177dc36310788dd|||||||
+util|util.attr_updating|'Util' class's static variable 'ATTR_UPDATING' is accessed.|055d986432794ccda177dc36310788dd|||||||
+results|login.verifyuserandpassword(userid, passwd)|The result of calling the 'login' class's 'verifyUserAndPassword' method with 'userid' and 'passwd' as arguments is stored in a variable called 'results'.|055d986432794ccda177dc36310788dd|||||||
+util|"util.debug(""email address was invalid. "")"|'Util' class's static method 'debug' is called with a string argument.|055d986432794ccda177dc36310788dd|||||||
+util|"util.debug(""user id or email address was invalid. id="")"|'Util' class's static method 'debug' is called with a string argument.|055d986432794ccda177dc36310788dd|||||||
+req|getsession(true)|The session object associated with the request object is accessed using the 'getSession' method of the request object.|055d986432794ccda177dc36310788dd|||||||
+util|util.page_login|'Util' class's static variable 'PAGE_LOGIN' is accessed.|055d986432794ccda177dc36310788dd|||||||
+session|customer|session contains customer data|950ab05d558e4966abf355fc10a16d60|||||||
+session|cart|session removes cart data for old user|950ab05d558e4966abf355fc10a16d60|||||||
+session|checkout|session removes checkout data for old user|950ab05d558e4966abf355fc10a16d60|||||||
+session|orderkey|session removes order key for old user|950ab05d558e4966abf355fc10a16d60|||||||
+req|editaccountinfo|request contains attribute for editing account info|950ab05d558e4966abf355fc10a16d60|||||||
+session|checkingout|session stores boolean flag for checking out|950ab05d558e4966abf355fc10a16d60|||||||
+category|plants|default category is plants if none specified|950ab05d558e4966abf355fc10a16d60|||||||
+url|util.page_promo|The URL 'url' is assigned the value of 'Util.PAGE_PROMO' when a certain condition is met.|a3a4409ed15a4778ad09af787b7006ce|||||||
+url|util.page_shopping|When the specified condition is not met, the URL 'url' is assigned the value of 'Util.PAGE_SHOPPING'.|a3a4409ed15a4778ad09af787b7006ce|||||||
+request object|catalog|The 'request' object contains a reference to an object named 'catalog', which is used to retrieve a list of items by category.|a3a4409ed15a4778ad09af787b7006ce|||||||
+category|integer.parseint(category)|The 'category' parameter, passed as a request parameter, is converted into an integer for use in retrieving the list of items.|a3a4409ed15a4778ad09af787b7006ce|||||||
+exception|/nexception occurred|When an exception occurs, an error message is set in the 'request' object with a value indicating that an exception has occurred.|a3a4409ed15a4778ad09af787b7006ce|||||||
+servletexception|e|When a 'ServletException' occurs, it is thrown and wrapped in another 'ServletException' object with a message containing the original exception's message.|a3a4409ed15a4778ad09af787b7006ce|||||||
+action|action_register|The 'action' parameter, passed as a request parameter, is used to differentiate between different types of requests being handled by the servlet.|a3a4409ed15a4778ad09af787b7006ce|||||||
+userid|req.getparameter('userid')|The 'userid' parameter, passed as a request parameter, is retrieved from the 'request' object using its getParameter() method.|a3a4409ed15a4778ad09af787b7006ce|||||||
+password|req.getparameter('passwd')|The 'password' parameter, passed as a request parameter, is retrieved from the 'request' object using its getParameter() method.|a3a4409ed15a4778ad09af787b7006ce|||||||
+cpassword|req.getparameter('vpasswd')|The 'cpassword' parameter, passed as a request parameter, is retrieved from the 'request' object using its getParameter() method.|a3a4409ed15a4778ad09af787b7006ce|||||||
+firstname|req.getparameter('fname')|The 'firstName' parameter, passed as a request parameter, is retrieved from the 'request' object using its getParameter() method.|a3a4409ed15a4778ad09af787b7006ce|||||||
+lastname|req.getparameter('lname')|The 'lastName' parameter, passed as a request parameter, is retrieved from the 'request' object using its getParameter() method.|a3a4409ed15a4778ad09af787b7006ce|||||||
+addr1|req.getparameter('addr1')|The 'addr1' parameter, passed as a request parameter, is retrieved from the 'request' object using its getParameter() method.|a3a4409ed15a4778ad09af787b7006ce|||||||
+addr2|req.getparameter('addr2')|The 'addr2' parameter, passed as a request parameter, is retrieved from the 'request' object using its getParameter() method.|a3a4409ed15a4778ad09af787b7006ce|||||||
+city|req.getparameter('city')|The 'city' parameter, passed as a request parameter, is retrieved from the 'request' object using its getParameter() method.|a3a4409ed15a4778ad09af787b7006ce|||||||
+state|req.getparameter('state')|The 'state' parameter, passed as a request parameter, is retrieved from the 'request' object using its getParameter() method.|a3a4409ed15a4778ad09af787b7006ce|||||||
+zip|req.getparameter('zip')|The 'zip' parameter, passed as a request parameter, is retrieved from the 'request' object using its getParameter() method.|a3a4409ed15a4778ad09af787b7006ce|||||||
+phone|req.getparameter('phone')|The 'phone' parameter, passed as a request parameter, is retrieved from the 'request' object using its getParameter() method.|a3a4409ed15a4778ad09af787b7006ce|||||||
+util.attr_results|/nexception occurred|When an exception occurs during the execution of the servlet, an error message is set in a session attribute with a value indicating that an exception has occurred.|a3a4409ed15a4778ad09af787b7006ce|||||||
+util.attr_results|e|When an exception occurs during the execution of the servlet, the original exception is stored in a session attribute for debugging purposes.|a3a4409ed15a4778ad09af787b7006ce|||||||
+first name|contains invalid characters.|"req.setAttribute(Util.ATTR_RESULTS, ""First Name contains invalid characters."");"|6b0f2de190c04e308566a6a8f1f3fc08|||||||
+last name|contains invalid characters.|"req.setAttribute(Util.ATTR_RESULTS, ""Last Name contains invalid characters."");"|6b0f2de190c04e308566a6a8f1f3fc08|||||||
+addr1|contains invalid characters.|"req.setAttribute(Util.ATTR_RESULTS, ""Address Line 1 contains invalid characters."");"|6b0f2de190c04e308566a6a8f1f3fc08|||||||
+addr2|contains invalid characters.|"req.setAttribute(Util.ATTR_RESULTS, ""Address Line 2 contains invalid characters."");"|6b0f2de190c04e308566a6a8f1f3fc08|||||||
+addrcity|contains invalid characters.|"req.setAttribute(Util.ATTR_RESULTS, ""City contains invalid characters."");"|6b0f2de190c04e308566a6a8f1f3fc08|||||||
+addrstate|contains invalid characters.|"req.setAttribute(Util.ATTR_RESULTS, ""State contains invalid characters."");"|6b0f2de190c04e308566a6a8f1f3fc08|||||||
+addrzip|contains invalid characters.|"req.setAttribute(Util.ATTR_RESULTS, ""Zip contains invalid characters."");"|6b0f2de190c04e308566a6a8f1f3fc08|||||||
+phone|contains invalid characters.|"req.setAttribute(Util.ATTR_RESULTS, ""Phone Number contains invalid characters."");"|6b0f2de190c04e308566a6a8f1f3fc08|||||||
+action_accountupdate|login|is called within the context of handling an account update request|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+customer|session|is stored in HttpSession under the key 'ATTR_CUSTOMER'|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+userid|customer|is a property of customer|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+firstname|req.getparameter()|is retrieved from request parameter|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+lastname|req.getparameter()|is retrieved from request parameter|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+addr1|req.getparameter()|is retrieved from request parameter|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+addr2|req.getparameter()|is retrieved from request parameter|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+addrcity|req.getparameter()|is retrieved from request parameter|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+addrstate|req.getparameter()|is retrieved from request parameter|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+addrzip|req.getparameter()|is retrieved from request parameter|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+phone|req.getparameter()|is retrieved from request parameter|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+customer|login.updateuser()|is updated by login.updateUser() function with the new values of its properties fetched via req.getParameter()|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+session|setattribute()|is used to store customer object under 'ATTR_CUSTOMER'|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+checkingout|session.getattribute()|is retrieved from HttpSession using the key 'ATTR_CHECKOUT'|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+checkingout|boolean.valueof()|is converted to Boolean type for comparison|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+url|util.page_orderinfo|is set to Util.PAGE_ORDERINFO if user was in the middle of checking out|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+category|session.getattribute()|is retrieved from HttpSession using the key 'ATTR_CATEGORY'|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+category|util.page_shopping|is set to Util.PAGE_SHOPPING if category is not null|352acb8c4932410ba0d8ff5c7f381f6c|||||||
+plants|default|If category is null, url defaults to page promoting plants|637e74314d244019a0e80de3d50a1441|||||||
+category|url|When category is not null, url changes based on selected category|637e74314d244019a0e80de3d50a1441|||||||
+catalog|itemsbycategory|Contains a list of items associated with the selected category|637e74314d244019a0e80de3d50a1441|||||||
+util|attrinvitems|Stores a list of invited items as an attribute of the request object|637e74314d244019a0e80de3d50a1441|||||||
+util|pagepromo|Default page for promotional content related to plants|637e74314d244019a0e80de3d50a1441|||||||
+util|pageshopping|Page displaying products related to selected category|637e74314d244019a0e80de3d50a1441|||||||
+request|setdebug|Sets debug mode based on value of debugSetting parameter in request|637e74314d244019a0e80de3d50a1441|||||||
+util|setdebug|Method to set debugging level for the application|637e74314d244019a0e80de3d50a1441|||||||
+util|pagehelp|Page displaying help information about the application|637e74314d244019a0e80de3d50a1441|||||||
+programming interface|operating platform|The given context mentions that the programming interface is specifically for a certain operating platform.|cf5d012f86094fa9884e943b9242bd1e|||||||
+ibm|sample source code|IBM provides the sample source code on an 'as is' basis, as mentioned in the given context.|cf5d012f86094fa9884e943b9242bd1e|||||||
+warranties|ibm|The given context mentions that IBM disclaims all warranties, including but not limited to any implied warranties or conditions of merchantability, satisfactory quality, fitness for a particular purpose, title, and any warranty or condition of non-infringement.|cf5d012f86094fa9884e943b9242bd1e|||||||
+damages|ibm|The given context mentions that IBM shall not be liable for any direct, indirect, incidental, special or consequential damages arising out of the use or operation of the sample source code.|cf5d012f86094fa9884e943b9242bd1e|||||||
+maintenance|ibm|The given context mentions that IBM has no obligation to provide maintenance, support, updates, enhancements or modifications to the sample source code.|cf5d012f86094fa9884e943b9242bd1e|||||||
+copyright|international business machines corp.|The given context mentions that Copyright International Business Machines Corp., belongs to 2003,2011.|cf5d012f86094fa9884e943b9242bd1e|||||||
+licensed materials|* licensed materials - property of ibm|The given context mentions that '* Licensed Materials - Property of IBM' belongs to 2003,2011.|cf5d012f86094fa9884e943b9242bd1e|||||||
+package|com.ibm.websphere.samples.pbw.war|The given context mentions that the package is 'com.ibm.websphere.samples.pbw.war'.|cf5d012f86094fa9884e943b9242bd1e|||||||
+httpservletconfig|servletconfig|The given context mentions that ServletConfig is being referred to as HttpServletConfig.|cf5d012f86094fa9884e943b9242bd1e|||||||
+servletcontext|servletcontext|The given context mentions that ServletContext is being referred to as ServletContext.|cf5d012f86094fa9884e943b9242bd1e|||||||
+httpservlet|javax.servlet.http.httpservlet|The given context mentions that HttpServlet is being referred to as javax.servlet.http.HttpServlet.|cf5d012f86094fa9884e943b9242bd1e|||||||
+httpservletrequest|httpservletrequest|The given context mentions that HttpServletRequest is being referred to as HttpServletRequest.|cf5d012f86094fa9884e943b9242bd1e|||||||
+httpservletresponse|httpservletresponse|The given context mentions that HttpServletResponse is being referred to as HttpServletResponse.|cf5d012f86094fa9884e943b9242bd1e|||||||
+backordermgr|backordermgr|The given context mentions that BackOrderMgr is being referred to as BackOrderMgr.|cf5d012f86094fa9884e943b9242bd1e|||||||
+adminservlet|httpservlet|is a type of Servlet|701ced51c42c49c5a65c211675fb71bd|||||||
+httpservletresponse|resp|is the name given to this object in the code|701ced51c42c49c5a65c211675fb71bd|||||||
+suppliersbean|suppliers|is the name given to this variable in the code|701ced51c42c49c5a65c211675fb71bd|||||||
+login|login|is the name given to this variable in the code|701ced51c42c49c5a65c211675fb71bd|||||||
+backordermgr|backorderstock|is the name given to this variable in the code|701ced51c42c49c5a65c211675fb71bd|||||||
+catalogmgr|catalog|is the name given to this variable in the code|701ced51c42c49c5a65c211675fb71bd|||||||
+resetdbbean|resetdb|is the name given to this variable in the code|701ced51c42c49c5a65c211675fb71bd|||||||
+backorder|backorder|class BackOrder is named the same as the object in the code|701ced51c42c49c5a65c211675fb71bd|||||||
+inventory|inventory|class Inventory is named the same as the object in the code|701ced51c42c49c5a65c211675fb71bd|||||||
+supplier|supplier|class Supplier is named the same as the object in the code|701ced51c42c49c5a65c211675fb71bd|||||||
+customermgr|login|is a type of class CustomerMgr and login variable points to this class|701ced51c42c49c5a65c211675fb71bd|||||||
+httpservlet|adminservlet|class AdminServlet is a subclass of class HttpServlet|701ced51c42c49c5a65c211675fb71bd|||||||
+suppliersbean|suppliers|is a variable pointing to the class SuppliersBean|701ced51c42c49c5a65c211675fb71bd|||||||
+util|util|class Util is named the same as the object in the code|701ced51c42c49c5a65c211675fb71bd|||||||
+performpopulate|req|is a parameter passed to the method|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+performpopulate|resp|is a parameter passed to the method|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+updatesupplierinfo|supplierid|is a required input for updating supplier info|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+updatesupplierinfo|name|is an optional input for updating supplier info|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+updatesupplierinfo|street|is an optional input for updating supplier info|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+updatesupplierinfo|city|is an optional input for updating supplier info|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+updatesupplierinfo|state|is an optional input for updating supplier info|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+updatesupplierinfo|zip|is an optional input for updating supplier info|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+updatesupplierinfo|phone|is an optional input for updating supplier info|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+updatesupplierinfo|location_url|is an optional input for updating supplier info|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+performsupplierconfig|req|is a required input passed to the method|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+performsupplierconfig|resp|is a required output passed by the method|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+adminservlet.performsupplierconfig()|action|indicates the specific operation being performed in this request|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+adminservlet.performsupplierconfig() - action=|util.action._getsupplier|is executed when no action parameter is provided|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+adminservlet.performsupplierconfig() - action=|util.action._updatesupplier|is executed when the 'update supplier' action parameter is provided|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+performsupplierconfig()|session|allows for data to be persisted between requests|3b4d4d28044b4ee7906d3c0959d6c601|||||||
+getbackorders|session|AdminServlet.performBackOrder() - action='GETBACKORDERS', session is used to store data for the user.|b95ff91a20ec4fa2baf7f2c5d695fc7f|||||||
+getbackorders|requestdispatch|requestDispatch(Util.PAGE_BACKADMIN) is called to display the list of backorders to the user.|b95ff91a20ec4fa2baf7f2c5d695fc7f|||||||
+action_updatestock|req|action is obtained from req parameter, which is used to determine what task to perform in this servlet method.|b95ff91a20ec4fa2baf7f2c5d695fc7f|||||||
+selectedobjectids|backorderids|selectedObjectIds from req parameter contains the IDs of the selected backorders, which are assigned to backOrderIDs for future use.|b95ff91a20ec4fa2baf7f2c5d695fc7f|||||||
+backorderstock|backorderid|backOrderStock method is used to obtain the BackOrder's inventory ID and quantity.|b95ff91a20ec4fa2baf7f2c5d695fc7f|||||||
+backorderinventoryid|inventoryid|backOrderInventoryID obtained from backOrderStock method is assigned to inventoryID for future use.|b95ff91a20ec4fa2baf7f2c5d695fc7f|||||||
+catalog|itemquantity|catalog object is used to update the item's quantity in the database based on the obtained quantity from backOrderStock method.|b95ff91a20ec4fa2baf7f2c5d695fc7f|||||||
+adminservlet.performbackorder()|action|is a parameter passed in the request body|3af8fad98fec4de398befd4694016f51|||||||
+adminservlet.performbackorder()|quantity|is a parameter passed in the request body and is used to update the BackOrder status|3af8fad98fec4de398befd4694016f51|||||||
+util.debug()|adminservlet.performbackorder()|is called inside AdminServlet.performBackOrder() and is used for debugging purposes|3af8fad98fec4de398befd4694016f51|||||||
+backorderid|adminservlet.performbackorder()|is a parameter passed in the request body and is used to identify a specific BackOrder|3af8fad98fec4de398befd4694016f51|||||||
+itemqty|paramquantity|both represent the quantity parameter for updating the BackOrder status|3af8fad98fec4de398befd4694016f51|||||||
+getbackorders()|adminservlet.performtask()|is called inside AdminServlet.performTask() and is used to retrieve a list of all BackOrders|3af8fad98fec4de398befd4694016f51|||||||
+util.page_backadmin|requestdispatch()|is passed as an argument to requestDispatch() and specifies the page to be displayed after executing AdminServlet.performTask() or handling an exception|3af8fad98fec4de398befd4694016f51|||||||
+util.action_cancel|action|is a parameter passed in the request body and is used to cancel selected BackOrders|3af8fad98fec4de398befd4694016f51|||||||
+selectedobjectids|adminservlet.performbackorder()|is a parameter passed in the request body and contains an array of IDs for the selected BackOrders to be cancelled|3af8fad98fec4de398befd4694016f51|||||||
+backorderstock.deletebackorder()|try-catch block inside loop iterating through selectedobjectids|is used to delete a specific BackOrder identified by its ID|3af8fad98fec4de398befd4694016f51|||||||
+backorderid|supplierorderid|both backOrderItem and supplierOrderID are related to a BackOrderItem|063035d610da49739ea2d30830fa7d89|||||||
+inventoryid|backorderid|a BackOrderItem is associated with an Inventory through inventoryID|063035d610da49739ea2d30830fa7d89|||||||
+quantity|backorderid|a BackOrderItem has a quantity|063035d610da49739ea2d30830fa7d89|||||||
+name|backorderid|a BackOrderItem has a name|063035d610da49739ea2d30830fa7d89|||||||
+status|backorderid|a BackOrderItem has a status (ADDEDSTOCK or other)|063035d610da49739ea2d30830fa7d89|||||||
+lowdate|backorderid|a BackOrderItem has a low date|063035d610da49739ea2d30830fa7d89|||||||
+orderdate|backorderid|a BackOrderItem has an order date|063035d610da49739ea2d30830fa7d89|||||||
+adminservlet.getbackorders()|lowdate|is a method of AdminServlet called getBackOrders, and lowDate is one of its arguments|d897ef95fc8847fa8416f6a256dc8c3b|||||||
+adminservlet.getbackorders()|orderdate|is a method of AdminServlet called getBackOrders, and orderDate is one of its arguments|d897ef95fc8847fa8416f6a256dc8c3b|||||||
+backorderitems|"session.setattribute(""backorderitems"", backorderitems)"|"is a variable named backOrderItems being set as an attribute in the session object by the statement ""session.setAttribute(""backOrderItems"", backOrderItems)"""|d897ef95fc8847fa8416f6a256dc8c3b|||||||
+sendredirect|resp|is a method named sendRedirect that takes resp as an argument|d897ef95fc8847fa8416f6a256dc8c3b|||||||
+sendredirect|page|is a method named sendRedirect that takes page as an argument|d897ef95fc8847fa8416f6a256dc8c3b|||||||
+requestdispatch|ctx|is a method named requestDispatch that takes ctx as an argument|d897ef95fc8847fa8416f6a256dc8c3b|||||||
+requestdispatch|req|is a method named requestDispatch that takes req as an argument|d897ef95fc8847fa8416f6a256dc8c3b|||||||
+requestdispatch|resp|is a method named requestDispatch that takes resp as an argument|d897ef95fc8847fa8416f6a256dc8c3b|||||||
+requestdispatch|page|is a method named requestDispatch that takes page as an argument|d897ef95fc8847fa8416f6a256dc8c3b|||||||
+backorderitem|backorder|A back order item is related to a BackOrder, which represents an order for a product that cannot be fulfilled immediately due to shortage in inventory.|8c3a28ee517f4925873b057a19e03bb0|||||||
+name|backorderitem|The name of the back order item is related to the back order item itself.|8c3a28ee517f4925873b057a19e03bb0|||||||
+inventoryquantity|backorderitem|The inventory quantity for a back order item is related to the back order item itself, as it indicates how many units of the product are currently unavailable due to low inventory.|8c3a28ee517f4925873b057a19e03bb0|||||||
+backorderid|backorderitem|A unique identifier for a specific back order is assigned by the BackOrder object and is related to the corresponding back order item.|8c3a28ee517f4925873b057a19e03bb0|||||||
+quantity|backorderitem|The quantity of the product that is currently on back order is related to the specific back order item for which it applies.|8c3a28ee517f4925873b057a19e03bb0|||||||
+status|backorderitem|The status of a back order item, such as pending or fulfilled, is related to the specific back order item itself.|8c3a28ee517f4925873b057a19e03bb0|||||||
+lowdate|backorderitem|A date and time when the inventory level for a particular product reached a critically low quantity is recorded in the BackOrderItem object, as it indicates the reason for the back order.|8c3a28ee517f4925873b057a19e03bb0|||||||
+inventory|backorderitem|A back order item is related to the inventory that is currently unavailable due to low stock levels. The BackOrderItem object includes a reference to the corresponding Inventory object for tracking purposes.|8c3a28ee517f4925873b057a19e03bb0|||||||
+util|backorderitem|A utilities class, Util, is used in conjunction with the BackOrderItem and related objects for various tasks such as input/output, logging, and error handling.|8c3a28ee517f4925873b057a19e03bb0|||||||
+backorderitem|backorder|A BackOrderItem is associated with a specific BackOrder.|ba8de1221a62485892b0584acd7dbf4b|||||||
+quantity|backorderitem|The quantity of an item requested in a BackOrderItem is related to the BackOrderItem itself.|ba8de1221a62485892b0584acd7dbf4b|||||||
+status|backorderitem|The status of an item in a BackOrderItem indicates its current state within the BackOrder process.|ba8de1221a62485892b0584acd7dbf4b|||||||
+inventoryid|inventory|A BackOrderItem is associated with a specific inventory item.|ba8de1221a62485892b0584acd7dbf4b|||||||
+name|backorderitem|The name of an item in a BackOrderItem provides further detail about the requested product.|ba8de1221a62485892b0584acd7dbf4b|||||||
+lowdate|backorderitem|The low date of a BackOrderItem refers to the point at which the item became backordered.|ba8de1221a62485892b0584acd7dbf4b|||||||
+orderdate|backorderitem|The order date of a BackOrderItem indicates when the request for the item was made.|ba8de1221a62485892b0584acd7dbf4b|||||||
+setbackorderid|backorderid|is used to set the value of backOrderID|eef027996a59461a963bdfbce21cdbff|||||||
+backorderid|string|has data type String|eef027996a59461a963bdfbce21cdbff|||||||
+getbackorderid|backorderid|is used to retrieve the value of backOrderID|eef027996a59461a963bdfbce21cdbff|||||||
+supplierorderid|string|has data type String|eef027996a59461a963bdfbce21cdbff|||||||
+setsupplierorderid|supplierorderid|is used to set the value of supplierOrderID|eef027996a59461a963bdfbce21cdbff|||||||
+getsupplierorderid|supplierorderid|is used to retrieve the value of supplierOrderID|eef027996a59461a963bdfbce21cdbff|||||||
+quantity|int|has data type int|eef027996a59461a963bdfbce21cdbff|||||||
+setquantity|quantity|is used to set the value of quantity|eef027996a59461a963bdfbce21cdbff|||||||
+getquantity|quantity|is used to retrieve the value of quantity|eef027996a59461a963bdfbce21cdbff|||||||
+inventory|inventory|has a reference to an object of type Inventory|eef027996a59461a963bdfbce21cdbff|||||||
+getinventory|inventory|returns a reference to the object of type Inventory|eef027996a59461a963bdfbce21cdbff|||||||
+getname|name|is used to retrieve the value of name|eef027996a59461a963bdfbce21cdbff|||||||
+setname|name|is used to set the value of name|eef027996a59461a963bdfbce21cdbff|||||||
+lowdate|long|has data type long|eef027996a59461a963bdfbce21cdbff|||||||
+setlowdate|lowdate|is used to set the value of lowDate|eef027996a59461a963bdfbce21cdbff|||||||
+getlowdate|lowdate|is used to retrieve the value of lowDate|eef027996a59461a963bdfbce21cdbff|||||||
+orderdate|long|has data type long|eef027996a59461a963bdfbce21cdbff|||||||
+setorderdate|orderdate|is used to set the value of orderDate|eef027996a59461a963bdfbce21cdbff|||||||
+getorderdate|orderdate|is used to retrieve the value of orderDate|eef027996a59461a963bdfbce21cdbff|||||||
+getlowdate|lowdate|Method for retrieving a long value representing the lower date. This method is called getLowDate().|c43ae47393ba42cda11e02a5cd802bee|||||||
+lowdate|int|The lowDate field of type long is declared in this class.|c43ae47393ba42cda11e02a5cd802bee|||||||
+getorderdate|orderdate|Method for retrieving a long value representing the order date. This method is called getOrderDate().|c43ae47393ba42cda11e02a5cd802bee|||||||
+orderdate|int|The orderDate field of type long is declared in this class.|c43ae47393ba42cda11e02a5cd802bee|||||||
+gethelpbean|helpbean|Method for retrieving an object of type HelpBean. This method is called getHelpBean().|c43ae47393ba42cda11e02a5cd802bee|||||||
+helpbean|class|The HelpBean class is declared in this file.|c43ae47393ba42cda11e02a5cd802bee|||||||
+src|folder|The src folder contains the source code files for this project.|c43ae47393ba42cda11e02a5cd802bee|||||||
+war|folder|The war folder contains the Web Archive (WAR) file for this project.|c43ae47393ba42cda11e02a5cd802bee|||||||
+sample.plantsbywebsphere|folder|The sample.plantsbywebsphere folder contains the source code files and resources for this WebSphere Application Server Plug-in (WAS Plugin).|c43ae47393ba42cda11e02a5cd802bee|||||||
+com|folder|The com folder contains the packages for this project.|c43ae47393ba42cda11e02a5cd802bee|||||||
+websphere|folder|The websphere folder contains the packages for the WebSphere Application Server Plug-in (WAS Plugin).|c43ae47393ba42cda11e02a5cd802bee|||||||
+samples|folder|The samples folder contains the sample projects for this release of WebSphere Application Server.|c43ae47393ba42cda11e02a5cd802bee|||||||
+pbw|folder|The pbw folder contains the source code files and resources for this project.|c43ae47393ba42cda11e02a5cd802bee|||||||
+helpbean|action_help|HelpBean is the class for the help page, and ACTION_HELP represents the action performed on clicking the help button|d7475aa4a41e48ffac4d2158033ffda0|||||||
+helpbean|dbdumpfile|HelpBean has a member variable dbDumpFile to store the database dump file|d7475aa4a41e48ffac4d2158033ffda0|||||||
+helpbean|resetdbbean|HelpBean has an injected field called rdb of type ResetDBBean, which is used for resetting the database|d7475aa4a41e48ffac4d2158033ffda0|||||||
+resetdbbean|resetdb|The ResetDBBean class has a method named resetDB() that resets the database|d7475aa4a41e48ffac4d2158033ffda0|||||||
+util|debugon|Util is a utility class that has a static method called debugOn() to check whether debugging is enabled or not|d7475aa4a41e48ffac4d2158033ffda0|||||||
+util|setdebug|Util also provides a method named setDebug() to set the debug mode|d7475aa4a41e48ffac4d2158033ffda0|||||||
+imageservlet.java|../sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war/imageservlet.java|The code snippet provided is from ImageServlet.java, which belongs to the sample.plantsbywebsphere project|d7475aa4a41e48ffac4d2158033ffda0|||||||
+ibm|copyright license| IBM provides the sample source code on an 'as is' basis and disclaims all warranties, express or implied. This information contains sample code provided in source code form that can be copied, modified, and distributed for developing, using, marketing, or distributing application programs conforming to the application programming interface for the operating platform for which the sample code is written.|aeba37d9a6894fb0b34b74f2310ab8a4|||||||
+2001|2011| Copyright International Business Machines Corp., 2001,2011. All Rights Reserved * Licensed Materials - Property of IBM.|aeba37d9a6894fb0b34b74f2310ab8a4|||||||
+com.ibm.websphere.samples.pbw.war|sample source code| This information contains sample code provided in source code form for com.ibm.websphere.samples.pbw.war.|aeba37d9a6894fb0b34b74f2310ab8a4|||||||
+imageservlet.java|sample program| // Copyright LICENSE: This information contains sample code provided in source code form for ImageServlet.java, an application program conforming to the application programming interface for the operating platform for which this sample code is written.|aeba37d9a6894fb0b34b74f2310ab8a4|||||||
+servlet|http request handler|A Servlet is a Java class that processes HTTP requests and generates responses.|80a58f4d3b4e4065b58300f02c428f45|||||||
+webservlet|annotation for web servlets|The @WebServlet annotation is used to map a servlet to a specific URL.|80a58f4d3b4e4065b58300f02c428f45|||||||
+httpservlet|base class for http servers|HttpServlet is a base class for implementing server-side components that process HTTP requests and generate responses.|80a58f4d3b4e4065b58300f02c428f45|||||||
+http|hypertext transfer protocol|HTTP is an application protocol for distributed, collaborative, hypermedia information systems.|80a58f4d3b4e4065b58300f02c428f45|||||||
+java|programming language|Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation-dependent aspects as possible.|80a58f4d3b4e4065b58300f02c428f45|||||||
+json|data interchange format|JSON (JavaScript Object Notation) is a lightweight, text-based, open standard for data interchange that is easy for humans to read and write, and easy for machines to parse and generate.|80a58f4d3b4e4065b58300f02c428f45|||||||
+servletconfig|class for configuration parameters|ServletConfig is a class provided by the Servlet API that allows you to define configuration parameters for your servlets.|80a58f4d3b4e4065b58300f02c428f45|||||||
+httpservletrequest|interface for http requests|HttpServletRequest is an interface in the Java Servlet API that represents an HTTP request from a client, such as a web browser or an HTTP-enabled device.|80a58f4d3b4e4065b58300f02c428f45|||||||
+httpservletresponse|interface for http responses|HttpServletResponse is an interface in the Java Servlet API that represents an HTTP response to be sent back to a client, such as a web browser or an HTTP-enabled device.|80a58f4d3b4e4065b58300f02c428f45|||||||
+catalogmgr|class for managing catalogs|CatalogMgr is a class provided by the PBW (Personalized Business Intelligence and Web Applications) sample application that provides functionality for managing catalogs.|80a58f4d3b4e4065b58300f02c428f45|||||||
+util|utility class for pbw|Util is a utility class provided by the PBW (Personalized Business Intelligence and Web Applications) sample application that provides various helper methods for working with catalogs.|80a58f4d3b4e4065b58300f02c428f45|||||||
+httpservletrequest|response|Object that encapsulates the request to the servlet and Object that encapsulates the response from the servlet are both parameters passed to the doPost method of ImageServlet.|2d9dc8f91ee240bda8bc635095c58c55|||||||
+imageservlet|performtask|Main service method for ImageServlet is a method in ImageServlet class.|2d9dc8f91ee240bda8bc635095c58c55|||||||
+req|response|HttpServletRequest and HttpServletResponse are objects passed to the doPost method of ImageServlet.|2d9dc8f91ee240bda8bc635095c58c55|||||||
+action|inventoryid|"String action = req.getParameter(""action""); String inventoryID = req.getParameter(""inventoryID"");"|2d9dc8f91ee240bda8bc635095c58c55|||||||
+catalog|buf|byte[] buf = catalog.getItemImageBytes(inventoryID);|2d9dc8f91ee240bda8bc635095c58c55|||||||
+logininfo.java|||2d9dc8f91ee240bda8bc635095c58c55|||||||
+programming interface|operating platform|for which the sample code is written|0252792150314eb9a97bc0607d27f80f|||||||
+ibm|sample source code|provided on an 'as is' basis and ibm disclaims all warranties|0252792150314eb9a97bc0607d27f80f|||||||
+direct|indirect|ibm shall not be liable for any damages arising out of the use or operation of the sample source code|0252792150314eb9a97bc0607d27f80f|||||||
+ibm|sample source code|has no obligation to provide maintenance, support, updates, enhancements or modifications to the sample source code|0252792150314eb9a97bc0607d27f80f|||||||
+(c) copyright international business machines corp., 2003,2011|* licensed materials - property of ibm||0252792150314eb9a97bc0607d27f80f|||||||
+package|com.ibm.websphere.samples.pbw.war||0252792150314eb9a97bc0607d27f80f|||||||
+jsf backing bean|login info|used to store information for the login web page|0252792150314eb9a97bc0607d27f80f|||||||
+bean|account|accessed via the account bean|0252792150314eb9a97bc0607d27f80f|||||||
+string|checkpassword||0252792150314eb9a97bc0607d27f80f|||||||
+string|email|@[a-zA-Z0-9.-]+|0252792150314eb9a97bc0607d27f80f|||||||
+string|message||0252792150314eb9a97bc0607d27f80f|||||||
+string|password|@[a-zA-Z0-9_-]+|0252792150314eb9a97bc0607d27f80f|||||||
+int|min|must be between 6 and 10 characters.|0252792150314eb9a97bc0607d27f80f|size|password|||||
+password|logininfo|LoginInfo is a class in which the password attribute is defined.|20a4f08de201408c8b27fcef0cb938bb|||||||
+checkpassword|logininfo|The checkPassword attribute is a member of the LoginInfo class.|20a4f08de201408c8b27fcef0cb938bb|||||||
+email|logininfo|The email attribute is a member of the LoginInfo class.|20a4f08de201408c8b27fcef0cb938bb|||||||
+message|logininfo|The message attribute is a member of the LoginInfo class.|20a4f08de201408c8b27fcef0cb938bb|||||||
+mailaction.java|..|The MailAction.java file is located in a directory named '..'.|20a4f08de201408c8b27fcef0cb938bb|||||||
+sample.plantsbywebsphere|src|The sample.plantsbywebsphere directory contains a directory named 'src'.|20a4f08de201408c8b27fcef0cb938bb|||||||
+pbw|war|The pbw directory contains a directory named 'war'.|20a4f08de201408c8b27fcef0cb938bb|||||||
+java|/|The file MailAction.java is located in the '/' directory within the 'java' language context.|20a4f08de201408c8b27fcef0cb938bb|||||||
+com|/|The package com is located within the root directory ('/') for Java programs.|20a4f08de201408c8b27fcef0cb938bb|||||||
+ibm|/|The company IBM is identified by the '/' directory in the file path.|20a4f08de201408c8b27fcef0cb938bb|||||||
+websphere|/|The product Websphere is identified by the '/' directory in the file path.|20a4f08de201408c8b27fcef0cb938bb|||||||
+samples|/|The samples directory is located within the root directory ('/') for Java programs.|20a4f08de201408c8b27fcef0cb938bb|||||||
+mailer|customer|The Mailer object is used to create and send email messages. The customer is a recipient of the email.|e8fb24120cfa40978ea99fae4b63fa3b|||||||
+mailer|orderkey|The orderKey is passed as an argument to the Mailer object to include it in the email content or subject.|e8fb24120cfa40978ea99fae4b63fa3b|||||||
+mailerappexception|mail|If a MailerAppException is thrown while sending the email, it may be because the mail service has not been configured properly.|e8fb24120cfa40978ea99fae4b63fa3b|||||||
+orderinfo.java|sample.plantsbywebsphere|The OrderInfo.java file is a part of the larger sample.plantsbywebsphere project.|e8fb24120cfa40978ea99fae4b63fa3b|||||||
+orderinfo|com.ibm.websphere.samples.pbw.war.orderinfo|Class hierarchy relationship between the class 'OrderInfo' and its fully qualified name in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+orderid|orderinfo|Attribute 'orderID' belongs to the class 'OrderInfo' mentioned in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+billname|orderinfo|Attribute 'billName' belongs to the class 'OrderInfo' mentioned in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+billaddr1|orderinfo|Attribute 'billAddr1' belongs to the class 'OrderInfo' mentioned in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+billaddr2|orderinfo|Attribute 'billAddr2' belongs to the class 'OrderInfo' mentioned in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+billcity|orderinfo|Attribute 'billCity' belongs to the class 'OrderInfo' mentioned in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+billstate|orderinfo|Attribute 'billState' belongs to the class 'OrderInfo' mentioned in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+billzip|orderinfo|Attribute 'billZip' belongs to the class 'OrderInfo' mentioned in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+billphone|orderinfo|Attribute 'billPhone' belongs to the class 'OrderInfo' mentioned in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+com.ibm.websphere.samples.pbw.utils.util|orderinfo|Class 'Util' is used by the class 'OrderInfo' mentioned in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+com.ibm.websphere.samples.pbw.jpa.order|orderinfo|Class 'Order' is related to the class 'OrderInfo' mentioned in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+orderinfo|com.ibm.websphere.samples.pbw.war|Class 'OrderInfo' is part of the package 'com.ibm.websphere.samples.pbw.war' mentioned in the given context.|9e0ebf4461c845fc9607edfcb29da828|||||||
+orderinfo|class|OrderInfo is a type of class|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+billname|string|billName is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+billaddr1|string|billAddr1 is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+billaddr2|string|billAddr2 is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+billcity|string|billCity is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+billstate|string|billState is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+constructor(string billname, string billaddr1, string billaddr2, string billcity, string billstate)|method|constructor is a method of Class|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+billphone|string|billPhone is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+cardholdername|string|cardholderName is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+cardname|string|cardName is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+shipname|string|shipName is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+shipaddr1|string|shipAddr1 is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+shipaddr2|string|shipAddr2 is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+shipcity|string|shipCity is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+shipstate|string|shipState is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+shipzip|string|shipZip is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+shipphone|string|shipPhone is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+constructor(string billname, string billaddr1, string billaddr2, string billcity, string billstate)|method|constructor is a method of Class|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+shipisbill|boolean|shipisbill is a property of boolean|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+cardnum|string|cardNum is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+constructor(string billname, string billaddr1, string billaddr2, string billcity, string billstate)|method|constructor is a method of Class|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+cardexpmonth|string|cardExpMonth is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+cardexpyear|string|cardExpYear is a property of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+constructor(string billname, string billaddr1, string billaddr2, string billcity, string billstate)|method|constructor is a method of Class|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+shipaddr1|string|shipAddr1 is related to billAddr1 because both are properties of String|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+billname|string|billName is related to shipName because both represent names in the order context|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+cardholdername|string|cardHolderName is related to billName and shipName because all three are properties of String representing names in the order context|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+constructor(string billname, string billaddr1, string billaddr2, string billcity, string billstate)|method|constructor is related to all properties and methods because they are all part of the class that manages order context|aec42f9f77aa4eee8b1c2ca7b6d58e1d|||||||
+orderinfo|orderid|unique identifier assigned to an order|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|billname|name of the person or entity receiving the order|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|billaddr1|first line of the address where the order will be delivered|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|billaddr2|second line of the address where the order will be delivered (optional)|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|billcity|city where the order will be delivered|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|billstate|state or province where the order will be delivered|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|billzip|postal code where the order will be delivered|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|billphone|phone number of the person or entity receiving the order|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|shipname|name of the person or entity to whom the order will be shipped|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|shipaddr1|first line of the address where the order will be shipped|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|shipaddr2|second line of the address where the order will be shipped (optional)|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|shipcity|city where the order will be shipped|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|shipstate|state or province where the order will be shipped|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|shipzip|postal code where the order will be shipped|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|shipphone|phone number of the person or entity receiving the order|bfde204db5b34fb597ea0782a49ab1e7|||||||
+orderinfo|shippingmethod|method by which the order will be shipped (e.g., standard, expedited)|bfde204db5b34fb597ea0782a49ab1e7|||||||
+billaddr1|this.billaddr1|The variable 'this.billAddr1' is accessed to return the value of billAddr1.|e45f46c3373242f79838d9f6d9fa130a|||||||
+setbilladdr1|billaddr1|The method 'setBillAddr1' is used to set the value of billAddr1.|e45f46c3373242f79838d9f6d9fa130a|||||||
+getbillcity|billcity|The method 'getBillCity' is called to return the value of billCity.|e45f46c3373242f79838d9f6d9fa130a|||||||
+setbillcity|billcity|The method 'setBillCity' is used to set the value of billCity.|e45f46c3373242f79838d9f6d9fa130a|||||||
+getbillstate|billstate|The method 'getBillState' is called to return the value of billState.|e45f46c3373242f79838d9f6d9fa130a|||||||
+setbillstate|billstate|The method 'setBillState' is used to set the value of billState.|e45f46c3373242f79838d9f6d9fa130a|||||||
+getbillzip|billzip|The method 'getBillZip' is called to return the value of billZip.|e45f46c3373242f79838d9f6d9fa130a|||||||
+setbillzip|billzip|The method 'setBillZip' is used to set the value of billZip.|e45f46c3373242f79838d9f6d9fa130a|||||||
+getbillphone|billphone|The method 'getBillPhone' is called to return the value of billPhone.|e45f46c3373242f79838d9f6d9fa130a|||||||
+setbillphone|billphone|The method 'setBillPhone' is used to set the value of billPhone.|e45f46c3373242f79838d9f6d9fa130a|||||||
+getshipname|shipname|The method 'getShipName' is called to return the value of shipName.|e45f46c3373242f79838d9f6d9fa130a|||||||
+setshipname|shipname|The method 'setShipName' is used to set the value of shipName.|e45f46c3373242f79838d9f6d9fa130a|||||||
+setshipname|shipname|is used to set the value of shipName|67c94760fdfe4bcab7c823284bdc5815|||||||
+shipname|string|has data type String|67c94760fdfe4bcab7c823284bdc5815|||||||
+getshipname|shipname|is used to retrieve the value of shipName|67c94760fdfe4bcab7c823284bdc5815|||||||
+shipaddr1|string|has data type String|67c94760fdfe4bcab7c823284bdc5815|||||||
+getshipaddr1|shipaddr1|is used to retrieve the value of shipAddr1|67c94760fdfe4bcab7c823284bdc5815|||||||
+setshipaddr1|shipaddr1|is used to set the value of shipAddr1|67c94760fdfe4bcab7c823284bdc5815|||||||
+shipaddr2|string|has data type String|67c94760fdfe4bcab7c823284bdc5815|||||||
+getshipaddr2|shipaddr2|is used to retrieve the value of shipAddr2|67c94760fdfe4bcab7c823284bdc5815|||||||
+setshipaddr2|shipaddr2|is used to set the value of shipAddr2|67c94760fdfe4bcab7c823284bdc5815|||||||
+shipcity|string|has data type String|67c94760fdfe4bcab7c823284bdc5815|||||||
+getshipcity|shipcity|is used to retrieve the value of shipCity|67c94760fdfe4bcab7c823284bdc5815|||||||
+setshipcity|shipcity|is used to set the value of shipCity|67c94760fdfe4bcab7c823284bdc5815|||||||
+shipstate|string|has data type String|67c94760fdfe4bcab7c823284bdc5815|||||||
+getshipstate|shipstate|is used to retrieve the value of shipState|67c94760fdfe4bcab7c823284bdc5815|||||||
+setshipstate|shipstate|is used to set the value of shipState|67c94760fdfe4bcab7c823284bdc5815|||||||
+shipzip|string|has data type String|67c94760fdfe4bcab7c823284bdc5815|||||||
+getshipzip|shipzip|is used to retrieve the value of shipZip|67c94760fdfe4bcab7c823284bdc5815|||||||
+setshipzip|shipzip|is used to set the value of shipZip|67c94760fdfe4bcab7c823284bdc5815|||||||
+shipphone|string|has data type String|67c94760fdfe4bcab7c823284bdc5815|||||||
+getshipphone|shipphone|is used to retrieve the value of shipPhone|67c94760fdfe4bcab7c823284bdc5815|||||||
+setshipphone|shipphone|is used to set the value of shipPhone|67c94760fdfe4bcab7c823284bdc5815|||||||
+shippingmethod|int|has data type int|67c94760fdfe4bcab7c823284bdc5815|||||||
+cardname|cardholdername|In this context, the term 'cardName' and 'CardholderName' are both related to a payment transaction. The 'cardName' refers to the type of card being used, while the 'CardholderName' is the name of the person making the payment.|8366ebf3881344afa5f02844963ac1e6|||||||
+cardnum|cardholdername|The term 'cardNum' represents the unique number assigned to a credit or debit card, while 'CardholderName' is the name of the person associated with that card.|8366ebf3881344afa5f02844963ac1e6|||||||
+cardexpmonth|cardexpyear|Both 'cardExpMonth' and 'CardExpYear' are attributes related to the expiry date of a credit or debit card. They indicate the month and year respectively, in which the card will no longer be valid.|8366ebf3881344afa5f02844963ac1e6|||||||
+getshippingmethod|shippingmethod|The method used to transport a product from the seller to the buyer is represented by 'getShippingMethod' and its corresponding variable 'shippingMethod'.|8366ebf3881344afa5f02844963ac1e6|||||||
+getcardexpyears|cardexpyears|This method returns the value of cardExpYears.|634a848a4757459083d7c5a6133d56ad|||||||
+setcardexpyears|cardexpyears|This method sets the value of cardExpYears.|634a848a4757459083d7c5a6133d56ad|||||||
+isshipisbill|shipisbill|This method returns a boolean value indicating whether this entity is a billing shipment.|634a848a4757459083d7c5a6133d56ad|||||||
+shipisbill|sample entity for testing websphere application server features.|The variable 'shipisbill' is boolean and indicates whether this entity is a billing shipment.|634a848a4757459083d7c5a6133d56ad|||||||
+populate|sample.plantsbywebsphere/src/main/java/com/ibm/websphere/samples/pbw/war|The class 'Populate' is located in the package 'com.ibm.websphere.samples.pbw.war' in the project 'sample.plantsbywebsphere'.|634a848a4757459083d7c5a6133d56ad|||||||
+src/main/java|com/ibm/websphere/samples/pbw/war|The 'Populate' class is stored in the 'src/main/java' directory with the package structure 'com.ibm.websphere.samples.pbw.war'.|634a848a4757459083d7c5a6133d56ad|||||||
+war|sample.plantsbywebsphere|The 'Populate' class is a part of the WAR file named 'sample.plantsbywebsphere'. This WAR file is stored in the project 'sample.plantsbywebsphere'.|634a848a4757459083d7c5a6133d56ad|||||||
+sample.plantsbywebsphere|src/main/java|The project 'sample.plantsbywebsphere' is located in the directory 'src/main/java'.|634a848a4757459083d7c5a6133d56ad|||||||
+websphere application server features.|sample entity for testing websphere application server features.|The variable 'shipisbill' is related to the context of testing WebSphere Application Server features.|634a848a4757459083d7c5a6133d56ad|||||||
+copyright license|sample code provided in source code form.|This information contains a copyright license for the sample code provided in source code form.|634a848a4757459083d7c5a6133d56ad|||||||
+application programming interface|operating platform|The sample code conforms to the application programming interface for the operating platform for which it is written.|634a848a4757459083d7c5a6133d56ad|||||||
+populate|inventory table|populates the INVENTORY table with text in the given context.|815befe6d83446038f366f54cc18cb1b|||||||
+resetdb|populate|is passed as an argument to the Populate constructor to be used in the doPopulate() method.|815befe6d83446038f366f54cc18cb1b|||||||
+catalog|populate|is assigned a value in the Populate constructor and is used in the addImage() method.|815befe6d83446038f366f54cc18cb1b|||||||
+login|populate|is assigned a value in the Populate constructor but is not explicitly used in this context.|815befe6d83446038f366f54cc18cb1b|||||||
+backorderstock|populate|is assigned a value in the Populate constructor but is not explicitly used in this context.|815befe6d83446038f366f54cc18cb1b|||||||
+suppliers|populate|is assigned a value in the Populate constructor but is not explicitly used in this context.|815befe6d83446038f366f54cc18cb1b|||||||
+inventory table|resetdb.deleteall()|the INVENTORY table's data is deleted using the resetDB object and deleteAll() method.|815befe6d83446038f366f54cc18cb1b|||||||
+"util.debug(""found inventory property values: "")"|"string[] values = util.getproperties(""inventory"");"|the properties of the 'inventory' file are obtained using the Util.getProperties() method.|815befe6d83446038f366f54cc18cb1b|||||||
+inventory table|"string[] values = util.getproperties(""inventory"");"|each of the properties obtained from 'inventory' are iteratively added to the INVENTORY table using the doPopulate() method.|815befe6d83446038f366f54cc18cb1b|||||||
+order|customerid|The order belongs to a specific customer with the ID provided.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|billname|The order has a specified billing name.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|billaddr1|The order has a specific billing address line 1.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|billaddr2|The order may have an additional billing address line 2.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|billcity|The order's billing city is specified.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|billstate|The state or region where the billing address of the order is located is provided.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|billzip|The postal code or zip code associated with the billing address of the order is given.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|billphone|A contact number for the billing address of the order is supplied.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|shipname|The order has a specified shipping name.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|shipaddr1|The order has a specific shipping address line 1.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|shipaddr2|The order may have an additional shipping address line 2.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|shipcity|The city or town associated with the shipping address of the order is given.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|shipstate|The state or region where the shipping address of the order is located is provided.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|shipzip|The postal code or zip code associated with the shipping address of the order is given.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|shipphone|A contact number for the shipping address of the order is supplied.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|shippingmethod|The shipping method used to deliver the products of this order is specified.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|creditcard|A specific credit card was used for payment of this order.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|ccnum|The number on the customer's credit card used to pay for this order is given.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|ccexpiremonth|The month in which the expiration date of the customer's credit card used for payment falls.|9180e249e985427ca6ce8b1985d248c5|||||||
+order|ccexpireyear|The year in which the expiration date of the customer's credit card used for payment falls.|9180e249e985427ca6ce8b1985d248c5|||||||
+suppliers|suppliers|table 'SUPPLIERS' is being populated with data from the 'suppliers' text file|f57acf593e5e4df4ba650f9139090779|||||||
+supplier|suppliers|each SUPPLIER record in the 'suppliers' text file is being inserted into the SUPPLIERS table|f57acf593e5e4df4ba650f9139090779|||||||
+supplierid|supplier|each SUPPLIER record in the 'suppliers' text file has a unique identifier stored in the 'SUPPLIERID' column|f57acf593e5e4df4ba650f9139090779|||||||
+name|supplier|each SUPPLIER record in the 'suppliers' text file has a name stored in the 'NAME' column|f57acf593e5e4df4ba650f9139090779|||||||
+address|supplier|each SUPPLIER record in the 'suppliers' text file has an address stored in the 'ADDRESS' column|f57acf593e5e4df4ba650f9139090779|||||||
+city|supplier|each SUPPLIER record in the 'suppliers' text file has a city stored in the 'CITY' column|f57acf593e5e4df4ba650f9139090779|||||||
+state|supplier|each SUPPLIER record in the 'suppliers' text file has a state stored in the 'STATE' column|f57acf593e5e4df4ba650f9139090779|||||||
+zip|supplier|each SUPPLIER record in the 'suppliers' text file has a zip code stored in the 'ZIP' column|f57acf593e5e4df4ba650f9139090779|||||||
+phone|supplier|each SUPPLIER record in the 'suppliers' text file has a phone number stored in the 'PHONE' column|f57acf593e5e4df4ba650f9139090779|||||||
+url|supplier|each SUPPLIER record in the 'suppliers' text file has a URL stored in the 'URL' column|f57acf593e5e4df4ba650f9139090779|||||||
+backorder|int maximumitems|the 'maximumItems' variable is being used to set the maximum number of backorders for a given inventory item|f57acf593e5e4df4ba650f9139090779|||||||
+amounttoorder|backorder|the 'amountToOrder' variable contains the amount that should be ordered to replenish stock levels|f57acf593e5e4df4ba650f9139090779|||||||
+int maximumitems|backorder|each BACKORDER record in the code has a maximum number of backorders allowed for the inventory item, stored in the 'maximumItems' variable|f57acf593e5e4df4ba650f9139090779|||||||
+inventoryid|backorder|each BACKORDER record in the code is associated with a specific inventory item, identified by its 'inventoryID'|f57acf593e5e4df4ba650f9139090779|||||||
+productbean|java class|A Java class named ProductBean is mentioned in this context.|0e6d49411c3b45c89a4dc2d6d9384186|||||||
+com.ibm.websphere.samples.pbw.war|java package|The Java package com.ibm.websphere.samples.pbw.war is mentioned in this context.|0e6d49411c3b45c89a4dc2d6d9384186|||||||
+war|web archive file format|In this context, 'war' refers to the Web archive file format.|0e6d49411c3b45c89a4dc2d6d9384186|||||||
+src|source code directory|The term 'src' in this context represents a source code directory.|0e6d49411c3b45c89a4dc2d6d9384186|||||||
+main|java package|In this context, 'main' refers to the Java package.|0e6d49411c3b45c89a4dc2d6d9384186|||||||
+java|programming language|The term 'java' in this context represents a programming language.|0e6d49411c3b45c89a4dc2d6d9384186|||||||
+shoppingbean|quantity|In this Java class called ShoppingBean, a private integer variable named quantity is declared and can be accessed through the getQuantity() and setQuantity() methods.|676d6ad3985848d2af820ba7fd675d64|||||||
+shoppingbean|jsf action bean and backing bean for the shopping web page|is a combination of|089e9d88137e473691ae1e0d08e5172b|||||||
+shoppingbean|catalog|has a dependency on via injection|089e9d88137e473691ae1e0d08e5172b|||||||
+shoppingbean|product|is associated with via a field called 'product'|089e9d88137e473691ae1e0d08e5172b|||||||
+shoppingbean|products|has access to through another field|089e9d88137e473691ae1e0d08e5172b|||||||
+shoppingbean|shippingcost|can calculate using the 'shoppingCart' bean via injection|089e9d88137e473691ae1e0d08e5172b|||||||
+shoppingitem|inventory|represents a specific item from the inventory|089e9d88137e473691ae1e0d08e5172b|||||||
+productbean|catalog|is managed by via injection|089e9d88137e473691ae1e0d08e5172b|||||||
+shoppingbean|action_shopping|The method catch(Throwable e) returns either ACTION_SHOPPING or null if no category is specified.|1f73d63262134623938dfa348cfd7f1d|||||||
+products|last category|If no category is specified, the products variable uses the last category.|1f73d63262134623938dfa348cfd7f1d|||||||
+inventories|products|The products variable is populated by converting all items in the inventories list into ProductBean objects.|1f73d63262134623938dfa348cfd7f1d|||||||
+inventory|productbean|Each inventory object is converted into a ProductBean object if it is public.|1f73d63262134623938dfa348cfd7f1d|||||||
+shoppingitem|wrapinventoryitems(collection<inventory> invitems)|The wrapInventoryItems() method creates an ArrayList of ShoppingItem objects from a Collection of Inventory objects.|1f73d63262134623938dfa348cfd7f1d|||||||
+shoppingitem|inventory|ShoppingItem is created from Inventory through a conversion process|fdab9bc085044b579442d46cd1f340b8|||||||
+shoppinglist|arraylist<shoppingitem>|shoppingList contains an ordered list of ShoppingItems|fdab9bc085044b579442d46cd1f340b8|||||||
+i|inventory|Iteration over a collection of Inventory items is performed in the method|fdab9bc085044b579442d46cd1f340b8|||||||
+invitems|collection<inventory>|A collection of Inventory items is accessed and iterated upon|fdab9bc085044b579442d46cd1f340b8|||||||
+shoppingitem|inventory|A ShoppingItem is constructed from an Inventory item|fdab9bc085044b579442d46cd1f340b8|||||||
+shoppingitem|inventory|wraps the JPA Inventory entity class to provide additional methods needed by the web app.|8af482600fc145dab3172fce45683c0c|||||||
+inventory|item|attribute of ShoppingItem|8af482600fc145dab3172fce45683c0c|||||||
+inventory|key|String attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+inventory|name|String attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+inventory|heading|String attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+inventory|desc|String attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+inventory|pkginfo|String attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+inventory|image|String attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+inventory|price|float attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+inventory|cost|float attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+inventory|quantity|int attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+inventory|category|int attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+inventory|notes|String attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+inventory|ispublic|boolean attribute of Inventory entity class|8af482600fc145dab3172fce45683c0c|||||||
+backorder|item|attribute of ShoppingItem|8af482600fc145dab3172fce45683c0c|||||||
+inventory|item|An Inventory object contains an Item object.|672126e220fe44928bcdbc0a8c1cf5cf|||||||
+item|category|Each item belongs to a specific category represented by an enum int value.|672126e220fe44928bcdbc0a8c1cf5cf|||||||
+item|cost|An item has a specific cost represented as float.|672126e220fe44928bcdbc0a8c1cf5cf|||||||
+item|description|Each item has a description represented as String.|672126e220fe44928bcdbc0a8c1cf5cf|||||||
+setdescription|description|This method sets the description of the item.|8409ec9f033b463c9249de564d88b880|||||||
+item|heading|The item has a heading.|8409ec9f033b463c9249de564d88b880|||||||
+setheading|heading|This method sets the heading of the item.|8409ec9f033b463c9249de564d88b880|||||||
+item|image|The item has an image.|8409ec9f033b463c9249de564d88b880|||||||
+setimage|image|This method sets the image of the item.|8409ec9f033b463c9249de564d88b880|||||||
+item|name|The item has a name.|8409ec9f033b463c9249de564d88b880|||||||
+setname|name|This method sets the name of the item.|8409ec9f033b463c9249de564d88b880|||||||
+item|notes|The item has notes.|8409ec9f033b463c9249de564d88b880|||||||
+setnotes|notes|This method sets the notes of the item.|8409ec9f033b463c9249de564d88b880|||||||
+getprice|price|Property accessor for price of the item. This method returns the price of the item and is accessed using getPrice().|390e7d7fc148465dbb656a6e265c2556|||||||
+price|item|The price of an item is associated with the item it belongs to.|390e7d7fc148465dbb656a6e265c2556|||||||
+setprice|price|Method used to set the price of an item. Takes a float as parameter and sets the price of the item.|390e7d7fc148465dbb656a6e265c2556|||||||
+price|float|The price is a float value representing the cost of the item.|390e7d7fc148465dbb656a6e265c2556|||||||
+getquantity|quantity|Property accessor for quantity of items ordered. This method returns the quantity of items and is accessed using getQuantity().|390e7d7fc148465dbb656a6e265c2556|||||||
+quantity|item|The quantity of an item is associated with the item it belongs to.|390e7d7fc148465dbb656a6e265c2556|||||||
+setquantity|quantity|Method used to set the quantity of an item. Takes an int as parameter and sets the quantity of the item.|390e7d7fc148465dbb656a6e265c2556|||||||
+quantity|int|The quantity is an integer value representing the number of items ordered.|390e7d7fc148465dbb656a6e265c2556|||||||
+getmaxthreshold|maxthreshold|Property accessor for maximum threshold. This method returns the maximum threshold and is accessed using getMaxThreshold().|390e7d7fc148465dbb656a6e265c2556|||||||
+maxthreshold|item|The maximum threshold of an item is associated with the item it belongs to.|390e7d7fc148465dbb656a6e265c2556|||||||
+maxthreshold|item|A maximum threshold is associated with a specific item through the setMaxThreshold() and getMaxThreshold() methods in the Inventory class.|60a2bead835a4a8ea4ef7f79e2fd4e1a|||||||
+minthreshold|item|Similarly, a minimum threshold is also associated with an item through the setMinThreshold() and getMinThreshold() methods in the Inventory class.|60a2bead835a4a8ea4ef7f79e2fd4e1a|||||||
+id|item|Each item has a unique ID, which can be retrieved or updated using the getID() and setID() methods respectively in the Inventory class.|60a2bead835a4a8ea4ef7f79e2fd4e1a|||||||
+inventoryid|item|Additionally, each item is associated with an inventory ID through the getInventoryId() and setInventoryId() methods in the Inventory class.|60a2bead835a4a8ea4ef7f79e2fd4e1a|||||||
+id|item|The item itself also has an ID, which can be accessed using the getID() method in the Item interface implemented by the item object.|60a2bead835a4a8ea4ef7f79e2fd4e1a|||||||
+ispublic|item|Finally, each item may also have a boolean flag indicating whether it is public or not through the isPublic() and setIsPublic() methods in the Inventory class.|60a2bead835a4a8ea4ef7f79e2fd4e1a|||||||
+ispublic|item|A boolean value that determines whether an inventory item is publicly accessible or not. This method returns the current value of isPublic for the current inventory item.|e11876d2ca804dd9baeb334310d514f6|||||||
+setispublic|item|Sets the boolean value isPublic for the current inventory item. The setIsPublic method sets the private boolean field privacy to the new value specified by isPublic.|e11876d2ca804dd9baeb334310d514f6|||||||
+setprivacy|item|Sets the boolean value privacy for the current inventory item. This method is used when privacy and isPublic have the same meaning, and it is used instead of setIsPublic to avoid confusion between the two methods.|e11876d2ca804dd9baeb334310d514f6|||||||
+getimgbytes|item|Returns a byte array representing the image bytes associated with the current inventory item. The getImgbytes method returns the private byte array field imgBytes for the current inventory item.|e11876d2ca804dd9baeb334310d514f6|||||||
+setimgbytes|item|Sets the byte array imgBytes for the current inventory item. The setImgbytes method sets the private byte array field imgBytes for the current inventory item.|e11876d2ca804dd9baeb334310d514f6|||||||
+getbackorder|item|Returns a BackOrder object representing whether the current inventory item is currently on backorder. The getBackOrder method returns the private BackOrder field backOrder for the current inventory item.|e11876d2ca804dd9baeb334310d514f6|||||||
+setbackorder|item|Sets the BackOrder object backOrder for the current inventory item. The setBackOrder method sets the private BackOrder field backOrder for the current inventory item.|e11876d2ca804dd9baeb334310d514f6|||||||
+jsf validator class|jsf|The JSF validator class is used for validation within the context of JavaScript Faces (JSF). JSF is a technology used in JavaServer Faces web application frameworks. This relationship indicates that the JSF validator class is specifically designed to work within the JSF environment.|27f26bbfd1bf49d98fe89ff016af6a85|||||||
+javaserver faces|java server pages (jsp)|JavaServer Faces (JSF) is a component-based user interface framework for JavaServer Pages (JSP). This relationship indicates that JSF and JSP are both technologies used in the development of web applications, and there is a connection between them.|27f26bbfd1bf49d98fe89ff016af6a85|||||||
+javaserver faces|facescontext|FacesContext is a class used in JSF for processing requests and responses during the lifecycle of a web application. This relationship indicates that JSF has a direct interaction with the FacesContext class.|27f26bbfd1bf49d98fe89ff016af6a85|||||||
+jsf validator class|validatorexception|ValidatorException is an exception thrown by a JSF validator when validation fails. This relationship indicates that the JSF validator class is capable of throwing a ValidatorException in certain circumstances.|27f26bbfd1bf49d98fe89ff016af6a85|||||||
+jsf|javaserver pages standard tag library (jstl)|JavaServer Faces (JSF) and JavaServer Pages Standard Tag Library (JSTL) are both technologies used in the development of web applications. This relationship indicates that JSF and JSTL can potentially be used together, as they share a common environment.|27f26bbfd1bf49d98fe89ff016af6a85|||||||
+uiinput|jsf validator class|UIInput is an interface implemented by UI components that support input. The JSF validator class can be used to validate the input provided by a user through a UI component that implements UIInput.|27f26bbfd1bf49d98fe89ff016af6a85|||||||
+jsf|javaserver pages expression language (el)|JavaServer Faces (JSF) and JavaServer Pages Expression Language (EL) are both technologies used in the development of web applications. This relationship indicates that JSF and EL can potentially be used together, as they share a common environment.|27f26bbfd1bf49d98fe89ff016af6a85|||||||
+uicomponent|jsf validator class|UIComponent is the superclass for all UI components in JSF. The JSF validator class can be used to validate input provided by any UI component that is a subclass of UIComponent.|27f26bbfd1bf49d98fe89ff016af6a85|||||||
+validatepasswords|gui interaction|JSF validator class is required during GUI interaction for validation, but not implemented in Bean Validation.|dc4040bbb8ed499cb6b0b4f7d7045666|||||||
+gui interaction|sample programs|Application programming interface for the operating platform is written to develop, use, market or distribute application programs conforming to it.|dc4040bbb8ed499cb6b0b4f7d7045666|||||||
+passwords|passwords do not match.|ValidationException is thrown when passwords entered in two different components do not match.|dc4040bbb8ed499cb6b0b4f7d7045666|||||||
+uicomponent component|otherpasswordid|The other component with the ID specified in 'otherPasswordID' attribute is found using the findComponent method.|dc4040bbb8ed499cb6b0b4f7d7045666|||||||
+string str|uiinput othercomponent|The value entered by the user for the current component and the value of another component with ID specified in 'otherPasswordID' attribute are compared.|dc4040bbb8ed499cb6b0b4f7d7045666|||||||
+validatorexception|"adderrormessage(context, ""passwords do not match. "")"|If passwords entered in two components do not match, a ValidatorException is thrown and an error message is added to the context using the addErrorMessage method.|dc4040bbb8ed499cb6b0b4f7d7045666|||||||
+validatorutils.java|com/ibm/websphere/samples/pbw/war|The sample code for ValidatorUtils class is found in the specified location.|dc4040bbb8ed499cb6b0b4f7d7045666|||||||
+copyright license|sample programs|Sample source code can be copied, modified and distributed without payment to IBM for developing, using, marketing or distributing application programs conforming to the application programming interface for the specified operating platform.|dc4040bbb8ed499cb6b0b4f7d7045666|||||||
+ibm|copyright license|IBM provides the sample source code on an 'AS IS' basis and disclaims all warranties, express or implied, including but not limited to any implied warranty of merchantability or fitness for a particular purpose.|dc4040bbb8ed499cb6b0b4f7d7045666|||||||
+sample source code|licensed materials|is associated with|94ce8178bb6d40d8be67da9b1941070d|||||||
+international business machines corp.|copyright holder|holds the copyright for|94ce8178bb6d40d8be67da9b1941070d|||||||
+ibm|disclaimer provider|provides disclaimers for|94ce8178bb6d40d8be67da9b1941070d|||||||
+direct, indirect, incidental, special or consequential damages|limitations|are limited by|94ce8178bb6d40d8be67da9b1941070d|||||||
+merchantability, satisfactory quality, fitness for a particular purpose, title, and any warranty or condition of non-infringement|warranties|are disclaimed by|94ce8178bb6d40d8be67da9b1941070d|||||||
+uicomponent|component with errormessage attribute|has the ability to|94ce8178bb6d40d8be67da9b1941070d|||||||
+sample source code|application programming interface|the provided sample programs conform to the application programming interface for the operating platform for which the sample code is written.|6872b7fd424645de82feb232f555c9fb|||||||
+copyright license|sample source code|this information contains sample code provided in source code form and can be copied, modified, and distributed without payment to ibm for the purposes of developing, using, marketing, or distributing application programs conforming to the application programming interface.|6872b7fd424645de82feb232f555c9fb|||||||
+ibm|all rights reserved|* licensed materials - property of ibm|6872b7fd424645de82feb232f555c9fb|||||||
+international business machines corp.|c copyright international business machines corp., 2001,2011||6872b7fd424645de82feb232f555c9fb|||||||
+microsoft internet explorer|navigator.appname|"(navigator.appname == ""microsoft internet explorer"")"|6872b7fd424645de82feb232f555c9fb|||||||
+navigator.appversion|i|"i = navigator.appversion.indexOf(""MSIE 6"");"|6872b7fd424645de82feb232f555c9fb|||||||
+ibm|copyright license|IBM provides the sample source code on an 'as is' basis and disclaims all warranties, express or implied. Notwithstanding anything to the contrary, IBM disclaims all warranties, including, but not limited to, any implied warranties or conditions of merchantability, satisfactory quality, fitness for a particular purpose, title, and any warranty or condition of non-infringement.|797c9843071c43cd8d7921afda04f2bf|||||||
+sample source code|ibm|IBM provides the sample source code.|797c9843071c43cd8d7921afda04f2bf|||||||
+application programming interface|sample code|These sample programs conform to the application programming interface for the operating platform for which the sample code is written.|797c9843071c43cd8d7921afda04f2bf|||||||
+operating platform|application programming interface|For which the sample code is written.|797c9843071c43cd8d7921afda04f2bf|||||||
+temp|allchecked|is affected by the value of allchecked|c4ab0e0109c74d8c922f9681c2462ec9|||||||
+chkname|multiall|are used to determine the value of multiall|c4ab0e0109c74d8c922f9681c2462ec9|||||||
+theform.elements[i]|temp|is affected by the checked state of this element|c4ab0e0109c74d8c922f9681c2462ec9|||||||
+temp|allchecked|is set to true when all elements are checked|c4ab0e0109c74d8c922f9681c2462ec9|||||||
+temp|allchecked|is set to false when not all elements are checked|c4ab0e0109c74d8c922f9681c2462ec9|||||||
+theform.elements[i].checked|temp|sets the value of temp based on the state of this checkbox|c4ab0e0109c74d8c922f9681c2462ec9|||||||
+allcheck|appitem|is set based on the presence of 'checkBoxes' in appitem|c4ab0e0109c74d8c922f9681c2462ec9|||||||
+curitem|curcheck|is set based on the presence of a specific name in curitem|c4ab0e0109c74d8c922f9681c2462ec9|||||||
+chkname|allchkname|is used to determine the value of allchkname|c4ab0e0109c74d8c922f9681c2462ec9|||||||
+context|sample context|contains|4e3e082b9c5240d6886be5c86e2652da|||||||
+file|plantsscripts.js|located in|4e3e082b9c5240d6886be5c86e2652da|||||||
+folder|resources|contained by|4e3e082b9c5240d6886be5c86e2652da|||||||
+folder|javascript|contained by|4e3e082b9c5240d6886be5c86e2652da|||||||
+file|plantsscripts.js|belongs to|4e3e082b9c5240d6886be5c86e2652da|||||||
+project|src/main/webapp|contains|4e3e082b9c5240d6886be5c86e2652da|||||||
+folder|resources|contained by|4e3e082b9c5240d6886be5c86e2652da|||||||
+url|/sample.plantsbywebsphere/src/main/webapp/resources/javascript/plantsscripts.js|accessed through|4e3e082b9c5240d6886be5c86e2652da|||||||
+url|http://localhost:8080/sample.plantsbywebsphere/src/main/webapp/resources/javascript/plantsscripts.js|can also be accessed through|4e3e082b9c5240d6886be5c86e2652da|||||||
+url|http://example.com/sample.plantsbywebsphere/src/main/webapp/resources/javascript/plantsscripts.js|can be accessed through|4e3e082b9c5240d6886be5c86e2652da|||||||
+variable|theform|is a part of|4e3e082b9c5240d6886be5c86e2652da|||||||
+element|elements[i]|is a collection of|4e3e082b9c5240d6886be5c86e2652da|||||||
+variable|chkname|is associated with|4e3e082b9c5240d6886be5c86e2652da|||||||
+string|selectedobjectids|refers to|4e3e082b9c5240d6886be5c86e2652da|||||||
+string|checkboxes|refers to|4e3e082b9c5240d6886be5c86e2652da|||||||
+boolean|checked|indicates whether an element is selected or not|4e3e082b9c5240d6886be5c86e2652da|||||||
+integer|ischeck, appitem, appcheck, curcheck|help in finding the position of a string within another string|4e3e082b9c5240d6886be5c86e2652da|||||||
+boolean|allchecked|indicates whether all elements are selected or not|4e3e082b9c5240d6886be5c86e2652da|||||||
+operating platform|programming interface|The provided sample code is specific to a particular operating platform, and this context refers to the programming interface for that platform.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+ibm|as is basis|IBM provides the sample source code on an 'as is' basis, implying that any issues arising from using it are solely the responsibility of the user.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+implied warranties or conditions|merchantability, satisfactory quality, fitness for a particular purpose, title, and non-infringement|IBM explicitly disclaims all of these implied warranties or conditions associated with the provided sample source code.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+direct|indirect|IBM shall not be liable for any of these types of damages arising from the use or operation of the provided sample source code.|3cbbf632cd934a499f7a3d37ff9df923|Incidental|Special||Consequential Damages|||
+support|updates|IBM has no obligation to provide maintenance, support, updates, enhancements, or modifications to the provided sample source code.|3cbbf632cd934a499f7a3d37ff9df923|Enhancements|Modifications|||||
+copyright international business machines corp.|2011|The provided material is copyrighted by IBM in 2011, and all rights are reserved.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+licensed materials|property of ibm|These materials belong to IBM, and they are licensed.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+document.images|resources/images|This context refers to images stored in the 'resources' directory named 'images' that can be accessed using JavaScript's document object.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+menu1s|resources/images/tab_flowers_s.gif|This context refers to a specific image named 'tab_flowers_s' in the 'resources/images' directory.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+menu2s|resources/images/tab_veggies_s.gif|This context refers to a specific image named 'tab_veggies_s' in the 'resources/images' directory.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+menu3s|resources/images/tab_trees_s.gif|This context refers to a specific image named 'tab_trees_s' in the 'resources/images' directory.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+menu4s|resources/images/tab_accessories_s.gif|This context refers to a specific image named 'tab_accessories_s' in the 'resources/images' directory.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+menu1u|resources/images/tab_flowers_u.gif|This context refers to a specific image named 'tab_flowers_u' in the 'resources/images' directory.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+menu2u|resources/images/tab_veggies_u.gif|This context refers to a specific image named 'tab_veggies_u' in the 'resources/images' directory.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+menu3u|resources/images/tab_trees_u.gif|This context refers to a specific image named 'tab_trees_u' in the 'resources/images' directory.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+menu4u|resources/images/tab_accessories_u.gif|This context refers to a specific image named 'tab_accessories_u' in the 'resources/images' directory.|3cbbf632cd934a499f7a3d37ff9df923|||||||
+usebill|billname|is used to retrieve the name of the bill being paid.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+usebill|billaddr1|is not directly related to useBill, but might be required in some cases for billing purposes.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+usebill|billaddr2|is not directly related to useBill, but might be required in some cases for billing purposes.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+usebill|billcity|is used to retrieve the city associated with the bill being paid.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+usebill|billstate|is used to retrieve the state associated with the bill being paid.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+usebill|billzip|is used to retrieve the zip code associated with the bill being paid.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+usebill|billphone|is used to retrieve the phone number associated with the bill being paid.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+orderinfo:sname|shipname|is used to set the shipper name when the shipment address is also being used as the billing address.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+orderinfo:saddr1|shipaddr1|is not directly related to useBill, but might be required in some cases for shipping purposes.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+orderinfo:saddr2|shipaddr2|is not directly related to useBill, but might be required in some cases for shipping purposes.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+orderinfo:scity|shipcity|is used to set the city associated with the shipment address when the shipment address is also being used as the billing address.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+orderinfo:sstate|shipstate|is used to set the state associated with the shipment address when the shipment address is also being used as the billing address.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+orderinfo:szip|shipzip|is used to set the zip code associated with the shipment address when the shipment address is also being used as the billing address.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+orderinfo:sphone|shipphone|is used to set the phone number associated with the shipment address when the shipment address is also being used as the billing address.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+orderinfo:shipisbill|shipisbill|indicates whether the shipment address is also being used as the billing address or not.|63a11fab78d44a1fa40b7f6f5c5827f9|||||||
+shipisbill|billname|If the 'shipIsBill' checkbox is checked, the value of 'billName' will be copied to 'shipName'|647aa3a1183744868039e56b70e04dbb|||||||
+shipisbill|billaddr1|If the 'shipIsBill' checkbox is checked, the value of 'billAddr1' will be copied to 'shipAddr1'|647aa3a1183744868039e56b70e04dbb|||||||
+shipisbill|billaddr2|If the 'shipIsBill' checkbox is checked, the value of 'billAddr2' will be copied to 'shipAddr2'|647aa3a1183744868039e56b70e04dbb|||||||
+shipisbill|billcity|If the 'shipIsBill' checkbox is checked, the value of 'billCity' will be copied to 'shipCity'|647aa3a1183744868039e56b70e04dbb|||||||
+shipisbill|billstate|If the 'shipIsBill' checkbox is checked, the value of 'billState' will be copied to 'shipState'|647aa3a1183744868039e56b70e04dbb|||||||
+shipisbill|billzip|If the 'shipIsBill' checkbox is checked, the value of 'billZip' will be copied to 'shipZip'|647aa3a1183744868039e56b70e04dbb|||||||
+shipisbill|billphone|If the 'shipIsBill' checkbox is checked, the value of 'billPhone' will be copied to 'shipPhone'|647aa3a1183744868039e56b70e04dbb|||||||

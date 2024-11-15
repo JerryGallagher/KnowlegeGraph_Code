@@ -1,0 +1,153 @@
+node_1|node_2|edge|chunk_id
+donothingaction|baseaction|subclass relationship, 'DoNothingAction' is a subclass of 'BaseAction'|41dbb7bbcadb4b73b011921bb6581e8f
+com.ibatis.jpetstore.presentation.action.editaccountaction|com.ibatis.jpetstore.presentation.action.donothingaction|subclass relationship, 'EditAccountAction' is a subclass of 'DoNothingAction'|41dbb7bbcadb4b73b011921bb6581e8f
+com.ibatis.db.dao.dao|com.ibatis.jpetstore.domain.account|usages relation, 'DAO' is used to interact with instances of 'Account'|41dbb7bbcadb4b73b011921bb6581e8f
+com.ibatis.jpetstore.presentation.form.accountform|com.ibatis.jpetstore.domain.account|mapping relation, 'AccountForm' is used to extract data for mapping it to instances of 'Account'|41dbb7bbcadb4b73b011921bb6581e8f
+org.apache.struts.action.|javax.servlet.http.|importing relation, 'org.apache.struts.action.' imports 'javax.servlet.http.'|41dbb7bbcadb4b73b011921bb6581e8f
+editaccountformaction|baseaction|is a type of action in Struts framework, which extends BaseAction for performing customized actions specific to the EditAccountForm.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|accountform|works with AccountForm object passed as parameter to doPerform() method in Struts framework for editing account information.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.getsession().getattribute(""accountform"")"|retrieves the AccountForm object from session attribute and stores it in workingAcctForm for further processing.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|workingacctform|is used as a temporary variable to store the AccountForm object obtained from session and perform necessary operations on it.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.getsession().setattribute(""workingaccountform"")"|stores the modified AccountForm object in session attribute for further use by other Struts actions.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.getsession().removeattribute(""workingaccountform"")"|removes the temporary workingAcctForm object from session for avoiding memory leaks.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"mapping.findforward(""success"")"|redirects to success page upon successful execution of doPerform() method.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.setattribute(""message"", ""your account was not updated because the submitted information was not validated."")"|sets a message attribute in request for displaying error message on failure page.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"mapping.findforward(""failure"")"|redirects to failure page upon unsuccessful execution of doPerform() method due to validation errors.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.setattribute(""message"", ""there was a problem updating your account information. cause: "") + e"")"|sets a message attribute in request for displaying error message on failure page with exception details.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"request.setattribute(""message"", ""your account was not updated because the submitted information was not validated."")"|sets a message attribute in request for displaying error message on failure page.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|"mapping.findforward(""unknown-error"")"|redirects to unknown error page upon unsuccessful execution of doPerform() method due to unknown errors.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|username = acctform.getaccount().getuserid()|extracts the username from AccountForm object for further processing by DaoTransaction class.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|accountdao.getaccount(trans, username)|retrieves the account information from database using getAccount() method of AccountDao class with trans and username arguments.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|daomanager.gettransaction()|creates a new transaction for executing DB operations using getTransaction() method of DaoManager class.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|acctdao.getaccount(trans, username)|retrieves the account information from database for a particular user using getAccount() method of AccountDao class.|a935c952b3324639a3f1157f7ab0b3fa
+editaccountformaction|daomanager.release()|releases the transaction obtained by getTransaction() method of DaoManager class for DB operations.|a935c952b3324639a3f1157f7ab0b3fa
+indexaction|categorydao|uses to retrieve category list|810f8d249e0249ac8f51f394ceddd142
+listordersaction|accountform|receives instance of AccountForm for accessing account information|810f8d249e0249ac8f51f394ceddd142
+newaccountformaction|com.ibatis.jpetstore.presentation.action|is a subclass of|dcb255390cae4d519b1ad671d2d57f99
+baseaction|org.apache.struts.action|is a subclass of|dcb255390cae4d519b1ad671d2d57f99
+httpsessionbindinglistener|javax.servlet.http.httpsessionbindinglistener|implements|dcb255390cae4d519b1ad671d2d57f99
+accountdao|com.ibatis.db.dao|is used by|dcb255390cae4d519b1ad671d2d57f99
+productdao|com.ibatis.db.dao|is used by|dcb255390cae4d519b1ad671d2d57f99
+accountform|com.ibatis.jpetstore.presentation.form|is referenced by|dcb255390cae4d519b1ad671d2d57f99
+transaction|com.ibatis.db.transaction|is used by|dcb255390cae4d519b1ad671d2d57f99
+signon|com.ibatis.jpetstore.domain|is referenced by|dcb255390cae4d519b1ad671d2d57f99
+signondao|com.ibatis.db.dao|is used by|dcb255390cae4d519b1ad671d2d57f99
+neworderformaction|com|is a package or namespace of|0303f4e6b16d4a31b5bc62cc9193f14c
+neworderformaction|jpetstore|is a subpackage, module or component of|0303f4e6b16d4a31b5bc62cc9193f14c
+neworderformaction|presentation|is a subpackage, module or component of|0303f4e6b16d4a31b5bc62cc9193f14c
+neworderformaction|action|is a subclass, type or instance of|0303f4e6b16d4a31b5bc62cc9193f14c
+orderform|neworderformaction|is an attribute, property or field of|0303f4e6b16d4a31b5bc62cc9193f14c
+orderdao|daomanager|is accessed by or refers to|0303f4e6b16d4a31b5bc62cc9193f14c
+lineitemdao|daomanager|is accessed by or refers to|0303f4e6b16d4a31b5bc62cc9193f14c
+inventorydao|daomanager|is accessed by or refers to|0303f4e6b16d4a31b5bc62cc9193f14c
+orderform.getorder()|orderdao.getorder()|returns the same element as|0303f4e6b16d4a31b5bc62cc9193f14c
+orderform.getorderid()|lineitemdao.getlineitemsbyorderid()|returns the same element as|0303f4e6b16d4a31b5bc62cc9193f14c
+neworderformaction|baseaction|NewOrderFormAction is a subclass of BaseAction|b659e27e8a0843aca42021631836b450
+neworderformaction|daomanager|NewOrderFormAction uses daoManager to get OrderDao object|b659e27e8a0843aca42021631836b450
+doperform|neworderformaction|doPerform is a method of NewOrderFormAction|b659e27e8a0843aca42021631836b450
+acctform|request.getsession().getattribute()|NewOrderFormAction retrieves acctForm object from request session|b659e27e8a0843aca42021631836b450
+cartform|request.getsession().getattribute()|NewOrderFormAction retrieves cartForm object from request session|b659e27e8a0843aca42021631836b450
+orderdao|"daomanager.getdao(""order"")"|"NewOrderFormAction gets OrderDao object from daoManager using ""Order"" string parameter"|b659e27e8a0843aca42021631836b450
+signonforwardaction|request.setattribute()|NewOrderFormAction sets signonForwardAction attribute in request|b659e27e8a0843aca42021631836b450
+global-orderform|signonforwardaction|global-orderform is a value of signonForwardAction attribute|b659e27e8a0843aca42021631836b450
+global-signon|request.setattribute()|NewOrderFormAction sets global-signon attribute in request|b659e27e8a0843aca42021631836b450
+accountform|"request.getsession().getattribute(""accountform"")"|"NewOrderFormAction retrieves accountForm object from request session using ""accountForm"" string parameter"|b659e27e8a0843aca42021631836b450
+removeitemfromcartaction|com.ibatis.jpetstore.presentation.action|RemoveItemFromCartAction is a class in com.ibatis.jpetstore.presentation.action package|b659e27e8a0843aca42021631836b450
+orderform|request.getsession().getattribute()|NewOrderFormAction retrieves OrderForm object from request session|b659e27e8a0843aca42021631836b450
+searchproductsaction|baseaction|is a type of Action in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.jpetstore.presentation.action.searchproductsaction|com.ibatis.jpetstore.presentation.action.baseaction|is a subclass of BaseAction in the presented context|363fabf3a715477983d0ee6ebab999f1
+org.apache.struts.action.requestprocessor|actionservlet|is a part of ActionServlet in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.jpetstore.presentation.form.cartform|org.apache.struts.action.actionform|is a subclass of ActionForm in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.jpetstore.domain.|item|is related to Item through the RemoveItemFromCartAction|363fabf3a715477983d0ee6ebab999f1
+org.apache.struts.action.actionmapping|com.ibatis.jpetstore.presentation.action.removeitemfromcartaction|is a part of RemoveItemFromCartAction in the presented context|363fabf3a715477983d0ee6ebab999f1
+org.apache.struts.util.|requestutils|is a part of HttpServletRequest in the presented context|363fabf3a715477983d0ee6ebab999f1
+javax.servlet.|httpservletresponse|is a part of HttpServletResponse in the presented context|363fabf3a715477983d0ee6ebab999f1
+java.util.|list|is a part of ArrayList in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.db.|daoexception|is thrown by DAOs in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.jpetstore.domain.|cart|contains Items in the presented context|363fabf3a715477983d0ee6ebab999f1
+javax.servlet.http.|httpservletrequest|is used to access HTTP request parameters and headers in the presented context|363fabf3a715477983d0ee6ebab999f1
+com.ibatis.jpetstore.presentation.action.|removeitemfromcartaction|removes an Item from a Cart based on its ID in the presented context|363fabf3a715477983d0ee6ebab999f1
+keyword|productlist|The 'keyword' parameter is used to search for products, which are stored in the 'productList'.|1b73752a646248ee9088c717aa1006d1
+signoffaction|workingaccountform|In the 'SignoffAction', the session attribute 'workingAccountForm' is removed.|1b73752a646248ee9088c717aa1006d1
+signoffaction|accountform|In the 'SignoffAction', the session attribute 'accountForm' is removed.|1b73752a646248ee9088c717aa1006d1
+signoffaction|workingorderform|In the 'SignoffAction', the session attribute 'workingOrderForm' is removed.|1b73752a646248ee9088c717aa1006d1
+signoffaction|cartform|In the 'SignoffAction', the session attribute 'cartForm' is removed.|1b73752a646248ee9088c717aa1006d1
+updatecartquantitiesaction|baseaction|is a type of action in Struts framework.|3915f4f08fca492d830b3d59b68e6e53
+updatecartquantitiesaction|com.ibatis.jpetstore.presentation.action|belongs to the package com.ibatis.jpetstore.presentation.action in the JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+updatecartquantitiesaction|com.ibatis.jpetstore.presentation|is a part of presentation layer of JPetStore application.|3915f4f08fca492d830b3d59b68e6e53
+updatecartquantitiesaction|com.ibatis.jpetstore|belongs to the com.ibatis.jpetstore package which contains classes for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+updatecartquantitiesaction|com.ibatis|is a part of ibatis library used in this application.|3915f4f08fca492d830b3d59b68e6e53
+baseaction|actionsupport|extends ActionSupport class which provides support for the Struts action framework.|3915f4f08fca492d830b3d59b68e6e53
+cartform|com.ibatis.jpetstore.presentation.form|belongs to the com.ibatis.jpetstore.presentation.form package which contains form classes for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+cartform|com.ibatis.jpetstore.presentation|is a part of presentation layer of JPetStore application.|3915f4f08fca492d830b3d59b68e6e53
+cartform|com.ibatis.jpetstore|belongs to the com.ibatis.jpetstore package which contains classes for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+cartitem|com.ibatis.jpetstore.domain|belongs to the domain layer which represents the data objects in the JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+cartitem|com.ibatis.jpetstore|belongs to the com.ibatis.jpetstore package which contains classes for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+cartitem|item|is associated with Item class which represents an item in the store.|3915f4f08fca492d830b3d59b68e6e53
+com.ibatis.jpetstore|web-inf|contains web application configuration and resources for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+com.ibatis.jpetstore|src|contains Java source files for the JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+web-inf|classes|contains compiled class files for JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+updatecartquantitiesaction|request.getparameter(itemid)|accesses the request parameter 'itemId' to obtain the new quantity value.|3915f4f08fca492d830b3d59b68e6e53
+cartform|getcart()|returns a Cart object which contains the cart items for the user.|3915f4f08fca492d830b3d59b68e6e53
+cartform|setaccount(account)|sets the account information obtained from the login process.|3915f4f08fca492d830b3d59b68e6e53
+cartform|setpassword(null)|resets the password to null after successful login.|3915f4f08fca492d830b3d59b68e6e53
+cartitem|getitem()|returns the Item object associated with this CartItem.|3915f4f08fca492d830b3d59b68e6e53
+com.ibatis.jpetstore.domain|com.ibatis.jpetstore|contains domain classes for JPetStore project which represent the data entities in the store.|3915f4f08fca492d830b3d59b68e6e53
+httpservletrequest|request.getparameter(itemid)|provides access to request parameters in a web application using Struts framework.|3915f4f08fca492d830b3d59b68e6e53
+com.ibatis.jpetstore|src|contains the Java source files for classes and resources related to JPetStore project.|3915f4f08fca492d830b3d59b68e6e53
+item|com.ibatis.jpetstore.domain|represents an item in the store which includes information such as product details, price, and quantity.|3915f4f08fca492d830b3d59b68e6e53
+httpservletresponse|response|provides access to the HTTP response for a web application using Struts framework.|3915f4f08fca492d830b3d59b68e6e53
+viewcategoryaction|categorydao|ViewCategoryAction uses CategoryDao to retrieve Category object for specified Category ID|2020f7666faf4850970af146a51d9073
+viewcategoryaction|categoryform|ViewCategoryAction interacts with CategoryForm to get and set category information|2020f7666faf4850970af146a51d9073
+viewcategoryaction|mapping|ViewCategoryAction is mapped to a specific ActionMapping|2020f7666faf4850970af146a51d9073
+viewcategoryaction|httpservletrequest|ViewCategoryAction receives information through HttpServletRequest object|2020f7666faf4850970af146a51d9073
+viewcategoryaction|httpservletresponse|ViewCategoryAction sends response to client using HttpServletResponse object|2020f7666faf4850970af146a51d9073
+viewitemaction|productdao|ViewItemAction uses ProductDao to retrieve product list for specified Category ID|2020f7666faf4850970af146a51d9073
+viewitemaction|categoryform|ViewItemAction interacts with CategoryForm to get and set category information|2020f7666faf4850970af146a51d9073
+viewitemaction|mapping|ViewItemAction is mapped to a specific ActionMapping|2020f7666faf4850970af146a51d9073
+viewitemaction|httpservletrequest|ViewItemAction receives information through HttpServletRequest object|2020f7666faf4850970af146a51d9073
+viewitemaction|httpservletresponse|ViewItemAction sends response to client using HttpServletResponse object|2020f7666faf4850970af146a51d9073
+viewitemaction|baseaction|is a type of Action in the context.|2dfc20be4ba144879b62d7ccb9d6130d
+viewitemaction|mapping|interacts with to determine the forward to take.|2dfc20be4ba144879b62d7ccb9d6130d
+viewitemaction|form|manipulates and uses this object for storing user data.|2dfc20be4ba144879b62d7ccb9d6130d
+viewitemaction|httpservletrequest|is used to access request attributes and parameters sent by client.|2dfc20be4ba144879b62d7ccb9d6130d
+viewitemaction|httpservletresponse|is used to send HTTP responses back to the client.|2dfc20be4ba144879b62d7ccb9d6130d
+daotransaction|itemdao|is used to retrieve Item object by its ID.|2dfc20be4ba144879b62d7ccb9d6130d
+daotransaction|productdao|is used to retrieve Product object by Item's product ID.|2dfc20be4ba144879b62d7ccb9d6130d
+itemform|viewitemaction|is an argument passed to the ViewItemAction.|2dfc20be4ba144879b62d7ccb9d6130d
+itemform|product|represents a product associated with an Item.|2dfc20be4ba144879b62d7ccb9d6130d
+itemform|item|is used to store and retrieve Item data through the ViewItemAction.|2dfc20be4ba144879b62d7ccb9d6130d
+vieworderaction|baseaction|is a type of Action in the context.|2dfc20be4ba144879b62d7ccb9d6130d
+vieworderaction|mapping|interacts with to determine the forward to take.|2dfc20be4ba144879b62d7ccb9d6130d
+vieworderaction|form|manipulates and uses this object for storing user data.|2dfc20be4ba144879b62d7ccb9d6130d
+vieworderaction|httpservletrequest|is used to access request attributes and parameters sent by client.|2dfc20be4ba144879b62d7ccb9d6130d
+vieworderaction|httpservletresponse|is used to send HTTP responses back to the client.|2dfc20be4ba144879b62d7ccb9d6130d
+daotransaction|itemdao|is used to retrieve Item object by its ID.|2dfc20be4ba144879b62d7ccb9d6130d
+daotransaction|orderdao|is used to retrieve Order object by an unknown identifier in the context.|2dfc20be4ba144879b62d7ccb9d6130d
+productform|product|ProductForm is used to interact with a specific product, and the product object (of type Product) is retrieved using productDao.getProduct(trans, prodForm.getProductId()).|d9222a3758554b4aa86631de8f0ca9c5
+itemdao|itemlist|The itemDao is used to retrieve a list of items (of type List) for the specified product using itemDao.getItemListByProduct(trans, prodForm.getProductId()).|d9222a3758554b4aa86631de8f0ca9c5
+request|message|"If the product cannot be found, an error message (of type String) is set as an attribute of the request object using request.setAttribute(""message"", ""Error viewing Product. Could not find Product for Product ID specified."")."|d9222a3758554b4aa86631de8f0ca9c5
+forwardaction|success|"Depending on whether the product was found or not, a different forward action is set using return mapping.findForward(""failure"") and return mapping.findForward(""success"")."|d9222a3758554b4aa86631de8f0ca9c5
+accountform|username|The AccountForm class is used to handle forms related to user accounts, and the username field (of type String) is accessed using username.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|password|The password field (of type String) is also accessed using password.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|repeatedpassword|The repeatedPassword field (also of type String) may be used to verify the user's password.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|languages|The languages field (of type List) contains a list of available languages, which can be accessed using languages.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|categories|Similarly, the categories field (also of type List) may contain a list of available categories.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|validate|"The validate field (of type String) is used to identify which form validation action should be taken (either ""editAccount"" or ""newAccount"")."|d9222a3758554b4aa86631de8f0ca9c5
+accountform|mylist|The myList field (of type List) may contain some arbitrary list of values.|d9222a3758554b4aa86631de8f0ca9c5
+accountform|account|Belongs to AccountForm and is a property of it.|8be17bec52764f38828e8bdf8d21c85a
+username|accountform.getusername()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setusername|accountform|Used to set the value of username property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+mylist|accountform.getmylist()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setmylist|accountform|Used to set the value of myList property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+forwardaction|accountform|Contains the action that is executed when the form is submitted.|8be17bec52764f38828e8bdf8d21c85a
+password|accountform.getpassword()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setpassword|accountform|Used to set the value of password property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+repeatedpassword|accountform|Contains the repeated password entered by the user for confirmation.|8be17bec52764f38828e8bdf8d21c85a
+account|accountform.getaccount()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setaccount|accountform|Used to set the value of account property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+languages|accountform.getlanguages()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setlanguages|accountform|Used to set the value of languages property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+categories|accountform.getcategories()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+setcategories|accountform|Used to set the value of categories property of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
+validate|accountform.getvalidate()|Can be accessed using the getter method of AccountForm.|8be17bec52764f38828e8bdf8d21c85a
