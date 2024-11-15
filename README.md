@@ -61,9 +61,8 @@ Additional it also calculates the Degree of each node, and Communities of nodes,
 ## Tech Stack
 
 ### Mistral 7B
-<a href="https://mistral.ai/news/announcing-mistral-7b/"><img src="https://mistral.ai/images/logo_hubc88c4ece131b91c7cb753f40e9e1cc5_2589_256x0_resize_q97_h2_lanczos_3.webp" height=50 /></a>
 
-I am using the [Mistral 7B Openorca](https://huggingface.co/Open-Orca/Mistral-7B-OpenOrca) for extracting concepts out of text chunks. It can follow the system prompt instructions very well. 
+I modified the default to run the Zephyr 3B model. (https://huggingface.co/stabilityai/stablelm-zephyr-3b) for extracting concepts out of text chunks. It can follow the system prompt instructions very well. 
 
 ### Ollama
 <a href="https://ollama.ai"><img src='https://github.com/jmorganca/ollama/assets/3325447/0d0b44e2-8f4a-4e99-9b52-a5c1c741c8f7 ' height='50'/></a>
