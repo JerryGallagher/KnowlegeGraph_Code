@@ -60,7 +60,7 @@ Additional it also calculates the Degree of each node, and Communities of nodes,
 ---
 ## Tech Stack
 
-### Mistral 7B
+### Zephyr 3B
 
 I modified the default to run the Zephyr 3B model. (https://huggingface.co/stabilityai/stablelm-zephyr-3b) for extracting concepts out of text chunks. It can follow the system prompt instructions very well. 
 
