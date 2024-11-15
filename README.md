@@ -62,12 +62,12 @@ Additional it also calculates the Degree of each node, and Communities of nodes,
 
 ### Zephyr 3B
 
-I modified the default to run the Zephyr 3B model. (https://huggingface.co/stabilityai/stablelm-zephyr-3b) for extracting concepts out of text chunks. It can follow the system prompt instructions very well. 
+I modified the default to run the [Zephyr 3B model](https://huggingface.co/stabilityai/stablelm-zephyr-3b) for extracting concepts out of text chunks. It can follow the system prompt instructions very well. 
 
 ### Ollama
 <a href="https://ollama.ai"><img src='https://github.com/jmorganca/ollama/assets/3325447/0d0b44e2-8f4a-4e99-9b52-a5c1c741c8f7 ' height='50'/></a>
 
-Ollama makes it easy to host any model locally. Mistral 7B OpenOrca version is already available with Ollama to use out of the box. 
+Ollama makes it easy to host any model locally.
 
 To set up this project, you must install Ollama on your local machine. 
 
