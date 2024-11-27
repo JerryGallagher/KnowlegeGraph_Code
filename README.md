@@ -1,8 +1,6 @@
 # Convert Source code to knowledge graph
 
-![Knowledge Graph Banner](./assets/KG_banner.png)
-*A knowledge graph generated using this code* 
-ghpages link of this graph: https://rahulnyk.github.io/knowledge_graph/
+The project is based on https://rahulnyk.github.io/knowledge_graph/
 
 
 ## What is a knowledge graph?
@@ -18,6 +16,7 @@ Source: https://www.ibm.com/topics/knowledge-graph
 5. Populate nodes (concepts) and edges (relations).
 6. Visualise and Query. 
 
+## Getting Started. 
 
 
 ## Why Graph?
