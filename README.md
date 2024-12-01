@@ -12,6 +12,10 @@ The project is based on [[https://github.com/rahulnyk/knowledge_graph](https://g
 
 `source codevenv/bin/activate`
 
+`poetry update`
+
+`jupyter lab`
+
 
 ---
 ## Tech Stack
