@@ -7,7 +7,8 @@ The project is based on [[https://github.com/rahulnyk/knowledge_graph](https://g
 `git clone https://github.com/JerryGallagher/KnowlegeGraph_Code.git`
 
 `cd KnowledgeGraph_Code`
-`python -m venv code`
+
+`python -m venv codevenv`
 
 `source code/bin/activate`
 
