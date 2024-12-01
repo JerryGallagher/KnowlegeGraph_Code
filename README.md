@@ -1,6 +1,6 @@
 # Convert Source code to knowledge graph
 
-The project is based on https://rahulnyk.github.io/knowledge_graph/
+The project is based on [[https://github.com/rahulnyk/knowledge_graph](https://github.com/rahulnyk/knowledge_graph)
 
 ## Getting Started. 
 
