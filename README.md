@@ -10,7 +10,7 @@ The project is based on [[https://github.com/rahulnyk/knowledge_graph](https://g
 
 `python -m venv codevenv`
 
-`source code/bin/activate`
+`source codevenv/bin/activate`
 
 
 ---
