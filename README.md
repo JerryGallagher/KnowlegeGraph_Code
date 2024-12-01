@@ -6,6 +6,10 @@ The project is based on https://rahulnyk.github.io/knowledge_graph/
 
 `git clone https://github.com/JerryGallagher/KnowlegeGraph_Code.git`
 
+`cd KnowledgeGraph_Code`
+`python -m venv code`
+
+`source code/bin/activate`
 
 
 ---
