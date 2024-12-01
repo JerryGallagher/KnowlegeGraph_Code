@@ -16,6 +16,10 @@ The project is based on [[https://github.com/rahulnyk/knowledge_graph](https://g
 
 `jupyter lab`
 
+## TODO
+
+Need to add readme for the the code used from auto. 
+
 
 ---
 ## Tech Stack
