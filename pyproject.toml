@@ -2,7 +2,7 @@
 name = "knowlege-graph"
 version = "0.1.0"
 description = ""
-authors = ["Nayak <rahul.nyk@gmail.com>"]
+authors = ["Nayak <rahul.nyk@gmail.com>","Jerry <jlg.gee.k@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
