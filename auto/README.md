@@ -7,4 +7,4 @@ It currently spits it out to the command line, it would be nice to have it creat
 
 ## Others
 
-Many other expierments here. LDA and topic modeling. 
+Many other experiments here. LDA and topic modeling. 
