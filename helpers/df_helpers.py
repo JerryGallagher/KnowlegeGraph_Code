@@ -47,13 +47,10 @@ def concepts2Df(concepts_list) -> pd.DataFrame:
 
     return concepts_dataframe
 
-def df2Topic(dataframe: pd.DataFrame) -> list:
-    # dataframe.reset_index(inplace=True)
+def df2Topic(dataframe: pd.DataFrame, model=None) -> list:
+     # dataframe.reset_index(inplace=True)
     results = dataframe.apply(
-        lambda row: classify_topic(
-            row.text, {"chunk_id": row.chunk_id, "type": "concept"}
-        ),
-        axis=1,
+        lambda row: classify_topic(row.text, {"chunk_id": row.chunk_id}, model), axis=1
     )
     # invalid json results in NaN
     results = results.dropna()
@@ -61,7 +58,7 @@ def df2Topic(dataframe: pd.DataFrame) -> list:
 
     ## Flatten the list of lists to one single list of entities.
     concept_list = np.concatenate(results).ravel().tolist()
-    return topics
+    return concept_list
 
 
 def topics2Df(topics) -> pd.DataFrame:
