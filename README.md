@@ -2,6 +2,10 @@
 
 The project is based on [[https://github.com/rahulnyk/knowledge_graph](https://github.com/rahulnyk/knowledge_graph)
 
+# Hardware and software requirements
+
+The system I ran this on was Fedora 40 on an AMD Ryzen 9 7900X with a GeForce RTX 4080 SUPER
+
 ## Getting Started. 
 
 `git clone https://github.com/JerryGallagher/KnowlegeGraph_Code.git`
