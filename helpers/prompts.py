@@ -33,7 +33,7 @@ def extractConcepts(prompt: str, metadata={}, model="mistral-openorca:latest"):
         
     return result
 
-def classify_topic_groups(input_data: dict, model="mistral-openorca:latest"):
+def classify_topic(input_data: dict, model="mistral-openorca:latest"):
     if model is None:
         model = "mistral-openorca:latest"
 

@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from .prompts import extractConcepts
 from .prompts import graphPrompt
-from .prompts import classify_topic_groups
+from .prompts import classify_topic
 
 
 def documents2Dataframe(documents) -> pd.DataFrame:
@@ -46,6 +46,33 @@ def concepts2Df(concepts_list) -> pd.DataFrame:
     )
 
     return concepts_dataframe
+
+def df2Topic(dataframe: pd.DataFrame) -> list:
+    # dataframe.reset_index(inplace=True)
+    results = dataframe.apply(
+        lambda row: classify_topic(
+            row.text, {"chunk_id": row.chunk_id, "type": "concept"}
+        ),
+        axis=1,
+    )
+    # invalid json results in NaN
+    results = results.dropna()
+    results = results.reset_index(drop=True)
+
+    ## Flatten the list of lists to one single list of entities.
+    concept_list = np.concatenate(results).ravel().tolist()
+    return topics
+
+
+def topics2Df(topics) -> pd.DataFrame:
+    ## Remove all NaN entities
+    concepts_dataframe = pd.DataFrame(concepts_list).replace(" ", np.nan)
+    concepts_dataframe = concepts_dataframe.dropna(subset=["entity"])
+    concepts_dataframe["entity"] = concepts_dataframe["entity"].apply(
+        lambda x: x.lower()
+    )
+
+    return topics_dataframe
 
 
 def df2Graph(dataframe: pd.DataFrame, model=None) -> list:
