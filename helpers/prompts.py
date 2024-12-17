@@ -33,7 +33,7 @@ def extractConcepts(prompt: str, metadata={}, model="mistral-openorca:latest"):
         
     return result
 
-def classify_topic(input_data: dict, model="mistral-openorca:latest"):
+def classify_topic(input_data: list, model="mistral-openorca:latest"):
     if model is None:
         model = "mistral-openorca:latest"
 
@@ -53,18 +53,9 @@ def classify_topic(input_data: dict, model="mistral-openorca:latest"):
     )
 
     # Format the input data into a suitable prompt
-    group_prompts = "\n\n".join(
-        f"Group {i+1}: {', '.join(group)}" for i, group in enumerate(input_data["Communities"])
-    )
-    USER_PROMPT = f"context: ```{group_prompts}``` \n\n output: "
+    prompt = " ".join(item.strip("'") for item in your_list)
 
-    response = openai.Completion.create(
-        model=model,
-        prompt=SYS_PROMPT + USER_PROMPT,
-        max_tokens=500,
-        temperature=0.3
-    )
-
+    response, _ = client.generate(model_name=model, system=SYS_PROMPT, prompt=prompt)
     try:
         result = json.loads(response.choices[0].text)
     except json.JSONDecodeError:

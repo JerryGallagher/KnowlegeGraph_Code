@@ -1,6 +1,7 @@
 import uuid
 import pandas as pd
 import numpy as np
+import re
 from .prompts import extractConcepts
 from .prompts import graphPrompt
 from .prompts import classify_topic
@@ -47,18 +48,29 @@ def concepts2Df(concepts_list) -> pd.DataFrame:
 
     return concepts_dataframe
 
-def df2Topic(dataframe: pd.DataFrame, model=None) -> list:
-     # dataframe.reset_index(inplace=True)
-    results = dataframe.apply(
-        lambda row: classify_topic(row.text, {"chunk_id": row.chunk_id}, model), axis=1
-    )
+def df2Topic(my_list , model=None) -> list:
+    # dataframe.reset_index(inplace=True)
+    for element in my_list:
+        print(element)
+        print("-----")
+        prompt = " ".join(item.strip("'") for item in element)
+        cleaned_prompt = re.sub(r'[^A-Za-z0-9]+', ' ', prompt)
+        print(cleaned_prompt)
+        print("=====")
+
+     
+        #classify_topic(element, model)
+    
+    #results = dataframe.apply(
+    #    lambda row: classify_topic(row.text, {"chunk_id": row.chunk_id}, model), axis=1
+    #)
     # invalid json results in NaN
-    results = results.dropna()
-    results = results.reset_index(drop=True)
+    #results = results.dropna()
+    #results = results.reset_index(drop=True)
 
     ## Flatten the list of lists to one single list of entities.
-    concept_list = np.concatenate(results).ravel().tolist()
-    return concept_list
+    #concept_list = np.concatenate(results).ravel().tolist()
+    #return concept_list
 
 
 def topics2Df(topics) -> pd.DataFrame:
