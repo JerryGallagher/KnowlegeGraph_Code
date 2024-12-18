@@ -50,14 +50,14 @@ def concepts2Df(concepts_list) -> pd.DataFrame:
 
 def df2Topic(my_list , model=None) -> list:
     # dataframe.reset_index(inplace=True)
-    for element in my_list:
+    for index, element in enumerate(my_list):
         print(element)
         print("-----")
         prompt = " ".join(item.strip("'") for item in element)
         cleaned_prompt = re.sub(r'[^A-Za-z0-9]+', ' ', prompt)
         print(cleaned_prompt)
         print("=====")
-
+        return (graphPrompt(cleaned_prompt, {"chunk_id": index}, model))
      
         #classify_topic(element, model)
     

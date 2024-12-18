@@ -33,7 +33,7 @@ def extractConcepts(prompt: str, metadata={}, model="mistral-openorca:latest"):
         
     return result
 
-def classify_topic(input_data: list, model="mistral-openorca:latest"):
+def classify_topic(input: str, metadata={}, model="mistral-openorca:latest"):
     if model is None:
         model = "mistral-openorca:latest"
 
@@ -51,11 +51,9 @@ def classify_topic(input_data: list, model="mistral-openorca:latest"):
         "Example:\n"
         '[{"group": ["term1", "term2"], "topic": "Relevant Topic"}]'
     )
-
-    # Format the input data into a suitable prompt
-    prompt = " ".join(item.strip("'") for item in your_list)
-
-    response, _ = client.generate(model_name=model, system=SYS_PROMPT, prompt=prompt)
+    print(input)
+    USER_PROMPT = f"context: ```{input}``` \n\n output: "
+    response, _ = client.generate(model_name=model, system=SYS_PROMPT, prompt=USER_PROMPT)
     try:
         result = json.loads(response.choices[0].text)
     except json.JSONDecodeError:
