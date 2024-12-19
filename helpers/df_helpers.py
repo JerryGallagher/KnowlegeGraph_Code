@@ -48,36 +48,25 @@ def concepts2Df(concepts_list) -> pd.DataFrame:
 
     return concepts_dataframe
 
-def df2Topic(my_list , model=None) -> list:
+def df2Topic(dataframe: pd.DataFrame, model=None) -> list:
     # dataframe.reset_index(inplace=True)
-    for index, element in enumerate(my_list):
-        print(element)
-        print("-----")
-        prompt = " ".join(item.strip("'") for item in element)
-        cleaned_prompt = re.sub(r'[^A-Za-z0-9]+', ' ', prompt)
-        print(cleaned_prompt)
-        print("=====")
-        return (graphPrompt(cleaned_prompt, {"chunk_id": index}, model))
-     
-        #classify_topic(element, model)
-    
-    #results = dataframe.apply(
-    #    lambda row: classify_topic(row.text, {"chunk_id": row.chunk_id}, model), axis=1
-    #)
+    results = dataframe.apply(
+        lambda row: classify_topic(row.text, model), axis=1
+    )
     # invalid json results in NaN
-    #results = results.dropna()
-    #results = results.reset_index(drop=True)
+    results = results.dropna()
+    results = results.reset_index(drop=True)
 
     ## Flatten the list of lists to one single list of entities.
-    #concept_list = np.concatenate(results).ravel().tolist()
-    #return concept_list
+    concept_list = np.concatenate(results).ravel().tolist()
+    return concept_list
 
 
-def topics2Df(topics) -> pd.DataFrame:
+def topics2Df(topics_list) -> pd.DataFrame:
     ## Remove all NaN entities
-    concepts_dataframe = pd.DataFrame(concepts_list).replace(" ", np.nan)
-    concepts_dataframe = concepts_dataframe.dropna(subset=["entity"])
-    concepts_dataframe["entity"] = concepts_dataframe["entity"].apply(
+    concepts_dataframe = pd.DataFrame(topics_list).replace(" ", np.nan)
+    concepts_dataframe = concepts_dataframe.dropna(subset=["topic"])
+    concepts_dataframe["topic"] = concepts_dataframe["topic"].apply(
         lambda x: x.lower()
     )
 

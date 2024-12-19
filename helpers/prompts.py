@@ -33,7 +33,7 @@ def extractConcepts(prompt: str, metadata={}, model="mistral-openorca:latest"):
         
     return result
 
-def classify_topic(input: str, metadata={}, model="mistral-openorca:latest"):
+def classify_topic(input: str, model="mistral-openorca:latest"):
     if model is None:
         model = "mistral-openorca:latest"
 
@@ -44,14 +44,15 @@ def classify_topic(input: str, metadata={}, model="mistral-openorca:latest"):
     SYS_PROMPT = (
         "You are a system for classifying groups of terms into topic categories. "
         "For each group of terms given, determine a general topic name that best describes the group. "
-        "Consider the terms’ meanings, applications, and relationships with each other.\n\n"
-        "Your response format should be a JSON list where each entry has:\n"
-        "- 'group': The original terms in the group\n"
-        "- 'topic': The identified general topic name\n\n"
-        "Example:\n"
-        '[{"group": ["term1", "term2"], "topic": "Relevant Topic"}]'
+        "Consider the terms’ meanings, applications, and relationships with each other.\n"
+        "Format your output as a list of json with the following format:\n"
+        "[\n"
+        "   {\n"
+        '       "topic": The identified general topic name\n'
+        "   }, \n"
+        "{ }, \n"
+        "]\n"
     )
-    print(input)
     USER_PROMPT = f"context: ```{input}``` \n\n output: "
     response, _ = client.generate(model_name=model, system=SYS_PROMPT, prompt=USER_PROMPT)
     try:
